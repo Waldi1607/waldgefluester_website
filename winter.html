@@ -21,11 +21,11 @@
     .page-hero-content p { font-size:1.15rem; opacity:.9; max-width:580px; margin:0 auto 2rem; }
 
     .highlights-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; margin-top:3rem; }
-    .highlight-card { text-align:center; padding:2.5rem 1.5rem; border-radius:4px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); transition:transform .25s,background .25s; }
-    .highlight-card:hover { transform:translateY(-4px); background:rgba(255,255,255,.1); }
+    .highlight-card { text-align:center; padding:2.5rem 1.5rem; border-radius:4px; background:var(--white); border-bottom:3px solid var(--gold); box-shadow:0 4px 20px rgba(0,0,0,.07); transition:transform .25s,box-shadow .25s; }
+    .highlight-card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.13); }
     .highlight-icon { font-size:2.8rem; margin-bottom:1rem; }
-    .highlight-card h3 { font-size:1.05rem; margin-bottom:.5rem; }
-    .highlight-card p { color:rgba(255,255,255,.7); font-size:.9rem; }
+    .highlight-card h3 { font-size:1.05rem; margin-bottom:.5rem; color:var(--green-dark); }
+    .highlight-card p { color:var(--text-muted); font-size:.9rem; }
 
     .planung-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
     .planung-step { text-align:center; }
@@ -84,7 +84,7 @@
 </section>
 
 <!-- HIGHLIGHTS -->
-<section class="section bg-dark" id="winterevents">
+<section class="section bg-cream" id="winterevents">
   <div class="container">
     <div class="section-header fade-in">
       <span class="eyebrow">Was euch erwartet</span>
