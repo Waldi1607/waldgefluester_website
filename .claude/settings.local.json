@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --version)",
+      "WebFetch(domain:waldgefluester-events.de)",
+      "Bash(gh repo *)"
+    ]
+  }
+}
