@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventlocation im Wald – Waldgeflüster Events Schwäbische Alb</title>
+  <meta name="description" content="Waldgeflüster Events – exklusive Eventlocation im Wald auf der Schwäbischen Alb. Für Hochzeiten, Geburtstage, Firmenfeiern und mehr." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .fade-in { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+
+    .page-hero { height:100vh; min-height:560px; position:relative; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
+    .page-hero-bg { position:absolute; inset:0; background-image:url('images/aussen/DJI_0782-1030x579.webp'); background-size:cover; background-position:center; }
+    .page-hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,.48); }
+    .page-hero-content { position:relative; z-index:2; color:var(--white); padding:2rem; max-width:820px; }
+    .page-hero-content h1 { margin:.75rem 0 1.2rem; text-shadow:0 2px 30px rgba(0,0,0,.5); }
+    .page-hero-content p { font-size:1.15rem; opacity:.9; max-width:580px; margin:0 auto 2rem; }
+
+    .event-types { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin-top:3rem; }
+    .event-type { background:var(--white); border-radius:4px; padding:2rem 1.5rem; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,.07); border-bottom:3px solid var(--gold); transition:transform .25s,box-shadow .25s; }
+    .event-type:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,.13); }
+    .event-type-icon { font-size:2.5rem; margin-bottom:1rem; }
+    .event-type h3 { font-size:1.1rem; margin-bottom:.5rem; }
+    .event-type p { color:var(--text-muted); font-size:.9rem; }
+
+    .ausstattung-list { display:grid; grid-template-columns:1fr 1fr; gap:.75rem 2rem; margin-top:1.5rem; }
+    .ausstattung-item { display:flex; align-items:center; gap:.75rem; font-size:.95rem; color:var(--text-muted); padding:.5rem 0; border-bottom:1px solid #f0ede6; }
+    .ausstattung-item::before { content:'✓'; color:var(--gold); font-weight:700; font-size:1.1rem; flex-shrink:0; }
+    .bg-dark .ausstattung-item { color:rgba(255,255,255,.75); border-color:rgba(255,255,255,.1); }
+
+    .warum-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
+    .warum-card { text-align:center; padding:2.5rem 1.5rem; border-radius:4px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05); }
+    .warum-icon { font-size:2.8rem; margin-bottom:1rem; }
+    .warum-card h3 { margin-bottom:.6rem; }
+    .warum-card p { color:rgba(255,255,255,.7); font-size:.9rem; }
+
+    .location-gallery { display:grid; grid-template-columns:2fr 1fr; grid-template-rows:1fr 1fr; gap:1rem; height:500px; margin-top:3rem; }
+    .location-gallery img { width:100%; height:100%; object-fit:cover; border-radius:4px; }
+    .location-gallery img:first-child { grid-row:span 2; }
+
+    @media(max-width:900px) {
+      .warum-grid { grid-template-columns:1fr; max-width:400px; margin-inline:auto; }
+      .ausstattung-list { grid-template-columns:1fr; }
+      .location-gallery { grid-template-columns:1fr; grid-template-rows:auto; height:auto; }
+      .location-gallery img:first-child { grid-row:span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-text">Waldgeflüster</span>
+    <span class="nav-logo-sub">EVENTS</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Oh Hello!</a></li>
+    <li><a href="heiraten.html">Heiraten</a></li>
+    <li><a href="eventlocation.html" style="color:var(--gold)">Eventlocation</a></li>
+    <li><a href="winter.html">Winterevents</a></li>
+    <li><a href="bilder.html">Bilder</a></li>
+    <li><a href="index.html#anfragen" class="nav-cta">Anfragen</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close">&times;</button>
+  <a href="index.html">Oh Hello!</a>
+  <a href="heiraten.html">Heiraten</a>
+  <a href="eventlocation.html">Eventlocation</a>
+  <a href="winter.html">Winterevents</a>
+  <a href="bilder.html">Bilder</a>
+  <a href="index.html#anfragen">Anfragen</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <span class="eyebrow">Waldgeflüster Events</span>
+    <h1>Eventlocation im Wald für Hochzeiten &amp; Feiern</h1>
+    <p>Einzigartig. Natürlich. Unvergesslich. – Eure exklusive Eventlocation auf der Schwäbischen Alb für jeden besonderen Anlass.</p>
+    <div class="btn-group" style="justify-content:center">
+      <a href="index.html#anfragen" class="btn btn-primary">Event anfragen</a>
+      <a href="bilder.html" class="btn btn-outline-white">Bilder ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- VERANSTALTUNGSARTEN -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Für jeden Anlass</span>
+      <h2>Eure Eventlocation im Wald</h2>
+      <p>Waldgeflüster Events ist die perfekte Bühne für alle besonderen Momente des Lebens.</p>
+    </div>
+    <div class="event-types">
+      <div class="event-type fade-in"><div class="event-type-icon">💍</div><h3>Hochzeiten</h3><p>Freie Trauung, Festzelt, Getting-Ready Hütte – alles für euren perfekten Hochzeitstag.</p></div>
+      <div class="event-type fade-in"><div class="event-type-icon">🎂</div><h3>Geburtstage</h3><p>Feiert runde Geburtstage in einzigartiger Waldatmosphäre mit bis zu 110 Gästen.</p></div>
+      <div class="event-type fade-in"><div class="event-type-icon">🏢</div><h3>Firmenfeiern</h3><p>Unvergessliche Firmenfeiern, Teambuilding und Weihnachtsfeiern in der Natur.</p></div>
+      <div class="event-type fade-in"><div class="event-type-icon">🎉</div><h3>Sonstige Events</h3><p>Taufen, Jubiläen, Verlobungen – jeder Anlass verdient eine besondere Location.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION DETAILS -->
+<section class="section" id="tour">
+  <div class="container">
+    <div class="section-2col fade-in">
+      <div class="col-text">
+        <span class="eyebrow">Die Location</span>
+        <h2>Waldgeflüster – Eventlocation im Wald</h2>
+        <p>Auf 2.000 m² Außenfläche inmitten der Schwäbischen Alb erwartet euch eine Location, die keine Wünsche offenlässt. Das ca. 100 m² große Festzelt mit transparenten Wänden fasst bis zu 110 Gäste beim festlichen Dinner.</p>
+        <div class="ausstattung-list">
+          <div class="ausstattung-item">Festzelt (ca. 100 m²)</div>
+          <div class="ausstattung-item">Bar &amp; Tanzfläche</div>
+          <div class="ausstattung-item">DJ-Equipment &amp; Mikrofone</div>
+          <div class="ausstattung-item">Moderne Licht-Technik</div>
+          <div class="ausstattung-item">Getting-Ready Hütte</div>
+          <div class="ausstattung-item">Piaggio Ape Bar</div>
+          <div class="ausstattung-item">Sitzlounge &amp; Feuerstelle</div>
+          <div class="ausstattung-item">Sonnenterrasse</div>
+          <div class="ausstattung-item">7 Minigolf-Löcher</div>
+          <div class="ausstattung-item">Parkplätze vorhanden</div>
+        </div>
+      </div>
+      <div class="col-img">
+        <img src="images/eventzelt/Waldgefluester-2-1030x687.webp" alt="Waldgeflüster Eventlocation" style="width:100%;height:100%;object-fit:cover" />
+      </div>
+    </div>
+
+    <div class="location-gallery fade-in">
+      <img src="images/aussen/DJI_0762-1030x579.webp" alt="Vogelperspektive" loading="lazy" />
+      <img src="images/eventzelt/SR-Zelt-Deko-Einzug-83-1030x686.webp" alt="Eventzelt" loading="lazy" />
+      <img src="images/bar/240913_232223-1030x687.webp" alt="Bar" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- WARUM WALDGEFLÜSTER -->
+<section class="section bg-dark">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Unsere Stärken</span>
+      <h2>Warum Waldgeflüster Events?</h2>
+    </div>
+    <div class="warum-grid">
+      <div class="warum-card fade-in">
+        <div class="warum-icon">🌿</div>
+        <h3>Naturverbundene Atmosphäre</h3>
+        <p>Eingebettet in den Wald auf der Schwäbischen Alb – eine Kulisse, die kein Dekorationsbudget der Welt ersetzen kann.</p>
+      </div>
+      <div class="warum-card fade-in">
+        <div class="warum-icon">🎯</div>
+        <h3>Flexibilität &amp; Individualität</h3>
+        <p>Kein starres Konzept – wir passen uns euren Wünschen an. Keine versteckten Kosten, transparente Preise.</p>
+      </div>
+      <div class="warum-card fade-in">
+        <div class="warum-icon">🤝</div>
+        <h3>Alles aus einer Hand</h3>
+        <p>Von der Planung bis zum letzten Tanz kümmern sich David und Felix persönlich um euren besonderen Tag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Euer Team</span>
+      <h2>David &amp; Felix</h2>
+      <p>Mit Herzblut für eure unvergesslichen Momente – David und Felix teilen eine gemeinsame Leidenschaft: besondere Events zu schaffen, die ein Leben lang in Erinnerung bleiben.</p>
+    </div>
+    <div class="team-grid fade-in">
+      <div class="team-card">
+        <div class="team-photo"><img src="images/team/205-catchthemoment-2729-633x1030.webp" alt="David" style="width:100%;height:100%;object-fit:cover;object-position:top" /></div>
+        <h3>David</h3>
+        <p>Mit Blick fürs Detail und Leidenschaft für Gastfreundschaft sorgt David dafür, dass euer Event reibungslos und unvergesslich wird.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="images/team/wg-8408-685x1030.webp" alt="Felix" style="width:100%;height:100%;object-fit:cover;object-position:top" /></div>
+        <h3>Felix</h3>
+        <p>Felix bringt Kreativität und Organisationstalent mit – er kümmert sich darum, dass jede Feier ihre ganz eigene, besondere Note bekommt.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="fade-in">
+      <a href="index.html#anfragen" class="btn btn-primary">Event anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-cream" id="faq">
+  <div class="container container-narrow">
+    <div class="section-header fade-in">
+      <span class="eyebrow">FAQ</span>
+      <h2>Häufig gestellte Fragen</h2>
+    </div>
+    <div class="accordion fade-in">
+      <div class="accordion-item">
+        <button class="accordion-trigger">Wie viele Gäste können feiern? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Das Festzelt bietet Platz für bis zu 110 Gäste beim Dinner. Für Winterevents stehen sitzend bis zu 40 Plätze zur Verfügung. Die 2.000 m² Außenfläche ermöglicht auch größere Gesellschaften bei der freien Trauung oder dem Sektempfang.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Welche Veranstaltungsarten sind möglich? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Hochzeiten, Geburtstage, Firmenfeiern, Weihnachtsfeiern, Jubiläen, Taufen und vieles mehr. Sprecht uns einfach an!</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Gibt es Parkplätze? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Ja, ausreichend Parkplätze sind vorhanden. Auf Anfrage ist auch ein Shuttle-Service buchbar.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Kann ich eigenes Catering mitbringen? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Wir arbeiten mit 8 bewährten regionalen Catering-Partnern zusammen. Eigenes externes Catering bitte im Vorfeld absprechen.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Was passiert bei schlechtem Wetter? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Das Festzelt mit transparenten Wänden bietet auch bei schlechtem Wetter stilvollen Schutz. Wir passen uns flexibel an die Wetterbedingungen an – kein Brautpaar musste bisher im Regen feiern!</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger">Gibt es versteckte Kosten? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Nein – unsere Gäste schätzen besonders unser transparentes Preis-Leistungs-Verhältnis ohne versteckte Zusatzkosten.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-dark">
+  <div class="container" style="text-align:center;max-width:700px">
+    <div class="fade-in">
+      <span class="eyebrow">Euer nächster Schritt</span>
+      <h2>Event anfragen</h2>
+      <p style="color:rgba(255,255,255,.75);margin:1rem 0 2rem">Ihr habt Interesse? Schreibt uns – wir melden uns schnellstmöglich mit allen Infos und einem individuellen Angebot.</p>
+      <a href="index.html#anfragen" class="btn btn-primary">Jetzt anfragen</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="footer-logo-main">Waldgeflüster</span><span class="footer-logo-sub">EVENTS</span></div>
+        <p>Exklusive Hochzeits- und Eventlocation im Wald · Kaltentalstrasse 52 · 72584 Hülben</p>
+        <div class="footer-social"><a href="https://www.instagram.com/waldgefluester_eventlocation" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Oh Hello!</a></li>
+          <li><a href="heiraten.html">Heiraten im Wald</a></li>
+          <li><a href="eventlocation.html">Eventlocation</a></li>
+          <li><a href="winter.html">Winterevents</a></li>
+          <li><a href="bilder.html">Bilder</a></li>
+          <li><a href="index.html#anfragen">Anfragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-info">
+        <h4>Kontakt</h4>
+        <p><a href="tel:+491736149896">+49 (0)173 614 98 96</a></p>
+        <p><a href="mailto:anfrage@waldgefluester-events.de">anfrage@waldgefluester-events.de</a></p>
+        <p>Kaltentalstrasse 52<br>72584 Hülben</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Waldgeflüster Events · Teolia GmbH</p>
+      <div class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    </div>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Nach oben">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
