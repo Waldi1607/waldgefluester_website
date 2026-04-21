@@ -74,6 +74,20 @@ h3 { font-size: clamp(1.15rem, 2.5vw, 1.8rem); }
 .btn-outline-white { background: transparent; color: var(--white); border-color: var(--white); }
 .btn-outline-white:hover { background: var(--white); color: var(--green-dark); }
 .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-dark { background: var(--green-dark); color: var(--white); border: 2px solid var(--green-dark); border-radius:2px; padding:.85rem 2rem; font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; display:inline-flex; align-items:center; transition:all .25s; }
+.btn-dark:hover { background: transparent; color: var(--green-dark); }
+
+.hero-anchor-link {
+  color: rgba(255,255,255,.8);
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,.35);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.hero-anchor-link:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ══════════════════════════════════════════
    NAVIGATION
