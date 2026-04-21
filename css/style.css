@@ -330,6 +330,18 @@ h3 { font-size: clamp(1.15rem, 2.5vw, 1.8rem); }
 .bg-dark .col-text p { color: rgba(255,255,255,.72); }
 .col-img { border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; }
 
+.inline-quote {
+  border-left: 3px solid var(--gold);
+  padding: .75rem 1.25rem;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--font-head);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.bg-dark .inline-quote { color: rgba(255,255,255,.6); border-color: var(--gold); }
+
 /* ══════════════════════════════════════════
    SUB-2 GRID (Freie Trauung / Festzelt etc.)
 ═══════════════════════════════════════════ */
