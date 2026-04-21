@@ -3,11 +3,11 @@
    ============================================ */
 
 :root {
-  --green-dark:  #1e3a1e;
-  --green-mid:   #2d5a2d;
-  --green-light: #4a7c4a;
-  --cream:       #f5f0e8;
-  --beige:       #e8dfc8;
+  --green-dark:  #2a3716;
+  --green-mid:   #3d5020;
+  --green-light: #89a488;
+  --cream:       #faf7f2;
+  --beige:       #e9e6e1;
   --gold:        #c9a96e;
   --white:       #ffffff;
   --text-dark:   #1a1a1a;
@@ -485,7 +485,7 @@ h3 { font-size: clamp(1.15rem, 2.5vw, 1.8rem); }
 /* ══════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════ */
-#footer { background: #111a11; color: var(--white); padding: 4rem 2rem 0; position: relative; }
+#footer { background: #192605; color: var(--white); padding: 4rem 2rem 0; position: relative; }
 
 .footer-grid {
   display: grid;
