@@ -158,25 +158,37 @@
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <span class="eyebrow">Waldgeflüster Events</span>
-    <h1>Bilder der Location</h1>
-    <p style="opacity:.85;font-size:1.05rem">Impressionen aus unserem Wald – lass dich inspirieren</p>
+    <h1>Impressionen vom Waldgeflüster</h1>
+    <p style="opacity:.85;font-size:1.05rem;max-width:640px;margin:0 auto 1.5rem">Taucht ein in die Atmosphäre von Waldgeflüster Events und lasst euch von unseren schönsten Momenten inspirieren. Von der romantischen freien Trauung über das festliche Eventzelt bis hin zur stimmungsvollen Tanzfläche &amp; Bar – hier findet ihr Bilder, die die Magie unserer Location einfangen.</p>
+    <a href="index.html#anfragen" class="btn btn-primary">Jetzt kontaktieren</a>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+      <a href="#freietrauung" class="hero-anchor-link" onclick="activateTab('freietrauung')">Freie Trauung</a>
+      <a href="#eventzelt" class="hero-anchor-link" onclick="activateTab('eventzelt')">Eventzelt</a>
+      <a href="#bar" class="hero-anchor-link" onclick="activateTab('bar')">Bar &amp; Tanzfläche</a>
+      <a href="#gettingready" class="hero-anchor-link" onclick="activateTab('getting-ready')">Getting-Ready Hütte</a>
+      <a href="#aussen" class="hero-anchor-link" onclick="activateTab('aussen')">Außenbereich</a>
+      <a href="#wintergalerie" class="hero-anchor-link" onclick="activateTab('winter')">Winter</a>
+      <a href="#team" class="hero-anchor-link" onclick="activateTab('team')">Team</a>
+    </div>
   </div>
 </div>
 
 <!-- CATEGORY TABS -->
 <div class="gallery-tabs">
   <div class="gallery-tabs-inner">
-    <button class="tab-btn active" data-tab="getting-ready">Getting-Ready Hütte</button>
-    <button class="tab-btn" data-tab="eventzelt">Eventzelt</button>
-    <button class="tab-btn" data-tab="bar">Bar & Tanzfläche</button>
-    <button class="tab-btn" data-tab="aussen">Außenbereich</button>
-    <button class="tab-btn" data-tab="trauung">Freie Trauung</button>
-    <button class="tab-btn" data-tab="winter">Wintergeflüster</button>
+    <button class="tab-btn active" data-tab="trauung" id="tab-btn-trauung">Freie Trauung</button>
+    <button class="tab-btn" data-tab="eventzelt" id="tab-btn-eventzelt">Eventzelt</button>
+    <button class="tab-btn" data-tab="bar" id="tab-btn-bar">Bar &amp; Tanzfläche</button>
+    <button class="tab-btn" data-tab="getting-ready" id="tab-btn-getting-ready">Getting-Ready Hütte</button>
+    <button class="tab-btn" data-tab="aussen" id="tab-btn-aussen">Außenbereich</button>
+    <button class="tab-btn" data-tab="winter" id="tab-btn-winter">Winter</button>
+    <button class="tab-btn" data-tab="team" id="tab-btn-team">Team Waldgeflüster</button>
   </div>
 </div>
 
 <!-- GETTING READY -->
-<div class="gallery-section active" id="tab-getting-ready">
+<div class="gallery-section" id="tab-getting-ready">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Unsere gemütliche Getting-Ready-Hütte im charmanten Stil bietet den idealen Raum für Entspannung und pure Vorfreude.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/getting-ready/237-catchthemoment-3133-1-702x1030.webp" alt="Getting-Ready" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/getting-ready/SR-GettingReady-225-2-1030x686.webp" alt="Getting-Ready" loading="lazy" /></div>
@@ -193,6 +205,7 @@
 
 <!-- EVENTZELT -->
 <div class="gallery-section" id="tab-eventzelt">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Gewinnt Einblicke in unser großzügiges Festzelt – ein Ort, der perfekt für stilvolle Dinner und ausgelassene Feiern ist.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/eventzelt/Waldgefluester-2-1030x687.webp" alt="Eventzelt" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/eventzelt/Sophia-und-Jonas-Waldgefluester-373-5-1030x687.webp" alt="Eventzelt" loading="lazy" /></div>
@@ -209,6 +222,7 @@
 
 <!-- BAR & TANZFLÄCHE -->
 <div class="gallery-section" id="tab-bar">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Erlebt Bilder voller Energie und unvergleichlicher Stimmung: Hier wird nicht nur getanzt, gelacht und angestoßen – sondern jede Minute pulsiert vor Freude.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/bar/240913_232223-1030x687.webp" alt="Bar" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/bar/240913_232328-1030x687.webp" alt="Bar" loading="lazy" /></div>
@@ -225,6 +239,7 @@
 
 <!-- AUSSENBEREICH -->
 <div class="gallery-section" id="tab-aussen">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Vom weitläufigen Grün über die sonnendurchflutete Terrasse bis zu unseren unterhaltsamen Minigolfbahnen – unser Außenbereich bietet vielseitigen Raum für Erholung, Spaß und unvergessliche Erinnerungen.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/aussen/DJI_0762-1030x579.webp" alt="Außenbereich Drohne" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/aussen/DJI_0782-1030x579.webp" alt="Außenbereich Drohne" loading="lazy" /></div>
@@ -241,7 +256,8 @@
 </div>
 
 <!-- FREIE TRAUUNG -->
-<div class="gallery-section" id="tab-trauung">
+<div class="gallery-section active" id="tab-trauung">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Erlebt eure Freie Trauung mitten in der Natur, wo eure Liebe in jedem Detail zum Ausdruck kommt. Unsere Galerie zeigt eindrucksvolle Bilder von liebevoll dekorierten Traubögen und kunstvoll arrangierten Sitzplätzen unter hohen, ehrwürdigen Bäumen.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/trauung/19-LM_0609-653-1-1030x685.webp" alt="Freie Trauung" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/trauung/DSC9732-1-1030x562.webp" alt="Freie Trauung" loading="lazy" /></div>
@@ -259,6 +275,7 @@
 
 <!-- WINTER -->
 <div class="gallery-section" id="tab-winter">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Taucht ein in die winterliche Magie von Waldgeflüster! Unsere Galerie zeigt euch die schönsten Momente vergangener Winterevents – vom gemütlichen Glühweinempfang bis zum Action-reichen Eisstockschießen.</p></div>
   <div class="masonry">
     <div class="masonry-item"><img src="images/winter-galerie/DSC04651-1-1030x687.jpg" alt="Wintergeflüster" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/winter-galerie/DSC04675-1-1030x687.jpg" alt="Wintergeflüster" loading="lazy" /></div>
@@ -275,6 +292,23 @@
     <div class="masonry-item"><img src="images/winter-galerie/DSC05677-1-687x1030.webp" alt="Wintergeflüster" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/winter-galerie/DSC05953-1-687x1030.webp" alt="Wintergeflüster" loading="lazy" /></div>
     <div class="masonry-item"><img src="images/winter-galerie/DSC04680-1-687x1030.jpg" alt="Wintergeflüster" loading="lazy" /></div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="gallery-section" id="tab-team">
+  <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem"><p style="color:var(--text-muted)">Lernt das engagierte Team von Waldgeflüster Events kennen: Unsere Crew arbeitet mit Herzblut und Leidenschaft daran, eure Hochzeit zu einem unvergesslichen Ereignis zu machen.</p></div>
+  <div class="masonry">
+    <div class="masonry-item"><img src="images/team/205-catchthemoment-2729-633x1030.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/wg-8408-685x1030.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/DocumentingLove_Waldgefluester_0055-1030x687.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/DocumentingLove_Waldgefluester_0086-687x1030.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/DocumentingLove_Waldgefluester_0161-686x1030.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/214-catchthemoment-2907-687x1030.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/199-catchthemoment-2609-1030x647.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/PHOTO-2023-09-24-18-29-58-1030x686.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/Cindy-und-Michele-1037-1030x687.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
+    <div class="masonry-item"><img src="images/team/17-Sophie_Steffen_220723-226-1030x687.webp" alt="Team Waldgeflüster" loading="lazy" /></div>
   </div>
 </div>
 
@@ -303,8 +337,9 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="index.html">Oh Hello!</a></li>
-          <li><a href="index.html#hochzeit">Heiraten</a></li>
-          <li><a href="index.html#winterevents">Winterevents</a></li>
+          <li><a href="heiraten.html">Heiraten im Wald</a></li>
+          <li><a href="eventlocation.html">Eventlocation</a></li>
+          <li><a href="winter.html">Winterevents</a></li>
           <li><a href="bilder.html">Bilder</a></li>
           <li><a href="index.html#anfragen">Anfragen</a></li>
         </ul>
@@ -331,15 +366,39 @@
 <script src="js/main.js"></script>
 <script>
   // ── TABS
+  function activateTab(tabKey) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+    var btn = document.getElementById('tab-btn-' + tabKey);
+    var section = document.getElementById('tab-' + tabKey);
+    if (btn) btn.classList.add('active');
+    if (section) section.classList.add('active');
+  }
+
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      activateTab(btn.dataset.tab);
       window.scrollTo({ top: document.querySelector('.gallery-tabs').offsetTop - 70, behavior: 'smooth' });
     });
   });
+
+  // Hash-based activation (e.g. bilder.html#freietrauung)
+  var hashMap = {
+    'freietrauung': 'trauung',
+    'eventzelt': 'eventzelt',
+    'bar': 'bar',
+    'gettingready': 'getting-ready',
+    'aussen': 'aussen',
+    'wintergalerie': 'winter',
+    'team': 'team'
+  };
+  var hash = window.location.hash.replace('#', '');
+  if (hash && hashMap[hash]) {
+    activateTab(hashMap[hash]);
+    setTimeout(function() {
+      window.scrollTo({ top: document.querySelector('.gallery-tabs').offsetTop - 70, behavior: 'smooth' });
+    }, 100);
+  }
 
   // ── LIGHTBOX
   const lightbox = document.getElementById('lightbox');
