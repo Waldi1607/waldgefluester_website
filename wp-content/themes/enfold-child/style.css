@@ -1,0 +1,389 @@
+/*
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating will be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+
+/* Child Theme CSS */
+
+/* Logo-Styles */
+.logo.avia-svg-logo {
+  display: block;
+  max-width: 450px;
+  width: 450px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.my-svg-logo img {
+  width: 300px;
+  height: auto;
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .logo.avia-svg-logo {
+  max-width: 300px;
+  width: 300px;
+  margin-top: 25px;
+  }
+}
+
+/* Media Query: Verstecke Logo ab 1140px */
+@media only screen and (max-width: 767px) {
+  .logo.avia-svg-logo {
+    display: none !important;
+  }
+}
+
+/* Allgemeine Elemente ausblenden */
+.ls-gui-element.ls-circle-timer {
+  display: none !important;
+}
+
+/* Rotation & mobilerotation */
+.rotation img {
+  border-radius: 30px;
+}
+
+.rotation {
+  display: block;
+}
+
+.mobilerotation {
+  display: none;
+}
+
+/* Responsive Anpassungen für Rotation */
+@media screen and (max-width: 767px) {
+  .rotation {
+    display: none;
+  }
+  .mobilerotation {
+    display: block;
+  }
+}
+
+/* Auf Handys: Keine Rundung */
+@media (max-width: 768px) {
+  .rotation img {
+    border-radius: 0;
+  }
+}
+
+/* Weitere Elemente */
+.my-overlap-box {
+  padding: 0 15%;
+}
+
+/* Hover Effekt im Footer */
+.avia-image-container:hover .image-overlay {
+  display: none !important;
+}
+
+/* Facts-Box */
+.facts {
+  width: 76.5%;
+  margin: 0 auto;
+}
+
+/* Responsive Anpassungen (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+  .my-overlap-box2 {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+
+  .my-overlap-box {
+    padding: 0 !important;
+    margin-top: 50px !important;
+  }
+
+  .facts {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Kontakt-Styles */
+.contact {
+  font-size: 12px;
+  padding: 0;
+  z-index: 100;
+}
+
+/* Enfold-Formularfelder */
+.avia_ajax_form input[type="text"],
+.avia_ajax_form input[type="email"],
+.avia_ajax_form input[type="url"],
+.avia_ajax_form input[type="tel"],
+.avia_ajax_form input[type="search"],
+.avia_ajax_form input[type="password"],
+.avia_ajax_form textarea,
+.avia_ajax_form select {
+  padding: 6px !important;
+  margin: 0 !important;
+  border-width: 1px !important;
+}
+
+#top div .av-dark-form .input-text,
+#top div .av-dark-form input[type=email],
+#top div .av-dark-form input[type=input],
+#top div .av-dark-form input[type=number],
+#top div .av-dark-form input[type=password],
+#top div .av-dark-form input[type=search],
+#top div .av-dark-form input[type=tel],
+#top div .av-dark-form input[type=text],
+#top div .av-dark-form input[type=url],
+#top div .av-dark-form select,
+#top div .av-dark-form textarea,
+div div .av-dark-form .button {
+  border-width: 1px !important;
+}
+
+/* Startseite: Header-Logo ausblenden */
+.home .av_header_transparency .logo.avia-svg-logo {
+  display: none !important;
+}
+
+/* Untermenü für mobile Geräte */
+@media only screen and (max-width: 768px) {
+  #top .av-subnav-menu {
+    font-size: 9px;
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    box-sizing: border-box;
+  }
+
+  #top .av-subnav-menu > li > a {
+    padding: 0 6px;
+  }
+}
+
+/* Tooltip und Tab Titel */
+.avia-tooltip .inner_tooltip {
+  font-size: 0.825em;
+}
+
+.av-inner-tab-title {
+  font-size: 12px;
+}
+
+/* Seite 1987: Farben und Hover-Effekte */
+.page-id-1987 h2,
+.page-id-1987 h3,
+.page-id-1987 h4,
+.page-id-1987 h5,
+.page-id-1987 h6 {
+  color: #5dade2 !important;
+}
+
+.page-id-1987 .avia-icon-list-container,
+.page-id-1987 .avia-icon-list-container p {
+  color: black;
+}
+
+.page-id-1987 #sub_menu1,
+.page-id-1987 #sub_menu1 a,
+.page-id-1987 #sub_menu1 .avia-menu-text {
+  color: black !important;
+}
+
+.page-id-1987 #sub_menu1 a:hover,
+.page-id-1987 #sub_menu1 .avia-menu-text:hover {
+  color: #333 !important;
+}
+
+.page-id-1987 #menu-item-1996 a:hover {
+  color: #5dade2 !important;
+}
+
+.page-id-1987 #header-reading-progress-1987 {
+  background-color: #5dade2 !important;
+}
+
+.page-id-1987 {
+  --enfold-header-color-primary: #5dade2 !important;
+  --enfold-header-color-secondary: #5dade2 !important;
+  --enfold-header-color-color: #5dade2;
+  --enfold-header-color-bg2: rgba(244, 253, 255, 0.4);
+  --enfold-main-color-bg2: rgba(244, 253, 255, 0.4);
+  --enfold-main-color-primary: #5dade2 !important;
+  --enfold-main-color-secondary: #5dade2 !important;
+  --enfold-alternate-color-primary: #5dade2 !important;
+}
+
+.page-id-1987 ::selection {
+  background-color: #5dade2;
+  color: #ffffff;
+}
+
+.page-id-1987 .avia-timeline-boxshadow .av-milestone-contentbox {
+  background-color: rgba(249, 253, 255, 1);
+}
+
+/* Anfrage-Button */
+#menu-item-1996 .avia-menu-text {
+  border-radius: 120px !important;
+  padding: 10px 30px !important;
+}
+
+#top #wrap_all .header_color .av-menu-button-colored > a .avia-menu-text {
+  border-radius: 120px;
+  padding: 15px 40px;
+}
+
+/* Feste Größe für die Spalte */
+.my-fixed-size {
+  height: 125px !important;
+  overflow: hidden;
+}
+
+/* Absatz in aprokt */
+.aprokt p {
+  margin: 0;
+}
+
+/* Große Buttons */
+.avia-button.avia-size-large {
+  min-width: 200px;
+}
+
+/* Masonry-Galerien */
+.my-masonry-col .flex_cell {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+}
+
+@media only screen and (max-width: 1051px) {
+  .responsive #top #wrap_all .av-flex-cells .no_margin {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    padding-bottom: 1% !important;
+  }
+  .responsive #top #wrap_all .my-masonry-col .flex_cell {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.catererreiter .avia-icon-list-container {
+  margin: 0 !important;
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1340px) {
+  .responsive .av-masonry-col-flexible.av-masonry-gallery .av-masonry-entry.av-landscape-img {
+    width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1340px) {
+  .responsive .av-masonry-col-flexible .av-masonry-entry.av-landscape-img {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 467px) {
+  .test .my-flex-column {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Flex Column & Button im Testbereich */
+.test .my-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 130px !important;
+}
+
+.test .my-flex-column .my-bottom-button {
+  margin-top: auto;
+}
+
+.test .my-bottom-button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 30px !important;
+  left: 50% !important;
+}
+
+/* Equal Height Section */
+.equal-height-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.equal-height-section > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tour */
+.tour {
+  position: relative;
+  transform: translate(-50%, -50%);
+  margin-top: 110px !important;
+  left: 50% !important;
+  width: 50%;
+}
+
+/* Virtuelle Tour auf kleinen Bildschirmen */
+@media only screen and (max-width: 768px) {
+  .virtuelletour .iconbox_top .iconbox_content {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    background: #ffffff;
+    box-shadow: none !important;
+  }
+}
+
+/* Responsive Einstellungen für Animated Number und Facts */
+@media only screen and (max-width: 600px) {
+  .avia-animated-number.factnumber .avia-animated-number-circle {
+    width: 70% !important;
+  }
+  .responsive #top #wrap_all .flex_cell.factcolumnli,
+  .responsive #top #wrap_all .flex_cell.factcolumnre {
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1051px) {
+  .avia-animated-number.factnumber .avia-animated-number-circle {
+    width: 50% !important;
+  }
+  .responsive #top #wrap_all .flex_cell.factcolumnli,
+  .responsive #top #wrap_all .flex_cell.factcolumnre {
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .avia-animated-number.factnumber .avia-animated-number-circle {
+    width: 50% !important;
+  }
+}
+
+/* Custom Form Button */
+#top .av-custom-form-color .button {
+  border: 0;
+  border-radius: 30px;
+  background-color: var(--enfold-alternate-color-primary);
+  color: white;
+}
+/*Add your own styles here:*/
+

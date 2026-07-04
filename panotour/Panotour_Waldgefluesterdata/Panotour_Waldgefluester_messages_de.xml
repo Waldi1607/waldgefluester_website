@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="de_project_title"><![CDATA[Waldgefluester_Panotour]]></data>
+
+
+
+  <data name="de_pano443_title"><![CDATA[SAM_103_0349]]></data>
+
+
+  <data name="de_pano10_title"><![CDATA[SAM_103_0333]]></data>
+
+
+  <data name="de_pano12_title"><![CDATA[SAM_103_0335]]></data>
+
+
+  <data name="de_pano16_title"><![CDATA[SAM_103_0342]]></data>
+
+
+  <data name="de_pano19_title"><![CDATA[SAM_103_0330]]></data>
+
+
+  <data name="de_pano24_title"><![CDATA[SAM_103_0325]]></data>
+
+
+  <data name="de_pano29_title"><![CDATA[SAM_103_0324]]></data>
+
+
+  <data name="de_pano33_title"><![CDATA[SAM_103_0323]]></data>
+
+
+  <data name="de_pano42_title"><![CDATA[SAM_103_0321]]></data>
+
+
+  <data name="de_pano47_title"><![CDATA[SAM_103_0332]]></data>
+
+
+  <data name="de_pano37_title"><![CDATA[SAM_103_0320]]></data>
+
+
+  <data name="de_pano116_title"><![CDATA[SAM_103_0336]]></data>
+
+
+  <data name="de_pano277_title"><![CDATA[SAM_103_0337]]></data>
+
+
+  <data name="de_pano281_title"><![CDATA[SAM_103_0338]]></data>
+
+
+  <data name="de_pano285_title"><![CDATA[SAM_103_0339]]></data>
+
+
+  <data name="de_pano291_title"><![CDATA[SAM_103_0327]]></data>
+
+
+  <data name="de_pano294_title"><![CDATA[SAM_103_0329]]></data>
+
+
+  <data name="de_pano298_title"><![CDATA[SAM_103_0326]]></data>
+
+
+  <data name="de_pano303_title"><![CDATA[SAM_103_0331]]></data>
+
+
+  <data name="de_pano314_title"><![CDATA[SAM_103_0340]]></data>
+
+
+  <data name="de_pano309_title"><![CDATA[SAM_103_0341]]></data>
+
+
+  <data name="de_pano445_title"><![CDATA[SAM_103_0346]]></data>
+
+
+  <data name="de_pano447_title"><![CDATA[SAM_103_0348]]></data>
+
+
+
+
+
+
+  <data name="de_CirclesControlBarmoveLeftTip"><![CDATA[]]></data>
+  <data name="de_CirclesControlBarmoveRightTip"><![CDATA[]]></data>
+
+
+  <data name="de_vr_setup_hmd0"><![CDATA[HMD AUSWÄHLEN ]]></data>
+  <data name="de_vr_setup_advanced"><![CDATA[ERWEITERTE EINSTELLUNGEN]]></data>
+  <data name="de_vr_setup_title"><![CDATA[Web VR Einstellungen ]]></data>
+  <data name="de_vr_setup_dvn1"><![CDATA[Gerät :]]></data>
+  <data name="de_vr_setup_siz1"><![CDATA[Bildschirmgröße:]]></data>
+  <data name="de_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="de_vr_setup_hmd1"><![CDATA[HDM:]]></data>
+  <data name="de_vr_setup_hmd3"><![CDATA[Anpassen]]></data>
+  <data name="de_vr_setup_cal"><![CDATA[Gyroskop Kalibrieren]]></data>
+  <data name="de_vr_setup_sav"><![CDATA[SPEICHERN ]]></data>
+  <data name="de_vr_setup_rst"><![CDATA[Reset]]></data>
+  <data name="de_vr_setup_simple"><![CDATA[EINFACH]]></data>
+  <data name="de_vr_setup_cls"><![CDATA[Schließen]]></data>
+  <data name="de_vr_setup_m31"><![CDATA[HMD Einstellungen ]]></data>
+  <data name="de_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="de_vr_setup_dst1"><![CDATA[Verzeichnung :]]></data>
+  <data name="de_vr_setup_d2tx"><![CDATA[Verzeichnung 2:]]></data>
+  <data name="de_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="de_vr_setup_cac1"><![CDATA[Chromatische Aberration:]]></data>
+  <data name="de_vr_setup_olp1"><![CDATA[Überlappen:]]></data>
+  <data name="de_vr_setup_m35"><![CDATA[ZURÜCK]]></data>
+  <data name="de_vr_setup_cb1"><![CDATA[GYROSKOP]]></data>
+  <data name="de_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="de_vr_setup_cb3"><![CDATA[Kalibrieren]]></data>
+  <data name="de_vr_setup_cb4"><![CDATA[Reset]]></data>
+  <data name="de_vr_setup_cb5"><![CDATA[ZURÜCK]]></data>
+  <data name="de_vr_setup_cb6"><![CDATA[Wird kalibriert... ]]></data>
+  <data name="de_vr_setup_cb7"><![CDATA[Kalibrierung Erfolgreich abgeschlossen ]]></data>
+  <data name="de_vr_setup_cb8"><![CDATA[kalibrierung fehlgeschlagen]]></data>
+  <data name="de_vr_setup_unavailable"><![CDATA[VR Modus[br] ist auf ihrem Gerät nicht verfügbar]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

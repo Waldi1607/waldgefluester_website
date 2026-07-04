@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.20.9">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+
+
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_neutral_sequence_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="26"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+
+         />
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Circles Control Bar -->
+<!-- id : CirclesControlBar -->
+<!-- ********** -->
+
+  <krpano CirclesControlBarbarbuilt="false" CirclesControlBarbackgroundwidthwhenclosed="0" CirclesControlBarbackgroundwidthwhenopened="0" CirclesControlBarIsOpened="false" />
+  <events name="CirclesControlBarevents" 
+    onxmlcomplete="CirclesControlBarbuildMenuBar();" 
+
+
+    keep="true" />
+
+
+
+  <action name="CirclesControlBarbuildMenuBar">
+    ifnot (CirclesControlBarbarbuilt, CirclesControlBarbuildMenu(); set(CirclesControlBarbarbuilt, true););
+  </action>
+
+  <style name="CirclesControlBar_btn_style"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         crop="0|0|60|60"
+         onovercrop="0|60|60|60"
+         ondowncrop="0|120|60|60"
+         onhover="showTooltip('plugin', CirclesControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+  <style name="CirclesControlBar_btn_style_off"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         onhover="showTooltip('plugin', CirclesControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+
+  <layer name="CirclesControlBar_menu_bg"
+         keep="true"
+         type="container"
+         zorder="1"
+         width="40"
+         height="40"
+         align="bottom"
+         x="0" y="10"
+         maskchildren="true"
+         rotate="0"
+         visible="false"
+         >
+
+
+    <layer name="CirclesControlBarbtn_left"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_left.png"
+            ondown="viewControlMoveLeft(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveLeftTip"
+            devices="desktop"
+            />
+    <layer name="CirclesControlBarbtn_right"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_right.png"
+            ondown="viewControlMoveRight(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveRightTip"
+            devices="desktop"
+            />
+
+
+
+
+
+
+
+
+
+ </layer>
+
+
+
+
+
+
+  <action name="CirclesControlBarhideMenuControls">
+    set(CirclesControlBarIsOpened, false);
+
+
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_left].visible, false);
+	set(layer[CirclesControlBarbtn_right].visible, false);
+);
+
+
+
+
+
+
+
+
+	set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenclosed));
+
+	set(layer[CirclesControlBar_menu_bg].visible, true);
+  </action>
+  <action name="CirclesControlBarshowMenuControls">
+    set(CirclesControlBarIsOpened, true);
+	set(layer[CirclesControlBar_menu_bg].visible, true);
+
+
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_left].visible, true);
+	set(layer[CirclesControlBarbtn_right].visible, true);
+);
+
+
+
+
+
+
+
+    set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+  </action>
+
+
+
+
+
+
+<layer name="CirclesControlBarmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="false"
+	border="false"
+	css="color:#89a488;font-family:Helvetica;font-weight:bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	xoffset="0"
+	yoffset="0"
+	padding="2"
+	selectable="false"
+	zorder="0"
+	visible="false"
+	html=""
+	edge="bottom"
+/>
+  <action name="CirclesControlBarbuildMenu">
+    
+    set(CirclesControlBarbutton_pos, 0);
+
+
+
+
+
+
+
+
+
+
+
+      if (device.desktop,
+        set(layer[CirclesControlBarbtn_right].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+        set(layer[CirclesControlBarbtn_left].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+
+
+      dec(CirclesControlBarbutton_pos, 5);
+
+      set(CirclesControlBarbackgroundwidthwhenopened, get(CirclesControlBarbutton_pos));
+
+
+    
+      set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+	
+	
+	
+    </action>
+
+	<events name="CirclesControlBarStartTourEvents" onTourStart="CirclesControlBarCallOnStartTour();" keep="true" />
+	
+	<action name="CirclesControlBarCallOnStartTour">
+		
+		CirclesControlBarshowMenuControls();
+	</action>
+
+
+
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+</krpano>
