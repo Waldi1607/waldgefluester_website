@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git --version)",
       "WebFetch(domain:waldgefluester-events.de)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "Bash(git -C /Users/mastafied/waldgefluester_website log --oneline)",
+      "Bash(python3 *)"
     ]
   }
 }

@@ -16,7 +16,13 @@
 
 ## Seiten
 
-`/` · `/heiraten-schwaebische-alb/` · `/location-schwaebische-alb/` · `/winter/` · `/bilder/` · `/faq/` · `/rechtliches/` · `/freie-hochzeitstermine/` · `/panotour/` (virtuelle 3D-Tour)
+`/` · `/heiraten-schwaebische-alb/` · `/feiern/` · `/trauerfeier/` · `/winter/` · `/eigene-events/` · `/location-schwaebische-alb/` · `/bilder/` · `/faq/` · `/rechtliches/` · `/freie-hochzeitstermine/` · `/panotour/` (virtuelle 3D-Tour)
+
+Die drei neuen Seiten (Feiern, Trauercafé, Events — passend zu den Flyer-QR-Codes) sind Klone des Enfold-Markups; ihre Bild- und Farb-Anpassungen liegen zentral in `assets/css/pages.css`.
+
+## Termine pflegen (`events.json`)
+
+Termine für die Events-Seite und den Startseiten-Banner stehen in **`events.json`** im Repo-Root — einfach neue Einträge ins `events`-Array (Format siehe `_anleitung`/`_beispiel` in der Datei), committen, fertig. Vergangene Termine werden automatisch ausgeblendet; ist kein Termin vorhanden, verschwindet der Banner auf der Startseite von selbst.
 
 ## Lokal ansehen
 

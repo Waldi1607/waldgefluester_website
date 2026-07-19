@@ -1,0 +1,11 @@
+{
+  "_anleitung": "Neue Termine als Objekt in 'events' eintragen. Pflicht: title + date (JJJJ-MM-TT). Optional: end (bei mehrtägigen Events), time (z.B. '14–19 Uhr'), teaser (Kurzbeschreibung), url (Link, sonst leer lassen). Vergangene Termine werden automatisch ausgeblendet, löschen nicht nötig.",
+  "_beispiel": {
+    "title": "Waldcafé & Eisstockschießen",
+    "date": "2026-11-15",
+    "time": "14–19 Uhr",
+    "teaser": "Kaffee, Kuchen & Feuerstelle – ohne Reservierung",
+    "url": ""
+  },
+  "events": []
+}
