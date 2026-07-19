@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://waldgefluester-events.de/sitemap.xml
