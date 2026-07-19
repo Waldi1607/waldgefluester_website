@@ -1,0 +1,26 @@
+{
+  "name": "waldgefluester-website",
+  "version": "1.0.0",
+  "description": "1:1-Kopie von [waldgefluester-events.de](https://waldgefluester-events.de/) (WordPress/Enfold) als statische Website, gehostet \u00fcber GitHub Pages.",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Waldi1607/waldgefluester_website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Waldi1607/waldgefluester_website/issues"
+  },
+  "homepage": "https://github.com/Waldi1607/waldgefluester_website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "private": true
+}

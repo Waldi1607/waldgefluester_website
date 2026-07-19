@@ -1,6 +1,24 @@
-# Waldgeflüster Events — statischer Website-Klon
+# Waldgeflüster Events — statische Website
 
-1:1-Kopie von [waldgefluester-events.de](https://waldgefluester-events.de/) (WordPress/Enfold) als statische Website, gehostet über GitHub Pages.
+Statische Website von [waldgefluester-events.de](https://waldgefluester-events.de/) (ursprünglich WordPress/Enfold-Mirror), gehostet über GitHub Pages, gebaut mit **Eleventy**.
+
+## ⚠️ Wichtig: HTML-Dateien sind Build-Output
+
+Die `index.html`-Dateien im Root und in den Seitenordnern werden aus **`src/`** generiert — **niemals direkt editieren!** Stattdessen:
+
+```sh
+# Quellen ändern in src/ (Layout, Partials, Snippets), dann:
+npm install        # einmalig
+npm run build      # generiert die HTML-Dateien in den Repo-Root
+```
+
+Struktur:
+- `src/_includes/layout.njk` — Dokument-Gerüst (Head, Consent, Meta)
+- `src/_includes/partials/` — **geteilte Komponenten**: `header.njk` (Logo + Navigation, einmal für alle Seiten), `kontakt.njk` (Formular), `footer.njk` (Footer, Cookie-Banner, Scripts)
+- `src/snippets/<seite>-{seo,head,body,foot,post}.html` — seitenspezifische Inhalte
+- `src/pages/<seite>.njk` — Seiten-Definitionen (Frontmatter: Titel-Slot, Nav-Active, Logo-Variante, Pfad-Präfix)
+
+Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `partials/` anfassen, `npm run build`, fertig.
 
 ## Wie dieser Klon entstanden ist
 
