@@ -304,5 +304,11 @@ document.addEventListener('submit', function(e){
   }, true);
 })();
 </script>
+<script>
+/* Service Worker: cached statische Assets fuer Wiederkehrer */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){ navigator.serviceWorker.register('{{ pre }}sw.js'); });
+}
+</script>
 </body>
 </html>

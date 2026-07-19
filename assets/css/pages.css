@@ -148,3 +148,13 @@ body.page-id-5002 ::selection { background-color: #8a8f83; }
   #top .av-logo-container .logo.avia-svg-logo { max-width: 340px; width: 340px; }
   #top .av-main-nav > li > a { padding: 0 7px; }
 }
+
+/* ---------- Responsive Hero-Hintergruende: mobil kleinere Varianten ---------- */
+@media (max-width: 767px) {
+  body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+}
