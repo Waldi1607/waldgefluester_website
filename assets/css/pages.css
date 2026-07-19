@@ -27,7 +27,7 @@ body.page-id-5003 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
 
 /* ---------- Trauercafé (page-id-5002): Bilder + ruhige Optik ---------- */
 body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
-  background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-scaled.jpg);
+  background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg);
 }
 body.page-id-5002 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
   background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp);
@@ -177,4 +177,24 @@ body.page-id-5002 ::selection { background-color: #8a8f83; }
   body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
   body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+}
+
+/* ---------- LCP-Fix: Hero sofort malen (Parallax-Layer ist bis JS-Init display:none;
+   die Section traegt das gleiche Bild als Sofort-Hintergrund darunter) ---------- */
+body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424.webp); background-size: cover; background-position: center; }
+body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424.webp); background-size: cover; background-position: center; }
+body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
+body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
+body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp); background-size: cover; background-position: center; }
+body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg); background-size: cover; background-position: center; }
+body.page-id-1559 .avia-section.av-m65exedf-f297d08e6f5792d0a2ec4e0eeaeced9c { background-image: url(../../wp-content/uploads/2025/01/Waldgefluester-1.webp); background-size: cover; background-position: center; }
+body.page-id-1610 .avia-section.av-4p5ahx6-7af42a683abcda1e17bcdcb6b1b6acb6 { background-image: url(../../wp-content/uploads/2025/01/Fotograf1300.webp); background-size: cover; background-position: center; }
+body.page-id-1987 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp); background-size: cover; background-position: center; }
+@media (max-width: 767px) {
+  body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
 }
