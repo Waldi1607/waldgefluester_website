@@ -138,8 +138,13 @@ body.page-id-5002 ::selection { background-color: #8a8f83; }
   #wg-event-banner .wg-banner-items .wg-banner-item:nth-child(n+2) { display: none; }
 }
 
-/* ---------- Menübreite: 9 Top-Level-Punkte auf Desktop unterbringen ---------- */
+/* ---------- Menübreite: 9 Top-Level-Punkte auf Desktop unterbringen ----------
+   Logo bleibt in der site-weiten Standardgröße (450px); nur auf schmalen
+   Desktops wird Logo + Menü-Padding kompakter, damit nichts umbricht. */
 @media (min-width: 990px) {
   #top .av-main-nav > li > a { padding: 0 10px; }
-  #top .av-logo-container .logo { max-width: 340px; }
+}
+@media (min-width: 990px) and (max-width: 1359px) {
+  #top .av-logo-container .logo.avia-svg-logo { max-width: 340px; width: 340px; }
+  #top .av-main-nav > li > a { padding: 0 7px; }
 }
