@@ -149,6 +149,26 @@ body.page-id-5002 ::selection { background-color: #8a8f83; }
   #top .av-main-nav > li > a { padding: 0 7px; }
 }
 
+/* ---------- Cookie-Banner in CI-Farben (statt Enfold-Pink) ---------- */
+#top .avia-cookie-consent .avia-button,
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+  background-color: transparent !important;
+  border: 1px solid #9ab599 !important;
+  color: #e9e6e1 !important;
+}
+#top .avia-cookie-consent .avia-button.avia-cookie-consent-button-1,
+#top #av-consent-extra-info .avia-button.avia-cookie-consent-button-4 {
+  background-color: #678266 !important;
+  border-color: #678266 !important;
+  color: #faf7f2 !important;
+}
+#top .avia-cookie-consent .avia-button:hover,
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button:hover {
+  background-color: #9ab599 !important;
+  border-color: #9ab599 !important;
+  color: #2d2d2a !important;
+}
+
 /* ---------- Responsive Hero-Hintergruende: mobil kleinere Varianten ---------- */
 @media (max-width: 767px) {
   body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }

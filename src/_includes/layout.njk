@@ -150,6 +150,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 {% if heroLarge %}<link rel="preload" as="image" href="{{ pre }}{{ heroLarge }}"{% if heroSmall %} media="(min-width: 768px)"{% endif %}>{% endif %}
 {% if heroSmall %}<link rel="preload" as="image" href="{{ pre }}{{ heroSmall }}" media="(max-width: 767px)">{% endif %}
 <link rel='stylesheet' id='wg-bundle-css' href='{{ pre }}assets/css/bundle.css' media='all' />
+<link rel='stylesheet' id='wg-pages-css' href='{{ pre }}assets/css/pages.css' media='all' />
 {% rawfile 'src/snippets/' + slug + '-head.html' %}
 <script id="jquery-core-js" src="{{ pre }}wp-includes/js/jquery/jquery.min.js"></script>
 <script id="jquery-migrate-js" src="{{ pre }}wp-includes/js/jquery/jquery-migrate.min.js"></script>

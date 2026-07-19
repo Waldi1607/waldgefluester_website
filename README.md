@@ -38,6 +38,14 @@ Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `par
 
 Die drei neuen Seiten (Feiern, Trauercafé, Events — passend zu den Flyer-QR-Codes) sind Klone des Enfold-Markups; ihre Bild- und Farb-Anpassungen liegen zentral in `assets/css/pages.css`.
 
+
+## Performance-Architektur
+
+- **CSS-Bundle**: Die 45 Theme-Stylesheets sind zu `assets/css/bundle.css` gebündelt (url()-Pfade umgeschrieben). `assets/css/pages.css` bleibt bewusst **separat** verlinkt — das ist die Schicht für eigene Anpassungen (direkt editierbar, kein Rebuild nötig). Theme-CSS geändert? `python3 tools/css_bundle.py` neu laufen lassen.
+- **Responsive Heroes**: Mobile Geräte laden kleine Hero-Varianten (Regeln am Ende von pages.css), Preloads pro Seite im Frontmatter (`heroLarge`/`heroSmall`).
+- **Service Worker** (`sw.js`): network-first für HTML/events.json, stale-while-revalidate für statische Assets.
+- **Bilder**: Alle Uploads sind komprimiert (340 MB → 111 MB). Neue Fotos vor dem Einchecken auf ~q75 komprimieren (`cwebp`/`sips`).
+
 ## Termine pflegen (`events.json`)
 
 Termine für die Events-Seite und den Startseiten-Banner stehen in **`events.json`** im Repo-Root — einfach neue Einträge ins `events`-Array (Format siehe `_anleitung`/`_beispiel` in der Datei), committen, fertig. Vergangene Termine werden automatisch ausgeblendet; ist kein Termin vorhanden, verschwindet der Banner auf der Startseite von selbst.
