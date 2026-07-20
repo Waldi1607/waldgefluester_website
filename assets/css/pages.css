@@ -289,3 +289,30 @@ body.page-id-5002 .av-special-heading-tag {
 }
 body.page-id-5002 .av-parallax + .av-section-color-overlay-wrap h1,
 body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
+
+/* Icon-Kreise und Meilenstein-Punkte: Winter-Hellblau (#b3e5fc) ersetzen */
+#top.page-id-5001 .iconlist_icon,
+#top.page-id-5003 .iconlist_icon,
+#top.page-id-5001 .av-milestone-icon-inner,
+#top.page-id-5003 .av-milestone-icon-inner {
+  background-color: #dce5db !important;
+  color: #3f5340 !important;
+}
+#top.page-id-5002 .iconlist_icon,
+#top.page-id-5002 .av-milestone-icon-inner {
+  background-color: #e4e2dc !important;
+  color: #4a4d46 !important;
+}
+
+/* Trauercafé: Icons weglassen – schlichte Textzeilen wirken wuerdiger als
+   Symbole wie "Daumen hoch". Einrueckung entsprechend zuruecknehmen. */
+#top.page-id-5002 .avia-icon-list .iconlist_icon { display: none !important; }
+#top.page-id-5002 .avia-icon-list .iconlist-timeline { display: none !important; }
+#top.page-id-5002 .avia-icon-list li .iconlist_content_wrap { margin-left: 0 !important; }
+#top.page-id-5002 .avia-icon-list li {
+  padding: 0 0 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #e5e2db;
+}
+#top.page-id-5002 .avia-icon-list li:last-child { border-bottom: none; }
+#top.page-id-5002 .avia-icon-list li .iconlist_title { margin-bottom: 4px; }
