@@ -36,8 +36,10 @@
 
   function badge(ev) {
     var d = parseDay(ev.date);
-    var wrap = el('div', 'wg-event-badge');
+    var wrap = el('time', 'wg-event-badge');
     var e = ev.end && ev.end !== ev.date ? parseDay(ev.end) : null;
+    wrap.setAttribute('datetime', ev.date);
+    wrap.setAttribute('aria-label', fmtDate(ev));
     wrap.appendChild(el('span', 'wg-badge-day', e ? d.getDate() + '.–' + e.getDate() + '.' : String(d.getDate())));
     wrap.appendChild(el('span', 'wg-badge-month', MONATE[(e || d).getMonth()]));
     wrap.appendChild(el('span', 'wg-badge-year', String(d.getFullYear())));
@@ -67,20 +69,22 @@
       return;
     }
     events.forEach(function (ev) {
-      var item = el('div', 'wg-event');
+      var item = el('article', 'wg-event');
       item.appendChild(badge(ev));
       var body = el('div', 'wg-event-body');
       var head = el('div', 'wg-event-head');
       head.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev)));
       if (ev.time) head.appendChild(el('span', 'wg-event-time', ev.time));
       body.appendChild(head);
+      var title = el('h3', 'wg-event-title');
       if (ev.url) {
-        var a = el('a', 'wg-event-title', ev.title);
+        var a = el('a', '', ev.title);
         a.href = ev.url;
-        body.appendChild(a);
+        title.appendChild(a);
       } else {
-        body.appendChild(el('div', 'wg-event-title', ev.title));
+        title.textContent = ev.title;
       }
+      body.appendChild(title);
       if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', ev.teaser));
       item.appendChild(body);
       target.appendChild(item);

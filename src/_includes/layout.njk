@@ -780,7 +780,12 @@ Updates: enabled - token has changed and not verified
 PLAu:8
 -->
 </head>{% endif %}
-{{ bodyTag | safe }}
+{# Seitenthemes und Komponentenvarianten werden zentral am Body vererbt. #}
+{% set pageTheme = theme | default('forest') %}
+{% set pageBodyClasses = 'wg-theme-' ~ pageTheme %}
+{{ bodyTag | replace('class="', 'class="' ~ pageBodyClasses ~ ' ') | safe }}
+
+<a class="wg-skip-link" href="#main">Zum Inhalt springen</a>
 
 
 			
@@ -795,6 +800,7 @@ PLAu:8
 {% include 'partials/header.njk' %}
 {% rawfile 'src/snippets/' + slug + '-body.html' %}
 {% include 'partials/kontakt.njk' %}
+<script src="{{ pre }}assets/js/site.js" defer></script>
 {% rawfile 'src/snippets/' + slug + '-post.html' %}
 {% if fullFooter %}{% rawfile 'src/snippets/' + slug + '-foot-full.html' %}
-{% else %}{% include 'partials/footer.njk' %}{% endif %}
+{% else %}{% include 'partials/footer.njk' %}{% endif -%}

@@ -28,7 +28,7 @@ Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `par
 
 ## Statische Anpassungen gegenüber dem Original
 
-- **Kontaktformular:** WordPress/AJAX funktioniert statisch nicht. Beim Klick auf „Senden" öffnet sich stattdessen das E-Mail-Programm mit vorausgefüllter Anfrage an `anfrage@waldgefluester-events.de` (Interceptor-Script am Ende jeder Seite).
+- **Kontaktformular:** Das Formular ist optisch und technisch für einen späteren HTTP-Endpunkt vorbereitet (`data-endpoint` bzw. `window.WG_CONTACT_ENDPOINT`). Solange kein Endpunkt gesetzt ist, wird nichts versendet und insbesondere kein E-Mail-Programm geöffnet. Die separat angezeigte E-Mail-Adresse bleibt als direkter Kontaktweg anklickbar.
 - **Canonical/OG-Meta-Tags** zeigen weiterhin auf waldgefluester-events.de (verhindert Duplicate-Content in Suchmaschinen).
 - Google Tag Manager / Analytics laden wie im Original extern.
 
