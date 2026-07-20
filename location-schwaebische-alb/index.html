@@ -1479,6 +1479,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 	})( jQuery );
 
 </script>
+<script src="../assets/js/tracking.js" defer></script>
 <script>
 /* Statischer Ersatz fuer das WordPress-Kontaktformular: oeffnet eine vorausgefuellte E-Mail */
 document.addEventListener('submit', function(e){
@@ -1487,6 +1488,12 @@ document.addEventListener('submit', function(e){
   e.preventDefault(); e.stopPropagation();
   var get = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; };
   var body = 'Name: '+get('avia_1_1')+'\nE-Mail: '+get('avia_2_1')+'\nTelefonnummer: '+get('avia_3_1')+'\nPersonenanzahl (ca.): '+get('avia_4_1')+'\nEventform: '+get('avia_5_1')+'\nGewuenschtes Jahr: '+get('avia_6_1')+'\n\nNachricht:\n'+get('avia_7_1');
+  /* Conversion an den Tag Manager melden (vor dem Mailprogramm-Wechsel) */
+  if (window.wgTrack) window.wgTrack('anfrage_abgeschickt', {
+    eventform: get('avia_5_1') || '(keine Angabe)',
+    personenanzahl: get('avia_4_1') || '(keine Angabe)',
+    wunschjahr: get('avia_6_1') || '(keine Angabe)'
+  });
   window.location.href = 'mailto:anfrage@waldgefluester-events.de?subject='+encodeURIComponent('Eventanfrage über die Website')+'&body='+encodeURIComponent(body);
 }, true);
 </script>
