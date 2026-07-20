@@ -122,6 +122,9 @@
   var burger = document.querySelector('.av-burger-menu-main > a');
   var scrollTopLink = document.getElementById('scroll-top-link');
   var cookieNotice = document.querySelector('.avia-cookie-consent');
+  var homeHeroBoundary = body.classList.contains('home')
+    ? document.getElementById('sub_menu1')
+    : null;
   var mobileQuery = window.matchMedia('(max-width: 989px)');
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var lastScrollY = Math.max(window.scrollY, 0);
@@ -162,6 +165,19 @@
     scrollTopLink.tabIndex = visible ? 0 : -1;
   }
 
+  function syncHomeHeroState() {
+    if (!body.classList.contains('home') || !mobileQuery.matches) {
+      body.classList.remove('wg-home-hero-passed');
+      return;
+    }
+
+    var navHeight = header ? header.getBoundingClientRect().height : 72;
+    var heroPassed = homeHeroBoundary
+      ? homeHeroBoundary.getBoundingClientRect().top <= navHeight
+      : window.scrollY >= window.innerHeight - navHeight;
+    body.classList.toggle('wg-home-hero-passed', heroPassed);
+  }
+
   function updateScrollState() {
     var y = Math.max(window.scrollY, 0);
     var delta = y - lastScrollY;
@@ -178,6 +194,7 @@
       body.classList.remove('wg-nav-hidden', 'wg-nav-scrolled');
     }
 
+    syncHomeHeroState();
     syncScrollTopLink(y);
     lastScrollY = y;
     ticking = false;

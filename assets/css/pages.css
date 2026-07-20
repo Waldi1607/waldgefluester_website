@@ -568,6 +568,45 @@ body { color: var(--wg-ink); }
   #top.home #wrap_all { padding-top: 0 !important; }
 
   #top #header .logo { display: none !important; }
+
+  /* Auf der Startseite bleibt der Video-Hero bewusst frei. Erst wenn der
+     gesamte Hero-Bereich verlassen ist, erscheint die Wortmarke ruhig in der
+     festen Navigation. */
+  #top.home #header .logo {
+    position: absolute !important;
+    inset: 0 auto 0 max(18px, env(safe-area-inset-left)) !important;
+    display: flex !important;
+    width: min(220px, calc(100vw - 112px)) !important;
+    height: var(--wg-mobile-nav-height) !important;
+    margin: 0 !important;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -5px, 0);
+    transition: opacity 180ms ease-out, transform 220ms ease-out, visibility 0s linear 220ms;
+  }
+
+  #top.home #header .logo > a {
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  #top.home #header .logo svg {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 28px;
+  }
+
+  #top.home.wg-home-hero-passed #header .logo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+  }
   #top #header .main_menu {
     right: max(16px, env(safe-area-inset-right)) !important;
     height: var(--wg-mobile-nav-height);
@@ -607,16 +646,27 @@ body { color: var(--wg-ink); }
     background-color: var(--wg-theme-nav-ink) !important;
   }
 
-  #top.home:not(.wg-nav-scrolled) #header {
+  #top.home:not(.wg-home-hero-passed) #header {
     background: transparent !important;
     box-shadow: none;
   }
 
-  #top.home:not(.wg-nav-scrolled) .av-hamburger-inner,
-  #top.home:not(.wg-nav-scrolled) .av-hamburger-inner::before,
-  #top.home:not(.wg-nav-scrolled) .av-hamburger-inner::after {
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner,
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner::before,
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner::after,
+  html.av-burger-overlay-active #top .av-hamburger-inner,
+  html.av-burger-overlay-active #top .av-hamburger-inner::before,
+  html.av-burger-overlay-active #top .av-hamburger-inner::after,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner::before,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner::after {
     background-color: var(--wg-white) !important;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .46));
+  }
+
+  html.av-burger-overlay-active #top.home.wg-home-hero-passed #header .logo svg,
+  html.av-burger-overlay-active-delayed #top.home.wg-home-hero-passed #header .logo svg {
+    filter: brightness(0) invert(1);
   }
 
   #top.wg-nav-hidden #header {
@@ -629,6 +679,23 @@ body { color: var(--wg-ink); }
   #top.av-burger-overlay-active #header {
     pointer-events: auto;
     transform: translate3d(0, 0, 0);
+  }
+
+  /* Der Enfold-Overlay liegt innerhalb des auf 72 px begrenzten Headers.
+     Viewport-Hoehen verhindern, dass das geoeffnete Menue auf diese 72 px
+     zusammengedrueckt wird. */
+  #top .av-burger-overlay,
+  #top .av-burger-overlay-scroll,
+  #top .av-burger-overlay-bg {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh;
+  }
+
+  #top .av-burger-overlay {
+    position: fixed !important;
+    inset: 0 !important;
   }
 }
 
