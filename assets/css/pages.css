@@ -65,77 +65,100 @@ body.page-id-5002 hr.av-inner-hr {
 body.page-id-5002 ::selection { background-color: #8a8f83; }
 
 /* ---------- Terminliste (/eigene-events/) ---------- */
-#wg-event-list { margin: 0 auto; max-width: 780px; }
+#wg-event-list { margin: 0 auto; max-width: 860px; }
 #wg-event-list .wg-event {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
   background: #ffffff;
-  border: 1px solid #e9e6e1;
-  border-radius: 4px;
-  padding: 22px 26px;
-  margin-bottom: 18px;
+  border: 1px solid #e5e2db;
+  border-left: 4px solid #678266;
+  border-radius: 3px;
+  padding: 26px 30px;
+  margin-bottom: 16px;
   text-align: left;
+  transition: box-shadow .25s ease, transform .25s ease;
 }
-#wg-event-list .wg-event-head { margin-bottom: 6px; }
-#wg-event-list .wg-event-date {
-  color: #678266;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 0.85em;
+#wg-event-list .wg-event:hover {
+  box-shadow: 0 10px 28px rgba(45,45,42,.10);
+  transform: translateY(-2px);
 }
-#wg-event-list .wg-event-time {
-  color: #7a7a72;
-  font-size: 0.85em;
-  margin-left: 14px;
+.wg-event-badge {
+  flex: 0 0 88px;
+  text-align: center;
+  background: #f2f0ea;
+  border-radius: 3px;
+  padding: 12px 6px 10px;
+  line-height: 1.1;
 }
-#wg-event-list .wg-event-title {
+.wg-badge-day {
   display: block;
-  font-size: 1.25em;
-  font-weight: 600;
-  color: #2d2d2a;
-  text-decoration: none;
+  font-size: 2.1em;
+  font-weight: 700;
+  color: #3f5340;
+  letter-spacing: -1px;
 }
-#wg-event-list a.wg-event-title:hover { color: #678266; }
-#wg-event-list .wg-event-teaser { margin: 6px 0 0; color: #55554f; }
+.wg-badge-month {
+  display: block;
+  font-size: .95em;
+  font-weight: 600;
+  color: #678266;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.wg-badge-year { display: block; font-size: .75em; color: #8d8d84; margin-top: 3px; }
+.wg-event-body { flex: 1 1 auto; min-width: 0; }
+.wg-event-head { margin-bottom: 4px; }
+.wg-event-weekday {
+  color: #678266; font-weight: 600; letter-spacing: 1.4px;
+  text-transform: uppercase; font-size: .78em;
+}
+.wg-event-time { color: #8d8d84; font-size: .82em; margin-left: 14px; }
+.wg-event-title {
+  display: block; font-size: 1.3em; font-weight: 600; color: #2d2d2a;
+  text-decoration: none; line-height: 1.3;
+}
+a.wg-event-title:hover { color: #678266; }
+.wg-event-teaser { margin: 7px 0 0; color: #55554f; line-height: 1.55; }
 #wg-event-list .wg-events-empty { text-align: center; color: #55554f; }
 
-/* ---------- Startseiten-Banner ---------- */
-#wg-event-banner {
-  background: #678266;
-  border-bottom: 1px solid #55704f;
+/* ---------- Startseite: Termin-Sektion ---------- */
+#wg-event-banner { background: #f2f0ea; border-top: 1px solid #e5e2db; border-bottom: 1px solid #e5e2db; }
+#wg-event-banner .container { padding-top: 58px; padding-bottom: 58px; text-align: center; }
+.wg-home-kicker {
+  display: block; color: #678266; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; font-size: .78em; margin-bottom: 10px;
 }
-#wg-event-banner .wg-banner-link {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 26px;
-  justify-content: center;
-  padding: 14px 10px;
-  text-decoration: none;
+#wg-event-banner h2.wg-home-title {
+  margin: 0 0 34px; font-weight: 400; color: #2a3716; letter-spacing: .5px;
 }
-#wg-event-banner .wg-banner-label {
-  color: #faf7f2;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.8em;
+.wg-home-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; text-align: left; margin-bottom: 32px;
 }
-#wg-event-banner .wg-banner-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 22px;
-  justify-content: center;
+.wg-home-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: #ffffff; border: 1px solid #e5e2db; border-radius: 3px;
+  padding: 22px; text-decoration: none;
+  transition: box-shadow .25s ease, transform .25s ease;
 }
-#wg-event-banner .wg-banner-item { color: #faf7f2; font-size: 0.95em; }
-#wg-event-banner .wg-banner-date { font-weight: 600; margin-right: 8px; }
-#wg-event-banner .wg-banner-more {
-  color: #e9e6e1;
-  font-size: 0.85em;
-  letter-spacing: 1px;
-  white-space: nowrap;
+.wg-home-card:hover { box-shadow: 0 10px 28px rgba(45,45,42,.10); transform: translateY(-2px); }
+.wg-home-card .wg-event-badge { flex: 0 0 74px; padding: 10px 4px 8px; }
+.wg-home-card .wg-badge-day { font-size: 1.7em; }
+.wg-home-card .wg-event-title { font-size: 1.08em; margin-top: 2px; }
+.wg-home-card .wg-event-teaser {
+  font-size: .9em; margin-top: 5px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-#wg-event-banner .wg-banner-link:hover .wg-banner-more { color: #ffffff; }
+.wg-home-more {
+  display: inline-block; border: 1px solid #678266; color: #678266;
+  border-radius: 999px; padding: 11px 34px; text-decoration: none;
+  letter-spacing: 1px; font-size: .92em; transition: all .25s ease;
+}
+.wg-home-more:hover { background: #678266; color: #faf7f2; }
 @media (max-width: 767px) {
-  #wg-event-banner .wg-banner-items .wg-banner-item:nth-child(n+2) { display: none; }
+  #wg-event-banner .container { padding-top: 40px; padding-bottom: 40px; }
+  .wg-home-grid { gap: 14px; margin-bottom: 24px; }
 }
 
 /* ---------- Menübreite: 9 Top-Level-Punkte auf Desktop unterbringen ----------
@@ -198,3 +221,71 @@ body.page-id-1987 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { bac
   body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
   body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
 }
+
+
+/* ============================================================
+   FIX: Winter-Eisblau bleibt auf der Winterseite
+   post-1987.css faerbt drei Buttons hart skyblue (#5dade2) ueber
+   Avia-Hashklassen - die tauchen auch auf den Klon-Seiten auf.
+   ============================================================ */
+#top.page-id-5001 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5003 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5001 #wrap_all .avia-button.av-m6f0779d-dd19b3b76205190c4bf4845fdef5a44e {
+  background-color: #678266;
+  border-color: #678266;
+  color: #faf7f2;
+}
+#top.page-id-5001 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6:hover,
+#top.page-id-5003 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6:hover,
+#top.page-id-5001 #wrap_all .avia-button.av-m6f0779d-dd19b3b76205190c4bf4845fdef5a44e:hover {
+  background-color: #89a488;
+  border-color: #89a488;
+}
+/* Trauercafe: gedeckt statt Blau */
+#top.page-id-5002 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5002 #wrap_all .avia-button {
+  background-color: transparent;
+  border: 1px solid #b9b6ad;
+  color: #e9e6e1;
+}
+#top.page-id-5002 #wrap_all .avia-button:hover {
+  background-color: #b9b6ad;
+  border-color: #b9b6ad;
+  color: #22241f;
+}
+
+/* ============================================================
+   TRAUERCAFE (page-id-5002): ruhige, wuerdevolle Farbwelt
+   ============================================================ */
+/* Zitat-Block: dunkel, ruhiges Kerzenlicht-Motiv, helle Schrift */
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 {
+  background-image: linear-gradient(rgba(20,18,15,.72), rgba(20,18,15,.72)),
+                    url(../../wp-content/uploads/2025/09/DSC04683-1-1400.jpg);
+  background-size: cover;
+  background-position: center;
+  /* Platz fuer den absolut positionierten Button am unteren Rand */
+  padding: 70px 46px 118px !important;
+}
+/* Button sitzt per Theme-CSS absolut unten - Ueberlappung mit dem Text verhindern */
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .my-bottom-button {
+  bottom: 42px !important;
+}
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h1,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h2,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h3,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .av-special-heading-tag {
+  color: #f3f0ea !important;
+  font-weight: 300;
+  line-height: 1.35;
+}
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 p,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .avia_textblock {
+  color: #ddd9d1 !important;
+}
+/* Ueberschriften der Seite gedeckt-graphit statt Gold */
+body.page-id-5002 h1, body.page-id-5002 h2, body.page-id-5002 h3, body.page-id-5002 h4,
+body.page-id-5002 .av-special-heading-tag {
+  color: #3a3d36;
+}
+body.page-id-5002 .av-parallax + .av-section-color-overlay-wrap h1,
+body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }

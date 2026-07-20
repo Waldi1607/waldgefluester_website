@@ -34,6 +34,22 @@
       .sort(function (a, b) { return parseDay(a.date) - parseDay(b.date); });
   }
 
+  function badge(ev) {
+    var d = parseDay(ev.date);
+    var wrap = el('div', 'wg-event-badge');
+    var e = ev.end && ev.end !== ev.date ? parseDay(ev.end) : null;
+    wrap.appendChild(el('span', 'wg-badge-day', e ? d.getDate() + '.–' + e.getDate() + '.' : String(d.getDate())));
+    wrap.appendChild(el('span', 'wg-badge-month', MONATE[(e || d).getMonth()]));
+    wrap.appendChild(el('span', 'wg-badge-year', String(d.getFullYear())));
+    return wrap;
+  }
+
+  function weekdayLine(ev) {
+    var d = parseDay(ev.date);
+    if (ev.end && ev.end !== ev.date) return 'Zweitägig';
+    return ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'][d.getDay()];
+  }
+
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -52,18 +68,21 @@
     }
     events.forEach(function (ev) {
       var item = el('div', 'wg-event');
+      item.appendChild(badge(ev));
+      var body = el('div', 'wg-event-body');
       var head = el('div', 'wg-event-head');
-      head.appendChild(el('span', 'wg-event-date', fmtDate(ev)));
+      head.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev)));
       if (ev.time) head.appendChild(el('span', 'wg-event-time', ev.time));
-      item.appendChild(head);
+      body.appendChild(head);
       if (ev.url) {
         var a = el('a', 'wg-event-title', ev.title);
         a.href = ev.url;
-        item.appendChild(a);
+        body.appendChild(a);
       } else {
-        item.appendChild(el('div', 'wg-event-title', ev.title));
+        body.appendChild(el('div', 'wg-event-title', ev.title));
       }
-      if (ev.teaser) item.appendChild(el('p', 'wg-event-teaser', ev.teaser));
+      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', ev.teaser));
+      item.appendChild(body);
       target.appendChild(item);
     });
   }
@@ -73,19 +92,24 @@
     if (!banner || !events.length) return;
     var inner = banner.querySelector('.container') || banner;
     inner.innerHTML = '';
-    var wrap = el('a', 'wg-banner-link');
-    wrap.href = targetUrl || '#';
-    wrap.appendChild(el('span', 'wg-banner-label', 'Aktuelle Termine'));
-    var list = el('span', 'wg-banner-items');
+    inner.appendChild(el('span', 'wg-home-kicker', 'Bei uns ist was los'));
+    inner.appendChild(el('h2', 'wg-home-title', 'Kommende Events & Waldcafé-Termine'));
+    var grid = el('div', 'wg-home-grid');
     events.slice(0, 3).forEach(function (ev) {
-      var item = el('span', 'wg-banner-item');
-      item.appendChild(el('span', 'wg-banner-date', fmtDate(ev)));
-      item.appendChild(el('span', 'wg-banner-title', ev.title));
-      list.appendChild(item);
+      var card = el(ev.url ? 'a' : 'div', 'wg-home-card');
+      if (ev.url) card.href = ev.url;
+      card.appendChild(badge(ev));
+      var body = el('div', 'wg-home-card-body');
+      body.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev) + (ev.time ? ' · ' + ev.time : '')));
+      body.appendChild(el('div', 'wg-event-title', ev.title));
+      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', ev.teaser));
+      card.appendChild(body);
+      grid.appendChild(card);
     });
-    wrap.appendChild(list);
-    wrap.appendChild(el('span', 'wg-banner-more', 'Alle Termine →'));
-    inner.appendChild(wrap);
+    inner.appendChild(grid);
+    var more = el('a', 'wg-home-more', 'Alle Termine ansehen');
+    more.href = targetUrl || '#';
+    inner.appendChild(more);
     banner.hidden = false;
   }
 
