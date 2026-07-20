@@ -276,7 +276,11 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <script>
 /* Consent-Update: Zustimmung ueber den Enfold-Cookie-Banner an Google melden */
 (function(){
-  function grant(){ gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'}); }
+  function grant(){
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'});
+    }
+  }
   function hasConsent(){
     return document.cookie.indexOf('aviaCookieConsent=') > -1 &&
            document.cookie.indexOf('aviaPrivacyGoogleTrackingDisabled') === -1;

@@ -1264,7 +1264,7 @@ left:43.5%;
   </div>
 </section>
 
-<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/site.js?v=4" defer></script>
 <div id='av_section_3'  class='avia-section av-dogi7-3684c9a5743b0e3541661444970bc713 main_color avia-section-default avia-no-border-styling  avia-builder-el-6  el_after_av_layout_row  el_before_av_layout_row  avia-bg-style-scroll container_wrap fullsize'  data-section-bg-repeat='no-repeat'><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-1610'><div class='entry-content-wrapper clearfix'>
 
 <style type="text/css" data-created_by="avia_inline_auto" id="style-css-av-8xc0f-9d2d585c64979fe2cc13cd33ccc169be">
@@ -1553,7 +1553,11 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <script>
 /* Consent-Update: Zustimmung ueber den Enfold-Cookie-Banner an Google melden */
 (function(){
-  function grant(){ gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'}); }
+  function grant(){
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'});
+    }
+  }
   function hasConsent(){
     return document.cookie.indexOf('aviaCookieConsent=') > -1 &&
            document.cookie.indexOf('aviaPrivacyGoogleTrackingDisabled') === -1;

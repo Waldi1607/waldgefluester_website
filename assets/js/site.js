@@ -136,7 +136,9 @@
   }
 
   function showHeader() {
-    body.classList.remove('wg-nav-hidden');
+    if (body.classList.contains('wg-nav-hidden')) {
+      body.classList.remove('wg-nav-hidden');
+    }
   }
 
   function cookieNoticeIsOpen() {
@@ -204,15 +206,20 @@
 
   var menuObserver = new MutationObserver(syncMenuState);
   menuObserver.observe(root, { attributes: true, attributeFilter: ['class'] });
-  menuObserver.observe(body, { attributes: true, attributeFilter: ['class'] });
 
   if (cookieNotice) {
     var cookieObserver = new MutationObserver(function () {
-      body.classList.toggle('wg-cookie-notice-open', cookieNoticeIsOpen());
+      var noticeOpen = cookieNoticeIsOpen();
+      if (body.classList.contains('wg-cookie-notice-open') !== noticeOpen) {
+        body.classList.toggle('wg-cookie-notice-open', noticeOpen);
+      }
       syncScrollTopLink(Math.max(window.scrollY, 0));
     });
     cookieObserver.observe(cookieNotice, { attributes: true, attributeFilter: ['aria-hidden', 'class'] });
-    body.classList.toggle('wg-cookie-notice-open', cookieNoticeIsOpen());
+    var noticeOpen = cookieNoticeIsOpen();
+    if (body.classList.contains('wg-cookie-notice-open') !== noticeOpen) {
+      body.classList.toggle('wg-cookie-notice-open', noticeOpen);
+    }
   }
 
   window.addEventListener('scroll', requestScrollUpdate, { passive: true });
