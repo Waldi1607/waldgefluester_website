@@ -1,11 +1,42 @@
 {
   "_anleitung": "Neue Termine als Objekt in 'events' eintragen. Pflicht: title + date (JJJJ-MM-TT). Optional: end (bei mehrtägigen Events), time (z.B. '14–19 Uhr'), teaser (Kurzbeschreibung), url (Link, sonst leer lassen). Vergangene Termine werden automatisch ausgeblendet, löschen nicht nötig.",
-  "_beispiel": {
-    "title": "Waldcafé & Eisstockschießen",
-    "date": "2026-11-15",
-    "time": "14–19 Uhr",
-    "teaser": "Kaffee, Kuchen & Feuerstelle – ohne Reservierung",
-    "url": ""
-  },
-  "events": []
+  "_hinweis": "ACHTUNG: Die folgenden Termine sind BEISPIELE zur Ansicht und muessen vor dem Domain-Umzug durch echte Termine ersetzt werden.",
+  "events": [
+    {
+      "title": "Sommerolympiade im Waldgeflüster",
+      "date": "2026-08-15",
+      "time": "ab 14 Uhr",
+      "teaser": "Spiel, Spaß und Wettkampf auf der Wiese – mit Grill, Bar und Siegerehrung am Lagerfeuer.",
+      "url": ""
+    },
+    {
+      "title": "Waldcafé – Saisonstart",
+      "date": "2026-11-08",
+      "time": "13–18 Uhr",
+      "teaser": "Kaffee, hausgemachter Kuchen und Glühwein an der Feuerstelle. Ohne Anmeldung, kommt einfach vorbei.",
+      "url": ""
+    },
+    {
+      "title": "Eisstock-Turnier",
+      "date": "2026-11-28",
+      "end": "2026-11-29",
+      "time": "ab 11 Uhr",
+      "teaser": "Zweitägiges Turnier auf unserer Eisstockbahn – Teams zu viert, Anmeldung per E-Mail.",
+      "url": ""
+    },
+    {
+      "title": "Adventscafé im Wald",
+      "date": "2026-12-13",
+      "time": "13–19 Uhr",
+      "teaser": "Lichterglanz, Punsch und Weihnachtsgebäck – der gemütlichste Adventssonntag auf der Alb.",
+      "url": ""
+    },
+    {
+      "title": "Waldcafé – Winterausklang",
+      "date": "2027-03-07",
+      "time": "13–18 Uhr",
+      "teaser": "Letzter Waldcafé-Tag der Saison, bevor wir in die Hochzeitssaison starten.",
+      "url": ""
+    }
+  ]
 }
