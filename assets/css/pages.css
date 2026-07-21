@@ -3246,3 +3246,82 @@ body.page-id-1987 #planung .av-milestone-content-wrap { width: 100% !important; 
   #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.62; }
   body.page-id-1987 #planung .av-milestone { grid-template-rows: 50px minmax(0, 1fr); }
 }
+
+/* Startseite: Die grossen Themenkarten trennen Bild und Inhalt bewusst.
+   Das Foto bleibt eine atmosphaerische Einleitung, der Text wird darunter
+   ruhig und ohne Kontrastproblem gelesen. */
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  min-height: 0 !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-text) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
+  content: "";
+  position: relative !important;
+  z-index: auto !important;
+  inset: auto !important;
+  display: block;
+  flex: 0 0 clamp(240px, 22vw, 330px);
+  width: 100%;
+  background: var(--wg-card-image) center / cover no-repeat !important;
+}
+body.home #av_section_4 .av-20k55b-b94be11c5403a66d123794cd3e8d9fdb { --wg-card-image: url("../wp-content/uploads/2025/01/MrslisaliFotografie-HochzeitAliciaDenis-Waldgefluester-25052024-508-1-e1737563486346.webp"); }
+body.home #av_section_4 .av-84ahj-642b162816d7381def3b1fc6a34dc3d0 { --wg-card-image: url("../wp-content/uploads/2025/01/Sophia-und-Jonas-Waldgefluester-373-2-e1738770905619.webp"); }
+body.home #av_section_8 .av-6y03z-7fff00d29bd691d99684e86117193953 { --wg-card-image: url("../wp-content/uploads/2025/01/Eisstockschiessen_small.webp"); }
+body.home #av_section_8 .av-141vin-c1966f0b3c2041b1a2f3e21785647377 { --wg-card-image: url("../wp-content/uploads/2025/01/DSCF9232-1-e1737570626491.webp"); }
+body.home :where(#av_section_4, #av_section_8) .my-flex-column > * {
+  position: relative !important;
+  z-index: auto !important;
+  max-width: none;
+  color: var(--wg-theme-text) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading {
+  padding: 30px 34px 0 !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading-tag {
+  max-width: none;
+  margin: 0 0 7px !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(24px, 1.8vw, 31px) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-subheading {
+  margin: 0 !important;
+  color: var(--wg-theme-muted) !important;
+  font-size: 16px !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock {
+  max-width: none;
+  margin: 24px 0 0 !important;
+  padding: 0 34px !important;
+  color: var(--wg-theme-text) !important;
+  font-size: 16px !important;
+  line-height: 1.64 !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock :where(strong, b) {
+  color: var(--wg-theme-accent) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button {
+  margin: 28px 34px 32px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button {
+  background: transparent !important;
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-theme-accent) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button:hover {
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+@media (max-width: 767px) {
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column::before { flex-basis: clamp(210px, 62vw, 290px); }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading { padding: 26px 24px 0 !important; }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock { padding: 0 24px !important; }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button { margin: 24px 24px 28px !important; }
+}
