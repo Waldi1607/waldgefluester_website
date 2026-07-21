@@ -3,10 +3,10 @@
    - HTML-Seiten + events.json: network-first (Inhalte immer aktuell, offline-Fallback aus Cache)
    - Statische Assets (CSS/JS/Bilder/Fonts): stale-while-revalidate (sofort aus dem Cache,
      Aktualisierung im Hintergrund) — umgeht die 10-Minuten-Cache-Grenze von GitHub Pages */
-const CACHE = "wg-static-v15";
+const CACHE = "wg-static-v16";
 const PRECACHE = [
   "assets/css/bundle.css",
-  "assets/css/pages.css?v=22",
+  "assets/css/pages.css?v=23",
   "assets/js/site.js?v=6",
   "assets/js/events.js",
   "wp-includes/js/jquery/jquery.min.js",

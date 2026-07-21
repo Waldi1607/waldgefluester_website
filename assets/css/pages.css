@@ -2257,7 +2257,7 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.p
 /* Virtuelle Tour: Beschreibung und Handlungslink bilden einen Baustein. */
 #top .wg-tour-cta {
   display: block !important;
-  padding: 12px 20px clamp(48px, 7vw, 86px);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 36px) clamp(48px, 7vw, 86px);
   background: var(--wg-theme-canvas) !important;
 }
 #top .wg-tour-cta > .flex_cell { display: none !important; }
@@ -2266,7 +2266,7 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.p
   float: none !important;
   width: min(100%, 1180px) !important;
   margin: 0 auto;
-  padding: 8px !important;
+  padding: 12px !important;
   border: 1px solid var(--wg-theme-border) !important;
   border-radius: var(--wg-radius-lg);
   background: var(--wg-theme-surface) !important;
@@ -2276,11 +2276,12 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.p
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 26px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  column-gap: clamp(24px, 3vw, 40px);
+  row-gap: 4px;
   min-height: 150px;
   margin: 0 !important;
-  padding: clamp(30px, 4vw, 48px) !important;
+  padding: clamp(32px, 4vw, 52px) !important;
   align-items: center;
   border: 0 !important;
   border-radius: 21px;
@@ -2309,19 +2310,20 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.p
 #top .wg-tour-cta .iconbox_icon {
   position: static !important;
   display: grid;
-  width: 76px;
-  height: 76px;
+  width: 88px !important;
+  height: 88px !important;
   margin: 0 !important;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, .28);
   border-radius: 50%;
   background: rgba(255, 255, 255, .09);
   color: var(--wg-white) !important;
-  font-size: 28px;
+  font-size: 28px !important;
 }
 #top .wg-tour-cta .iconbox_content_title {
   grid-column: 2;
-  margin: 0 0 6px;
+  align-self: end;
+  margin: 0 !important;
   color: var(--wg-white) !important;
   font-size: clamp(25px, 3vw, 36px);
   font-weight: 500;
@@ -2329,12 +2331,13 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.p
 }
 #top .wg-tour-cta .iconbox_content_container {
   grid-column: 2;
-  margin-top: -16px;
+  margin: 0 !important;
   color: rgba(255, 255, 255, .8);
   font-size: 15px;
   line-height: 1.6;
 }
-#top .wg-tour-cta .iconbox_content_container p { margin: 4px 0; }
+#top .wg-tour-cta .iconbox_content_container p { margin: 0 !important; }
+#top .wg-tour-cta .iconbox_content_container p + p { margin-top: 10px !important; }
 #top .wg-tour-cta .iconbox_content_container a {
   display: inline-flex;
   gap: 12px;
@@ -3444,26 +3447,26 @@ body.page-id-1987 #planung .av-milestone-content-wrap {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), 0 12px 26px rgba(31, 43, 33, .14) !important;
 }
 #top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]) {
-  border-color: #31513c !important;
-  background: rgba(49, 81, 60, .94) !important;
+  border-color: var(--wg-theme-accent) !important;
+  background: color-mix(in srgb, var(--wg-theme-accent) 94%, transparent) !important;
   color: #fff !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 10px 24px rgba(31, 57, 40, .24) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 10px 24px var(--wg-theme-button-shadow) !important;
 }
 #top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]):hover {
-  border-color: #274330 !important;
-  background: #274330 !important;
+  border-color: var(--wg-theme-accent-hover) !important;
+  background: var(--wg-theme-accent-hover) !important;
   color: #fff !important;
 }
 #top #wrap_all #menu-item-1996 > a .avia-menu-text {
-  border: 1px solid rgba(255, 255, 255, .22) !important;
-  background: rgba(49, 81, 60, .94) !important;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-accent) 76%, rgba(255, 255, 255, .35)) !important;
+  background: color-mix(in srgb, var(--wg-theme-accent) 94%, transparent) !important;
   color: #fff !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 8px 20px rgba(31, 57, 40, .22) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 8px 20px var(--wg-theme-button-shadow) !important;
   backdrop-filter: blur(14px) saturate(125%);
   -webkit-backdrop-filter: blur(14px) saturate(125%);
 }
 #top #wrap_all #menu-item-1996 > a:hover .avia-menu-text {
-  background: #274330 !important;
+  background: var(--wg-theme-accent-hover) !important;
   color: #fff !important;
 }
 
