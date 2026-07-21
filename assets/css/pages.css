@@ -3373,3 +3373,26 @@ body.page-id-1987 #planung .av-timeline-nav { display: none !important; }
   body.page-id-1987 #planung .av-milestone { grid-template-rows: 52px minmax(0, 1fr); }
   body.page-id-1987 #planung .av-milestone-contentbox { padding: 25px 22px !important; }
 }
+
+/* Nummer und Karte nutzen dieselbe Breite; so bleibt die Zuordnung auf jeder
+   Bildschirmgroesse eindeutig. */
+body.page-id-1987 #planung .av-milestone-date {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  justify-self: stretch;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap,
+body.page-id-1987 #planung .av-milestone-contentbox {
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+@media (max-width: 989px) {
+  body.page-id-1987 #planung .avia-timeline {
+    grid-template-columns: minmax(0, 640px);
+    justify-content: center;
+    gap: 18px;
+  }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 54px minmax(0, 1fr); }
+}
