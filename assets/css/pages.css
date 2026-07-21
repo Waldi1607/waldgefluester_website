@@ -3396,3 +3396,88 @@ body.page-id-1987 #planung .av-milestone-contentbox {
   }
   body.page-id-1987 #planung .av-milestone { grid-template-rows: 54px minmax(0, 1fr); }
 }
+
+/* Die alte Sprechblasen-Spitze und die Slider-Navigation gehoeren nicht zu
+   den neuen Schritt-Karten. */
+body.page-id-1987 #planung .av-milestone-contentbox::before,
+body.page-id-1987 #planung .av-milestone-contentbox::after,
+body.page-id-1987 #planung .av-timeline-nav,
+body.page-id-1987 #planung .avia-slideshow-arrows {
+  display: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Einheitliche Zeichensetzung: das kaufmaennische Und bleibt lesbar und
+   nimmt nicht mehr die dekorative Serifenschrift des alten Themes an. */
+#top .special_amp {
+  font: inherit !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Aktion und Navigation: Kontakt ist immer dieselbe deutliche Primaeraktion;
+   alle anderen Links bleiben als ruhige, glasartige Sekundaeraktionen lesbar. */
+#top #main .avia-button.avia-size-large {
+  border-color: color-mix(in srgb, var(--wg-theme-accent) 58%, transparent) !important;
+  background: color-mix(in srgb, var(--wg-theme-surface) 74%, transparent) !important;
+  color: var(--wg-theme-accent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72), 0 8px 22px rgba(31, 43, 33, .08) !important;
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+}
+#top #main .avia-button.avia-size-large:hover {
+  border-color: var(--wg-theme-accent) !important;
+  background: color-mix(in srgb, var(--wg-theme-surface) 90%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), 0 12px 26px rgba(31, 43, 33, .14) !important;
+}
+#top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]) {
+  border-color: #31513c !important;
+  background: rgba(49, 81, 60, .94) !important;
+  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 10px 24px rgba(31, 57, 40, .24) !important;
+}
+#top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]):hover {
+  border-color: #274330 !important;
+  background: #274330 !important;
+  color: #fff !important;
+}
+#top #wrap_all #menu-item-1996 > a .avia-menu-text {
+  border: 1px solid rgba(255, 255, 255, .22) !important;
+  background: rgba(49, 81, 60, .94) !important;
+  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 8px 20px rgba(31, 57, 40, .22) !important;
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+}
+#top #wrap_all #menu-item-1996 > a:hover .avia-menu-text {
+  background: #274330 !important;
+  color: #fff !important;
+}
+
+/* Formularfelder: ruhige Glasflaeche und ein praeziser, nicht gelber Fokus. */
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+  background: rgba(255, 255, 255, .62) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):focus,
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):focus-visible {
+  outline: none !important;
+  border-color: var(--wg-theme-accent) !important;
+  background: rgba(255, 255, 255, .86) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--wg-theme-accent) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+}
