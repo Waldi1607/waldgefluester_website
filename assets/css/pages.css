@@ -3421,6 +3421,108 @@ body.page-id-1987 #planung .av-milestone-content-wrap {
   width: 100% !important;
 }
 
+/* Gemeinsame Ablauf-Komponente: Zahl, Karte und Raster folgen auf allen
+   Angebotsseiten derselben Geometrie. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone {
+  display: grid !important;
+  grid-template-rows: 56px minmax(0, 1fr);
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date strong {
+  margin: 0 !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-content-wrap,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  position: static !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  display: flex;
+  min-height: 100% !important;
+  padding: 28px 26px !important;
+  flex-direction: column;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox::before,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox::after,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-timeline-nav,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-slideshow-arrows {
+  display: none !important;
+}
+@media (max-width: 989px) {
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline {
+    grid-template-columns: minmax(0, 640px);
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone {
+    grid-template-rows: 52px minmax(0, 1fr);
+  }
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+    padding: 25px 22px !important;
+  }
+}
+
+/* Location-Zitat: eine ruhige, durchgehende Flaeche statt wechselnder
+   Abschnittshintergruende ober- und unterhalb des Textes. */
+body.page-id-3516 #einleitung {
+  padding: clamp(44px, 6vw, 76px) 20px !important;
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #einleitung > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: 0;
+}
+body.page-id-3516 #einleitung .entry-content-wrapper {
+  padding: clamp(34px, 4vw, 54px) !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-3516 #einleitung :where(.hr, .hr-invisible) { display: none !important; }
+body.page-id-3516 #einleitung .avia_textblock {
+  max-width: 940px;
+  margin: 0 auto !important;
+  color: var(--wg-theme-accent);
+  font-size: clamp(20px, 2vw, 29px);
+  line-height: 1.45;
+  text-align: center !important;
+}
+body.page-id-3516 #einleitung .avia_textblock :where(p, span) {
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
 /* Einheitliche Zeichensetzung: das kaufmaennische Und bleibt lesbar und
    nimmt nicht mehr die dekorative Serifenschrift des alten Themes an. */
 #top .special_amp {
