@@ -3325,3 +3325,51 @@ body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button:hove
   body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock { padding: 0 24px !important; }
   body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button { margin: 24px 24px 28px !important; }
 }
+
+/* Winter-Ablauf: kein Slider, sondern drei klar erkennbare Schritte. */
+body.page-id-1987 #planung .avia-timeline {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone {
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  grid-template-rows: 58px minmax(0, 1fr);
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  position: static !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-contentbox {
+  display: flex;
+  min-height: 100% !important;
+  padding: 28px 26px !important;
+  flex-direction: column;
+}
+body.page-id-1987 #planung .av-milestone-title {
+  margin: 0 0 16px !important;
+  font-size: clamp(18px, 1.45vw, 22px) !important;
+  line-height: 1.2;
+}
+body.page-id-1987 #planung .av-milestone-content {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.58;
+}
+body.page-id-1987 #planung .av-timeline-nav { display: none !important; }
+@media (max-width: 989px) {
+  body.page-id-1987 #planung .avia-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  body.page-id-1987 #planung .avia-timeline { grid-template-columns: 1fr; gap: 14px; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 52px minmax(0, 1fr); }
+  body.page-id-1987 #planung .av-milestone-contentbox { padding: 25px 22px !important; }
+}
