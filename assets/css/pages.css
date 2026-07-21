@@ -1083,13 +1083,292 @@ body { color: var(--wg-ink); }
   transform: translateY(-2px);
 }
 
-/* Cookie-Dialog: gleiche Radien und eine klarere Hierarchie. */
-#top .avia-cookie-consent {
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: var(--wg-radius-md);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, .34);
+/* Gerahmte Waldmomente: Die alten WordPress-Bild/Text-Zeilen werden zu einer
+   gemeinsamen Komponente. Farben und Schatten kommen aus dem jeweiligen
+   Seitenthema; die Bildposition wechselt auf Desktop und bleibt mobil zuerst. */
+#top .pfeilcontainer {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(calc(100% - 40px), 1240px);
+  margin: clamp(18px, 2.2vw, 28px) auto 0;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: 32px;
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
 }
-#top .avia-cookie-consent .avia-button { min-height: 44px; border-radius: 999px !important; }
+
+#top .pfeilcontainer > .flex_cell {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  min-height: clamp(350px, 31vw, 470px);
+  align-items: center;
+  border: 0 !important;
+  box-sizing: border-box;
+}
+
+#top .pfeilcontainer > .flex_cell > .flex_cell_inner { width: 100%; }
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(38px, 5vw, 72px) clamp(32px, 5vw, 68px) !important;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-text);
+}
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: clamp(32px, 5vw, 68px);
+  width: 56px;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  min-height: clamp(350px, 31vw, 470px);
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: var(--wg-theme-canvas);
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 43, 33, .06);
+}
+
+#top .pfeilcontainer .pfeillinks,
+#top .pfeilcontainer .pfeilrechts { display: none !important; }
+
+#top .pfeilcontainer .av-special-heading { margin: 0 0 18px; }
+#top .pfeilcontainer .av-special-heading-tag {
+  margin: 0;
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(27px, 2.55vw, 38px);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -.018em;
+}
+#top .pfeilcontainer .special-heading-border { display: none; }
+#top .pfeilcontainer .avia_textblock {
+  color: var(--wg-theme-text);
+  font-size: 16px;
+  line-height: 1.72;
+  text-align: left !important;
+}
+#top .pfeilcontainer .avia_textblock p:last-child,
+#top .pfeilcontainer .avia_textblock ul:last-child { margin-bottom: 0; }
+#top .pfeilcontainer .avia_textblock li { margin-bottom: 7px; }
+#top .pfeilcontainer .avia_textblock li::marker { color: var(--wg-theme-accent); }
+
+/* Auch Listen mit Vorteilen bekommen dieselbe ruhige Materialität, ohne jede
+   einzelne Zeile in eine weitere Karte zu verwandeln. */
+#top .avia-icon-list-container > .avia-icon-list {
+  width: min(100%, 880px);
+  margin-inline: auto;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+#top .avia-icon-list-container .iconlist_icon {
+  box-shadow: 0 0 0 6px var(--wg-theme-canvas);
+}
+
+/* Termine übernehmen Fläche, Kontur und Akzent direkt aus dem Seitenthema. */
+#top #wg-event-banner,
+#top.page-id-5003 #after_section_3 { background: var(--wg-theme-canvas); }
+#top #wg-event-list .wg-event,
+#top .wg-home-card {
+  border-color: var(--wg-theme-border);
+  background: var(--wg-theme-card);
+}
+#top .wg-event-badge {
+  border-color: var(--wg-theme-border);
+  background: var(--wg-theme-surface);
+}
+#top .wg-badge-day,
+#top .wg-badge-month,
+#top .wg-event-weekday { color: var(--wg-theme-accent); }
+
+/* Cookie-Hinweis: dieselbe helle, ruhige Designsprache wie das Kontaktformular. */
+#top .avia-cookie-consent {
+  width: min(520px, calc(100vw - 40px)) !important;
+  left: 20px !important;
+  bottom: 20px !important;
+  padding: 0 !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: color-mix(in srgb, var(--wg-theme-canvas) 94%, transparent) !important;
+  color: var(--wg-theme-text) !important;
+  box-shadow: 0 24px 70px rgba(31, 43, 33, .24), 0 2px 10px rgba(31, 43, 33, .08);
+  text-align: left;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+#top .avia-cookie-consent > .container {
+  width: auto !important;
+  max-width: none !important;
+  padding: 28px !important;
+}
+.wg-cookie-heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.wg-cookie-monogram {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 50%;
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+  font-family: Quicksand, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.wg-cookie-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--wg-theme-accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+#top .wg-cookie-heading strong {
+  display: block;
+  color: var(--wg-theme-text);
+  font-family: Quicksand, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+#top .avia-cookie-consent p.avia_cookie_text {
+  display: block;
+  margin: 0;
+  color: var(--wg-theme-muted);
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.62;
+}
+.wg-cookie-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .035em;
+  text-align: center;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1 {
+  grid-column: 1 / -1;
+  background: var(--wg-theme-accent) !important;
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-3 { order: 2; }
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-2 { order: 3; }
+#top .avia-cookie-consent .wg-cookie-actions .avia-button:hover {
+  border-color: var(--wg-theme-accent) !important;
+  background: var(--wg-theme-surface) !important;
+  color: var(--wg-theme-accent-hover) !important;
+  box-shadow: var(--wg-shadow-sm);
+  transform: translateY(-1px);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+}
+
+/* Das ausführliche Einstellungsfenster folgt derselben Oberfläche. */
+#top #av-consent-extra-info {
+  display: flex;
+  max-height: min(82dvh, 800px);
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-canvas) !important;
+  color: var(--wg-theme-text);
+  box-shadow: var(--wg-shadow-md);
+}
+#top #av-consent-extra-info .av-special-heading-tag { color: var(--wg-theme-text); }
+#top #av-consent-extra-info > .tabcontainer {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1 1 auto;
+}
+#top #av-consent-extra-info .tab {
+  border-color: var(--wg-theme-border);
+  color: var(--wg-theme-muted);
+}
+#top #av-consent-extra-info .tab.active_tab {
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+}
+#top #av-consent-extra-info > .avia-cookie-consent-modal-buttons-wrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  flex: 0 0 auto;
+  border-top: 1px solid var(--wg-theme-border);
+  background: var(--wg-theme-canvas);
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+  flex: 1 1 0;
+  margin: 0;
+  min-height: 46px;
+  border: 1px solid var(--wg-theme-accent) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--wg-theme-accent) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-cookie-consent-button-4 {
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button:hover {
+  background: var(--wg-theme-surface) !important;
+  color: var(--wg-theme-accent-hover) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-cookie-consent-button-4:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+}
 
 /* Das transparente Team-Motiv folgt seiner echten Bildproportion. So entstehen
    auf Tablet und Mobil keine 400px-WordPress-Leerflaechen oder weissen Naehte. */
@@ -1118,6 +1397,23 @@ body { color: var(--wg-ink); }
   #wg-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+@media (max-width: 989px) {
+  #top .pfeilcontainer {
+    grid-template-columns: 1fr;
+    width: calc(100% - 32px);
+    border-radius: 28px;
+  }
+  #top .pfeilcontainer > .flex_cell { min-height: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    order: 1;
+    min-height: clamp(300px, 56vw, 460px);
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    order: 2;
+    padding: clamp(38px, 7vw, 58px) clamp(32px, 7vw, 56px) !important;
+  }
+}
+
 @media (max-width: 900px) {
   .wg-contact-intro { grid-template-columns: 1fr; gap: 30px; }
   #top .wg-contact-heading h2 { max-width: 15ch; }
@@ -1129,6 +1425,63 @@ body { color: var(--wg-ink); }
 }
 
 @media (max-width: 767px) {
+  #top #main .avia_textblock { text-align: left !important; }
+
+  #top .pfeilcontainer {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    width: calc(100% - 24px);
+    margin-top: 16px;
+    padding: 6px;
+    border-radius: 26px;
+  }
+  #top .pfeilcontainer > .flex_cell { min-height: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    order: 1;
+    min-height: clamp(240px, 72vw, 360px);
+    border-radius: 20px;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    order: 2;
+    padding: 34px 24px 38px !important;
+    border-radius: 20px;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before { left: 24px; }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(25px, 7vw, 31px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.68; }
+  #top .avia-icon-list-container > .avia-icon-list {
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  #top .avia-cookie-consent {
+    width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    left: 12px !important;
+    border-radius: 22px;
+  }
+  #top .avia-cookie-consent > .container { padding: 22px !important; }
+  .wg-cookie-heading { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; }
+  .wg-cookie-monogram { width: 42px; height: 42px; font-size: 18px; }
+  #top .wg-cookie-heading strong { font-size: 17px; }
+  .wg-cookie-actions { grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
+  #top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1 { grid-column: auto; }
+  #top .avia-cookie-consent .wg-cookie-actions .avia-button { width: 100%; min-height: 48px; }
+  #top #av-consent-extra-info {
+    max-height: calc(100dvh - 24px);
+    padding: 20px;
+    border-radius: 22px;
+  }
+  #top #av-consent-extra-info > .avia-cookie-consent-modal-buttons-wrap {
+    flex-direction: column;
+    padding-top: 12px;
+  }
+  #top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
   .wg-contact-section { padding: 24px 16px 36px; }
   .wg-contact-shell { border-radius: 22px; }
   .wg-contact-intro { gap: 28px; padding: 38px 22px 28px; }
