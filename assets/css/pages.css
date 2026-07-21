@@ -1185,8 +1185,44 @@ body { color: var(--wg-ink); }
   background: var(--wg-theme-card);
   box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
 }
-#top .avia-icon-list-container .iconlist_icon {
-  box-shadow: 0 0 0 6px var(--wg-theme-canvas);
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_icon,
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist-timeline {
+  display: none !important;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li .iconlist_content_wrap {
+  margin-left: 0 !important;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li {
+  position: relative;
+  margin: 0;
+  padding: 24px 0 24px 34px;
+  border-bottom: 1px solid var(--wg-theme-border);
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:first-child { padding-top: 4px; }
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:last-child {
+  padding-bottom: 4px;
+  border-bottom: 0;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 17px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .72;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:first-child::before { top: 12px; }
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_title {
+  margin: 0 0 5px;
+  color: var(--wg-theme-text);
+  font-size: 19px;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_content {
+  color: var(--wg-theme-muted);
+  line-height: 1.68;
 }
 
 /* ============================================================
@@ -1242,65 +1278,6 @@ body.page-id-1143 :where(
   border-color: var(--wg-theme-border) !important;
 }
 
-/* Faktenband: vier Kennzahlen als eine zusammenhaengende, ruhige Flaeche. */
-body.page-id-1143 .wg-fact-panel {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  width: min(calc(100% - 40px), 1180px) !important;
-  margin: 0 auto clamp(20px, 4vw, 52px) !important;
-  padding: 8px;
-  overflow: hidden;
-  border: 1px solid var(--wg-theme-border) !important;
-  border-radius: var(--wg-radius-lg);
-  background: var(--wg-theme-surface) !important;
-  box-shadow: var(--wg-theme-shadow);
-  box-sizing: border-box;
-}
-body.page-id-1143 .wg-fact-panel > .flex_cell {
-  display: block !important;
-  float: none !important;
-  width: auto !important;
-  padding: 0 !important;
-  background: transparent !important;
-}
-body.page-id-1143 .wg-fact-panel .flex_cell_inner {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-}
-body.page-id-1143 .wg-fact-panel .flex_column {
-  display: flex;
-  float: none !important;
-  width: auto !important;
-  min-height: 176px;
-  margin: 0 !important;
-  padding: 28px 18px 22px !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 72%, transparent);
-  border-radius: 21px;
-  background: var(--wg-theme-card);
-  color: var(--wg-theme-text);
-  text-align: center;
-}
-body.page-id-1143 .wg-fact-panel .avia_textblock {
-  color: var(--wg-theme-muted);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .16em;
-}
-body.page-id-1143 .wg-fact-panel .factnumber { margin-top: 10px; }
-body.page-id-1143 .wg-fact-panel .factnumber .heading {
-  color: var(--wg-theme-accent) !important;
-  font-size: clamp(30px, 3vw, 44px) !important;
-}
-body.page-id-1143 .wg-fact-panel .avia-animated-number-circle {
-  border-color: var(--wg-theme-border) !important;
-  opacity: .8;
-}
-
 /* Location-Intro und Rezensionen greifen die Kontaktformular-Flaeche auf. */
 body.page-id-1143 .wg-wedding-story { padding: 28px 0 0; }
 body.page-id-1143 .wg-wedding-story > .container {
@@ -1326,110 +1303,9 @@ body.page-id-1143 .wg-wedding-story .av-special-heading-h3::before {
   background: var(--wg-theme-accent);
   opacity: .78;
 }
-body.page-id-1143 .wg-wedding-story .av-special-heading-h4 {
-  margin-top: clamp(30px, 4vw, 48px);
-  padding-top: clamp(24px, 3vw, 36px);
-  border-top: 1px solid var(--wg-theme-border);
-}
 body.page-id-1143 .wg-wedding-story .avia_textblock {
   color: var(--wg-theme-muted);
   line-height: 1.75;
-}
-
-/* Signatur-CTA: der virtuelle Rundgang als markanter Waldstreifen. */
-body.page-id-1143 .wg-tour-cta {
-  display: block !important;
-  padding: 12px 20px clamp(58px, 7vw, 92px);
-  background: var(--wg-theme-canvas) !important;
-}
-body.page-id-1143 .wg-tour-cta > .flex_cell { display: none !important; }
-body.page-id-1143 .wg-tour-cta > .av-cell-link {
-  display: block !important;
-  float: none !important;
-  width: min(100%, 1180px) !important;
-  margin: 0 auto;
-  padding: 8px !important;
-  border: 1px solid var(--wg-theme-border) !important;
-  border-radius: var(--wg-radius-lg);
-  background: var(--wg-theme-surface) !important;
-  box-shadow: var(--wg-theme-shadow);
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 26px;
-  min-height: 150px;
-  margin: 0 !important;
-  padding: clamp(30px, 4vw, 48px) !important;
-  align-items: center;
-  border: 0 !important;
-  border-radius: 21px;
-  background: var(--wg-theme-accent) !important;
-  color: var(--wg-white);
-  box-shadow: none !important;
-  text-align: left;
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content::after {
-  content: "3D";
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  right: clamp(28px, 6vw, 84px);
-  color: var(--wg-white);
-  font-family: Quicksand, sans-serif;
-  font-size: clamp(92px, 12vw, 166px);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -.08em;
-  opacity: .055;
-  transform: translateY(-52%);
-  pointer-events: none;
-}
-body.page-id-1143 .wg-tour-cta .entry-content-header { display: contents; }
-body.page-id-1143 .wg-tour-cta .iconbox_icon {
-  position: static !important;
-  display: grid;
-  width: 76px;
-  height: 76px;
-  margin: 0 !important;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, .28);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .09);
-  color: var(--wg-white) !important;
-  font-size: 28px;
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content_title {
-  grid-column: 2;
-  margin: 0 0 6px;
-  color: var(--wg-white) !important;
-  font-size: clamp(25px, 3vw, 36px);
-  font-weight: 500;
-  letter-spacing: -.02em;
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content_container {
-  grid-column: 2;
-  margin-top: -16px;
-  color: rgba(255, 255, 255, .78);
-  font-size: 15px;
-  line-height: 1.6;
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content_container p { margin: 4px 0; }
-body.page-id-1143 .wg-tour-cta .iconbox_content_container a {
-  display: inline-flex;
-  gap: 12px;
-  align-items: center;
-  color: var(--wg-white);
-  font-weight: 600;
-  text-decoration: none;
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content_container a span {
-  transition: transform var(--wg-motion);
-}
-body.page-id-1143 .wg-tour-cta .iconbox_content_container a:hover span {
-  transform: translateX(4px);
 }
 
 body.page-id-1143 .wg-proof-section { padding: 0 0 clamp(62px, 8vw, 100px); }
@@ -1698,7 +1574,6 @@ body.page-id-1143 .wg-decision-section .avia_textblock {
 body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !important; }
 
 @media (max-width: 989px) {
-  body.page-id-1143 .wg-fact-panel { width: calc(100% - 32px) !important; }
   body.page-id-1143 :where(.wg-wedding-story, .wg-proof-section, #after_section_4, #after_masonry, .wg-decision-section) > .container {
     width: calc(100% - 32px);
   }
@@ -1722,16 +1597,6 @@ body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !imp
 }
 
 @media (max-width: 620px) {
-  body.page-id-1143 .wg-fact-panel {
-    grid-template-columns: 1fr;
-    width: calc(100% - 24px) !important;
-    border-radius: 24px;
-  }
-  body.page-id-1143 .wg-fact-panel .flex_column {
-    min-height: 138px;
-    padding: 22px 10px 18px !important;
-    border-radius: 18px;
-  }
   body.page-id-1143 .wg-wedding-story > .container,
   body.page-id-1143 .wg-proof-section > .container,
   body.page-id-1143 #after_section_4 > .container,
@@ -1740,17 +1605,6 @@ body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !imp
     width: calc(100% - 24px);
     border-radius: 22px;
   }
-  body.page-id-1143 .wg-tour-cta { padding-inline: 12px; }
-  body.page-id-1143 .wg-tour-cta > .av-cell-link { border-radius: 22px; }
-  body.page-id-1143 .wg-tour-cta .iconbox_content {
-    grid-template-columns: 58px minmax(0, 1fr);
-    gap: 18px;
-    padding: 26px 22px !important;
-    border-radius: 16px;
-  }
-  body.page-id-1143 .wg-tour-cta .iconbox_icon { width: 58px; height: 58px; font-size: 22px; }
-  body.page-id-1143 .wg-tour-cta .iconbox_content_title { font-size: 24px; }
-  body.page-id-1143 .wg-tour-cta .iconbox_content_container { margin-top: -8px; }
   body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) { padding-inline: 12px; }
   body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) > .av-tab-section-outer-container { border-radius: 22px; }
   body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
@@ -1894,7 +1748,7 @@ body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !imp
 
 /* Das ausführliche Einstellungsfenster folgt derselben Oberfläche. */
 #top #av-consent-extra-info {
-  display: flex;
+  display: none;
   max-height: min(82dvh, 800px);
   overflow: hidden;
   flex-direction: column;
@@ -1904,6 +1758,7 @@ body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !imp
   color: var(--wg-theme-text);
   box-shadow: var(--wg-shadow-md);
 }
+#top .mfp-content #av-consent-extra-info { display: flex; }
 #top #av-consent-extra-info .av-special-heading-tag { color: var(--wg-theme-text); }
 #top #av-consent-extra-info > .tabcontainer {
   min-height: 0;
@@ -2088,5 +1943,1080 @@ body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !imp
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+}
+
+/* ============================================================
+   GEMEINSAME SEITENARCHITEKTUR
+   Wiederkehrende WordPress-Bausteine folgen jetzt denselben Rollen:
+   Einleitung, Fakten, Feature, Ablauf, Entscheidung und Footer.
+   ============================================================ */
+
+body:is(
+  .home,
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #main {
+  background: var(--wg-theme-canvas);
+}
+
+/* Einleitungen: ein ruhiger Auftakt statt freischwebendem Text auf Weiss. */
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1,
+body.home .wg-lead-panel {
+  padding: clamp(24px, 4vw, 52px) 20px 14px;
+  border: 0 !important;
+  background: var(--wg-theme-canvas) !important;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 > .container,
+body.home .wg-lead-panel > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px);
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .content,
+body.home .wg-lead-panel .content {
+  padding: 0;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .entry-content-wrapper,
+body.home .wg-lead-panel .entry-content-wrapper {
+  position: relative;
+  max-width: 900px;
+  padding-top: 20px;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .entry-content-wrapper::before,
+body.home .wg-lead-panel .entry-content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+
+body.home .wg-lead-panel h1 {
+  max-width: 18ch;
+  margin: 0 0 22px;
+  color: var(--wg-theme-text);
+  font-size: clamp(31px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+body.home .wg-lead-panel .hr-invisible { display: none; }
+body.home .wg-lead-panel .avia_textblock,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .avia_textblock {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.78;
+}
+
+/* Faktenband: auf Location und Hochzeit dieselbe echte Komponente. */
+#top .wg-fact-panel {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(calc(100% - 40px), 1180px) !important;
+  margin: 14px auto clamp(34px, 6vw, 76px) !important;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+#top .wg-fact-panel > .flex_cell {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+#top .wg-fact-panel .flex_cell_inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+#top .wg-fact-panel .flex_column {
+  display: flex;
+  float: none !important;
+  width: auto !important;
+  min-height: 164px;
+  margin: 0 !important;
+  padding: 26px 16px 21px !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 72%, transparent);
+  border-radius: 21px;
+  background: var(--wg-theme-card);
+  color: var(--wg-theme-text);
+  text-align: center;
+}
+#top .wg-fact-panel .avia_textblock {
+  color: var(--wg-theme-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+#top .wg-fact-panel .factnumber { margin-top: 10px; }
+#top .wg-fact-panel .factnumber .heading {
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(30px, 3vw, 44px) !important;
+}
+#top .wg-fact-panel .avia-animated-number-circle {
+  border-color: var(--wg-theme-border) !important;
+  opacity: .74;
+}
+
+/* Virtuelle Tour: Beschreibung und Handlungslink bilden einen Baustein. */
+#top .wg-tour-cta {
+  display: block !important;
+  padding: 12px 20px clamp(48px, 7vw, 86px);
+  background: var(--wg-theme-canvas) !important;
+}
+#top .wg-tour-cta > .flex_cell { display: none !important; }
+#top .wg-tour-cta > .av-cell-link {
+  display: block !important;
+  float: none !important;
+  width: min(100%, 1180px) !important;
+  margin: 0 auto;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+}
+#top .wg-tour-cta .iconbox_content {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 26px;
+  min-height: 150px;
+  margin: 0 !important;
+  padding: clamp(30px, 4vw, 48px) !important;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white);
+  box-shadow: none !important;
+  text-align: left;
+}
+#top .wg-tour-cta .iconbox_content::after {
+  content: "3D";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: clamp(28px, 6vw, 84px);
+  color: var(--wg-white);
+  font-family: Quicksand, sans-serif;
+  font-size: clamp(92px, 12vw, 166px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.08em;
+  opacity: .055;
+  transform: translateY(-52%);
+  pointer-events: none;
+}
+#top .wg-tour-cta .entry-content-header { display: contents; }
+#top .wg-tour-cta .iconbox_icon {
+  position: static !important;
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 !important;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .09);
+  color: var(--wg-white) !important;
+  font-size: 28px;
+}
+#top .wg-tour-cta .iconbox_content_title {
+  grid-column: 2;
+  margin: 0 0 6px;
+  color: var(--wg-white) !important;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+#top .wg-tour-cta .iconbox_content_container {
+  grid-column: 2;
+  margin-top: -16px;
+  color: rgba(255, 255, 255, .8);
+  font-size: 15px;
+  line-height: 1.6;
+}
+#top .wg-tour-cta .iconbox_content_container p { margin: 4px 0; }
+#top .wg-tour-cta .iconbox_content_container a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--wg-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+#top .wg-tour-cta .iconbox_content_container a span { transition: transform var(--wg-motion); }
+#top .wg-tour-cta .iconbox_content_container a:hover span { transform: translateX(4px); }
+
+/* Eingebettete 3D-Tour auf der Locationseite. */
+body.page-id-3516 #after_grid_row_1 {
+  padding: 12px 20px clamp(56px, 7vw, 88px);
+  border: 0;
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #after_grid_row_1 > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: 0;
+}
+body.page-id-3516 #after_grid_row_1 .content { padding: 0; }
+body.page-id-3516 .wg-fact-panel { margin-bottom: 24px !important; }
+body.page-id-3516 .wg-immersive-tour {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 auto clamp(58px, 7vw, 86px) !important;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.page-id-3516 .wg-immersive-tour .iconbox_content {
+  margin: 0 !important;
+  padding: clamp(34px, 5vw, 62px) !important;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-card) !important;
+  box-shadow: none !important;
+}
+body.page-id-3516 .wg-immersive-tour .iconbox_icon { display: none !important; }
+body.page-id-3516 .wg-immersive-tour h2 {
+  position: relative;
+  max-width: 16ch;
+  margin: 0 0 20px;
+  padding-top: 18px;
+  color: var(--wg-theme-text);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -.025em;
+}
+body.page-id-3516 .wg-immersive-tour h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+}
+body.page-id-3516 .wg-immersive-tour p {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-3516 .wg-immersive-tour iframe {
+  display: block;
+  width: 100%;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 18px;
+  background: var(--wg-theme-surface);
+}
+body.page-id-3516 #events {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+/* Hochzeit: Karte und Reiter bilden optisch einen zusammenhaengenden Bereich. */
+body.page-id-1143 .av-hotspot-image-container {
+  width: min(calc(100% - 40px), 1180px);
+  margin: clamp(20px, 4vw, 52px) auto 0;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.page-id-1143 .av-hotspot-image-container .av-hotspot-container {
+  overflow: hidden;
+  border-radius: 21px;
+}
+body.page-id-1143 .av-hotspot-image-container .av-image-hotspot_inner {
+  border: 2px solid var(--wg-white) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 5px 16px var(--wg-theme-button-shadow);
+}
+body.page-id-1143 #hochzeitsreiter { padding-top: 14px; }
+
+/* Grosse Vorteilslisten: echte Inhaltsstruktur statt austauschbarer Icons. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-icon-list-container {
+  width: min(calc(100% - 40px), 1000px);
+  margin-inline: auto;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-icon-list-container > .avia-icon-list.av-iconlist-big {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Abläufe: Nummern bleiben, die alten Font-Icons verschwinden. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline-container {
+  width: min(100%, 1100px);
+  margin: clamp(26px, 4vw, 48px) auto;
+  padding: 8px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-icon-wrap {
+  display: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  min-height: 100%;
+  padding: clamp(24px, 3vw, 34px) !important;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 76%, transparent) !important;
+  border-radius: 20px;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-muted);
+  box-shadow: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date strong {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--wg-theme-accent);
+  color: var(--wg-white) !important;
+  font-family: Quicksand, sans-serif;
+  font-size: 17px;
+  box-shadow: 0 7px 18px var(--wg-theme-button-shadow);
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-indicator,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-article-footer {
+  display: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-title {
+  color: var(--wg-theme-text) !important;
+  font-size: 20px;
+}
+
+/* Startseite: bestehende Bildinszenierung behalten, Oberflaechen vereinheitlichen. */
+body.home :where(#hochzeit, #winter, #einleitung-details, #av_section_2, #av_section_4, #av_section_7, #av_section_8, #anfahrt, #ueber-uns) {
+  border: 0 !important;
+  background-color: var(--wg-theme-canvas) !important;
+}
+body.home #after_grid_row_1 { display: none; }
+body.home :where(#hochzeit, #winter) {
+  padding-block: clamp(24px, 4vw, 52px);
+}
+body.home :where(#hochzeit, #winter) .av-horizontal-gallery-wrap {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 12px 34px var(--wg-theme-button-shadow);
+}
+body.home :where(#av_section_2, #av_section_7) > .container {
+  width: min(calc(100% - 40px), 1040px);
+  max-width: 1040px;
+}
+body.home :where(#av_section_2, #av_section_7) .my-overlap-box2 {
+  padding: clamp(36px, 5vw, 62px) !important;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.home :where(#av_section_2, #av_section_7) .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: clamp(34px, 4vw, 52px) !important;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background-color: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .av-flex-placeholder { display: none !important; }
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .hr-invisible:first-child { display: none; }
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(480px, 48vw, 620px);
+  justify-content: flex-end;
+  overflow: hidden;
+  background-position: center !important;
+  background-size: cover !important;
+  color: var(--wg-white);
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(19,29,21,.08) 10%, rgba(19,29,21,.52) 52%, rgba(19,29,21,.88) 100%);
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column > * {
+  position: relative;
+  z-index: 1;
+}
+body.home :where(#av_section_4, #av_section_8) .av-special-heading-tag,
+body.home :where(#av_section_4, #av_section_8) .av-subheading,
+body.home :where(#av_section_4, #av_section_8) .avia_textblock {
+  color: var(--wg-white) !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.34);
+}
+body.home :where(#av_section_4, #av_section_8) .avia-button {
+  border-color: rgba(255,255,255,.78) !important;
+  background: rgba(255,255,255,.1) !important;
+  color: var(--wg-white) !important;
+  backdrop-filter: blur(8px);
+}
+body.home :where(#av_section_4, #av_section_8) .avia-button:hover {
+  border-color: var(--wg-white) !important;
+  background: var(--wg-white) !important;
+  color: var(--wg-theme-accent) !important;
+}
+body.home #einleitung-details > .container,
+body.home #anfahrt > .container {
+  width: min(calc(100% - 40px), 1000px);
+  max-width: 1000px;
+}
+body.home #einleitung-details .entry-content-wrapper,
+body.home #anfahrt .entry-content-wrapper {
+  padding: clamp(34px, 5vw, 56px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+}
+body.home #einleitung-details .av_font_icon { display: none; }
+body.home #einleitung-details .avia_textblock {
+  max-width: 780px;
+  margin-inline: auto;
+  color: var(--wg-theme-text);
+  font-family: Quicksand, sans-serif;
+  font-size: clamp(20px, 2.4vw, 29px);
+  line-height: 1.55;
+}
+body.home #av-layout-grid-4 {
+  width: min(calc(100% - 40px), 1180px);
+  margin: 14px auto 30px;
+  padding: 8px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.home #av-layout-grid-4 > .flex_cell {
+  padding: 0 !important;
+  background: transparent !important;
+}
+body.home #av-layout-grid-4 .flex_cell_inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+body.home #av-layout-grid-4 .flex_column {
+  float: none !important;
+  width: auto !important;
+  min-height: 150px;
+  margin: 0 !important;
+  padding: 24px 12px !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 20px;
+  background: var(--wg-theme-card);
+  text-align: center;
+}
+body.home #av-layout-grid-4 .avia-animated-number-circle { display: none; }
+body.home #av-layout-grid-4 .avia-animated-number-title {
+  color: var(--wg-theme-accent) !important;
+  font-size: 35px !important;
+}
+body.home #av-layout-grid-5 {
+  display: block !important;
+  padding: 0 20px clamp(52px, 7vw, 82px);
+  background: var(--wg-theme-canvas) !important;
+}
+body.home #av-layout-grid-5 > .flex_cell { display: none !important; }
+body.home #av-layout-grid-5 > .av-cell-link {
+  display: block !important;
+  float: none !important;
+  width: min(100%, 760px) !important;
+  margin: 0 auto;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+}
+body.home #av-layout-grid-5 .iconbox_content {
+  margin: 0 !important;
+  padding: 34px !important;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-card) !important;
+  box-shadow: none !important;
+}
+body.home #av-layout-grid-5 .iconbox_icon {
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-theme-accent) !important;
+}
+
+/* Karten fuer Team/FAQ auch auf der Locationseite. */
+body.page-id-3516 #av_section_4 {
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #av_section_4 > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+body.page-id-3516 #av_section_4 .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+body.page-id-3516 #av_section_4 .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: clamp(34px, 4vw, 52px) !important;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.page-id-3516 #av_section_4 .av-flex-placeholder { display: none !important; }
+
+/* Buttons: dieselbe Form und Rueckmeldung auf allen Marketingseiten. */
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #main .avia-button.avia-size-large {
+  min-height: 48px;
+  padding: 13px 24px !important;
+  border-radius: 999px !important;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #main .avia-button.avia-size-large:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer: kompakt, ohne den bisherigen ungenutzten Leerraum. */
+#top #av-layout-grid-7 {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(260px, 1fr);
+  gap: clamp(20px, 4vw, 64px);
+  min-height: 0 !important;
+  padding: 24px max(24px, calc((100vw - 1120px) / 2)) !important;
+  align-items: center;
+  border: 0 !important;
+  background: #090b09 !important;
+  box-sizing: border-box;
+}
+#top #wrap_all #av-layout-grid-7 > .flex_cell {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+#top #av-layout-grid-7 .flex_cell_inner { width: 100%; }
+#top #av-layout-grid-7 .hr-invisible { display: none; }
+#top #av-layout-grid-7 .avia_textblock { font-size: 12px !important; line-height: 1.55; }
+#top #av-layout-grid-7 .avia_textblock p { margin: 5px 0 0; }
+#top #av-layout-grid-7 h3 {
+  margin: 0;
+  color: rgba(255,255,255,.96);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+#top #av-layout-grid-7 .footerlogo img {
+  display: block;
+  width: 78px;
+  height: auto;
+  margin: 0 auto;
+}
+#top #socket {
+  min-height: 46px;
+  border-top-color: rgba(255,255,255,.1);
+  background: #090b09;
+}
+#top #socket .container {
+  min-height: 46px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 46px;
+}
+#top #socket .copyright { font-size: 11px; }
+#top #socket .social_bookmarks { margin-top: 7px; }
+
+@media (min-width: 768px) {
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 989px) {
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) .flex_column_table,
+  body.page-id-3516 #av_section_4 .flex_column_table {
+    grid-template-columns: 1fr;
+  }
+  #top #av-layout-grid-7 {
+    grid-template-columns: minmax(190px, 1fr) 82px minmax(230px, 1fr);
+    gap: 24px;
+    padding-inline: 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body:is(
+    .page-id-1143,
+    .page-id-3516,
+    .page-id-5001,
+    .page-id-5002,
+    .page-id-5003,
+    .page-id-4947,
+    .page-id-1987
+  ) #after_submenu_1,
+  body.home .wg-lead-panel {
+    padding: 16px 12px 8px;
+  }
+  body:is(
+    .page-id-1143,
+    .page-id-3516,
+    .page-id-5001,
+    .page-id-5002,
+    .page-id-5003,
+    .page-id-4947,
+    .page-id-1987
+  ) #after_submenu_1 > .container,
+  body.home .wg-lead-panel > .container {
+    padding: 32px 22px 36px;
+    border-radius: 22px;
+  }
+  #top .wg-fact-panel {
+    grid-template-columns: 1fr;
+    width: calc(100% - 24px) !important;
+    margin-bottom: 40px !important;
+    border-radius: 22px;
+  }
+  #top .wg-fact-panel .flex_cell_inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #top .wg-fact-panel .flex_column {
+    min-height: 130px;
+    padding: 20px 10px 16px !important;
+    border-radius: 17px;
+  }
+  #top .wg-tour-cta { padding: 8px 12px 46px; }
+  #top .wg-tour-cta > .av-cell-link { border-radius: 22px; }
+  #top .wg-tour-cta .iconbox_content {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 18px;
+    padding: 30px 22px !important;
+    border-radius: 16px;
+  }
+  #top .wg-tour-cta .iconbox_icon { width: 58px; height: 58px; font-size: 22px; }
+  #top .wg-tour-cta .iconbox_content_title { font-size: 23px; }
+  #top .wg-tour-cta .iconbox_content_container { margin-top: -7px; }
+  body.page-id-3516 #after_grid_row_1 { padding: 8px 12px 48px; }
+  body.page-id-3516 .wg-immersive-tour { border-radius: 22px; }
+  body.page-id-3516 .wg-immersive-tour .iconbox_content {
+    padding: 30px 20px !important;
+    border-radius: 16px;
+  }
+  body.page-id-3516 .wg-immersive-tour iframe { height: 430px; border-radius: 14px; }
+  body.page-id-1143 .av-hotspot-image-container {
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.page-id-1143 .av-hotspot-image-container .av-hotspot-container { border-radius: 16px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  body.home :where(#av_section_2, #av_section_7) > .container,
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) > .container,
+  body.home #einleitung-details > .container,
+  body.home #anfahrt > .container {
+    width: calc(100% - 24px);
+  }
+  body.home :where(#av_section_2, #av_section_7) .my-overlap-box2,
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) .my-flex-column,
+  body.home #einleitung-details .entry-content-wrapper,
+  body.home #anfahrt .entry-content-wrapper {
+    padding: 30px 22px !important;
+    border-radius: 22px;
+  }
+  body.home #av-layout-grid-4 {
+    display: block !important;
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.home #av-layout-grid-4 > .flex_cell { display: block !important; }
+  body.home #av-layout-grid-4 .flex_cell_inner { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  body.home #av-layout-grid-4 .flex_column { min-height: 125px; padding: 18px 6px !important; }
+  body.home #av-layout-grid-4 .avia-animated-number-title { font-size: 29px !important; }
+  #top #av-layout-grid-7 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+    padding: 22px 18px !important;
+  }
+  #top #av-layout-grid-7 > .flex_cell:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  #top #av-layout-grid-7 > .flex_cell:first-of-type { grid-column: 1; grid-row: 2; }
+  #top #av-layout-grid-7 > .flex_cell:last-of-type { grid-column: 2; grid-row: 2; }
+  #top #av-layout-grid-7 .footerlogo img { width: 62px; }
+  #top #av-layout-grid-7 .avia_textblock { font-size: 11px !important; }
+  #top #socket .container {
+    min-height: 0;
+    padding: 10px 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  #top #socket .copyright { display: block; float: none; }
+  #top #socket .social_bookmarks { display: none; }
+}
+
+@media (max-width: 440px) {
+  #top .wg-tour-cta .iconbox_content {
+    display: block;
+  }
+  #top .wg-tour-cta .iconbox_icon { margin-bottom: 20px !important; }
+  #top .wg-tour-cta .iconbox_content_title,
+  #top .wg-tour-cta .iconbox_content_container { margin-left: 0; }
+  #top .wg-tour-cta .iconbox_content_container { margin-top: 12px; }
+  body.home #av-layout-grid-4 .flex_cell_inner { grid-template-columns: 1fr; }
+  body.home #av-layout-grid-4 .flex_column { min-height: 0; }
+  #top #av-layout-grid-7 {
+    grid-template-columns: 1fr;
+  }
+  #top #av-layout-grid-7 > .flex_cell:nth-of-type(2),
+  #top #av-layout-grid-7 > .flex_cell:first-of-type,
+  #top #av-layout-grid-7 > .flex_cell:last-of-type {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Layout-Audit: Alle grossen Inhaltskarten folgen einem klaren Rhythmus.
+   Damit bleiben Text, Bild und Aktion zusammen und die alten Builder-Abstaende
+   erzeugen keine leeren Flaechen oder losgeloesten Linien mehr. */
+:root {
+  --wg-section-space: clamp(42px, 5vw, 68px);
+  --wg-card-space: clamp(30px, 4vw, 48px);
+}
+
+/* Die Linie war aus dem urspruenglichen Builder uebrig und sass am Kartenrand. */
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before,
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper::before,
+body.home .wg-lead-panel .entry-content-wrapper::before,
+body.page-id-3516 .wg-immersive-tour h2::before,
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3::before {
+  display: none !important;
+}
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding-top: clamp(34px, 4vw, 56px) !important;
+}
+
+/* Start: Intro deutlich kompakter und ohne die alte, zu enge Überschriftenbreite. */
+body.home .wg-lead-panel {
+  margin-top: 0 !important;
+  padding: 32px 20px 12px;
+}
+body.home .wg-lead-panel > .container {
+  padding: clamp(42px, 4vw, 54px) clamp(28px, 6vw, 72px) !important;
+}
+body.home .wg-lead-panel .entry-content-wrapper {
+  max-width: 1000px;
+  padding-top: 0;
+}
+body.home .wg-lead-panel h1 {
+  max-width: 980px;
+  margin-bottom: 18px;
+  color: var(--wg-theme-text) !important;
+  font-size: clamp(32px, 3.2vw, 48px);
+  line-height: 1.14;
+  text-align: left !important;
+}
+body.home .wg-lead-panel .avia_textblock {
+  max-width: 960px;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* Zitatblock: keine unsichtbaren Trenner und kein leerer Sockel unter dem Text. */
+body.home #einleitung-details {
+  margin-top: 0 !important;
+  padding: var(--wg-section-space) 0 0 !important;
+}
+body.home #einleitung-details .entry-content-wrapper {
+  padding: clamp(32px, 3.5vw, 42px) !important;
+}
+body.home #einleitung-details :where(.hr, .hr-invisible, .av_font_icon) {
+  display: none !important;
+}
+body.home #einleitung-details .avia_textblock {
+  max-width: 820px;
+  margin: 0 auto !important;
+  font-size: clamp(19px, 1.9vw, 25px);
+  line-height: 1.45;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+body.home #einleitung-details .avia_textblock :where(p, a) {
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+/* Bildkarten auf der Startseite: kompakte, linksbuendige Lesespalte statt Text ueber das ganze Bild. */
+body.home :where(#av_section_4, #av_section_8) {
+  padding-block: var(--wg-section-space) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  min-height: clamp(500px, 41vw, 590px);
+  padding: clamp(32px, 3.2vw, 46px) !important;
+  justify-content: flex-end;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column :where(.hr, .hr-invisible) {
+  display: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-special-heading {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-special-heading-tag {
+  max-width: 20ch;
+  margin: 0 0 8px !important;
+  font-size: clamp(27px, 2.25vw, 36px) !important;
+  line-height: 1.1 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-subheading {
+  max-width: 34rem;
+  margin: 0 0 18px !important;
+  font-size: clamp(15px, 1.25vw, 18px) !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock {
+  max-width: 35rem;
+  margin: 0 !important;
+  font-size: clamp(15px, 1.05vw, 17px) !important;
+  line-height: 1.62 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock p { margin: 0 !important; }
+body.home :where(#av_section_4, #av_section_8) .my-bottom-button {
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  margin: 24px 0 0 !important;
+  text-align: left !important;
+  transform: none !important;
+}
+
+/* Team und FAQ: Bild als Kopf, gut lesbarer Inhalt auf einer ruhigen Flaeche darunter. */
+body.home #ueber-uns,
+body.page-id-3516 #av_section_4 {
+  padding-block: var(--wg-section-space) !important;
+}
+body.home #ueber-uns .my-flex-column,
+body.page-id-3516 #av_section_4 .my-flex-column {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(610px, 42vw, 760px);
+  padding: clamp(240px, 21vw, 300px) clamp(30px, 3.5vw, 46px) 36px !important;
+  overflow: hidden;
+  background-color: var(--wg-theme-card) !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  color: var(--wg-theme-text) !important;
+}
+body.home #ueber-uns .my-flex-column::before,
+body.page-id-3516 #av_section_4 .my-flex-column::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0, transparent 38%, var(--wg-theme-card) 44%, var(--wg-theme-card) 100%);
+  pointer-events: none;
+}
+body.home #ueber-uns .my-flex-column > *,
+body.page-id-3516 #av_section_4 .my-flex-column > * {
+  position: relative;
+  z-index: 1;
+}
+body.home #ueber-uns .my-flex-column :where(.hr, .hr-invisible),
+body.page-id-3516 #av_section_4 .my-flex-column :where(.hr, .hr-invisible) {
+  display: none !important;
+}
+body.home #ueber-uns .av-special-heading,
+body.page-id-3516 #av_section_4 .av-special-heading {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.home #ueber-uns :where(.av-special-heading-tag, .av-subheading, .avia_textblock),
+body.page-id-3516 #av_section_4 :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
+  max-width: 35rem;
+  color: var(--wg-theme-text) !important;
+  text-align: left !important;
+  text-shadow: none !important;
+}
+body.home #ueber-uns .av-special-heading-tag,
+body.page-id-3516 #av_section_4 .av-special-heading-tag {
+  margin: 0 0 8px !important;
+  font-size: clamp(27px, 2.1vw, 35px) !important;
+  line-height: 1.1 !important;
+}
+body.home #ueber-uns .av-subheading,
+body.page-id-3516 #av_section_4 .av-subheading {
+  margin: 0 0 16px !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+}
+body.home #ueber-uns .avia_textblock,
+body.page-id-3516 #av_section_4 .avia_textblock {
+  margin: 0 !important;
+  color: var(--wg-theme-muted) !important;
+  font-size: 16px !important;
+  line-height: 1.62 !important;
+}
+body.home #ueber-uns .avia_textblock p,
+body.page-id-3516 #av_section_4 .avia_textblock p { margin: 0 !important; }
+body.home #ueber-uns .my-bottom-button,
+body.page-id-3516 #av_section_4 .my-bottom-button {
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  margin: 24px 0 0 !important;
+  text-align: left !important;
+  transform: none !important;
+}
+body.home #ueber-uns .avia-button,
+body.page-id-3516 #av_section_4 .avia-button {
+  border-color: var(--wg-theme-accent) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+
+@media (max-width: 767px) {
+  body.home .wg-lead-panel { padding: 20px 12px 8px; }
+  body.home .wg-lead-panel > .container { padding: 34px 22px !important; }
+  body.home .wg-lead-panel h1 { font-size: clamp(30px, 9vw, 40px); }
+  body.home #einleitung-details { padding-top: 42px !important; }
+  body.home #einleitung-details .entry-content-wrapper { padding: 30px 22px !important; }
+  body.home #einleitung-details .avia_textblock { font-size: 19px; }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+    min-height: 520px;
+    padding: 30px 22px !important;
+  }
+  body.home #ueber-uns .my-flex-column,
+  body.page-id-3516 #av_section_4 .my-flex-column {
+    min-height: 0;
+    padding: min(56vw, 270px) 22px 30px !important;
+  }
+  body.home #ueber-uns .my-flex-column::before,
+  body.page-id-3516 #av_section_4 .my-flex-column::before {
+    background: linear-gradient(to bottom, transparent 0, transparent 36%, var(--wg-theme-card) 43%, var(--wg-theme-card) 100%);
   }
 }

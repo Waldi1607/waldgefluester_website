@@ -6,7 +6,7 @@
 const CACHE = "wg-static-v8";
 const PRECACHE = [
   "assets/css/bundle.css",
-  "assets/css/pages.css?v=8",
+  "assets/css/pages.css?v=13",
   "assets/js/site.js?v=6",
   "assets/js/events.js",
   "wp-includes/js/jquery/jquery.min.js",
