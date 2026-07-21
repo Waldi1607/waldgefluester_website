@@ -3452,9 +3452,21 @@ body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .
   transform: none !important;
 }
 body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date strong {
+  display: flex !important;
   margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
   line-height: 1 !important;
+  text-align: center !important;
   text-indent: 0 !important;
+}
+
+/* Die Teamkarte hat bewusst eine Bildkante; ohne das Motiv darf dort kein
+   reservierter Leerraum entstehen. */
+body.page-id-3516 #av_section_4 .my-flex-column:first-child {
+  background-image: url(../../wp-content/uploads/2025/01/Mitarbeiter_free_16003.webp) !important;
+  background-size: contain !important;
 }
 body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-content-wrap,
 body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
