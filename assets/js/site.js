@@ -125,7 +125,7 @@
   var homeHeroBoundary = body.classList.contains('home')
     ? document.getElementById('sub_menu1')
     : null;
-  var mobileQuery = window.matchMedia('(max-width: 989px)');
+  var mobileQuery = window.matchMedia('(max-width: 1180px)');
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var lastScrollY = Math.max(window.scrollY, 0);
   var ticking = false;

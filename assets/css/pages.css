@@ -518,7 +518,7 @@ body { color: var(--wg-ink); }
 
 /* Smart-Navigation fuer Tablet und Mobil: aus dem Weg beim Lesen, sofort wieder
    erreichbar, sobald die Scrollrichtung nach oben wechselt. */
-@media (max-width: 989px) {
+@media (max-width: 1180px) {
   html { scroll-padding-top: 72px; }
 
   #top {
@@ -618,6 +618,9 @@ body { color: var(--wg-ink); }
     height: 100%;
     align-items: center;
   }
+
+  #top #header .av-main-nav > li { display: none !important; }
+  #top #header .av-main-nav > li.av-burger-menu-main { display: block !important; }
 
   #top .av-burger-menu-main.av-small-burger-icon {
     height: 52px;
@@ -1184,6 +1187,583 @@ body { color: var(--wg-ink); }
 }
 #top .avia-icon-list-container .iconlist_icon {
   box-shadow: 0 0 0 6px var(--wg-theme-canvas);
+}
+
+/* ============================================================
+   HOCHZEITSMODULE
+   Die heterogenen WordPress-Bausteine teilen sich eine Material-, Button-
+   und Reiter-Sprache. Die IDs bleiben nur als technische Andockpunkte;
+   semantische wg-Klassen markieren die wiederverwendbaren Bausteintypen.
+   ============================================================ */
+body.page-id-1143 #main {
+  background: var(--wg-theme-canvas);
+}
+
+body.page-id-1143 :where(
+  .wg-wedding-story,
+  .wg-proof-section,
+  #after_section_4,
+  #after_masonry,
+  #hochzeitsreiter,
+  #catererreiter,
+  .wg-decision-section
+) {
+  border-color: var(--wg-theme-border) !important;
+  background: var(--wg-theme-canvas) !important;
+  color: var(--wg-theme-text);
+}
+
+body.page-id-1143 :where(
+  .wg-wedding-story,
+  .wg-proof-section,
+  #after_section_4,
+  #after_masonry,
+  .wg-decision-section
+) > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+
+body.page-id-1143 .wg-themed-component .av-special-heading-tag,
+body.page-id-1143 #hochzeitsreiter .av-special-heading-tag,
+body.page-id-1143 #catererreiter .av-special-heading-tag,
+body.page-id-1143 #after_section_4 .av-special-heading-tag,
+body.page-id-1143 #after_masonry .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+}
+
+body.page-id-1143 :where(
+  .wg-themed-component,
+  #hochzeitsreiter,
+  #catererreiter,
+  #after_section_4,
+  #after_masonry
+) .special-heading-inner-border {
+  border-color: var(--wg-theme-border) !important;
+}
+
+/* Faktenband: vier Kennzahlen als eine zusammenhaengende, ruhige Flaeche. */
+body.page-id-1143 .wg-fact-panel {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(calc(100% - 40px), 1180px) !important;
+  margin: 0 auto clamp(20px, 4vw, 52px) !important;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.page-id-1143 .wg-fact-panel > .flex_cell {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+body.page-id-1143 .wg-fact-panel .flex_cell_inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+body.page-id-1143 .wg-fact-panel .flex_column {
+  display: flex;
+  float: none !important;
+  width: auto !important;
+  min-height: 176px;
+  margin: 0 !important;
+  padding: 28px 18px 22px !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 72%, transparent);
+  border-radius: 21px;
+  background: var(--wg-theme-card);
+  color: var(--wg-theme-text);
+  text-align: center;
+}
+body.page-id-1143 .wg-fact-panel .avia_textblock {
+  color: var(--wg-theme-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+body.page-id-1143 .wg-fact-panel .factnumber { margin-top: 10px; }
+body.page-id-1143 .wg-fact-panel .factnumber .heading {
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(30px, 3vw, 44px) !important;
+}
+body.page-id-1143 .wg-fact-panel .avia-animated-number-circle {
+  border-color: var(--wg-theme-border) !important;
+  opacity: .8;
+}
+
+/* Location-Intro und Rezensionen greifen die Kontaktformular-Flaeche auf. */
+body.page-id-1143 .wg-wedding-story { padding: 28px 0 0; }
+body.page-id-1143 .wg-wedding-story > .container {
+  padding: clamp(38px, 5vw, 64px) clamp(30px, 6vw, 76px);
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3 {
+  position: relative;
+  padding-top: 18px;
+}
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+body.page-id-1143 .wg-wedding-story .av-special-heading-h4 {
+  margin-top: clamp(30px, 4vw, 48px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--wg-theme-border);
+}
+body.page-id-1143 .wg-wedding-story .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.75;
+}
+
+/* Signatur-CTA: der virtuelle Rundgang als markanter Waldstreifen. */
+body.page-id-1143 .wg-tour-cta {
+  display: block !important;
+  padding: 12px 20px clamp(58px, 7vw, 92px);
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-1143 .wg-tour-cta > .flex_cell { display: none !important; }
+body.page-id-1143 .wg-tour-cta > .av-cell-link {
+  display: block !important;
+  float: none !important;
+  width: min(100%, 1180px) !important;
+  margin: 0 auto;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 26px;
+  min-height: 150px;
+  margin: 0 !important;
+  padding: clamp(30px, 4vw, 48px) !important;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white);
+  box-shadow: none !important;
+  text-align: left;
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content::after {
+  content: "3D";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: clamp(28px, 6vw, 84px);
+  color: var(--wg-white);
+  font-family: Quicksand, sans-serif;
+  font-size: clamp(92px, 12vw, 166px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.08em;
+  opacity: .055;
+  transform: translateY(-52%);
+  pointer-events: none;
+}
+body.page-id-1143 .wg-tour-cta .entry-content-header { display: contents; }
+body.page-id-1143 .wg-tour-cta .iconbox_icon {
+  position: static !important;
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 !important;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .09);
+  color: var(--wg-white) !important;
+  font-size: 28px;
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content_title {
+  grid-column: 2;
+  margin: 0 0 6px;
+  color: var(--wg-white) !important;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content_container {
+  grid-column: 2;
+  margin-top: -16px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 15px;
+  line-height: 1.6;
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content_container p { margin: 4px 0; }
+body.page-id-1143 .wg-tour-cta .iconbox_content_container a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--wg-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content_container a span {
+  transition: transform var(--wg-motion);
+}
+body.page-id-1143 .wg-tour-cta .iconbox_content_container a:hover span {
+  transform: translateX(4px);
+}
+
+body.page-id-1143 .wg-proof-section { padding: 0 0 clamp(62px, 8vw, 100px); }
+body.page-id-1143 .wg-proof-section > .container {
+  padding: clamp(38px, 5vw, 58px) clamp(30px, 6vw, 72px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+body.page-id-1143 .wg-proof-section .avia-testimonial-content {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+body.page-id-1143 .wg-proof-section .av-control-minimal .avia-slideshow-arrows a {
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 50%;
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+}
+
+/* Gemeinsames Reiter-Geruest fuer Location-Details und Caterer. */
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) {
+  padding: clamp(52px, 7vw, 88px) 20px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) > .av-tab-section-outer-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+  display: flex !important;
+  gap: 8px;
+  padding: 14px !important;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--wg-theme-border);
+  background: transparent !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--wg-theme-border) transparent;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0 !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 999px;
+  background: var(--wg-theme-card);
+  color: var(--wg-theme-muted) !important;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), transform var(--wg-motion);
+}
+body.page-id-1143 #hochzeitsreiter .av-section-tab-title {
+  padding: 12px 17px !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title:hover {
+  border-color: var(--wg-theme-accent);
+  color: var(--wg-theme-accent) !important;
+  transform: translateY(-1px);
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title.av-active-tab-title {
+  border-color: var(--wg-theme-accent);
+  background: var(--wg-theme-accent);
+  color: var(--wg-white) !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-arrow-container { display: none; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .av-tab-section-slide {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--wg-white);
+  filter: none;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .av-tab-section-slide::before {
+  width: 46px;
+  height: 46px;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-accent) 84%, var(--wg-white));
+  border-radius: 50%;
+  background: var(--wg-theme-accent);
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+  line-height: 46px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .next-slide { right: 8px; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .prev-slide { left: 8px; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab {
+  background: transparent !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+  margin: 0 !important;
+  padding: clamp(32px, 5vw, 60px) !important;
+  box-sizing: border-box;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .avia-image-container img {
+  width: 100%;
+  border-radius: 22px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) blockquote {
+  margin: 22px 0;
+  padding: 4px 0 4px 20px;
+  border-color: var(--wg-theme-accent);
+  color: var(--wg-theme-text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.page-id-1143 #hochzeitsreiter .my-bottom-button,
+body.page-id-1143 .wg-decision-section .my-bottom-button {
+  position: static !important;
+  margin-top: 26px !important;
+  transform: none !important;
+  text-align: left;
+}
+body.page-id-1143 :where(#hochzeitsreiter, .wg-decision-section) .avia-button.avia-size-large {
+  min-width: 0;
+  border: 1px solid var(--wg-theme-accent) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+}
+body.page-id-1143 :where(#hochzeitsreiter, .wg-decision-section) .avia-button.avia-size-large:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 12px 26px var(--wg-theme-button-shadow-hover);
+}
+
+/* Caterer: Logos als Auswahlchips, Partnerinfo als lesbare Serviceflaeche. */
+body.page-id-1143 #catererreiter .av-section-tab-title {
+  display: grid;
+  width: 116px;
+  min-height: 116px;
+  padding: 10px !important;
+  place-items: center;
+  border-radius: 18px;
+}
+body.page-id-1143 #catererreiter .av-tab-section-image {
+  width: 76px;
+  height: 76px;
+  margin: 0 !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(.78);
+}
+body.page-id-1143 #catererreiter .av-outer-tab-title { display: none; }
+body.page-id-1143 #catererreiter .av-active-tab-title .av-tab-section-image {
+  filter: brightness(0) invert(1);
+}
+body.page-id-1143 #catererreiter .avia-icon-list-container { margin-top: 28px !important; }
+body.page-id-1143 #catererreiter .avia-icon-list-container > .avia-icon-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: none;
+  padding: 20px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 18px;
+  background: var(--wg-theme-card);
+  box-shadow: none;
+}
+body.page-id-1143 #catererreiter .avia-icon-list li {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist_icon { display: none; }
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist-timeline { display: none; }
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist_content_wrap { margin-left: 0; }
+body.page-id-1143 #catererreiter .iconlist_title {
+  color: var(--wg-theme-accent);
+  font-size: 13px;
+}
+body.page-id-1143 #catererreiter .iconlist_content {
+  color: var(--wg-theme-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Galerie und Catering-Einleitung bilden bewusst ruhige Atempausen. */
+body.page-id-1143 #after_section_4 > .container,
+body.page-id-1143 #after_masonry > .container {
+  margin-top: clamp(48px, 6vw, 80px);
+  margin-bottom: 18px;
+  padding: clamp(38px, 5vw, 58px) clamp(30px, 6vw, 72px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+body.page-id-1143 #av-sc-masonry-gallery-1 {
+  padding: 8px 20px 0;
+  border: 0;
+  background: var(--wg-theme-canvas);
+}
+body.page-id-1143 #av-sc-masonry-gallery-1 .av-masonry {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Team + FAQ: zwei starke Abschlusskarten, mit normalem Textfluss statt
+   absolut positionierten Legacy-Buttons. */
+body.page-id-1143 .wg-decision-section {
+  padding: clamp(30px, 5vw, 66px) 0 clamp(54px, 7vw, 88px);
+}
+body.page-id-1143 .wg-decision-section > .container { padding: 0; }
+body.page-id-1143 .wg-decision-section .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+#top.page-id-1143 .wg-decision-section .av-flex-placeholder { display: none !important; }
+body.page-id-1143 .wg-decision-section .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-height: 690px;
+  margin: 0 !important;
+  padding: clamp(330px, 33vw, 395px) clamp(28px, 4vw, 46px) 40px !important;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg) !important;
+  background-color: var(--wg-theme-surface) !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.page-id-1143 .wg-decision-section .my-flex-column > .hr:first-child {
+  display: none;
+}
+body.page-id-1143 .wg-decision-section .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+  font-size: clamp(27px, 2.7vw, 37px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+body.page-id-1143 .wg-decision-section .av-subheading {
+  color: var(--wg-theme-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+body.page-id-1143 .wg-decision-section .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !important; }
+
+@media (max-width: 989px) {
+  body.page-id-1143 .wg-fact-panel { width: calc(100% - 32px) !important; }
+  body.page-id-1143 :where(.wg-wedding-story, .wg-proof-section, #after_section_4, #after_masonry, .wg-decision-section) > .container {
+    width: calc(100% - 32px);
+  }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) { padding-inline: 16px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    width: calc(100% - 32px);
+  }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab .flex_column {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  body.page-id-1143 .wg-decision-section .flex_column_table { grid-template-columns: 1fr; }
+  body.page-id-1143 .wg-decision-section .my-flex-column {
+    min-height: 0;
+    padding-top: clamp(360px, 60vw, 460px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.page-id-1143 .wg-fact-panel {
+    grid-template-columns: 1fr;
+    width: calc(100% - 24px) !important;
+    border-radius: 24px;
+  }
+  body.page-id-1143 .wg-fact-panel .flex_column {
+    min-height: 138px;
+    padding: 22px 10px 18px !important;
+    border-radius: 18px;
+  }
+  body.page-id-1143 .wg-wedding-story > .container,
+  body.page-id-1143 .wg-proof-section > .container,
+  body.page-id-1143 #after_section_4 > .container,
+  body.page-id-1143 #after_masonry > .container,
+  body.page-id-1143 .wg-decision-section > .container {
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.page-id-1143 .wg-tour-cta { padding-inline: 12px; }
+  body.page-id-1143 .wg-tour-cta > .av-cell-link { border-radius: 22px; }
+  body.page-id-1143 .wg-tour-cta .iconbox_content {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 18px;
+    padding: 26px 22px !important;
+    border-radius: 16px;
+  }
+  body.page-id-1143 .wg-tour-cta .iconbox_icon { width: 58px; height: 58px; font-size: 22px; }
+  body.page-id-1143 .wg-tour-cta .iconbox_content_title { font-size: 24px; }
+  body.page-id-1143 .wg-tour-cta .iconbox_content_container { margin-top: -8px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) { padding-inline: 12px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) > .av-tab-section-outer-container { border-radius: 22px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+    width: calc(100% - 24px);
+    padding: 26px 20px 34px !important;
+  }
+  body.page-id-1143 #catererreiter .av-section-tab-title { width: 92px; min-height: 92px; }
+  body.page-id-1143 #catererreiter .av-tab-section-image { width: 62px; height: 62px; }
+  body.page-id-1143 #catererreiter .avia-icon-list-container > .avia-icon-list { grid-template-columns: 1fr; }
+  body.page-id-1143 .wg-decision-section .my-flex-column {
+    padding: clamp(238px, 66vw, 285px) 24px 30px !important;
+    border-radius: 22px !important;
+  }
 }
 
 /* Termine übernehmen Fläche, Kontur und Akzent direkt aus dem Seitenthema. */

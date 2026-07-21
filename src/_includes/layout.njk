@@ -159,7 +159,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 {% if heroSmall %}<link rel="preload" as="image" href="{{ pre }}{{ heroSmall }}" media="(max-width: 767px)">{% endif %}
 <link rel='stylesheet' id='wg-bundle-css' href='{{ pre }}assets/css/bundle.css' media='all' />
 {% rawfile 'src/snippets/' + slug + '-head.html' %}
-<link rel='stylesheet' id='wg-pages-css' href='{{ pre }}assets/css/pages.css?v=7' media='all' />
+<link rel='stylesheet' id='wg-pages-css' href='{{ pre }}assets/css/pages.css?v=8' media='all' />
 
 <script id="jquery-core-js" src="{{ pre }}wp-includes/js/jquery/jquery.min.js"></script>
 <script id="jquery-migrate-js" src="{{ pre }}wp-includes/js/jquery/jquery-migrate.min.js"></script>
@@ -800,7 +800,7 @@ PLAu:8
 {% include 'partials/header.njk' %}
 {% rawfile 'src/snippets/' + slug + '-body.html' %}
 {% include 'partials/kontakt.njk' %}
-<script src="{{ pre }}assets/js/site.js?v=5" defer></script>
+<script src="{{ pre }}assets/js/site.js?v=6" defer></script>
 {% rawfile 'src/snippets/' + slug + '-post.html' %}
 {% if fullFooter %}{% rawfile 'src/snippets/' + slug + '-foot-full.html' %}
 {% else %}{% include 'partials/footer.njk' %}{% endif -%}
