@@ -202,6 +202,132 @@ body.page-id-5003 #impressionen-events { margin-bottom: clamp(32px, 4vw, 48px); 
   .wg-home-grid { gap: 14px; margin-bottom: 24px; }
 }
 
+/* Feinabstimmung nach der Sichtpruefung: Bild und Text bilden eine einzige,
+   geschlossene Einheit. Die Innenluft bleibt angenehm, ohne dass der Inhalt
+   vom Bild abgekoppelt wirkt. */
+#top .pfeilcontainer {
+  gap: 0;
+  margin-top: clamp(12px, 1.4vw, 18px);
+  padding: 0;
+  border-radius: 28px;
+}
+#top .pfeilcontainer > .flex_cell {
+  min-height: clamp(320px, 28vw, 430px);
+}
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  min-height: clamp(320px, 28vw, 430px);
+  border-radius: 26px 0 0 26px;
+}
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+  border-radius: 0 26px 26px 0;
+}
+#top .pfeilcontainer .av-special-heading { margin: 0 0 12px !important; }
+#top .pfeilcontainer .avia_textblock {
+  background: transparent !important;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.58;
+}
+
+/* Bildkarten auf der Startseite brauchen eine verlässliche Leseflaeche –
+   besonders bei Schnee, Feuer und bewegten Motiven. */
+body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
+  z-index: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(8, 17, 13, .88) 0%, rgba(8, 17, 13, .80) 43%, rgba(8, 17, 13, .55) 68%, rgba(8, 17, 13, .22) 100%),
+    linear-gradient(0deg, rgba(8, 17, 13, .18), rgba(8, 17, 13, .18)) !important;
+}
+body.home :where(#av_section_4, #av_section_8) :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .88) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock :where(strong, b) {
+  color: #ecf7ea !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .92) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia-button {
+  background: rgba(8, 17, 13, .66) !important;
+  border-color: rgba(255, 255, 255, .92) !important;
+  color: var(--wg-white) !important;
+}
+
+/* Einleitungen: der Text sitzt immer in derselben lesbaren Spalte und nie
+   direkt auf dem Kartenrand. */
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px) !important;
+}
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper {
+  max-width: 900px !important;
+  padding: 0 !important;
+}
+
+/* Ablauf: Jede Ziffer steht geometrisch in der Mitte ihrer Karte. */
+body.page-id-1987 #planung .av-milestone {
+  display: grid !important;
+  grid-template-rows: 54px minmax(0, 1fr);
+  justify-items: stretch;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 54px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date strong {
+  display: grid !important;
+  margin: 0 !important;
+  place-items: center !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 989px) {
+  #top .pfeilcontainer { gap: 0; padding: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(270px, 50vw, 370px);
+    border-radius: 24px 24px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 32px 28px 34px !important;
+    border-radius: 0 0 24px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #top .pfeilcontainer { margin-top: 12px; border-radius: 22px; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(230px, 64vw, 320px);
+    border-radius: 22px 22px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 28px 22px 30px !important;
+    border-radius: 0 0 22px 22px;
+  }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(24px, 7vw, 29px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.62; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 50px minmax(0, 1fr); }
+}
+
+/* Enfold setzt die Zellabstaende spaet und sehr spezifisch. Diese Fassung
+   gewinnt auch gegen diese Altregel und ist die verbindliche Komponente. */
+html body #top #wrap_all .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+}
+html body#top #main .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  padding: 0 !important;
+}
+
 /* ---------- Menübreite: 9 Top-Level-Punkte auf Desktop unterbringen ----------
    Logo bleibt in der site-weiten Standardgröße (450px); nur auf schmalen
    Desktops wird Logo + Menü-Padding kompakter, damit nichts umbricht. */
@@ -3019,4 +3145,104 @@ body.page-id-3516 #av_section_4 .avia-button {
   body.page-id-3516 #av_section_4 .my-flex-column::before {
     background: linear-gradient(to bottom, transparent 0, transparent 36%, var(--wg-theme-card) 43%, var(--wg-theme-card) 100%);
   }
+}
+
+/* Sichtpruefung v14: diese Regeln stehen bewusst zuletzt, damit sie die
+   historischen Builder-Abstaende verbindlich uebernehmen. */
+#top .pfeilcontainer {
+  gap: 0 !important;
+  margin-top: clamp(12px, 1.4vw, 18px) !important;
+  padding: 0 !important;
+  border-radius: 28px;
+}
+#top .pfeilcontainer > .flex_cell { min-height: clamp(320px, 28vw, 430px) !important; }
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  border-radius: 26px 0 0 26px;
+}
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+  border-radius: 0 26px 26px 0;
+}
+#top .pfeilcontainer .av-special-heading { margin: 0 0 12px !important; }
+#top .pfeilcontainer .avia_textblock {
+  background: transparent !important;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.58;
+}
+
+body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
+  z-index: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(8, 17, 13, .88) 0%, rgba(8, 17, 13, .80) 43%, rgba(8, 17, 13, .55) 68%, rgba(8, 17, 13, .22) 100%),
+    linear-gradient(0deg, rgba(8, 17, 13, .18), rgba(8, 17, 13, .18)) !important;
+}
+body.home :where(#av_section_4, #av_section_8) :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .88) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock :where(strong, b) {
+  color: #ecf7ea !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .92) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia-button {
+  background: rgba(8, 17, 13, .66) !important;
+  border-color: rgba(255, 255, 255, .92) !important;
+  color: var(--wg-white) !important;
+}
+
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px) !important;
+}
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper {
+  max-width: 900px !important;
+  padding: 0 !important;
+}
+
+body.page-id-1987 #planung .av-milestone {
+  display: grid !important;
+  grid-template-rows: 54px minmax(0, 1fr);
+  justify-items: stretch;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 54px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date strong {
+  display: grid !important;
+  margin: 0 !important;
+  place-items: center !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap { width: 100% !important; margin: 0 !important; }
+
+@media (max-width: 989px) {
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(270px, 50vw, 370px) !important;
+    border-radius: 24px 24px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 32px 28px 34px !important;
+    border-radius: 0 0 24px 24px;
+  }
+}
+@media (max-width: 767px) {
+  #top .pfeilcontainer { margin-top: 12px !important; border-radius: 22px; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(230px, 64vw, 320px) !important;
+    border-radius: 22px 22px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 28px 22px 30px !important;
+    border-radius: 0 0 22px 22px;
+  }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(24px, 7vw, 29px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.62; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 50px minmax(0, 1fr); }
 }
