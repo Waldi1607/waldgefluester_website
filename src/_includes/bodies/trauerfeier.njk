@@ -1,0 +1,39 @@
+{% from "components.njk" import hero, intro, zigzag, sectionQuote, iconList, planTimeline, ctaButton, contactBridge with context %}
+
+
+	<div id='main' class='all_colors' data-scroll-offset='88'>
+
+	{% set heroTitle %}Trauercafé im Waldgeflüster{% endset %}
+{{ hero(heroTitle, {}) }}{% set introText %}<p><span class="s1">Das </span><b>Waldgeflüster</b><span class="s1"> bietet euch ein liebevoll gestaltetes Ambiente inmitten der Natur. In ruhiger Umgebung, umgeben vom Wald, findet ihr Raum, um nach der Beisetzung zusammenzukommen – im engsten Kreis oder mit allen, die Abschied nehmen möchten.</span></p>
+{% endset %}
+{{ intro(introText) }}{% call zigzag({ id: 'eisstock', row: 'av-20jhvn-ac21fa1f5e933bb898e22471788c218c', cellA: 'av-m69g2fy9-4c16524b2424a472a13b26a355893d72', cellB: 'av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada', cellAExtra: ' avia-full-stretch', cellBExtra: ' avia-full-stretch', reverse: true, hr: 'av-7zlhar-deb373a7b4a9cc04b799513d46efae89', icon: 'av-sxa3n-60b3396a081fbbf38455be4192f42ca7', dir: 'rechts', char: '' }) %}
+<div  class='av-special-heading av-m69h0z5i-d7fab9ca7e9ee6596cf0632a5b061c48 av-special-heading-h2 custom-color-heading  avia-builder-el-8  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Räume &amp; Außenbereich – exklusiv für euch</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
+<section  class='av_textblock_section av-m69h11vm-1bf22103365ae4fd383f97dd92f2cf79 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p class="p1">Während eures Trauercafés gehören Gastraum und Außenbereich ausschließlich euch als Familie und Angehörigen. Kein Betrieb, keine fremden Gäste – nur Raum und Zeit, um beieinander zu sein.</p>
+<ul>
+<li>Beheizter Innenbereich – Platz für bis zu 40 Gäste (sitzend)</li>
+<li>Geschützter Außenbereich mit Waldkulisse</li>
+<li>Exklusive Nutzung – keine weiteren Gäste</li>
+</ul>
+</div></section>
+{% endcall %}
+{% call zigzag({ id: 'av-layout-grid-2', row: 'av-3qoiab-28e21722a495823f3eb5573d9ca62e4c', cellA: 'av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf', cellB: 'av-1yah7n-269fe5caf03f5119b2aee87c3c3eba97', cellAExtra: ' avia-full-stretch', arrowFirst: true, hr: 'av-3pzfib-a00a9f75d70b507038feda593c1cb33c', icon: 'av-9wjh5f-74e7953a7cbab43bfa22758075d25e75', dir: 'links', char: '' }) %}
+<div  class='av-special-heading av-9rhxnn-b61a072a66cbb7e01f0a33400b0caa0e av-special-heading-h2 custom-color-heading  avia-builder-el-18  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Kuchen, kleine Speisen &amp; Buffet</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
+<section  class='av_textblock_section av-71x7bn-28ea30763d5a23df4235ab9efde81fa7 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p>Ob Kaffee und Kuchen, kleine Speisen oder ein Buffet: Wir organisieren die Bewirtung auf euren individuellen Wunsch und stimmen alles im Vorfeld in Ruhe mit euch ab. Ihr müsst euch an diesem Tag um nichts kümmern.</p>
+</div></section>
+{% endcall %}{% set secTitle1 %}Ein Ort für euch{% endset %}
+{% call sectionQuote({ id: 'av_section_2', section: 'av-5punxv-f62247380787e76adb2007365efcdedb', heading: 'av-3z3d2b-a645dbeb6bdd7752630b9ae6fda388e1', title: secTitle1 }) %}
+{{ iconList([
+  { icon: 'av-m69h9tjj-684e667608135cc80aa85a32023056c7', char: '', aria: 'Ein Ort, um auszuruhen',
+    title: 'Ein Ort, um auszuruhen.',
+    text: 'Zieht euch zurück, atmet durch und lasst den Tag in geschützter Atmosphäre ausklingen.' },
+  { icon: 'av-m69ha4wk-e59a89b7f557d6ec8f468101ddd5d9e3', char: '', aria: 'Ein Ort, um zu erinnern',
+    title: 'Ein Ort, um zu erinnern.',
+    text: 'Teilt Erinnerungen und Geschichten – so, wie es für euch und eure Familie passt.' },
+  { icon: 'av-m69haf11-85d8b2c2815374a321a9029cd20b3b22', char: '', aria: 'Ein Ort, nur für euch',
+    title: 'Ein Ort, nur für euch.',
+    text: 'Ohne Zeitdruck und ohne fremde Blicke: Das Waldgeflüster gehört an diesem Tag ganz euch.' }
+], { hash: 'av-m69hag85-16f3508aa30779086d3593b88c73d5d1' }) }}
+{% endcall %}{% set kontaktHeading %}Nehmt Kontakt mit uns auf{% endset %}
+{% set kontaktText %}<p>Schreibt uns oder ruft uns an – wir besprechen alles Weitere in Ruhe mit euch.</p>
+{% endset %}
+{{ contactBridge(kontaktHeading, kontaktText) }}

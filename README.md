@@ -14,11 +14,14 @@ npm run build      # generiert die HTML-Dateien in den Repo-Root
 
 Struktur:
 - `src/_includes/layout.njk` — Dokument-Gerüst (Head, Consent, Meta)
-- `src/_includes/partials/` — **geteilte Komponenten**: `header.njk` (Logo + Navigation, einmal für alle Seiten), `kontakt.njk` (Formular), `footer.njk` (Footer, Cookie-Banner, Scripts)
-- `src/snippets/<seite>-{seo,head,body,foot,post}.html` — seitenspezifische Inhalte
-- `src/pages/<seite>.njk` — Seiten-Definitionen (Frontmatter: Titel-Slot, Nav-Active, Logo-Variante, Pfad-Präfix)
+- `src/_includes/partials/` — **geteilte Rahmen-Komponenten**: `header.njk` (Logo + Navigation, einmal für alle Seiten), `kontakt.njk` (Formular), `footer.njk` (Footer, Cookie-Banner, Scripts)
+- `src/_includes/components.njk` — **geteilte Inhalts-Bausteine** als Nunjucks-Makros: `hero` (Vollbild-Einstieg mit H1 + Kontakt-Button), `intro` (Einleitungsabsatz), `zigzag` (Bild/Text-Reihe mit Pfeil), `sectionQuote` (Sektion mit Zitat-Überschrift), `iconList` („Warum Waldgeflüster“-Liste), `planTimeline` (Ablauf-Schritte), `ctaButton`, `contactBridge` („Euer nächster Schritt“ vor dem Formular)
+- `src/_includes/bodies/<seite>.njk` — Seiteninhalte; rufen die Makros mit den seitenspezifischen (SEO-)Texten auf. `wedding-core.njk` ist der gemeinsame Kern von `/heiraten-schwaebische-alb/` und `/freie-hochzeitstermine/` (Unterschiede — eigene H1, Terminliste — steuert die Front Matter in `src/pages/`)
+- `src/snippets/<seite>-{seo,head,foot,post}.html` — restliche seitenspezifische Roh-Blöcke (Meta, Per-Page-CSS, Skripte)
+- `src/pages/<seite>.njk` — Seiten-Definitionen (Frontmatter: Titel-Slot, Nav-Active, Logo-Variante, Pfad-Präfix, Theme)
+- `tools/componentize.py` — dokumentiert, wie die Makros/Bodies einmalig aus dem Enfold-Export extrahiert wurden (nicht erneut ausführbar, die Quell-Snippets sind entfernt)
 
-Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `partials/` anfassen, `npm run build`, fertig.
+Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `partials/` anfassen; wiederkehrende Inhaltsblöcke (Hero, CTAs, Abläufe …) = Makro in `components.njk`; Texte einer Seite = `bodies/<seite>.njk`. Danach `npm run build`, fertig.
 
 ## Wie dieser Klon entstanden ist
 

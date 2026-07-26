@@ -798,7 +798,7 @@ PLAu:8
 
 	
 {% include 'partials/header.njk' %}
-{% rawfile 'src/snippets/' + slug + '-body.html' %}
+{% include 'bodies/' + slug + '.njk' %}
 {% include 'partials/kontakt.njk' %}
 <script src="{{ pre }}assets/js/site.js?v=6" defer></script>
 {% rawfile 'src/snippets/' + slug + '-post.html' %}
