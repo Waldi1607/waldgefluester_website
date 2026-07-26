@@ -34,6 +34,19 @@ Deutsch liegt unter `/`, Englisch unter `/en/…` (gleiche Pfade). Umsetzung:
 - **JS**: `assets/js/site.js` und `events.js` lesen `<html lang>` für Formular-/Terminlisten-Texte.
 - **Bewusst deutsch**: Rezensionen der Paare (echte Kundenstimmen), `/rechtliches/` (Impressum/Datenschutz, aus EN-Seiten verlinkt als "German"), Markenslogan "IHR, WIR, PASST!".
 
+## Lean-Architektur (seit Juli 2026)
+
+Der WordPress/Enfold-Unterbau ist vollständig entfernt. Die Seite besteht aus:
+
+- **1 Stylesheet** `assets/css/site.css` (~36 KB; Design-Tokens, drei Seitenthemes forest/winter/mourning, alle Komponenten)
+- **Vanilla-JS**: `assets/js/site.js` (Nav, Cookie-Consent mit Google Consent Mode v2, Lightbox, Tabs, Zähler, Kontaktformular), `events.js` (Terminliste/-banner aus events.json), `tracking.js` (dataLayer-Messpunkte)
+- **Self-hosted Fonts** (Quicksand/Open Sans/Caveat, woff2 in `assets/fonts/` — kein Google-Fonts-Hotlink)
+- Semantisches HTML aus den Nunjucks-Makros; kein jQuery, keine Icon-Fonts, keine Enfold-Skripte
+- `wp-content/uploads/` enthält nur noch **Bilder/Videos** (Content, URLs stabil); `panotour/` ist die eigenständige 3D-Tour
+- `sw.js` ist ein Kill-Switch, der den früheren Service Worker bei Bestandsbesuchern deregistriert
+
+Payload einer typischen Seite: ~100 KB HTML+CSS+JS (vorher ~1,3 MB in ~45 Requests).
+
 ## Wie dieser Klon entstanden ist
 
 - Komplett-Mirror der gerenderten WordPress-Seite (`wget --mirror --convert-links`), alle Links relativ

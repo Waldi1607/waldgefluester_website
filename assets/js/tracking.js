@@ -26,8 +26,8 @@
       push('termin_banner_klick', {});
     } else if (href.indexOf('instagram.com') > -1) {
       push('instagram_klick', {});
-    } else if (a.closest('.av-menu-button') || /#kontakt$/.test(href)) {
-      push('anfrage_button_klick', { position: a.closest('#header') ? 'header' : 'inhalt' });
+    } else if (a.closest('.wg-nav__cta') || /#kontakt$/.test(href)) {
+      push('anfrage_button_klick', { position: a.closest('.wg-header') ? 'header' : 'inhalt' });
     }
   }, true);
 

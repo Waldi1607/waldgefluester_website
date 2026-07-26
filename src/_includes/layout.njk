@@ -62,5 +62,6 @@ if (/(^|\.)waldgefluester-events\.de$/.test(location.hostname)) {
 {% include 'partials/kontakt.njk' %}
 </main>
 <script src="{{ pre }}assets/js/site.js?v=1" defer></script>
+<script src="{{ pre }}assets/js/tracking.js" defer></script>
 {% if eventsMode %}<script src="{{ pre }}assets/js/events.js" data-events-src="{{ pre }}events.json" data-mode="{{ eventsMode }}"{% if eventsMode == 'banner' %} data-target-url="{{ base }}eigene-events/"{% endif %} defer></script>{% endif %}
 {% include 'partials/footer.njk' %}
