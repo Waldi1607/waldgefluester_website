@@ -1,25 +1,22 @@
-{% from "components.njk" import hero, intro, zigzag, sectionQuote, iconList, planTimeline, ctaButton, contactBridge with context %}
+{% from "components.njk" import hero, intro, zigzag, sectionQuote, iconList, planTimeline, ctaButton, contactBridge, subnav, gallery with context %}
 
-
-	<div id='main' class='all_colors' data-scroll-offset='88'>
-
-	{% set heroTitle %}Funeral Reception (Trauercafé) at Waldgeflüster{% endset %}
+{% set heroTitle %}Funeral Reception (Trauercafé) at Waldgeflüster{% endset %}
 {{ hero(heroTitle, {}) }}{% set introText %}<p><span class="s1">At </span><b>Waldgeflüster</b><span class="s1">, you will find a lovingly designed setting in the heart of nature. In quiet surroundings, embraced by the forest, there is space to come together after the funeral service – with your closest family or with everyone who wishes to say goodbye.</span></p>
 {% endset %}
 {{ intro(introText) }}{% call zigzag({ id: 'eisstock', row: 'av-20jhvn-ac21fa1f5e933bb898e22471788c218c', cellA: 'av-m69g2fy9-4c16524b2424a472a13b26a355893d72', cellB: 'av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada', cellAExtra: ' avia-full-stretch', cellBExtra: ' avia-full-stretch', reverse: true, hr: 'av-7zlhar-deb373a7b4a9cc04b799513d46efae89', icon: 'av-sxa3n-60b3396a081fbbf38455be4192f42ca7', dir: 'rechts', char: '' }) %}
-<div  class='av-special-heading av-m69h0z5i-d7fab9ca7e9ee6596cf0632a5b061c48 av-special-heading-h2 custom-color-heading  avia-builder-el-8  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Rooms &amp; Outdoor Area – Exclusively Yours</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
-<section  class='av_textblock_section av-m69h11vm-1bf22103365ae4fd383f97dd92f2cf79 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p class="p1">During your funeral reception, the indoor lounge and outdoor area belong exclusively to you – to family and loved ones. No everyday business, no other guests – simply space and time to be together.</p>
+<h2>Rooms &amp; Outdoor Area – Exclusively Yours</h2>
+<p class="p1">During your funeral reception, the indoor lounge and outdoor area belong exclusively to you – to family and loved ones. No everyday business, no other guests – simply space and time to be together.</p>
 <ul>
 <li>Heated indoor space – seating for up to 40 guests</li>
 <li>Sheltered outdoor area with a forest backdrop</li>
 <li>Exclusive use – no other guests</li>
 </ul>
-</div></section>
+
 {% endcall %}
 {% call zigzag({ id: 'av-layout-grid-2', row: 'av-3qoiab-28e21722a495823f3eb5573d9ca62e4c', cellA: 'av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf', cellB: 'av-1yah7n-269fe5caf03f5119b2aee87c3c3eba97', cellAExtra: ' avia-full-stretch', arrowFirst: true, hr: 'av-3pzfib-a00a9f75d70b507038feda593c1cb33c', icon: 'av-9wjh5f-74e7953a7cbab43bfa22758075d25e75', dir: 'links', char: '' }) %}
-<div  class='av-special-heading av-9rhxnn-b61a072a66cbb7e01f0a33400b0caa0e av-special-heading-h2 custom-color-heading  avia-builder-el-18  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Cake, Light Fare &amp; Buffet</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
-<section  class='av_textblock_section av-71x7bn-28ea30763d5a23df4235ab9efde81fa7 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p>Whether coffee and cake, light fare, or a buffet: we arrange the catering according to your personal wishes and calmly coordinate every detail with you in advance. On this day, there is nothing you need to take care of.</p>
-</div></section>
+<h2>Cake, Light Fare &amp; Buffet</h2>
+<p>Whether coffee and cake, light fare, or a buffet: we arrange the catering according to your personal wishes and calmly coordinate every detail with you in advance. On this day, there is nothing you need to take care of.</p>
+
 {% endcall %}{% set secTitle1 %}A Place for You{% endset %}
 {% call sectionQuote({ id: 'av_section_2', section: 'av-5punxv-f62247380787e76adb2007365efcdedb', heading: 'av-3z3d2b-a645dbeb6bdd7752630b9ae6fda388e1', title: secTitle1 }) %}
 {{ iconList([
