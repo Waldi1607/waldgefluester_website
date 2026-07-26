@@ -229,27 +229,6 @@ body.page-id-5003 #impressionen-events { margin-bottom: clamp(32px, 4vw, 48px); 
   line-height: 1.58;
 }
 
-/* Bildkarten auf der Startseite brauchen eine verlässliche Leseflaeche –
-   besonders bei Schnee, Feuer und bewegten Motiven. */
-body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
-  z-index: 0 !important;
-  background:
-    linear-gradient(90deg, rgba(8, 17, 13, .88) 0%, rgba(8, 17, 13, .80) 43%, rgba(8, 17, 13, .55) 68%, rgba(8, 17, 13, .22) 100%),
-    linear-gradient(0deg, rgba(8, 17, 13, .18), rgba(8, 17, 13, .18)) !important;
-}
-body.home :where(#av_section_4, #av_section_8) :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
-  text-shadow: 0 2px 16px rgba(0, 0, 0, .88) !important;
-}
-body.home :where(#av_section_4, #av_section_8) .avia_textblock :where(strong, b) {
-  color: #ecf7ea !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, .92) !important;
-}
-body.home :where(#av_section_4, #av_section_8) .avia-button {
-  background: rgba(8, 17, 13, .66) !important;
-  border-color: rgba(255, 255, 255, .92) !important;
-  color: var(--wg-white) !important;
-}
-
 /* Einleitungen: der Text sitzt immer in derselben lesbaren Spalte und nie
    direkt auf dem Kartenrand. */
 body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
@@ -2557,40 +2536,7 @@ body.home :where(#av_section_4, #av_section_8, #ueber-uns) .hr-invisible:first-c
 body.home :where(#av_section_4, #av_section_8) .my-flex-column {
   position: relative;
   isolation: isolate;
-  min-height: clamp(480px, 48vw, 620px);
-  justify-content: flex-end;
   overflow: hidden;
-  background-position: center !important;
-  background-size: cover !important;
-  color: var(--wg-white);
-}
-body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(19,29,21,.08) 10%, rgba(19,29,21,.52) 52%, rgba(19,29,21,.88) 100%);
-}
-body.home :where(#av_section_4, #av_section_8) .my-flex-column > * {
-  position: relative;
-  z-index: 1;
-}
-body.home :where(#av_section_4, #av_section_8) .av-special-heading-tag,
-body.home :where(#av_section_4, #av_section_8) .av-subheading,
-body.home :where(#av_section_4, #av_section_8) .avia_textblock {
-  color: var(--wg-white) !important;
-  text-shadow: 0 2px 16px rgba(0,0,0,.34);
-}
-body.home :where(#av_section_4, #av_section_8) .avia-button {
-  border-color: rgba(255,255,255,.78) !important;
-  background: rgba(255,255,255,.1) !important;
-  color: var(--wg-white) !important;
-  backdrop-filter: blur(8px);
-}
-body.home :where(#av_section_4, #av_section_8) .avia-button:hover {
-  border-color: var(--wg-white) !important;
-  background: var(--wg-white) !important;
-  color: var(--wg-theme-accent) !important;
 }
 body.home #einleitung-details > .container,
 body.home #anfahrt > .container {
@@ -3135,10 +3081,6 @@ body.page-id-3516 #av_section_4 .avia-button {
   body.home #einleitung-details { padding-top: 42px !important; }
   body.home #einleitung-details .entry-content-wrapper { padding: 30px 22px !important; }
   body.home #einleitung-details .avia_textblock { font-size: 19px; }
-  body.home :where(#av_section_4, #av_section_8) .my-flex-column {
-    min-height: 520px;
-    padding: 30px 22px !important;
-  }
   body.home #ueber-uns .my-flex-column,
   body.page-id-3516 #av_section_4 .my-flex-column {
     min-height: 0;
@@ -3171,25 +3113,6 @@ body.page-id-3516 #av_section_4 .avia-button {
   background: transparent !important;
   font-size: clamp(16px, 1.35vw, 18px);
   line-height: 1.58;
-}
-
-body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
-  z-index: 0 !important;
-  background:
-    linear-gradient(90deg, rgba(8, 17, 13, .88) 0%, rgba(8, 17, 13, .80) 43%, rgba(8, 17, 13, .55) 68%, rgba(8, 17, 13, .22) 100%),
-    linear-gradient(0deg, rgba(8, 17, 13, .18), rgba(8, 17, 13, .18)) !important;
-}
-body.home :where(#av_section_4, #av_section_8) :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
-  text-shadow: 0 2px 16px rgba(0, 0, 0, .88) !important;
-}
-body.home :where(#av_section_4, #av_section_8) .avia_textblock :where(strong, b) {
-  color: #ecf7ea !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, .92) !important;
-}
-body.home :where(#av_section_4, #av_section_8) .avia-button {
-  background: rgba(8, 17, 13, .66) !important;
-  border-color: rgba(255, 255, 255, .92) !important;
-  color: var(--wg-white) !important;
 }
 
 body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
@@ -3270,10 +3193,10 @@ body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
   width: 100%;
   background: var(--wg-card-image) center / cover no-repeat !important;
 }
-body.home #av_section_4 .av-20k55b-b94be11c5403a66d123794cd3e8d9fdb { --wg-card-image: url("../wp-content/uploads/2025/01/MrslisaliFotografie-HochzeitAliciaDenis-Waldgefluester-25052024-508-1-e1737563486346.webp"); }
-body.home #av_section_4 .av-84ahj-642b162816d7381def3b1fc6a34dc3d0 { --wg-card-image: url("../wp-content/uploads/2025/01/Sophia-und-Jonas-Waldgefluester-373-2-e1738770905619.webp"); }
-body.home #av_section_8 .av-6y03z-7fff00d29bd691d99684e86117193953 { --wg-card-image: url("../wp-content/uploads/2025/01/Eisstockschiessen_small.webp"); }
-body.home #av_section_8 .av-141vin-c1966f0b3c2041b1a2f3e21785647377 { --wg-card-image: url("../wp-content/uploads/2025/01/DSCF9232-1-e1737570626491.webp"); }
+body.home #av_section_4 .av-20k55b-b94be11c5403a66d123794cd3e8d9fdb { --wg-card-image: url("../../wp-content/uploads/2025/01/MrslisaliFotografie-HochzeitAliciaDenis-Waldgefluester-25052024-508-1-e1737563486346.webp"); }
+body.home #av_section_4 .av-84ahj-642b162816d7381def3b1fc6a34dc3d0 { --wg-card-image: url("../../wp-content/uploads/2025/01/Sophia-und-Jonas-Waldgefluester-373-2-e1738770905619.webp"); }
+body.home #av_section_8 .av-6y03z-7fff00d29bd691d99684e86117193953 { --wg-card-image: url("../../wp-content/uploads/2025/01/Eisstockschiessen_small.webp"); }
+body.home #av_section_8 .av-141vin-c1966f0b3c2041b1a2f3e21785647377 { --wg-card-image: url("../../wp-content/uploads/2025/01/DSCF9232-1-e1737570626491.webp"); }
 body.home :where(#av_section_4, #av_section_8) .my-flex-column > * {
   position: relative !important;
   z-index: auto !important;
@@ -3302,15 +3225,22 @@ body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock {
   color: var(--wg-theme-text) !important;
   font-size: 16px !important;
   line-height: 1.64 !important;
+  text-shadow: none !important;
 }
 body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock :where(strong, b) {
   color: var(--wg-theme-accent) !important;
   text-shadow: none !important;
 }
 body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button {
+  /* margin-top:auto verankert den Button am Kartenende – so stehen die
+     Buttons beider Karten auf gleicher Höhe, egal wie lang der Text ist. */
+  position: static !important;
+  inset: auto !important;
   margin: 28px 34px 32px !important;
-  padding: 0 !important;
+  margin-top: auto !important;
+  padding: 28px 0 0 !important;
   text-align: center !important;
+  transform: none !important;
 }
 body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button {
   background: transparent !important;
