@@ -17,7 +17,7 @@ Struktur:
 - `src/_includes/partials/` — **geteilte Rahmen-Komponenten**: `header.njk` (Logo + Navigation, einmal für alle Seiten), `kontakt.njk` (Formular), `footer.njk` (Footer, Cookie-Banner, Scripts)
 - `src/_includes/components.njk` — **geteilte Inhalts-Bausteine** als Nunjucks-Makros: `hero` (Vollbild-Einstieg mit H1 + Kontakt-Button), `intro` (Einleitungsabsatz), `zigzag` (Bild/Text-Reihe mit Pfeil), `sectionQuote` (Sektion mit Zitat-Überschrift), `iconList` („Warum Waldgeflüster“-Liste), `planTimeline` (Ablauf-Schritte), `ctaButton`, `contactBridge` („Euer nächster Schritt“ vor dem Formular)
 - `src/_includes/bodies/<seite>.njk` — Seiteninhalte; rufen die Makros mit den seitenspezifischen (SEO-)Texten auf. `wedding-core.njk` ist der gemeinsame Kern von `/heiraten-schwaebische-alb/` und `/freie-hochzeitstermine/` (Unterschiede — eigene H1, Terminliste — steuert die Front Matter in `src/pages/`)
-- `src/snippets/<seite>-{seo,head,foot,post}.html` — restliche seitenspezifische Roh-Blöcke (Meta, Per-Page-CSS, Skripte)
+- `src/snippets/<seite>-seo.html` (+ `en/`) — SEO-Meta pro Seite (Title, Description, Canonical, JSON-LD); `index-head.html` trägt zusätzlich das LocalBusiness-Schema
 - `src/pages/<seite>.njk` — Seiten-Definitionen (Frontmatter: Titel-Slot, Nav-Active, Logo-Variante, Pfad-Präfix, Theme)
 - `tools/componentize.py` — dokumentiert, wie die Makros/Bodies einmalig aus dem Enfold-Export extrahiert wurden (nicht erneut ausführbar, die Quell-Snippets sind entfernt)
 
@@ -63,15 +63,13 @@ Payload einer typischen Seite: ~100 KB HTML+CSS+JS (vorher ~1,3 MB in ~45 Reques
 
 `/` · `/heiraten-schwaebische-alb/` · `/feiern/` · `/trauerfeier/` · `/winter/` · `/eigene-events/` · `/location-schwaebische-alb/` · `/bilder/` · `/faq/` · `/rechtliches/` · `/freie-hochzeitstermine/` · `/panotour/` (virtuelle 3D-Tour)
 
-Die drei neuen Seiten (Feiern, Trauercafé, Events — passend zu den Flyer-QR-Codes) sind Klone des Enfold-Markups; ihre Bild- und Farb-Anpassungen liegen zentral in `assets/css/pages.css`.
 
 
-## Performance-Architektur
+## Performance
 
-- **CSS-Bundle**: Die 45 Theme-Stylesheets sind zu `assets/css/bundle.css` gebündelt (url()-Pfade umgeschrieben). `assets/css/pages.css` bleibt bewusst **separat** verlinkt — das ist die Schicht für eigene Anpassungen (direkt editierbar, kein Rebuild nötig). Theme-CSS geändert? `python3 tools/css_bundle.py` neu laufen lassen.
-- **Responsive Heroes**: Mobile Geräte laden kleine Hero-Varianten (Regeln am Ende von pages.css), Preloads pro Seite im Frontmatter (`heroLarge`/`heroSmall`).
-- **Service Worker** (`sw.js`): network-first für HTML/events.json, stale-while-revalidate für statische Assets.
-- **Bilder**: Alle Uploads sind komprimiert (340 MB → 111 MB). Neue Fotos vor dem Einchecken auf ~q75 komprimieren (`cwebp`/`sips`).
+- Eine typische Seite lädt ~100 KB HTML+CSS+JS in 6 Requests; Fonts (~166 KB) werden gecacht.
+- Mobile Geräte laden kleine Hero-Varianten (`heroSmall` im Frontmatter), Hero-Bilder werden preloaded.
+- Bilder: Alle Uploads sind komprimiert (340 MB → 111 MB). Neue Fotos vor dem Einchecken auf ~q75 komprimieren (`cwebp`/`sips`).
 
 ## Termine pflegen (`events.json`)
 
@@ -83,7 +81,3 @@ Termine für die Events-Seite und den Startseiten-Banner stehen in **`events.jso
 python3 -m http.server 8765
 # → http://localhost:8765/
 ```
-
-## Aktualisieren
-
-Bei Änderungen an der WordPress-Original-Seite den Mirror-Prozess wiederholen (siehe oben) und die Dateien hier ersetzen.
