@@ -1,7 +1,8 @@
-<header class="wg-header">
-  <div class="wg-container wg-header__bar">
-    <a class="wg-logo" href="{{ base }}index.html">
-      {% if logo == 'winter' %}<svg   id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 70" preserveAspectRatio="xMinYMid meet">
+<header id='header' class='all_colors header_color light_bg_color  av_header_top av_logo_left av_main_nav_header av_menu_right av_slim av_header_sticky av_header_shrinking_disabled av_header_stretch av_mobile_menu_tablet av_header_transparency av_header_searchicon_disabled av_header_unstick_top_disabled av_minimal_header av_bottom_nav_disabled  av_alternate_logo_active av_header_border_disabled' aria-label="Header" data-av_shrink_factor='20' role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader" >{% if logo == 'winter' %}
+
+		<div  id='header_main' class='container_wrap container_wrap_logo'>
+
+        <div class='container av-logo-container'><div class='inner-container'><span class='logo avia-svg-logo'><a href='{{ base }}index.html' class='av-contains-svg' aria-label='Wintergeflüster!_line_skyblue' title='Wintergeflüster!_line_skyblue'><svg role="graphics-document" title="Wintergeflüster!_line_skyblue"   id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 70" preserveAspectRatio="xMinYMid meet">
   <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
   <defs>
     <style>
@@ -30,7 +31,11 @@
     <path class="st0" d="M567.9,35.2c0,1.9-.7,3.4-1.8,4.4l-.2.2c0,0,.1.1.2.2,1.2,1,1.8,2.5,1.8,4.4v22.1h-3.5v-21.6c0-.9-.3-1.6-.8-2.2-.5-.6-1.4-.9-2.3-1h-2.8v24.7h-3.4V12.1h6.1c2.2,0,3.7.5,4.9,1.6,1.2,1,1.8,2.5,1.8,4.4v17.1ZM558.5,14.9v23.5h2.7c1,0,1.9-.3,2.5-1,.5-.5.8-1.3.8-2.2v-17.1c0-1-.3-1.7-.8-2.2-.5-.6-1.5-.9-2.5-1h-2.7Z"/>
     <path class="st0" d="M595.2,64.4c0-1.3,1-2.4,2.3-2.4s2.4,1.1,2.4,2.4-1,2.4-2.4,2.4-2.3-1.1-2.3-2.4ZM599.2,12v45.5h-3.3V12h3.3Z"/>
   </g>
-</svg>{% else %}<svg   id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 70" preserveAspectRatio="xMinYMid meet">
+</svg><span class='subtext avia-img-svg-logo-sub'><img src='{{ pre }}wp-content/uploads/2025/01/Wintergefluester_line_white.svg' class='alternate avia-standard-logo' alt='Logo' title='Logo' /><span class="screen-reader-text">Waldgeflüster Events</span></span></a></span>{% else %}
+
+		<div  id='header_main' class='container_wrap container_wrap_logo'>
+
+        <div class='container av-logo-container'><div class='inner-container'><span class='logo avia-svg-logo'><a href='{{ base }}index.html' class='av-contains-svg' aria-label='Waldgeflüster!_line_darkgreen' title='Waldgeflüster!_line_darkgreen'><svg role="graphics-document" title="Waldgeflüster!_line_darkgreen"   id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 70" preserveAspectRatio="xMinYMid meet">
   <!-- Generator: Adobe Illustrator 29.2.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 108)  -->
   <defs>
     <style>
@@ -151,56 +156,76 @@
     <path id="A3" data-name="A" class="st5" d="M65.3,30.5l2.2,24.6h-4.3l2.1-24.6ZM72.5,69.2l-5.3-60.6h-3.8l-5.3,60.6h3.8l.9-10.4h5l.9,10.4h3.8Z"/>
     <polygon id="W3" data-name="W" class="st5" points="23.2 8.6 19 49.4 15.4 8.6 11.6 8.6 7.9 49.4 3.8 8.6 0 8.6 6.2 69.2 10 69.2 13.5 30 17 69.2 20.7 69.2 26.9 8.6 23.2 8.6"/>
   </g>
-</svg>{% endif %}
-      <span class="visually-hidden">Waldgeflüster Events</span>
-    </a>
-    <div class="wg-lang-switch"><a href="{{ langAltUrl }}" hreflang="{{ 'de' if locale == 'en' else 'en' }}" lang="{{ 'de' if locale == 'en' else 'en' }}">{{ 'DE' if locale == 'en' else 'EN' }}</a></div>
-    <button class="wg-burger" type="button" aria-expanded="false" aria-controls="wg-nav" aria-label="{{ 'Menü öffnen' | t | safe }}" data-nav-toggle><span></span><span></span><span></span></button>
-    <nav class="wg-nav" id="wg-nav" aria-label="{{ 'Hauptnavigation' | t | safe }}">
-      <ul>
-        <li{{ ' class="is-active"' | safe if active == 'index' }}><a href="{{ base }}index.html">OH HELLO!</a></li>
-        <li{{ ' class="is-active"' | safe if active == 'heiraten-schwaebische-alb' or active == 'freie-hochzeitstermine' }}>
-          <a href="{{ base }}heiraten-schwaebische-alb/">{{ "Heiraten" | t | safe }}</a>
-          <ul class="wg-nav__sub">
-            <li><a href="{{ base }}freie-hochzeitstermine/">{{ "Freie Hochzeitstermine" | t | safe }}</a></li>
-            <li><a href="{{ base }}heiraten-schwaebische-alb/#location">{{ "Hochzeitslocation" | t | safe }}</a></li>
-            <li><a href="{{ base }}heiraten-schwaebische-alb/#rezensionen">{{ "Rezensionen" | t | safe }}</a></li>
-            <li><a href="{{ base }}heiraten-schwaebische-alb/#impressionen">{{ "Impressionen" | t | safe }}</a></li>
-            <li><a href="{{ base }}heiraten-schwaebische-alb/#partner">{{ "Unsere Caterer" | t | safe }}</a></li>
-          </ul>
-        </li>
-        <li{{ ' class="is-active"' | safe if active == 'feiern' }}><a href="{{ base }}feiern/">{{ "Feiern" | t | safe }}</a></li>
-        <li{{ ' class="is-active"' | safe if active == 'trauerfeier' }}><a href="{{ base }}trauerfeier/">{{ "Trauercafé" | t | safe }}</a></li>
-        <li{{ ' class="is-active"' | safe if active == 'winter' }}>
-          <a href="{{ base }}winter/">Winter</a>
-          <ul class="wg-nav__sub">
-            <li><a href="{{ base }}winter/#winterevents">{{ "Winterevents" | t | safe }}</a></li>
-            <li><a href="{{ base }}winter/#planung">{{ "Planung" | t | safe }}</a></li>
-            <li><a href="{{ base }}winter/#winterimpressionen">{{ "Impressionen" | t | safe }}</a></li>
-          </ul>
-        </li>
-        <li{{ ' class="is-active"' | safe if active == 'eigene-events' }}><a href="{{ base }}eigene-events/">Events</a></li>
-        <li{{ ' class="is-active"' | safe if active == 'location-schwaebische-alb' or active == 'faq' }}>
-          <a href="{{ base }}location-schwaebische-alb/">{{ "Eventlocation" | t | safe }}</a>
-          <ul class="wg-nav__sub">
-            <li><a href="{{ base }}location-schwaebische-alb/#tour">{{ "Virtuelle Tour" | t | safe }}</a></li>
-            <li><a href="{{ base }}faq/">FAQ</a></li>
-          </ul>
-        </li>
-        <li{{ ' class="is-active"' | safe if active == 'bilder' }}>
-          <a href="{{ base }}bilder/">{{ "Bilder" | t | safe }}</a>
-          <ul class="wg-nav__sub">
-            <li><a href="{{ base }}bilder/#freietrauung">{{ "Freie Trauung" | t | safe }}</a></li>
-            <li><a href="{{ base }}bilder/#eventzelt">{{ "Eventzelt" | t | safe }}</a></li>
-            <li><a href="{{ base }}bilder/#bar">{{ "Tanzfläche &#038; Bar" | t | safe }}</a></li>
-            <li><a href="{{ base }}bilder/#gettingready">{{ "Getting-Ready Hütte" | t | safe }}</a></li>
-            <li><a href="{{ base }}bilder/#aussen">{{ "Außenbereich" | t | safe }}</a></li>
-            <li><a href="{{ base }}bilder/#wintergalerie">Winter</a></li>
-            <li><a href="{{ base }}bilder/#team">Team Waldgeflüster</a></li>
-          </ul>
-        </li>
-        <li class="wg-nav__cta"><a href="#kontakt">{{ "ANFRAGEN" | t | safe }}</a></li>
-      </ul>
-    </nav>
-  </div>
+</svg><span class='subtext avia-img-svg-logo-sub'><img src='{{ pre }}wp-content/uploads/2025/02/Waldgefluester_line_white.svg' class='alternate avia-standard-logo' alt='Logo' title='Logo' /><span class="screen-reader-text">Waldgeflüster Events</span></span></a></span>{% endif %}<div class='wg-lang-switch' aria-label='{{ 'Sprache wechseln' | t | safe }}'><a href='{{ langAltUrl }}' hreflang="{{ 'de' if locale == 'en' else 'en' }}" lang="{{ 'de' if locale == 'en' else 'en' }}">{{ 'DE' if locale == 'en' else 'EN' }}</a></div><nav class='main_menu' data-selectname='{{ "Wähle eine Seite" | t | safe }}'  role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" ><div class="avia-menu av-main-nav-wrap"><ul role="menu" class="menu av-main-nav" id="avia-menu"><li role="menuitem" id="menu-item-383" class="menu-item {% if active == 'index' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-top-level menu-item-top-level-1"><a href="{{ base }}index.html" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "OH HELLO!" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-2078" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="{{ base }}index.html#hochzeit" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Heiraten" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-2079" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="{{ base }}index.html#winter" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Winter" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-3391" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="{{ base }}index.html#anfahrt" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Anfahrt" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="{{ base }}index.html#ueber-uns" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Über uns" | t | safe }}</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-1149" class="menu-item {% if active == 'heiraten-schwaebische-alb' %}current-menu-item current_page_item {% endif %}{% if active == 'freie-hochzeitstermine' %}current-menu-ancestor current-menu-parent {% endif %}menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-2"><a href="{{ base }}heiraten-schwaebische-alb/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Heiraten" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-2087" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}heiraten-schwaebische-alb/#location" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Hochzeitslocation" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-2311" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}heiraten-schwaebische-alb/#rezensionen" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Rezensionen" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-2088" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}heiraten-schwaebische-alb/#impressionen" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Impressionen" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-2089" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}heiraten-schwaebische-alb/#partner" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Unsere Caterer" | t | safe }}</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-9001" class="menu-item {% if active == 'feiern' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-3"><a href="{{ base }}feiern/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Feiern" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-9002" class="menu-item {% if active == 'trauerfeier' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-4"><a href="{{ base }}trauerfeier/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Trauercafé" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-2003" class="menu-item {% if active == 'winter' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-5"><a href="{{ base }}winter/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Winter" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-3374" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="{{ base }}winter/#winterevents" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Winterevents" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-3375" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="{{ base }}winter/#planung" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Planung" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-3377" class="menu-item menu-item-type-custom menu-item-object-custom "><a href="{{ base }}winter/#winterimpressionen" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Impressionen" | t | safe }}</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-9003" class="menu-item {% if active == 'eigene-events' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-6"><a href="{{ base }}eigene-events/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Events" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-3524" class="menu-item {% if active == 'location-schwaebische-alb' %}current-menu-item current_page_item {% endif %}{% if active == 'faq' %}current-menu-ancestor current-menu-parent {% endif %}menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-7"><a href="{{ base }}location-schwaebische-alb/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Eventlocation" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-2313" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}location-schwaebische-alb/#tour" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Virtuelle Tour" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ base }}faq/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "FAQ" | t | safe }}</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-1926" class="menu-item {% if active == 'bilder' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-8"><a href="{{ base }}bilder/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Bilder" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-1927" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#freietrauung" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Freie Trauung" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-1928" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#eventzelt" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Eventzelt" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-1929" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#bar" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Tanzfläche &#038; Bar" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-1930" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#gettingready" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Getting-Ready Hütte" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-1931" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#aussen" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Außenbereich" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-2289" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#wintergalerie" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Winter" | t | safe }}</span></a></li>
+	<li role="menuitem" id="menu-item-1932" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ base }}bilder/#team" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Team Waldgeflüster" | t | safe }}</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-1996" class="menu-item menu-item-type-custom menu-item-object-custom av-menu-button av-menu-button-colored menu-item-top-level menu-item-top-level-9"><a title="test" href="#kontakt" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "ANFRAGEN" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li class="av-burger-menu-main menu-item-avia-special av-small-burger-icon" role="menuitem">
+			<a href="#" role="button" aria-label="{{ 'Menü öffnen' | t | safe }}" aria-expanded="false" aria-hidden="false">
+							<span class="av-hamburger av-hamburger--spin av-js-hamburger">
+								<span class="av-hamburger-box">
+						          <span class="av-hamburger-inner"></span>
+						          <strong>Menü</strong>
+								</span>
+							</span>
+							<span class="avia_hidden_link_text">{{ "Menü" | t | safe }}</span>
+						</a>
+	        		   </li></ul></div></nav></div> </div> 
+		<!-- end container_wrap-->
+		</div>
+<div id="avia_alternate_menu_container" style="display: none;"><nav class='main_menu' data-selectname='{{ "Wähle eine Seite" | t | safe }}'  role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" ><div class="avia_alternate_menu av-main-nav-wrap"><ul id="avia_alternate_menu" class="menu av-main-nav"><li role="menuitem" id="menu-item-3004" class="menu-item {% if active == 'index' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-home menu-item-top-level menu-item-top-level-1"><a href="{{ base }}index.html" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "OH HELLO!" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-3006" class="menu-item {% if active == 'heiraten-schwaebische-alb' %}current-menu-item current_page_item {% endif %}{% if active == 'freie-hochzeitstermine' %}current-menu-ancestor current-menu-parent {% endif %}menu-item-type-post_type menu-item-object-page menu-item-mega-parent  menu-item-top-level menu-item-top-level-2"><a href="{{ base }}heiraten-schwaebische-alb/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Heiraten" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-9103" class="menu-item {% if active == 'eigene-events' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-3"><a href="{{ base }}eigene-events/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Events" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-3643" class="menu-item {% if active == 'location-schwaebische-alb' %}current-menu-item current_page_item {% endif %}{% if active == 'faq' %}current-menu-ancestor current-menu-parent {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-4"><a href="{{ base }}location-schwaebische-alb/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Eventlocation" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-9101" class="menu-item {% if active == 'feiern' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-5"><a href="{{ base }}feiern/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Feiern" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-9102" class="menu-item {% if active == 'trauerfeier' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-6"><a href="{{ base }}trauerfeier/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Trauercafé" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li><li role="menuitem" id="menu-item-3008" class="menu-item {% if active == 'winter' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-7"><a href="{{ base }}winter/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Winter" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-3005" class="menu-item {% if active == 'bilder' %}current-menu-item current_page_item {% endif %}menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-8"><a href="{{ base }}bilder/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "Bilder" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-3009" class="menu-item menu-item-type-custom menu-item-object-custom av-menu-button av-menu-button-colored menu-item-top-level menu-item-top-level-9"><a title="test" href="#kontakt" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">{{ "ANFRAGEN" | t | safe }}</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+</ul></div></nav></div><div class="header_bg"></div><div id='header-reading-progress-1987' class='header-reading-progress small-bar' data-settings='{"color":"#89a488"}'></div>
+<!-- end header -->
 </header>

@@ -1,0 +1,3564 @@
+/* Waldgeflüster – Ergänzungen für die neuen Seiten (/feiern/, /trauerfeier/, /eigene-events/)
+   und die Termin-Elemente. Wird NACH post-1987.css geladen; Overrides scopen per Body-Klasse
+   (page-id-5001 = Feiern, page-id-5002 = Trauercafé, page-id-5003 = Events). */
+
+/* ---------- Feiern (page-id-5001): Bilder ---------- */
+body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
+  background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp);
+}
+body.page-id-5001 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/01/Sophia-und-Jonas-Waldgefluester-373-5.webp);
+}
+body.page-id-5001 .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+  background-image: url(../../wp-content/uploads/2025/01/191-Sarah-Max-191-1.webp);
+}
+body.page-id-5001 .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
+  background-image: url(../../wp-content/uploads/2025/01/Eva-Fabi_Hochzeitsreportage-24-1.webp);
+}
+
+/* ---------- Events (page-id-5003): Bilder ---------- */
+body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
+  background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp);
+}
+body.page-id-5003 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/02/Sitzlounge_im_Winter.webp);
+}
+/* Eisstock-Zelle (av-m69g0suv) behält ihr Original-Bild aus post-1987.css */
+
+/* ---------- Trauercafé (page-id-5002): Bilder + ruhige Optik ---------- */
+body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
+  background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg);
+}
+body.page-id-5002 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp);
+}
+body.page-id-5002 .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+  background-image: url(../../wp-content/uploads/2025/10/Deko-Detail-Sofa.webp);
+  background-position: 50% 35%;
+}
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 {
+  background-image: url(../../wp-content/uploads/2025/01/DSCF9123-2.webp);
+}
+
+/* Dunkleres, ruhigeres Hero-Overlay */
+body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-section-color-overlay {
+  opacity: 0.55;
+  background-color: #14120f;
+}
+
+/* Verspielte Akzente rausnehmen: kein oranger Button-Rahmen, kein Hover-Hüpfen */
+body.page-id-5002 .avia-button,
+body.page-id-5002 .avia-button.avia-size-large {
+  border-color: #8a8f83 !important;
+  background-color: transparent;
+  transform: none !important;
+  box-shadow: none !important;
+}
+body.page-id-5002 .avia-button:hover {
+  background-color: #8a8f83;
+  color: #faf7f2;
+}
+body.page-id-5002 .av-special-heading .special-heading-border .special-heading-inner-border,
+body.page-id-5002 hr.av-inner-hr {
+  border-color: #c9c5bc;
+}
+body.page-id-5002 ::selection { background-color: #8a8f83; }
+
+/* ---------- Terminraster (/eigene-events/) ---------- */
+body.page-id-5003 #after_section_3 {
+  border-top: 1px solid #e1e5dd;
+  border-bottom: 1px solid #e1e5dd;
+  background: #f4f6f1;
+}
+body.page-id-5003 #after_section_3 > .container {
+  max-width: 1240px;
+  padding-top: clamp(60px, 7vw, 96px);
+  padding-bottom: clamp(64px, 8vw, 108px);
+}
+body.page-id-5003 #impressionen-events { margin-bottom: clamp(32px, 4vw, 48px); }
+#wg-event-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+#wg-event-list .wg-event {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-start;
+  min-width: 0;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e2db;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: left;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+#wg-event-list .wg-event:hover {
+  box-shadow: 0 10px 28px rgba(45,45,42,.10);
+  transform: translateY(-2px);
+}
+.wg-event-badge {
+  flex: 0 0 auto;
+  width: 82px;
+  text-align: center;
+  background: #eef2eb;
+  border: 1px solid #dce4d9;
+  border-radius: 10px;
+  padding: 12px 6px 10px;
+  line-height: 1.1;
+}
+.wg-badge-day {
+  display: block;
+  font-size: 2.1em;
+  font-weight: 700;
+  color: #3f5340;
+  letter-spacing: -1px;
+}
+.wg-badge-month {
+  display: block;
+  font-size: .95em;
+  font-weight: 600;
+  color: #678266;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.wg-badge-year { display: block; font-size: .75em; color: #8d8d84; margin-top: 3px; }
+.wg-event-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+.wg-event-head { margin-bottom: 4px; }
+.wg-event-weekday {
+  color: #678266; font-weight: 600; letter-spacing: 1.4px;
+  text-transform: uppercase; font-size: .78em;
+}
+.wg-event-time { color: #8d8d84; font-size: .82em; margin-left: 14px; }
+.wg-event-title {
+  display: block;
+  margin: 4px 0 0;
+  color: #2d2d2a;
+  font-size: 1.24em;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.wg-event-title a { color: inherit; text-decoration: none; }
+.wg-event-title a:hover { color: #678266; }
+.wg-event-teaser { margin: 10px 0 0; color: #55554f; line-height: 1.62; }
+#wg-event-list .wg-events-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 34px;
+  border: 1px solid #d8ddd5;
+  border-radius: 18px;
+  background: #fff;
+  color: #55554f;
+  text-align: center;
+}
+
+/* ---------- Startseite: Termin-Sektion ---------- */
+#wg-event-banner { background: #f2f0ea; border-top: 1px solid #e5e2db; border-bottom: 1px solid #e5e2db; }
+#wg-event-banner .container { padding-top: 58px; padding-bottom: 58px; text-align: center; }
+.wg-home-kicker {
+  display: block; color: #678266; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; font-size: .78em; margin-bottom: 10px;
+}
+#wg-event-banner h2.wg-home-title {
+  margin: 0 0 34px; font-weight: 400; color: #2a3716; letter-spacing: .5px;
+}
+.wg-home-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; text-align: left; margin-bottom: 32px;
+}
+.wg-home-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: #ffffff; border: 1px solid #e5e2db; border-radius: 3px;
+  padding: 22px; text-decoration: none;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+.wg-home-card:hover { box-shadow: 0 10px 28px rgba(45,45,42,.10); transform: translateY(-2px); }
+.wg-home-card .wg-event-badge { flex: 0 0 74px; padding: 10px 4px 8px; }
+.wg-home-card .wg-badge-day { font-size: 1.7em; }
+.wg-home-card .wg-event-title { font-size: 1.08em; margin-top: 2px; }
+.wg-home-card .wg-event-teaser {
+  font-size: .9em; margin-top: 5px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.wg-home-more {
+  display: inline-block; border: 1px solid #678266; color: #678266;
+  border-radius: 999px; padding: 11px 34px; text-decoration: none;
+  letter-spacing: 1px; font-size: .92em; transition: all .25s ease;
+}
+.wg-home-more:hover { background: #678266; color: #faf7f2; }
+@media (max-width: 767px) {
+  #wg-event-banner .container { padding-top: 40px; padding-bottom: 40px; }
+  .wg-home-grid { gap: 14px; margin-bottom: 24px; }
+}
+
+/* Feinabstimmung nach der Sichtpruefung: Bild und Text bilden eine einzige,
+   geschlossene Einheit. Die Innenluft bleibt angenehm, ohne dass der Inhalt
+   vom Bild abgekoppelt wirkt. */
+#top .pfeilcontainer {
+  gap: 0;
+  margin-top: clamp(12px, 1.4vw, 18px);
+  padding: 0;
+  border-radius: 28px;
+}
+#top .pfeilcontainer > .flex_cell {
+  min-height: clamp(320px, 28vw, 430px);
+}
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  min-height: clamp(320px, 28vw, 430px);
+  border-radius: 26px 0 0 26px;
+}
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+  border-radius: 0 26px 26px 0;
+}
+#top .pfeilcontainer .av-special-heading { margin: 0 0 12px !important; }
+#top .pfeilcontainer .avia_textblock {
+  background: transparent !important;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.58;
+}
+
+/* Einleitungen: der Text sitzt immer in derselben lesbaren Spalte und nie
+   direkt auf dem Kartenrand. */
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px) !important;
+}
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper {
+  max-width: 900px !important;
+  padding: 0 !important;
+}
+
+/* Ablauf: Jede Ziffer steht geometrisch in der Mitte ihrer Karte. */
+body.page-id-1987 #planung .av-milestone {
+  display: grid !important;
+  grid-template-rows: 54px minmax(0, 1fr);
+  justify-items: stretch;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 54px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date strong {
+  display: grid !important;
+  margin: 0 !important;
+  place-items: center !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 989px) {
+  #top .pfeilcontainer { gap: 0; padding: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(270px, 50vw, 370px);
+    border-radius: 24px 24px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 32px 28px 34px !important;
+    border-radius: 0 0 24px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #top .pfeilcontainer { margin-top: 12px; border-radius: 22px; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(230px, 64vw, 320px);
+    border-radius: 22px 22px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 28px 22px 30px !important;
+    border-radius: 0 0 22px 22px;
+  }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(24px, 7vw, 29px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.62; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 50px minmax(0, 1fr); }
+}
+
+/* Enfold setzt die Zellabstaende spaet und sehr spezifisch. Diese Fassung
+   gewinnt auch gegen diese Altregel und ist die verbindliche Komponente. */
+html body #top #wrap_all .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+}
+html body#top #main .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  padding: 0 !important;
+}
+
+/* ---------- Menübreite: 9 Top-Level-Punkte auf Desktop unterbringen ----------
+   Logo bleibt in der site-weiten Standardgröße (450px); nur auf schmalen
+   Desktops wird Logo + Menü-Padding kompakter, damit nichts umbricht. */
+@media (min-width: 990px) {
+  #top .av-main-nav > li > a { padding: 0 10px; }
+}
+@media (min-width: 990px) and (max-width: 1359px) {
+  #top .av-logo-container .logo.avia-svg-logo { max-width: 340px; width: 340px; }
+  #top .av-main-nav > li > a { padding: 0 7px; }
+}
+
+/* ---------- Cookie-Banner in CI-Farben (statt Enfold-Pink) ---------- */
+#top .avia-cookie-consent .avia-button,
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+  background-color: transparent !important;
+  border: 1px solid #9ab599 !important;
+  color: #e9e6e1 !important;
+}
+#top .avia-cookie-consent .avia-button.avia-cookie-consent-button-1,
+#top #av-consent-extra-info .avia-button.avia-cookie-consent-button-4 {
+  background-color: #678266 !important;
+  border-color: #678266 !important;
+  color: #faf7f2 !important;
+}
+#top .avia-cookie-consent .avia-button:hover,
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button:hover {
+  background-color: #9ab599 !important;
+  border-color: #9ab599 !important;
+  color: #2d2d2a !important;
+}
+
+/* ---------- Responsive Hero-Hintergruende: mobil kleinere Varianten ---------- */
+@media (max-width: 767px) {
+  body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+}
+
+/* ---------- LCP-Fix: Hero sofort malen (Parallax-Layer ist bis JS-Init display:none;
+   die Section traegt das gleiche Bild als Sofort-Hintergrund darunter) ---------- */
+body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424.webp); background-size: cover; background-position: center; }
+body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424.webp); background-size: cover; background-position: center; }
+body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
+body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
+body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp); background-size: cover; background-position: center; }
+body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg); background-size: cover; background-position: center; }
+body.page-id-1559 .avia-section.av-m65exedf-f297d08e6f5792d0a2ec4e0eeaeced9c { background-image: url(../../wp-content/uploads/2025/01/Waldgefluester-1.webp); background-size: cover; background-position: center; }
+body.page-id-1610 .avia-section.av-4p5ahx6-7af42a683abcda1e17bcdcb6b1b6acb6 { background-image: url(../../wp-content/uploads/2025/01/Fotograf1300.webp); background-size: cover; background-position: center; }
+body.page-id-1987 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp); background-size: cover; background-position: center; }
+@media (max-width: 767px) {
+  body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
+  body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
+  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+}
+
+
+/* ============================================================
+   FIX: Winter-Eisblau bleibt auf der Winterseite
+   post-1987.css faerbt drei Buttons hart skyblue (#5dade2) ueber
+   Avia-Hashklassen - die tauchen auch auf den Klon-Seiten auf.
+   ============================================================ */
+#top.page-id-5001 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5003 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5001 #wrap_all .avia-button.av-m6f0779d-dd19b3b76205190c4bf4845fdef5a44e {
+  background-color: #678266;
+  border-color: #678266;
+  color: #faf7f2;
+}
+#top.page-id-5001 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6:hover,
+#top.page-id-5003 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6:hover,
+#top.page-id-5001 #wrap_all .avia-button.av-m6f0779d-dd19b3b76205190c4bf4845fdef5a44e:hover {
+  background-color: #89a488;
+  border-color: #89a488;
+}
+/* Trauercafe: gedeckt statt Blau */
+#top.page-id-5002 #wrap_all .avia-button.av-1at9u6r-c956e64780cf0c5f4b4beb46904192e6,
+#top.page-id-5002 #wrap_all .avia-button {
+  background-color: transparent;
+  border: 1px solid #b9b6ad;
+  color: #e9e6e1;
+}
+#top.page-id-5002 #wrap_all .avia-button:hover {
+  background-color: #b9b6ad;
+  border-color: #b9b6ad;
+  color: #22241f;
+}
+
+/* ============================================================
+   TRAUERCAFE (page-id-5002): ruhige, wuerdevolle Farbwelt
+   ============================================================ */
+/* Zitat-Block: dunkel, ruhiges Kerzenlicht-Motiv, helle Schrift */
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 {
+  background-image: linear-gradient(rgba(20,18,15,.72), rgba(20,18,15,.72)),
+                    url(../../wp-content/uploads/2025/09/DSC04683-1-1400.jpg);
+  background-size: cover;
+  background-position: center;
+  /* Platz fuer den absolut positionierten Button am unteren Rand */
+  padding: 70px 46px 118px !important;
+}
+/* Button sitzt per Theme-CSS absolut unten - Ueberlappung mit dem Text verhindern */
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .my-bottom-button {
+  bottom: 42px !important;
+}
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h1,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h2,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 h3,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .av-special-heading-tag {
+  color: #f3f0ea !important;
+  font-weight: 300;
+  line-height: 1.35;
+}
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 p,
+body.page-id-5002 .flex_column.av-m6bhlpr0-2141db12ea7bc01b0ee59df74dd30b40 .avia_textblock {
+  color: #ddd9d1 !important;
+}
+/* Ueberschriften der Seite gedeckt-graphit statt Gold */
+body.page-id-5002 h1, body.page-id-5002 h2, body.page-id-5002 h3, body.page-id-5002 h4,
+body.page-id-5002 .av-special-heading-tag {
+  color: #3a3d36;
+}
+body.page-id-5002 .av-parallax + .av-section-color-overlay-wrap h1,
+body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
+
+/* Icon-Kreise und Meilenstein-Punkte: Winter-Hellblau (#b3e5fc) ersetzen */
+#top.page-id-5001 .iconlist_icon,
+#top.page-id-5003 .iconlist_icon,
+#top.page-id-5001 .av-milestone-icon-inner,
+#top.page-id-5003 .av-milestone-icon-inner {
+  background-color: #dce5db !important;
+  color: #3f5340 !important;
+}
+#top.page-id-5002 .iconlist_icon,
+#top.page-id-5002 .av-milestone-icon-inner {
+  background-color: #e4e2dc !important;
+  color: #4a4d46 !important;
+}
+
+/* Trauercafé: Icons weglassen – schlichte Textzeilen wirken wuerdiger als
+   Symbole wie "Daumen hoch". Einrueckung entsprechend zuruecknehmen. */
+#top.page-id-5002 .avia-icon-list .iconlist_icon { display: none !important; }
+#top.page-id-5002 .avia-icon-list .iconlist-timeline { display: none !important; }
+#top.page-id-5002 .avia-icon-list li .iconlist_content_wrap { margin-left: 0 !important; }
+#top.page-id-5002 .avia-icon-list li {
+  padding: 0 0 22px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #e5e2db;
+}
+#top.page-id-5002 .avia-icon-list li:last-child { border-bottom: none; }
+#top.page-id-5002 .avia-icon-list li .iconlist_title { margin-bottom: 4px; }
+
+/* ============================================================
+   WALDGEFLÜSTER UI-SYSTEM
+   Ruhige Waldtöne, klare Zustände, einheitliche Radien/Schatten.
+   ============================================================ */
+:root {
+  --wg-forest-950: #1f2b21;
+  --wg-forest-800: #314334;
+  --wg-forest-700: #425a45;
+  --wg-moss-600: #60785f;
+  --wg-moss-400: #91a58e;
+  --wg-lichen-200: #dce4d9;
+  --wg-stone-100: #f1efe9;
+  --wg-paper: #fbfaf7;
+  --wg-white: #ffffff;
+  --wg-ink: #20251f;
+  --wg-muted: #5d665d;
+  --wg-line: #d8ddd5;
+  --wg-error: #a33a32;
+  --wg-focus: #f0df35;
+  --wg-radius-sm: 10px;
+  --wg-radius-md: 18px;
+  --wg-radius-lg: 28px;
+  --wg-shadow-sm: 0 2px 8px rgba(31, 43, 33, .08);
+  --wg-shadow-md: 0 16px 46px rgba(31, 43, 33, .13), 0 2px 8px rgba(31, 43, 33, .06);
+  --wg-motion: 220ms cubic-bezier(.2, .75, .25, 1);
+}
+
+/* Seitenthemes: dieselben Komponenten, nur andere semantische Farbtokens. */
+body.wg-theme-forest {
+  --wg-theme-canvas: #f4f6f1;
+  --wg-theme-surface: #e8eee5;
+  --wg-theme-card: rgba(255, 255, 255, .48);
+  --wg-theme-border: rgba(49, 67, 52, .14);
+  --wg-theme-field-line: #d8ddd5;
+  --wg-theme-field-hover: #aab5a8;
+  --wg-theme-accent: #314334;
+  --wg-theme-accent-hover: #425a45;
+  --wg-theme-text: #1f2b21;
+  --wg-theme-muted: #5d665d;
+  --wg-theme-nav-surface: rgba(244, 246, 241, .96);
+  --wg-theme-nav-border: rgba(49, 67, 52, .14);
+  --wg-theme-nav-ink: #1f2b21;
+  --wg-theme-focus-shadow: rgba(96, 120, 95, .13);
+  --wg-theme-button-shadow: rgba(31, 43, 33, .18);
+  --wg-theme-button-shadow-hover: rgba(31, 43, 33, .24);
+  --wg-theme-shadow: 0 18px 52px rgba(31, 43, 33, .10), 0 2px 8px rgba(31, 43, 33, .04);
+}
+
+body.wg-theme-winter {
+  --wg-theme-canvas: #f9fdff;
+  --wg-theme-surface: #e3f4fb;
+  --wg-theme-card: rgba(255, 255, 255, .68);
+  --wg-theme-border: #b3e5fc;
+  --wg-theme-field-line: #c7e2ee;
+  --wg-theme-field-hover: #82bfd9;
+  --wg-theme-accent: #2f718e;
+  --wg-theme-accent-hover: #245a74;
+  --wg-theme-text: #243b46;
+  --wg-theme-muted: #526f7c;
+  --wg-theme-nav-surface: rgba(249, 253, 255, .96);
+  --wg-theme-nav-border: rgba(47, 113, 142, .18);
+  --wg-theme-nav-ink: #245a74;
+  --wg-theme-focus-shadow: rgba(93, 173, 226, .20);
+  --wg-theme-button-shadow: rgba(47, 113, 142, .20);
+  --wg-theme-button-shadow-hover: rgba(47, 113, 142, .28);
+  --wg-theme-shadow: 0 18px 52px rgba(47, 113, 142, .11), 0 2px 8px rgba(47, 113, 142, .05);
+}
+
+body.wg-theme-mourning {
+  --wg-theme-canvas: #f4f3ef;
+  --wg-theme-surface: #e7e6e0;
+  --wg-theme-card: rgba(255, 255, 255, .52);
+  --wg-theme-border: rgba(74, 77, 70, .18);
+  --wg-theme-field-line: #d2d1ca;
+  --wg-theme-field-hover: #aaa9a1;
+  --wg-theme-accent: #4a4d46;
+  --wg-theme-accent-hover: #343731;
+  --wg-theme-text: #2c2e2a;
+  --wg-theme-muted: #65665f;
+  --wg-theme-nav-surface: rgba(244, 243, 239, .96);
+  --wg-theme-nav-border: rgba(74, 77, 70, .18);
+  --wg-theme-nav-ink: #343731;
+  --wg-theme-focus-shadow: rgba(74, 77, 70, .16);
+  --wg-theme-button-shadow: rgba(44, 46, 42, .18);
+  --wg-theme-button-shadow-hover: rgba(44, 46, 42, .25);
+  --wg-theme-shadow: 0 18px 52px rgba(44, 46, 42, .10), 0 2px 8px rgba(44, 46, 42, .04);
+}
+
+html { scroll-behavior: smooth; }
+body { color: var(--wg-ink); }
+::selection { background: var(--wg-lichen-200); color: var(--wg-forest-950); }
+
+.wg-skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 12px;
+  left: 12px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--wg-white);
+  color: var(--wg-forest-950);
+  box-shadow: var(--wg-shadow-md);
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform var(--wg-motion);
+}
+.wg-skip-link:focus { transform: translateY(0); }
+
+#top :where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid var(--wg-focus) !important;
+  outline-offset: 3px;
+}
+
+#top :where(a, button) { touch-action: manipulation; }
+
+#top .avia-button.avia-size-large {
+  min-height: 48px;
+  border-width: 1px;
+  border-radius: 999px;
+  padding: 14px 30px;
+  box-shadow: none;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#top:not(.page-id-1987):not(.page-id-5002) .avia-button.avia-size-large {
+  border-color: var(--wg-moss-600);
+}
+#top .avia-button.avia-size-large:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--wg-shadow-sm);
+}
+#top .avia-button.avia-size-large:active { transform: translateY(0); }
+
+#top #wrap_all .header_color .av-menu-button-colored > a .avia-menu-text {
+  width: auto;
+  height: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px !important;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(15, 24, 17, .16);
+  line-height: 1;
+  transition: background-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#top #wrap_all .header_color .av-menu-button-colored > a:hover .avia-menu-text {
+  box-shadow: 0 11px 28px rgba(15, 24, 17, .22);
+  transform: translateY(-1px);
+}
+
+#header:not(.av_header_transparency) {
+  isolation: isolate;
+  background: rgba(255, 255, 255, .985);
+  box-shadow: 0 1px 0 rgba(31, 43, 33, .09), 0 8px 24px rgba(31, 43, 33, .055);
+}
+
+/* Smart-Navigation fuer Tablet und Mobil: aus dem Weg beim Lesen, sofort wieder
+   erreichbar, sobald die Scrollrichtung nach oben wechselt. */
+@media (max-width: 1180px) {
+  html { scroll-padding-top: 72px; }
+
+  #top {
+    --wg-mobile-nav-height: 72px;
+    --wg-mobile-nav-shadow: 0 1px 0 var(--wg-theme-nav-border), 0 10px 28px rgba(31, 43, 33, .09);
+  }
+
+  #top #header {
+    position: fixed !important;
+    z-index: 1001;
+    inset: 0 0 auto;
+    width: 100% !important;
+    height: var(--wg-mobile-nav-height);
+    background: var(--wg-theme-nav-surface) !important;
+    box-shadow: var(--wg-mobile-nav-shadow);
+    transform: translate3d(0, 0, 0);
+    transition: transform 220ms cubic-bezier(.4, 0, 1, 1), background-color var(--wg-motion), box-shadow var(--wg-motion);
+    will-change: transform;
+  }
+
+  #top #header_main,
+  #top #header_main > .container,
+  #top #header_main .inner-container {
+    height: var(--wg-mobile-nav-height) !important;
+    min-height: var(--wg-mobile-nav-height) !important;
+    line-height: var(--wg-mobile-nav-height) !important;
+  }
+
+  #top #header_main {
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  #top #header_main > .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  #top #header .header_bg {
+    border: 0 !important;
+    background: transparent !important;
+    opacity: 0 !important;
+  }
+
+  #top:not(.home) #wrap_all { padding-top: var(--wg-mobile-nav-height) !important; }
+  #top.home #wrap_all { padding-top: 0 !important; }
+
+  #top #header .logo { display: none !important; }
+
+  /* Auf der Startseite bleibt der Video-Hero bewusst frei. Erst wenn der
+     gesamte Hero-Bereich verlassen ist, erscheint die Wortmarke ruhig in der
+     festen Navigation. */
+  #top.home #header .logo {
+    position: absolute !important;
+    inset: 0 auto 0 max(18px, env(safe-area-inset-left)) !important;
+    display: flex !important;
+    width: min(220px, calc(100vw - 112px)) !important;
+    height: var(--wg-mobile-nav-height) !important;
+    margin: 0 !important;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate3d(0, -5px, 0);
+    transition: opacity 180ms ease-out, transform 220ms ease-out, visibility 0s linear 220ms;
+  }
+
+  #top.home #header .logo > a {
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  #top.home #header .logo svg {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 28px;
+  }
+
+  #top.home.wg-home-hero-passed #header .logo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+  }
+  #top #header .main_menu {
+    right: max(16px, env(safe-area-inset-right)) !important;
+    height: var(--wg-mobile-nav-height);
+  }
+
+  #top #header .main_menu .av-main-nav-wrap,
+  #top #header .main_menu .av-main-nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  #top #header .av-main-nav > li { display: none !important; }
+  #top #header .av-main-nav > li.av-burger-menu-main { display: block !important; }
+
+  #top .av-burger-menu-main.av-small-burger-icon {
+    height: 52px;
+    transform: none !important;
+  }
+
+  #top .av-burger-menu-main > a {
+    display: flex !important;
+    width: 52px;
+    min-width: 52px;
+    height: 52px !important;
+    min-height: 52px;
+    padding: 0 !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--wg-theme-nav-ink) !important;
+    line-height: 1 !important;
+  }
+
+  #top .av-burger-menu-main > a:active { background: rgba(31, 43, 33, .08); }
+  #top .av-hamburger strong { display: none !important; }
+  #top .av-hamburger-inner,
+  #top .av-hamburger-inner::before,
+  #top .av-hamburger-inner::after {
+    background-color: var(--wg-theme-nav-ink) !important;
+  }
+
+  #top.home:not(.wg-home-hero-passed) #header {
+    background: transparent !important;
+    box-shadow: none;
+  }
+
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner,
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner::before,
+  #top.home:not(.wg-home-hero-passed) .av-hamburger-inner::after,
+  html.av-burger-overlay-active #top .av-hamburger-inner,
+  html.av-burger-overlay-active #top .av-hamburger-inner::before,
+  html.av-burger-overlay-active #top .av-hamburger-inner::after,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner::before,
+  html.av-burger-overlay-active-delayed #top .av-hamburger-inner::after {
+    background-color: var(--wg-white) !important;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .46));
+  }
+
+  html.av-burger-overlay-active #top.home.wg-home-hero-passed #header .logo svg,
+  html.av-burger-overlay-active-delayed #top.home.wg-home-hero-passed #header .logo svg {
+    filter: brightness(0) invert(1);
+  }
+
+  #top.wg-nav-hidden #header {
+    pointer-events: none;
+    transform: translate3d(0, calc(-100% - 2px), 0);
+  }
+
+  html.av-burger-overlay-active #top #header,
+  html.av-burger-overlay-active-delayed #top #header,
+  #top.av-burger-overlay-active #header {
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Der Enfold-Overlay liegt innerhalb des auf 72 px begrenzten Headers.
+     Viewport-Hoehen verhindern, dass das geoeffnete Menue auf diese 72 px
+     zusammengedrueckt wird. */
+  #top .av-burger-overlay,
+  #top .av-burger-overlay-scroll,
+  #top .av-burger-overlay-bg {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh;
+  }
+
+  #top .av-burger-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+  }
+}
+
+/* Der alte schwarze WordPress-Pfeil wird zu einem ruhigen, themenfaehigen
+   Bedienelement. Sichtbarkeit und Tastaturstatus steuert site.js gemeinsam. */
+#top #scroll-top-link {
+  right: clamp(18px, 2.5vw, 34px);
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  display: flex !important;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--wg-theme-nav-border);
+  border-radius: 50%;
+  background: var(--wg-theme-nav-surface);
+  color: var(--wg-theme-nav-ink);
+  box-shadow: 0 10px 30px rgba(31, 43, 33, .16), 0 2px 6px rgba(31, 43, 33, .08);
+  font-size: 0;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate3d(0, 12px, 0) scale(.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: opacity 180ms ease-out, transform 220ms cubic-bezier(.2, .75, .25, 1), background-color var(--wg-motion), border-color var(--wg-motion);
+}
+
+#top #scroll-top-link::before { content: none !important; }
+#top #scroll-top-link::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translateY(2px) rotate(-45deg);
+}
+
+#top #scroll-top-link.wg-scrolltop-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+#top.wg-cookie-notice-open #scroll-top-link {
+  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+#top #scroll-top-link:hover {
+  border-color: var(--wg-theme-accent);
+  background: var(--wg-theme-surface);
+}
+
+#top #scroll-top-link:active { transform: translate3d(0, 1px, 0) scale(.96); }
+
+@media (max-width: 767px) {
+  #top #scroll-top-link {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
+
+#kontakt,
+#kontaktformular { scroll-margin-top: 108px; }
+
+/* Der alte WordPress-Kontaktvorspann bleibt nur als Sprungziel erhalten.
+   Logo und Text sitzen jetzt direkt im eigentlichen Formularbereich. */
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+}
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) > .container,
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) .content,
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) .post-entry,
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) .entry-content-wrapper {
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) .entry-content-wrapper > * {
+  display: none !important;
+}
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) #kontakt {
+  position: relative;
+  display: block !important;
+  width: 1px !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+#main .container_wrap:has(img[src*="Ihr_wir_passt"]) #kontakt > * { display: none !important; }
+
+/* Gemeinsamer Seitenabschluss: Kontakt, Team-Motiv und Footer greifen ineinander. */
+#main > #footer-page {
+  /* Enfold setzt die vorherige Inhaltssektion auf float:left. Ohne Clear beginnt
+     der Footer-Page-Wrapper auf derselben Hoehe und ueberdeckt den CTA. */
+  clear: both;
+}
+
+.wg-contact-section {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding: 24px 20px 52px;
+  background: var(--wg-theme-canvas);
+  box-shadow: 0 0 0 100vmax var(--wg-theme-canvas);
+  clip-path: inset(0 -100vmax);
+  color: var(--wg-ink);
+}
+
+.wg-contact-shell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+
+.wg-contact-intro {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, .65fr);
+  gap: clamp(36px, 6vw, 88px);
+  align-items: end;
+  padding: clamp(42px, 5vw, 64px) clamp(32px, 5vw, 64px) clamp(32px, 4vw, 44px);
+  border-bottom: 1px solid var(--wg-theme-border);
+}
+
+.wg-contact-mark {
+  position: absolute;
+  z-index: -1;
+  top: 18px;
+  right: 26px;
+  width: clamp(190px, 24vw, 286px);
+  height: auto;
+  opacity: .13;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wg-eyebrow {
+  margin: 0 0 14px;
+  color: var(--wg-theme-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+#top .wg-contact-heading h2 {
+  max-width: 15ch;
+  margin: 0;
+  color: var(--wg-theme-text);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+.wg-contact-lead {
+  max-width: 52ch;
+  margin: 20px 0 0;
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.wg-contact-facts {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding-top: 76px;
+}
+.wg-contact-facts div { margin: 0; }
+.wg-contact-facts dt {
+  margin-bottom: 4px;
+  color: var(--wg-theme-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.wg-contact-facts dd { margin: 0; }
+.wg-contact-facts a {
+  color: var(--wg-theme-accent);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration-color: var(--wg-theme-border);
+  text-underline-offset: 4px;
+}
+.wg-contact-facts a:hover { text-decoration-color: currentColor; }
+
+.wg-contact-card {
+  padding: clamp(34px, 4.5vw, 56px) clamp(32px, 5vw, 64px) clamp(42px, 5vw, 64px);
+  background: var(--wg-theme-card);
+}
+
+.wg-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+}
+
+.wg-field { min-width: 0; }
+.wg-field-wide { grid-column: 1 / -1; }
+
+.wg-field label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 8px;
+  color: var(--wg-theme-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.wg-field label > span:not(.wg-optional) { color: var(--wg-error); }
+.wg-optional {
+  color: var(--wg-theme-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+  border: 1px solid var(--wg-theme-field-line) !important;
+  border-radius: var(--wg-radius-sm) !important;
+  background: var(--wg-white) !important;
+  color: var(--wg-ink) !important;
+  box-shadow: inset 0 1px 1px rgba(31, 43, 33, .025);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: border-color var(--wg-motion), box-shadow var(--wg-motion), background-color var(--wg-motion);
+}
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select) {
+  padding: 0 14px;
+}
+#top .wg-contact-form textarea {
+  min-height: 154px;
+  padding: 14px;
+  resize: vertical;
+}
+#top .wg-contact-form :where(input, select, textarea)::placeholder { color: #8a9289; }
+#top .wg-contact-form :where(input, select, textarea):hover { border-color: var(--wg-theme-field-hover) !important; }
+#top .wg-contact-form :where(input, select, textarea):focus {
+  border-color: var(--wg-theme-accent) !important;
+  box-shadow: 0 0 0 4px var(--wg-theme-focus-shadow) !important;
+}
+#top .wg-field.is-invalid :where(input, select, textarea),
+#top .wg-contact-form :where(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--wg-error) !important;
+  background: #fffafa !important;
+}
+
+.wg-field-hint,
+.wg-field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.wg-field-hint { color: var(--wg-theme-muted); }
+.wg-field-error { min-height: 0; color: var(--wg-error); font-weight: 600; }
+.wg-field-error:empty { display: none; }
+
+.wg-consent {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  margin-top: 24px;
+  color: var(--wg-theme-muted);
+  font-size: 12px;
+  line-height: 1.55;
+  cursor: pointer;
+}
+#top .wg-consent input {
+  width: 19px;
+  height: 19px;
+  margin: 1px 0 0;
+  border-radius: 4px !important;
+  background: var(--wg-white) !important;
+  accent-color: var(--wg-theme-accent);
+}
+.wg-consent a { color: var(--wg-theme-accent); text-underline-offset: 3px; }
+.wg-consent-error { margin-left: 33px; }
+
+.wg-contact-actions {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+#top .wg-contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--wg-theme-accent);
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  color: var(--wg-white);
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#top .wg-contact-submit svg { transition: transform var(--wg-motion); }
+#top .wg-contact-submit:hover {
+  background: var(--wg-theme-accent-hover);
+  box-shadow: 0 12px 26px var(--wg-theme-button-shadow-hover);
+  transform: translateY(-2px);
+}
+#top .wg-contact-submit:hover svg { transform: translateX(3px); }
+#top .wg-contact-submit:active { transform: translateY(0); }
+#top .wg-contact-submit:disabled { opacity: .58; cursor: wait; transform: none; }
+
+.wg-contact-note {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--wg-theme-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.wg-form-status {
+  min-height: 22px;
+  margin: 16px 0 0;
+  color: var(--wg-theme-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bestehende Termin-Elemente auf dieselbe Materialität heben. */
+#wg-event-list .wg-event,
+.wg-home-card {
+  border-color: var(--wg-line);
+  border-radius: var(--wg-radius-md);
+  box-shadow: 0 1px 0 rgba(31, 43, 33, .03);
+  transition: border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#wg-event-list .wg-event:hover,
+.wg-home-card:hover {
+  border-color: #c2cbc0;
+  box-shadow: var(--wg-shadow-md);
+  transform: translateY(-3px);
+}
+.wg-event-badge { border-radius: var(--wg-radius-sm); }
+.wg-home-more {
+  min-height: 46px;
+  padding: 11px 30px;
+  border-color: var(--wg-moss-600);
+  color: var(--wg-forest-700);
+  font-weight: 600;
+  transition: color var(--wg-motion), background-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+.wg-home-more:hover {
+  background: var(--wg-forest-700);
+  box-shadow: var(--wg-shadow-sm);
+  transform: translateY(-2px);
+}
+
+/* Gerahmte Waldmomente: Die alten WordPress-Bild/Text-Zeilen werden zu einer
+   gemeinsamen Komponente. Farben und Schatten kommen aus dem jeweiligen
+   Seitenthema; die Bildposition wechselt auf Desktop und bleibt mobil zuerst. */
+#top .pfeilcontainer {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(calc(100% - 40px), 1240px);
+  margin: clamp(18px, 2.2vw, 28px) auto 0;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: 32px;
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+
+#top .pfeilcontainer > .flex_cell {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  min-height: clamp(350px, 31vw, 470px);
+  align-items: center;
+  border: 0 !important;
+  box-sizing: border-box;
+}
+
+#top .pfeilcontainer > .flex_cell > .flex_cell_inner { width: 100%; }
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(38px, 5vw, 72px) clamp(32px, 5vw, 68px) !important;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-text);
+}
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: clamp(32px, 5vw, 68px);
+  width: 56px;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  min-height: clamp(350px, 31vw, 470px);
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: var(--wg-theme-canvas);
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 43, 33, .06);
+}
+
+#top .pfeilcontainer .pfeillinks,
+#top .pfeilcontainer .pfeilrechts { display: none !important; }
+
+#top .pfeilcontainer .av-special-heading { margin: 0 0 18px; }
+#top .pfeilcontainer .av-special-heading-tag {
+  margin: 0;
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(27px, 2.55vw, 38px);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -.018em;
+}
+#top .pfeilcontainer .special-heading-border { display: none; }
+#top .pfeilcontainer .avia_textblock {
+  color: var(--wg-theme-text);
+  font-size: 16px;
+  line-height: 1.72;
+  text-align: left !important;
+}
+#top .pfeilcontainer .avia_textblock p:last-child,
+#top .pfeilcontainer .avia_textblock ul:last-child { margin-bottom: 0; }
+#top .pfeilcontainer .avia_textblock li { margin-bottom: 7px; }
+#top .pfeilcontainer .avia_textblock li::marker { color: var(--wg-theme-accent); }
+
+/* Auch Listen mit Vorteilen bekommen dieselbe ruhige Materialität, ohne jede
+   einzelne Zeile in eine weitere Karte zu verwandeln. */
+#top .avia-icon-list-container > .avia-icon-list {
+  width: min(100%, 880px);
+  margin-inline: auto;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_icon,
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist-timeline {
+  display: none !important;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li .iconlist_content_wrap {
+  margin-left: 0 !important;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li {
+  position: relative;
+  margin: 0;
+  padding: 24px 0 24px 34px;
+  border-bottom: 1px solid var(--wg-theme-border);
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:first-child { padding-top: 4px; }
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:last-child {
+  padding-bottom: 4px;
+  border-bottom: 0;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 17px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .72;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big li:first-child::before { top: 12px; }
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_title {
+  margin: 0 0 5px;
+  color: var(--wg-theme-text);
+  font-size: 19px;
+}
+#top .avia-icon-list-container > .avia-icon-list.av-iconlist-big .iconlist_content {
+  color: var(--wg-theme-muted);
+  line-height: 1.68;
+}
+
+/* ============================================================
+   HOCHZEITSMODULE
+   Die heterogenen WordPress-Bausteine teilen sich eine Material-, Button-
+   und Reiter-Sprache. Die IDs bleiben nur als technische Andockpunkte;
+   semantische wg-Klassen markieren die wiederverwendbaren Bausteintypen.
+   ============================================================ */
+body.page-id-1143 #main {
+  background: var(--wg-theme-canvas);
+}
+
+body.page-id-1143 :where(
+  .wg-wedding-story,
+  .wg-proof-section,
+  #after_section_4,
+  #after_masonry,
+  #hochzeitsreiter,
+  #catererreiter,
+  .wg-decision-section
+) {
+  border-color: var(--wg-theme-border) !important;
+  background: var(--wg-theme-canvas) !important;
+  color: var(--wg-theme-text);
+}
+
+body.page-id-1143 :where(
+  .wg-wedding-story,
+  .wg-proof-section,
+  #after_section_4,
+  #after_masonry,
+  .wg-decision-section
+) > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+
+body.page-id-1143 .wg-themed-component .av-special-heading-tag,
+body.page-id-1143 #hochzeitsreiter .av-special-heading-tag,
+body.page-id-1143 #catererreiter .av-special-heading-tag,
+body.page-id-1143 #after_section_4 .av-special-heading-tag,
+body.page-id-1143 #after_masonry .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+}
+
+body.page-id-1143 :where(
+  .wg-themed-component,
+  #hochzeitsreiter,
+  #catererreiter,
+  #after_section_4,
+  #after_masonry
+) .special-heading-inner-border {
+  border-color: var(--wg-theme-border) !important;
+}
+
+/* Location-Intro und Rezensionen greifen die Kontaktformular-Flaeche auf. */
+body.page-id-1143 .wg-wedding-story { padding: 28px 0 0; }
+body.page-id-1143 .wg-wedding-story > .container {
+  padding: clamp(38px, 5vw, 64px) clamp(30px, 6vw, 76px);
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3 {
+  position: relative;
+  padding-top: 18px;
+}
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+body.page-id-1143 .wg-wedding-story .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.75;
+}
+
+body.page-id-1143 .wg-proof-section { padding: 0 0 clamp(62px, 8vw, 100px); }
+body.page-id-1143 .wg-proof-section > .container {
+  padding: clamp(38px, 5vw, 58px) clamp(30px, 6vw, 72px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+body.page-id-1143 .wg-proof-section .avia-testimonial-content {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+body.page-id-1143 .wg-proof-section .av-control-minimal .avia-slideshow-arrows a {
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 50%;
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+}
+
+/* Gemeinsames Reiter-Geruest fuer Location-Details und Caterer. */
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) {
+  padding: clamp(52px, 7vw, 88px) 20px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) > .av-tab-section-outer-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+  display: flex !important;
+  gap: 8px;
+  padding: 14px !important;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--wg-theme-border);
+  background: transparent !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--wg-theme-border) transparent;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title {
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0 !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 999px;
+  background: var(--wg-theme-card);
+  color: var(--wg-theme-muted) !important;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), transform var(--wg-motion);
+}
+body.page-id-1143 #hochzeitsreiter .av-section-tab-title {
+  padding: 12px 17px !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title:hover {
+  border-color: var(--wg-theme-accent);
+  color: var(--wg-theme-accent) !important;
+  transform: translateY(-1px);
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-section-tab-title.av-active-tab-title {
+  border-color: var(--wg-theme-accent);
+  background: var(--wg-theme-accent);
+  color: var(--wg-white) !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-arrow-container { display: none; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .av-tab-section-slide {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: var(--wg-white);
+  filter: none;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .av-tab-section-slide::before {
+  width: 46px;
+  height: 46px;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-accent) 84%, var(--wg-white));
+  border-radius: 50%;
+  background: var(--wg-theme-accent);
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+  line-height: 46px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .next-slide { right: 8px; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tabsection-arrow .prev-slide { left: 8px; }
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab {
+  background: transparent !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+  margin: 0 !important;
+  padding: clamp(32px, 5vw, 60px) !important;
+  box-sizing: border-box;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .avia-image-container img {
+  width: 100%;
+  border-radius: 22px;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) blockquote {
+  margin: 22px 0;
+  padding: 4px 0 4px 20px;
+  border-color: var(--wg-theme-accent);
+  color: var(--wg-theme-text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+body.page-id-1143 #hochzeitsreiter .my-bottom-button,
+body.page-id-1143 .wg-decision-section .my-bottom-button {
+  position: static !important;
+  margin-top: 26px !important;
+  transform: none !important;
+  text-align: left;
+}
+body.page-id-1143 :where(#hochzeitsreiter, .wg-decision-section) .avia-button.avia-size-large {
+  min-width: 0;
+  border: 1px solid var(--wg-theme-accent) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+}
+body.page-id-1143 :where(#hochzeitsreiter, .wg-decision-section) .avia-button.avia-size-large:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 12px 26px var(--wg-theme-button-shadow-hover);
+}
+
+/* Caterer: Logos als Auswahlchips, Partnerinfo als lesbare Serviceflaeche. */
+body.page-id-1143 #catererreiter .av-section-tab-title {
+  display: grid;
+  width: 116px;
+  min-height: 116px;
+  padding: 10px !important;
+  place-items: center;
+  border-radius: 18px;
+}
+body.page-id-1143 #catererreiter .av-tab-section-image {
+  width: 76px;
+  height: 76px;
+  margin: 0 !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(.78);
+}
+body.page-id-1143 #catererreiter .av-outer-tab-title { display: none; }
+body.page-id-1143 #catererreiter .av-active-tab-title .av-tab-section-image {
+  filter: brightness(0) invert(1);
+}
+body.page-id-1143 #catererreiter .avia-icon-list-container { margin-top: 28px !important; }
+body.page-id-1143 #catererreiter .avia-icon-list-container > .avia-icon-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: none;
+  padding: 20px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 18px;
+  background: var(--wg-theme-card);
+  box-shadow: none;
+}
+body.page-id-1143 #catererreiter .avia-icon-list li {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist_icon { display: none; }
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist-timeline { display: none; }
+body.page-id-1143 #catererreiter .avia-icon-list .iconlist_content_wrap { margin-left: 0; }
+body.page-id-1143 #catererreiter .iconlist_title {
+  color: var(--wg-theme-accent);
+  font-size: 13px;
+}
+body.page-id-1143 #catererreiter .iconlist_content {
+  color: var(--wg-theme-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Galerie und Catering-Einleitung bilden bewusst ruhige Atempausen. */
+body.page-id-1143 #after_section_4 > .container,
+body.page-id-1143 #after_masonry > .container {
+  margin-top: clamp(48px, 6vw, 80px);
+  margin-bottom: 18px;
+  padding: clamp(38px, 5vw, 58px) clamp(30px, 6vw, 72px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: 0 10px 34px rgba(31, 43, 33, .07);
+}
+body.page-id-1143 #av-sc-masonry-gallery-1 {
+  padding: 8px 20px 0;
+  border: 0;
+  background: var(--wg-theme-canvas);
+}
+body.page-id-1143 #av-sc-masonry-gallery-1 .av-masonry {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+/* Team + FAQ: zwei starke Abschlusskarten, mit normalem Textfluss statt
+   absolut positionierten Legacy-Buttons. */
+body.page-id-1143 .wg-decision-section {
+  padding: clamp(30px, 5vw, 66px) 0 clamp(54px, 7vw, 88px);
+}
+body.page-id-1143 .wg-decision-section > .container { padding: 0; }
+body.page-id-1143 .wg-decision-section .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+#top.page-id-1143 .wg-decision-section .av-flex-placeholder { display: none !important; }
+body.page-id-1143 .wg-decision-section .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-height: 690px;
+  margin: 0 !important;
+  padding: clamp(330px, 33vw, 395px) clamp(28px, 4vw, 46px) 40px !important;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg) !important;
+  background-color: var(--wg-theme-surface) !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.page-id-1143 .wg-decision-section .my-flex-column > .hr:first-child {
+  display: none;
+}
+body.page-id-1143 .wg-decision-section .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+  font-size: clamp(27px, 2.7vw, 37px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+body.page-id-1143 .wg-decision-section .av-subheading {
+  color: var(--wg-theme-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+body.page-id-1143 .wg-decision-section .avia_textblock {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-1143 .wg-decision-section .my-bottom-button { margin-top: auto !important; }
+
+@media (max-width: 989px) {
+  body.page-id-1143 :where(.wg-wedding-story, .wg-proof-section, #after_section_4, #after_masonry, .wg-decision-section) > .container {
+    width: calc(100% - 32px);
+  }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) { padding-inline: 16px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    width: calc(100% - 32px);
+  }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab .flex_column {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  body.page-id-1143 .wg-decision-section .flex_column_table { grid-template-columns: 1fr; }
+  body.page-id-1143 .wg-decision-section .my-flex-column {
+    min-height: 0;
+    padding-top: clamp(360px, 60vw, 460px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  body.page-id-1143 .wg-wedding-story > .container,
+  body.page-id-1143 .wg-proof-section > .container,
+  body.page-id-1143 #after_section_4 > .container,
+  body.page-id-1143 #after_masonry > .container,
+  body.page-id-1143 .wg-decision-section > .container {
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) { padding-inline: 12px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) > .av-tab-section-outer-container { border-radius: 22px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-layout-tab > .av-layout-tab-inner > .container {
+    width: calc(100% - 24px);
+    padding: 26px 20px 34px !important;
+  }
+  body.page-id-1143 #catererreiter .av-section-tab-title { width: 92px; min-height: 92px; }
+  body.page-id-1143 #catererreiter .av-tab-section-image { width: 62px; height: 62px; }
+  body.page-id-1143 #catererreiter .avia-icon-list-container > .avia-icon-list { grid-template-columns: 1fr; }
+  body.page-id-1143 .wg-decision-section .my-flex-column {
+    padding: clamp(238px, 66vw, 285px) 24px 30px !important;
+    border-radius: 22px !important;
+  }
+}
+
+/* Termine übernehmen Fläche, Kontur und Akzent direkt aus dem Seitenthema. */
+#top #wg-event-banner,
+#top.page-id-5003 #after_section_3 { background: var(--wg-theme-canvas); }
+#top #wg-event-list .wg-event,
+#top .wg-home-card {
+  border-color: var(--wg-theme-border);
+  background: var(--wg-theme-card);
+}
+#top .wg-event-badge {
+  border-color: var(--wg-theme-border);
+  background: var(--wg-theme-surface);
+}
+#top .wg-badge-day,
+#top .wg-badge-month,
+#top .wg-event-weekday { color: var(--wg-theme-accent); }
+
+/* Cookie-Hinweis: dieselbe helle, ruhige Designsprache wie das Kontaktformular. */
+#top .avia-cookie-consent {
+  width: min(520px, calc(100vw - 40px)) !important;
+  left: 20px !important;
+  bottom: 20px !important;
+  padding: 0 !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: color-mix(in srgb, var(--wg-theme-canvas) 94%, transparent) !important;
+  color: var(--wg-theme-text) !important;
+  box-shadow: 0 24px 70px rgba(31, 43, 33, .24), 0 2px 10px rgba(31, 43, 33, .08);
+  text-align: left;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+#top .avia-cookie-consent > .container {
+  width: auto !important;
+  max-width: none !important;
+  padding: 28px !important;
+}
+.wg-cookie-heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.wg-cookie-monogram {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 50%;
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+  font-family: Quicksand, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.wg-cookie-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--wg-theme-accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+#top .wg-cookie-heading strong {
+  display: block;
+  color: var(--wg-theme-text);
+  font-family: Quicksand, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+#top .avia-cookie-consent p.avia_cookie_text {
+  display: block;
+  margin: 0;
+  color: var(--wg-theme-muted);
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.62;
+}
+.wg-cookie-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-button {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .035em;
+  text-align: center;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1 {
+  grid-column: 1 / -1;
+  background: var(--wg-theme-accent) !important;
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 8px 18px var(--wg-theme-button-shadow);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-3 { order: 2; }
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-2 { order: 3; }
+#top .avia-cookie-consent .wg-cookie-actions .avia-button:hover {
+  border-color: var(--wg-theme-accent) !important;
+  background: var(--wg-theme-surface) !important;
+  color: var(--wg-theme-accent-hover) !important;
+  box-shadow: var(--wg-shadow-sm);
+  transform: translateY(-1px);
+}
+#top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+}
+
+/* Das ausführliche Einstellungsfenster folgt derselben Oberfläche. */
+#top #av-consent-extra-info {
+  display: none;
+  max-height: min(82dvh, 800px);
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-canvas) !important;
+  color: var(--wg-theme-text);
+  box-shadow: var(--wg-shadow-md);
+}
+#top .mfp-content #av-consent-extra-info { display: flex; }
+#top #av-consent-extra-info .av-special-heading-tag { color: var(--wg-theme-text); }
+#top #av-consent-extra-info > .tabcontainer {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1 1 auto;
+}
+#top #av-consent-extra-info .tab {
+  border-color: var(--wg-theme-border);
+  color: var(--wg-theme-muted);
+}
+#top #av-consent-extra-info .tab.active_tab {
+  background: var(--wg-theme-surface);
+  color: var(--wg-theme-accent);
+}
+#top #av-consent-extra-info > .avia-cookie-consent-modal-buttons-wrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  flex: 0 0 auto;
+  border-top: 1px solid var(--wg-theme-border);
+  background: var(--wg-theme-canvas);
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+  flex: 1 1 0;
+  margin: 0;
+  min-height: 46px;
+  border: 1px solid var(--wg-theme-accent) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--wg-theme-accent) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-cookie-consent-button-4 {
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button:hover {
+  background: var(--wg-theme-surface) !important;
+  color: var(--wg-theme-accent-hover) !important;
+}
+#top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-cookie-consent-button-4:hover {
+  background: var(--wg-theme-accent-hover) !important;
+  color: var(--wg-white) !important;
+}
+
+/* Das transparente Team-Motiv folgt seiner echten Bildproportion. So entstehen
+   auf Tablet und Mobil keine 400px-WordPress-Leerflaechen oder weissen Naehte. */
+#top .avia-section.av-dogi7-3684c9a5743b0e3541661444970bc713 {
+  --wg-team-strip-height: clamp(112px, 29.875vw, 478px);
+  min-height: var(--wg-team-strip-height);
+  border: 0;
+  background-color: var(--wg-theme-canvas) !important;
+  background-image: url(../../wp-content/uploads/2025/01/Mitarbeiter_free_16003.webp);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: min(1600px, 100%) auto;
+}
+#top .avia-section.av-dogi7-3684c9a5743b0e3541661444970bc713 > .container,
+#top .avia-section.av-dogi7-3684c9a5743b0e3541661444970bc713 .content {
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#top .avia-section.av-dogi7-3684c9a5743b0e3541661444970bc713 .hr-invisible {
+  height: var(--wg-team-strip-height) !important;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  #wg-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 989px) {
+  #top .pfeilcontainer {
+    grid-template-columns: 1fr;
+    width: calc(100% - 32px);
+    border-radius: 28px;
+  }
+  #top .pfeilcontainer > .flex_cell { min-height: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    order: 1;
+    min-height: clamp(300px, 56vw, 460px);
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    order: 2;
+    padding: clamp(38px, 7vw, 58px) clamp(32px, 7vw, 56px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .wg-contact-intro { grid-template-columns: 1fr; gap: 30px; }
+  #top .wg-contact-heading h2 { max-width: 15ch; }
+  .wg-contact-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 0;
+  }
+  .wg-contact-mark { opacity: .1; }
+}
+
+@media (max-width: 767px) {
+  #top #main .avia_textblock { text-align: left !important; }
+
+  #top .pfeilcontainer {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    width: calc(100% - 24px);
+    margin-top: 16px;
+    padding: 6px;
+    border-radius: 26px;
+  }
+  #top .pfeilcontainer > .flex_cell { min-height: 0; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    order: 1;
+    min-height: clamp(240px, 72vw, 360px);
+    border-radius: 20px;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    order: 2;
+    padding: 34px 24px 38px !important;
+    border-radius: 20px;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before { left: 24px; }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(25px, 7vw, 31px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.68; }
+  #top .avia-icon-list-container > .avia-icon-list {
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  #top .avia-cookie-consent {
+    width: calc(100vw - 24px) !important;
+    right: 12px !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    left: 12px !important;
+    border-radius: 22px;
+  }
+  #top .avia-cookie-consent > .container { padding: 22px !important; }
+  .wg-cookie-heading { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; }
+  .wg-cookie-monogram { width: 42px; height: 42px; font-size: 18px; }
+  #top .wg-cookie-heading strong { font-size: 17px; }
+  .wg-cookie-actions { grid-template-columns: 1fr; gap: 8px; margin-top: 18px; }
+  #top .avia-cookie-consent .wg-cookie-actions .avia-cookie-consent-button-1 { grid-column: auto; }
+  #top .avia-cookie-consent .wg-cookie-actions .avia-button { width: 100%; min-height: 48px; }
+  #top #av-consent-extra-info {
+    max-height: calc(100dvh - 24px);
+    padding: 20px;
+    border-radius: 22px;
+  }
+  #top #av-consent-extra-info > .avia-cookie-consent-modal-buttons-wrap {
+    flex-direction: column;
+    padding-top: 12px;
+  }
+  #top #av-consent-extra-info .avia-cookie-consent-modal-buttons-wrap .avia-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .wg-contact-section { padding: 24px 16px 36px; }
+  .wg-contact-shell { border-radius: 22px; }
+  .wg-contact-intro { gap: 28px; padding: 38px 22px 28px; }
+  .wg-contact-card { padding: 30px 22px 38px; }
+  .wg-contact-mark { top: 14px; right: -24px; width: 210px; opacity: .09; }
+  .wg-contact-grid { grid-template-columns: 1fr; gap: 19px; }
+  .wg-field-wide { grid-column: auto; }
+  .wg-contact-facts { grid-template-columns: 1fr; gap: 18px; }
+  .wg-contact-actions { grid-template-columns: 1fr; }
+  #top .wg-contact-submit { width: 100%; min-height: 54px; }
+  .wg-contact-note { max-width: none; text-align: center; }
+  #wg-event-list { grid-template-columns: 1fr; gap: 14px; }
+  #wg-event-list .wg-event { gap: 18px; padding: 20px; }
+}
+
+@media (max-width: 420px) {
+  #wg-event-list .wg-event .wg-event-badge { width: 84px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ============================================================
+   GEMEINSAME SEITENARCHITEKTUR
+   Wiederkehrende WordPress-Bausteine folgen jetzt denselben Rollen:
+   Einleitung, Fakten, Feature, Ablauf, Entscheidung und Footer.
+   ============================================================ */
+
+body:is(
+  .home,
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #main {
+  background: var(--wg-theme-canvas);
+}
+
+/* Einleitungen: ein ruhiger Auftakt statt freischwebendem Text auf Weiss. */
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1,
+body.home .wg-lead-panel {
+  padding: clamp(24px, 4vw, 52px) 20px 14px;
+  border: 0 !important;
+  background: var(--wg-theme-canvas) !important;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 > .container,
+body.home .wg-lead-panel > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px);
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .content,
+body.home .wg-lead-panel .content {
+  padding: 0;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .entry-content-wrapper,
+body.home .wg-lead-panel .entry-content-wrapper {
+  position: relative;
+  max-width: 900px;
+  padding-top: 20px;
+}
+
+body:is(
+  .page-id-1143,
+  .page-id-3516,
+  .page-id-5001,
+  .page-id-5002,
+  .page-id-5003,
+  .page-id-4947,
+  .page-id-1987
+) #after_submenu_1 .entry-content-wrapper::before,
+body.home .wg-lead-panel .entry-content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+  opacity: .78;
+}
+
+body.home .wg-lead-panel h1 {
+  max-width: 18ch;
+  margin: 0 0 22px;
+  color: var(--wg-theme-text);
+  font-size: clamp(31px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+body.home .wg-lead-panel .hr-invisible { display: none; }
+body.home .wg-lead-panel .avia_textblock,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .avia_textblock {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.78;
+}
+
+/* Faktenband: auf Location und Hochzeit dieselbe echte Komponente. */
+#top .wg-fact-panel {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(calc(100% - 40px), 1180px) !important;
+  margin: 14px auto clamp(34px, 6vw, 76px) !important;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+#top .wg-fact-panel > .flex_cell {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+#top .wg-fact-panel .flex_cell_inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+#top .wg-fact-panel .flex_column {
+  display: flex;
+  float: none !important;
+  width: auto !important;
+  min-height: 164px;
+  margin: 0 !important;
+  padding: 26px 16px 21px !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 72%, transparent);
+  border-radius: 21px;
+  background: var(--wg-theme-card);
+  color: var(--wg-theme-text);
+  text-align: center;
+}
+#top .wg-fact-panel .avia_textblock {
+  color: var(--wg-theme-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+#top .wg-fact-panel .factnumber { margin-top: 10px; }
+#top .wg-fact-panel .factnumber .heading {
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(30px, 3vw, 44px) !important;
+}
+#top .wg-fact-panel .avia-animated-number-circle {
+  border-color: var(--wg-theme-border) !important;
+  opacity: .74;
+}
+
+/* Virtuelle Tour: Beschreibung und Handlungslink bilden einen Baustein. */
+#top .wg-tour-cta {
+  display: block !important;
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 36px) clamp(48px, 7vw, 86px);
+  background: var(--wg-theme-canvas) !important;
+}
+#top .wg-tour-cta > .flex_cell { display: none !important; }
+#top .wg-tour-cta > .av-cell-link {
+  display: block !important;
+  float: none !important;
+  width: min(100%, 1180px) !important;
+  margin: 0 auto;
+  padding: 12px !important;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+}
+#top .wg-tour-cta .iconbox_content {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  column-gap: clamp(24px, 3vw, 40px);
+  row-gap: 4px;
+  min-height: 150px;
+  margin: 0 !important;
+  padding: clamp(32px, 4vw, 52px) !important;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white);
+  box-shadow: none !important;
+  text-align: left;
+}
+#top .wg-tour-cta .iconbox_content::after {
+  content: "3D";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: clamp(28px, 6vw, 84px);
+  color: var(--wg-white);
+  font-family: Quicksand, sans-serif;
+  font-size: clamp(92px, 12vw, 166px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.08em;
+  opacity: .055;
+  transform: translateY(-52%);
+  pointer-events: none;
+}
+#top .wg-tour-cta .entry-content-header { display: contents; }
+#top .wg-tour-cta .iconbox_icon {
+  position: static !important;
+  display: grid;
+  width: 88px !important;
+  height: 88px !important;
+  margin: 0 !important;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .09);
+  color: var(--wg-white) !important;
+  font-size: 28px !important;
+}
+#top .wg-tour-cta .iconbox_content_title {
+  grid-column: 2;
+  align-self: end;
+  margin: 0 !important;
+  color: var(--wg-white) !important;
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+#top .wg-tour-cta .iconbox_content_container {
+  grid-column: 2;
+  margin: 0 !important;
+  color: rgba(255, 255, 255, .8);
+  font-size: 15px;
+  line-height: 1.6;
+}
+#top .wg-tour-cta .iconbox_content_container p { margin: 0 !important; }
+#top .wg-tour-cta .iconbox_content_container p + p { margin-top: 10px !important; }
+#top .wg-tour-cta .iconbox_content_container a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--wg-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+#top .wg-tour-cta .iconbox_content_container a span { transition: transform var(--wg-motion); }
+#top .wg-tour-cta .iconbox_content_container a:hover span { transform: translateX(4px); }
+
+/* Eingebettete 3D-Tour auf der Locationseite. */
+body.page-id-3516 #after_grid_row_1 {
+  padding: 12px 20px clamp(56px, 7vw, 88px);
+  border: 0;
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #after_grid_row_1 > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: 0;
+}
+body.page-id-3516 #after_grid_row_1 .content { padding: 0; }
+body.page-id-3516 .wg-fact-panel { margin-bottom: 24px !important; }
+body.page-id-3516 .wg-immersive-tour {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 auto clamp(58px, 7vw, 86px) !important;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.page-id-3516 .wg-immersive-tour .iconbox_content {
+  margin: 0 !important;
+  padding: clamp(34px, 5vw, 62px) !important;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-card) !important;
+  box-shadow: none !important;
+}
+body.page-id-3516 .wg-immersive-tour .iconbox_icon { display: none !important; }
+body.page-id-3516 .wg-immersive-tour h2 {
+  position: relative;
+  max-width: 16ch;
+  margin: 0 0 20px;
+  padding-top: 18px;
+  color: var(--wg-theme-text);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -.025em;
+}
+body.page-id-3516 .wg-immersive-tour h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--wg-theme-accent);
+}
+body.page-id-3516 .wg-immersive-tour p {
+  color: var(--wg-theme-muted);
+  line-height: 1.72;
+  text-align: left !important;
+}
+body.page-id-3516 .wg-immersive-tour iframe {
+  display: block;
+  width: 100%;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 18px;
+  background: var(--wg-theme-surface);
+}
+body.page-id-3516 #events {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+/* Hochzeit: Karte und Reiter bilden optisch einen zusammenhaengenden Bereich. */
+body.page-id-1143 .av-hotspot-image-container {
+  width: min(calc(100% - 40px), 1180px);
+  margin: clamp(20px, 4vw, 52px) auto 0;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.page-id-1143 .av-hotspot-image-container .av-hotspot-container {
+  overflow: hidden;
+  border-radius: 21px;
+}
+body.page-id-1143 .av-hotspot-image-container .av-image-hotspot_inner {
+  border: 2px solid var(--wg-white) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+  box-shadow: 0 5px 16px var(--wg-theme-button-shadow);
+}
+body.page-id-1143 #hochzeitsreiter { padding-top: 14px; }
+
+/* Grosse Vorteilslisten: echte Inhaltsstruktur statt austauschbarer Icons. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-icon-list-container {
+  width: min(calc(100% - 40px), 1000px);
+  margin-inline: auto;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-icon-list-container > .avia-icon-list.av-iconlist-big {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Abläufe: Nummern bleiben, die alten Font-Icons verschwinden. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline-container {
+  width: min(100%, 1100px);
+  margin: clamp(26px, 4vw, 48px) auto;
+  padding: 8px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-icon-wrap {
+  display: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  min-height: 100%;
+  padding: clamp(24px, 3vw, 34px) !important;
+  border: 1px solid color-mix(in srgb, var(--wg-theme-border) 76%, transparent) !important;
+  border-radius: 20px;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-muted);
+  box-shadow: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date strong {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 12px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--wg-theme-accent);
+  color: var(--wg-white) !important;
+  font-family: Quicksand, sans-serif;
+  font-size: 17px;
+  box-shadow: 0 7px 18px var(--wg-theme-button-shadow);
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-indicator,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-article-footer {
+  display: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-title {
+  color: var(--wg-theme-text) !important;
+  font-size: 20px;
+}
+
+/* Startseite: bestehende Bildinszenierung behalten, Oberflaechen vereinheitlichen. */
+body.home :where(#hochzeit, #winter, #einleitung-details, #av_section_2, #av_section_4, #av_section_7, #av_section_8, #anfahrt, #ueber-uns) {
+  border: 0 !important;
+  background-color: var(--wg-theme-canvas) !important;
+}
+body.home #after_grid_row_1 { display: none; }
+body.home :where(#hochzeit, #winter) {
+  padding-block: clamp(24px, 4vw, 52px);
+}
+body.home :where(#hochzeit, #winter) .av-horizontal-gallery-wrap {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 12px 34px var(--wg-theme-button-shadow);
+}
+body.home :where(#av_section_2, #av_section_7) > .container {
+  width: min(calc(100% - 40px), 1040px);
+  max-width: 1040px;
+}
+body.home :where(#av_section_2, #av_section_7) .my-overlap-box2 {
+  padding: clamp(36px, 5vw, 62px) !important;
+  overflow: hidden;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.home :where(#av_section_2, #av_section_7) .av-special-heading-tag {
+  color: var(--wg-theme-text) !important;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: clamp(34px, 4vw, 52px) !important;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background-color: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .av-flex-placeholder { display: none !important; }
+body.home :where(#av_section_4, #av_section_8, #ueber-uns) .hr-invisible:first-child { display: none; }
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+body.home #einleitung-details > .container,
+body.home #anfahrt > .container {
+  width: min(calc(100% - 40px), 1000px);
+  max-width: 1000px;
+}
+body.home #einleitung-details .entry-content-wrapper,
+body.home #anfahrt .entry-content-wrapper {
+  padding: clamp(34px, 5vw, 56px);
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-card);
+}
+body.home #einleitung-details .av_font_icon { display: none; }
+body.home #einleitung-details .avia_textblock {
+  max-width: 780px;
+  margin-inline: auto;
+  color: var(--wg-theme-text);
+  font-family: Quicksand, sans-serif;
+  font-size: clamp(20px, 2.4vw, 29px);
+  line-height: 1.55;
+}
+body.home #av-layout-grid-4 {
+  width: min(calc(100% - 40px), 1180px);
+  margin: 14px auto 30px;
+  padding: 8px;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+  box-sizing: border-box;
+}
+body.home #av-layout-grid-4 > .flex_cell {
+  padding: 0 !important;
+  background: transparent !important;
+}
+body.home #av-layout-grid-4 .flex_cell_inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+body.home #av-layout-grid-4 .flex_column {
+  float: none !important;
+  width: auto !important;
+  min-height: 150px;
+  margin: 0 !important;
+  padding: 24px 12px !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: 20px;
+  background: var(--wg-theme-card);
+  text-align: center;
+}
+body.home #av-layout-grid-4 .avia-animated-number-circle { display: none; }
+body.home #av-layout-grid-4 .avia-animated-number-title {
+  color: var(--wg-theme-accent) !important;
+  font-size: 35px !important;
+}
+body.home #av-layout-grid-5 {
+  display: block !important;
+  padding: 0 20px clamp(52px, 7vw, 82px);
+  background: var(--wg-theme-canvas) !important;
+}
+body.home #av-layout-grid-5 > .flex_cell { display: none !important; }
+body.home #av-layout-grid-5 > .av-cell-link {
+  display: block !important;
+  float: none !important;
+  width: min(100%, 760px) !important;
+  margin: 0 auto;
+  padding: 8px !important;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow);
+}
+body.home #av-layout-grid-5 .iconbox_content {
+  margin: 0 !important;
+  padding: 34px !important;
+  border: 0 !important;
+  border-radius: 21px;
+  background: var(--wg-theme-card) !important;
+  box-shadow: none !important;
+}
+body.home #av-layout-grid-5 .iconbox_icon {
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-theme-accent) !important;
+}
+
+/* Karten fuer Team/FAQ auch auf der Locationseite. */
+body.page-id-3516 #av_section_4 {
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #av_section_4 > .container {
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 1180px;
+}
+body.page-id-3516 #av_section_4 .flex_column_table {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+body.page-id-3516 #av_section_4 .my-flex-column {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: clamp(34px, 4vw, 52px) !important;
+  flex-direction: column;
+  border: 1px solid var(--wg-theme-border) !important;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface) !important;
+  box-shadow: var(--wg-theme-shadow) !important;
+}
+body.page-id-3516 #av_section_4 .av-flex-placeholder { display: none !important; }
+
+/* Buttons: dieselbe Form und Rueckmeldung auf allen Marketingseiten. */
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #main .avia-button.avia-size-large {
+  min-height: 48px;
+  padding: 13px 24px !important;
+  border-radius: 999px !important;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: color var(--wg-motion), background-color var(--wg-motion), border-color var(--wg-motion), box-shadow var(--wg-motion), transform var(--wg-motion);
+}
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #main .avia-button.avia-size-large:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer: kompakt, ohne den bisherigen ungenutzten Leerraum. */
+#top #av-layout-grid-7 {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(260px, 1fr);
+  gap: clamp(20px, 4vw, 64px);
+  min-height: 0 !important;
+  padding: 24px max(24px, calc((100vw - 1120px) / 2)) !important;
+  align-items: center;
+  border: 0 !important;
+  background: #090b09 !important;
+  box-sizing: border-box;
+}
+#top #wrap_all #av-layout-grid-7 > .flex_cell {
+  display: flex !important;
+  float: none !important;
+  width: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+#top #av-layout-grid-7 .flex_cell_inner { width: 100%; }
+#top #av-layout-grid-7 .hr-invisible { display: none; }
+#top #av-layout-grid-7 .avia_textblock { font-size: 12px !important; line-height: 1.55; }
+#top #av-layout-grid-7 .avia_textblock p { margin: 5px 0 0; }
+#top #av-layout-grid-7 h3 {
+  margin: 0;
+  color: rgba(255,255,255,.96);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+#top #av-layout-grid-7 .footerlogo img {
+  display: block;
+  width: 78px;
+  height: auto;
+  margin: 0 auto;
+}
+#top #socket {
+  min-height: 46px;
+  border-top-color: rgba(255,255,255,.1);
+  background: #090b09;
+}
+#top #socket .container {
+  min-height: 46px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 46px;
+}
+#top #socket .copyright { font-size: 11px; }
+#top #socket .social_bookmarks { margin-top: 7px; }
+
+@media (min-width: 768px) {
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 989px) {
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) .flex_column_table,
+  body.page-id-3516 #av_section_4 .flex_column_table {
+    grid-template-columns: 1fr;
+  }
+  #top #av-layout-grid-7 {
+    grid-template-columns: minmax(190px, 1fr) 82px minmax(230px, 1fr);
+    gap: 24px;
+    padding-inline: 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body:is(
+    .page-id-1143,
+    .page-id-3516,
+    .page-id-5001,
+    .page-id-5002,
+    .page-id-5003,
+    .page-id-4947,
+    .page-id-1987
+  ) #after_submenu_1,
+  body.home .wg-lead-panel {
+    padding: 16px 12px 8px;
+  }
+  body:is(
+    .page-id-1143,
+    .page-id-3516,
+    .page-id-5001,
+    .page-id-5002,
+    .page-id-5003,
+    .page-id-4947,
+    .page-id-1987
+  ) #after_submenu_1 > .container,
+  body.home .wg-lead-panel > .container {
+    padding: 32px 22px 36px;
+    border-radius: 22px;
+  }
+  #top .wg-fact-panel {
+    grid-template-columns: 1fr;
+    width: calc(100% - 24px) !important;
+    margin-bottom: 40px !important;
+    border-radius: 22px;
+  }
+  #top .wg-fact-panel .flex_cell_inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #top .wg-fact-panel .flex_column {
+    min-height: 130px;
+    padding: 20px 10px 16px !important;
+    border-radius: 17px;
+  }
+  #top .wg-tour-cta { padding: 8px 12px 46px; }
+  #top .wg-tour-cta > .av-cell-link { border-radius: 22px; }
+  #top .wg-tour-cta .iconbox_content {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 18px;
+    padding: 30px 22px !important;
+    border-radius: 16px;
+  }
+  #top .wg-tour-cta .iconbox_icon { width: 58px; height: 58px; font-size: 22px; }
+  #top .wg-tour-cta .iconbox_content_title { font-size: 23px; }
+  #top .wg-tour-cta .iconbox_content_container { margin-top: -7px; }
+  body.page-id-3516 #after_grid_row_1 { padding: 8px 12px 48px; }
+  body.page-id-3516 .wg-immersive-tour { border-radius: 22px; }
+  body.page-id-3516 .wg-immersive-tour .iconbox_content {
+    padding: 30px 20px !important;
+    border-radius: 16px;
+  }
+  body.page-id-3516 .wg-immersive-tour iframe { height: 430px; border-radius: 14px; }
+  body.page-id-1143 .av-hotspot-image-container {
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.page-id-1143 .av-hotspot-image-container .av-hotspot-container { border-radius: 16px; }
+  body.page-id-1143 :where(#hochzeitsreiter, #catererreiter) .av-tab-section-tab-title-container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  body.home :where(#av_section_2, #av_section_7) > .container,
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) > .container,
+  body.home #einleitung-details > .container,
+  body.home #anfahrt > .container {
+    width: calc(100% - 24px);
+  }
+  body.home :where(#av_section_2, #av_section_7) .my-overlap-box2,
+  body.home :where(#av_section_4, #av_section_8, #ueber-uns) .my-flex-column,
+  body.home #einleitung-details .entry-content-wrapper,
+  body.home #anfahrt .entry-content-wrapper {
+    padding: 30px 22px !important;
+    border-radius: 22px;
+  }
+  body.home #av-layout-grid-4 {
+    display: block !important;
+    width: calc(100% - 24px);
+    border-radius: 22px;
+  }
+  body.home #av-layout-grid-4 > .flex_cell { display: block !important; }
+  body.home #av-layout-grid-4 .flex_cell_inner { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  body.home #av-layout-grid-4 .flex_column { min-height: 125px; padding: 18px 6px !important; }
+  body.home #av-layout-grid-4 .avia-animated-number-title { font-size: 29px !important; }
+  #top #av-layout-grid-7 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+    padding: 22px 18px !important;
+  }
+  #top #av-layout-grid-7 > .flex_cell:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  #top #av-layout-grid-7 > .flex_cell:first-of-type { grid-column: 1; grid-row: 2; }
+  #top #av-layout-grid-7 > .flex_cell:last-of-type { grid-column: 2; grid-row: 2; }
+  #top #av-layout-grid-7 .footerlogo img { width: 62px; }
+  #top #av-layout-grid-7 .avia_textblock { font-size: 11px !important; }
+  #top #socket .container {
+    min-height: 0;
+    padding: 10px 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  #top #socket .copyright { display: block; float: none; }
+  #top #socket .social_bookmarks { display: none; }
+}
+
+@media (max-width: 440px) {
+  #top .wg-tour-cta .iconbox_content {
+    display: block;
+  }
+  #top .wg-tour-cta .iconbox_icon { margin-bottom: 20px !important; }
+  #top .wg-tour-cta .iconbox_content_title,
+  #top .wg-tour-cta .iconbox_content_container { margin-left: 0; }
+  #top .wg-tour-cta .iconbox_content_container { margin-top: 12px; }
+  body.home #av-layout-grid-4 .flex_cell_inner { grid-template-columns: 1fr; }
+  body.home #av-layout-grid-4 .flex_column { min-height: 0; }
+  #top #av-layout-grid-7 {
+    grid-template-columns: 1fr;
+  }
+  #top #av-layout-grid-7 > .flex_cell:nth-of-type(2),
+  #top #av-layout-grid-7 > .flex_cell:first-of-type,
+  #top #av-layout-grid-7 > .flex_cell:last-of-type {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Layout-Audit: Alle grossen Inhaltskarten folgen einem klaren Rhythmus.
+   Damit bleiben Text, Bild und Aktion zusammen und die alten Builder-Abstaende
+   erzeugen keine leeren Flaechen oder losgeloesten Linien mehr. */
+:root {
+  --wg-section-space: clamp(42px, 5vw, 68px);
+  --wg-card-space: clamp(30px, 4vw, 48px);
+}
+
+/* Die Linie war aus dem urspruenglichen Builder uebrig und sass am Kartenrand. */
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading)::before,
+body:is(.home,.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper::before,
+body.home .wg-lead-panel .entry-content-wrapper::before,
+body.page-id-3516 .wg-immersive-tour h2::before,
+body.page-id-1143 .wg-wedding-story .av-special-heading-h3::before {
+  display: none !important;
+}
+
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding-top: clamp(34px, 4vw, 56px) !important;
+}
+
+/* Start: Intro deutlich kompakter und ohne die alte, zu enge Überschriftenbreite. */
+body.home .wg-lead-panel {
+  margin-top: 0 !important;
+  padding: 32px 20px 12px;
+}
+body.home .wg-lead-panel > .container {
+  padding: clamp(42px, 4vw, 54px) clamp(28px, 6vw, 72px) !important;
+}
+body.home .wg-lead-panel .entry-content-wrapper {
+  max-width: 1000px;
+  padding-top: 0;
+}
+body.home .wg-lead-panel h1 {
+  max-width: 980px;
+  margin-bottom: 18px;
+  color: var(--wg-theme-text) !important;
+  font-size: clamp(32px, 3.2vw, 48px);
+  line-height: 1.14;
+  text-align: left !important;
+}
+body.home .wg-lead-panel .avia_textblock {
+  max-width: 960px;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.7;
+  text-align: left !important;
+}
+
+/* Zitatblock: keine unsichtbaren Trenner und kein leerer Sockel unter dem Text. */
+body.home #einleitung-details {
+  margin-top: 0 !important;
+  padding: var(--wg-section-space) 0 0 !important;
+}
+body.home #einleitung-details .entry-content-wrapper {
+  padding: clamp(32px, 3.5vw, 42px) !important;
+}
+body.home #einleitung-details :where(.hr, .hr-invisible, .av_font_icon) {
+  display: none !important;
+}
+body.home #einleitung-details .avia_textblock {
+  max-width: 820px;
+  margin: 0 auto !important;
+  font-size: clamp(19px, 1.9vw, 25px);
+  line-height: 1.45;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+body.home #einleitung-details .avia_textblock :where(p, a) {
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+/* Bildkarten auf der Startseite: kompakte, linksbuendige Lesespalte statt Text ueber das ganze Bild. */
+body.home :where(#av_section_4, #av_section_8) {
+  padding-block: var(--wg-section-space) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  min-height: clamp(500px, 41vw, 590px);
+  padding: clamp(32px, 3.2vw, 46px) !important;
+  justify-content: flex-end;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column :where(.hr, .hr-invisible) {
+  display: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-special-heading {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-special-heading-tag {
+  max-width: 20ch;
+  margin: 0 0 8px !important;
+  font-size: clamp(27px, 2.25vw, 36px) !important;
+  line-height: 1.1 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .av-subheading {
+  max-width: 34rem;
+  margin: 0 0 18px !important;
+  font-size: clamp(15px, 1.25vw, 18px) !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock {
+  max-width: 35rem;
+  margin: 0 !important;
+  font-size: clamp(15px, 1.05vw, 17px) !important;
+  line-height: 1.62 !important;
+  text-align: left !important;
+}
+body.home :where(#av_section_4, #av_section_8) .avia_textblock p { margin: 0 !important; }
+body.home :where(#av_section_4, #av_section_8) .my-bottom-button {
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  margin: 24px 0 0 !important;
+  text-align: left !important;
+  transform: none !important;
+}
+
+/* Team und FAQ: Bild als Kopf, gut lesbarer Inhalt auf einer ruhigen Flaeche darunter. */
+body.home #ueber-uns,
+body.page-id-3516 #av_section_4 {
+  padding-block: var(--wg-section-space) !important;
+}
+body.home #ueber-uns .my-flex-column,
+body.page-id-3516 #av_section_4 .my-flex-column {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(610px, 42vw, 760px);
+  padding: clamp(240px, 21vw, 300px) clamp(30px, 3.5vw, 46px) 36px !important;
+  overflow: hidden;
+  background-color: var(--wg-theme-card) !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% auto !important;
+  color: var(--wg-theme-text) !important;
+}
+body.home #ueber-uns .my-flex-column::before,
+body.page-id-3516 #av_section_4 .my-flex-column::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0, transparent 38%, var(--wg-theme-card) 44%, var(--wg-theme-card) 100%);
+  pointer-events: none;
+}
+body.home #ueber-uns .my-flex-column > *,
+body.page-id-3516 #av_section_4 .my-flex-column > * {
+  position: relative;
+  z-index: 1;
+}
+body.home #ueber-uns .my-flex-column :where(.hr, .hr-invisible),
+body.page-id-3516 #av_section_4 .my-flex-column :where(.hr, .hr-invisible) {
+  display: none !important;
+}
+body.home #ueber-uns .av-special-heading,
+body.page-id-3516 #av_section_4 .av-special-heading {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.home #ueber-uns :where(.av-special-heading-tag, .av-subheading, .avia_textblock),
+body.page-id-3516 #av_section_4 :where(.av-special-heading-tag, .av-subheading, .avia_textblock) {
+  max-width: 35rem;
+  color: var(--wg-theme-text) !important;
+  text-align: left !important;
+  text-shadow: none !important;
+}
+body.home #ueber-uns .av-special-heading-tag,
+body.page-id-3516 #av_section_4 .av-special-heading-tag {
+  margin: 0 0 8px !important;
+  font-size: clamp(27px, 2.1vw, 35px) !important;
+  line-height: 1.1 !important;
+}
+body.home #ueber-uns .av-subheading,
+body.page-id-3516 #av_section_4 .av-subheading {
+  margin: 0 0 16px !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+}
+body.home #ueber-uns .avia_textblock,
+body.page-id-3516 #av_section_4 .avia_textblock {
+  margin: 0 !important;
+  color: var(--wg-theme-muted) !important;
+  font-size: 16px !important;
+  line-height: 1.62 !important;
+}
+body.home #ueber-uns .avia_textblock p,
+body.page-id-3516 #av_section_4 .avia_textblock p { margin: 0 !important; }
+body.home #ueber-uns .my-bottom-button,
+body.page-id-3516 #av_section_4 .my-bottom-button {
+  position: static !important;
+  inset: auto !important;
+  width: auto !important;
+  margin: 24px 0 0 !important;
+  text-align: left !important;
+  transform: none !important;
+}
+body.home #ueber-uns .avia-button,
+body.page-id-3516 #av_section_4 .avia-button {
+  border-color: var(--wg-theme-accent) !important;
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+
+@media (max-width: 767px) {
+  body.home .wg-lead-panel { padding: 20px 12px 8px; }
+  body.home .wg-lead-panel > .container { padding: 34px 22px !important; }
+  body.home .wg-lead-panel h1 { font-size: clamp(30px, 9vw, 40px); }
+  body.home #einleitung-details { padding-top: 42px !important; }
+  body.home #einleitung-details .entry-content-wrapper { padding: 30px 22px !important; }
+  body.home #einleitung-details .avia_textblock { font-size: 19px; }
+  body.home #ueber-uns .my-flex-column,
+  body.page-id-3516 #av_section_4 .my-flex-column {
+    min-height: 0;
+    padding: min(56vw, 270px) 22px 30px !important;
+  }
+  body.home #ueber-uns .my-flex-column::before,
+  body.page-id-3516 #av_section_4 .my-flex-column::before {
+    background: linear-gradient(to bottom, transparent 0, transparent 36%, var(--wg-theme-card) 43%, var(--wg-theme-card) 100%);
+  }
+}
+
+/* Sichtpruefung v14: diese Regeln stehen bewusst zuletzt, damit sie die
+   historischen Builder-Abstaende verbindlich uebernehmen. */
+#top .pfeilcontainer {
+  gap: 0 !important;
+  margin-top: clamp(12px, 1.4vw, 18px) !important;
+  padding: 0 !important;
+  border-radius: 28px;
+}
+#top .pfeilcontainer > .flex_cell { min-height: clamp(320px, 28vw, 430px) !important; }
+#top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+  border-radius: 26px 0 0 26px;
+}
+#top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+  padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
+  border-radius: 0 26px 26px 0;
+}
+#top .pfeilcontainer .av-special-heading { margin: 0 0 12px !important; }
+#top .pfeilcontainer .avia_textblock {
+  background: transparent !important;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.58;
+}
+
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 > .container {
+  padding: clamp(34px, 5vw, 62px) clamp(28px, 6vw, 76px) !important;
+}
+body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-4947,.page-id-1987) #after_submenu_1 .entry-content-wrapper {
+  max-width: 900px !important;
+  padding: 0 !important;
+}
+
+body.page-id-1987 #planung .av-milestone {
+  display: grid !important;
+  grid-template-rows: 54px minmax(0, 1fr);
+  justify-items: stretch;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 54px !important;
+  margin: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date strong {
+  display: grid !important;
+  margin: 0 !important;
+  place-items: center !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap { width: 100% !important; margin: 0 !important; }
+
+@media (max-width: 989px) {
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(270px, 50vw, 370px) !important;
+    border-radius: 24px 24px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 32px 28px 34px !important;
+    border-radius: 0 0 24px 24px;
+  }
+}
+@media (max-width: 767px) {
+  #top .pfeilcontainer { margin-top: 12px !important; border-radius: 22px; }
+  #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
+    min-height: clamp(230px, 64vw, 320px) !important;
+    border-radius: 22px 22px 0 0;
+  }
+  #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    padding: 28px 22px 30px !important;
+    border-radius: 0 0 22px 22px;
+  }
+  #top .pfeilcontainer .av-special-heading-tag { font-size: clamp(24px, 7vw, 29px); }
+  #top .pfeilcontainer .avia_textblock { font-size: 15px; line-height: 1.62; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 50px minmax(0, 1fr); }
+}
+
+/* Startseite: Die grossen Themenkarten trennen Bild und Inhalt bewusst.
+   Das Foto bleibt eine atmosphaerische Einleitung, der Text wird darunter
+   ruhig und ohne Kontrastproblem gelesen. */
+body.home :where(#av_section_4, #av_section_8) .my-flex-column {
+  min-height: 0 !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+  background: var(--wg-theme-card) !important;
+  color: var(--wg-theme-text) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column::before {
+  content: "";
+  position: relative !important;
+  z-index: auto !important;
+  inset: auto !important;
+  display: block;
+  flex: 0 0 clamp(240px, 22vw, 330px);
+  width: 100%;
+  background: var(--wg-card-image) center / cover no-repeat !important;
+}
+body.home #av_section_4 .av-20k55b-b94be11c5403a66d123794cd3e8d9fdb { --wg-card-image: url("../../wp-content/uploads/2025/01/MrslisaliFotografie-HochzeitAliciaDenis-Waldgefluester-25052024-508-1-e1737563486346.webp"); }
+body.home #av_section_4 .av-84ahj-642b162816d7381def3b1fc6a34dc3d0 { --wg-card-image: url("../../wp-content/uploads/2025/01/Sophia-und-Jonas-Waldgefluester-373-2-e1738770905619.webp"); }
+body.home #av_section_8 .av-6y03z-7fff00d29bd691d99684e86117193953 { --wg-card-image: url("../../wp-content/uploads/2025/01/Eisstockschiessen_small.webp"); }
+body.home #av_section_8 .av-141vin-c1966f0b3c2041b1a2f3e21785647377 { --wg-card-image: url("../../wp-content/uploads/2025/01/DSCF9232-1-e1737570626491.webp"); }
+body.home :where(#av_section_4, #av_section_8) .my-flex-column > * {
+  position: relative !important;
+  z-index: auto !important;
+  max-width: none;
+  color: var(--wg-theme-text) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading {
+  padding: 30px 34px 0 !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading-tag {
+  max-width: none;
+  margin: 0 0 7px !important;
+  color: var(--wg-theme-accent) !important;
+  font-size: clamp(24px, 1.8vw, 31px) !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-subheading {
+  margin: 0 !important;
+  color: var(--wg-theme-muted) !important;
+  font-size: 16px !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock {
+  max-width: none;
+  margin: 24px 0 0 !important;
+  padding: 0 34px !important;
+  color: var(--wg-theme-text) !important;
+  font-size: 16px !important;
+  line-height: 1.64 !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock :where(strong, b) {
+  color: var(--wg-theme-accent) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button {
+  /* margin-top:auto verankert den Button am Kartenende – so stehen die
+     Buttons beider Karten auf gleicher Höhe, egal wie lang der Text ist. */
+  position: static !important;
+  inset: auto !important;
+  margin: 28px 34px 32px !important;
+  margin-top: auto !important;
+  padding: 28px 0 0 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button {
+  background: transparent !important;
+  border-color: var(--wg-theme-accent) !important;
+  color: var(--wg-theme-accent) !important;
+  text-shadow: none !important;
+}
+body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia-button:hover {
+  background: var(--wg-theme-accent) !important;
+  color: var(--wg-white) !important;
+}
+@media (max-width: 767px) {
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column::before { flex-basis: clamp(210px, 62vw, 290px); }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .av-special-heading { padding: 26px 24px 0 !important; }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .avia_textblock { padding: 0 24px !important; }
+  body.home :where(#av_section_4, #av_section_8) .my-flex-column .my-bottom-button { margin: 24px 24px 28px !important; }
+}
+
+/* Winter-Ablauf: kein Slider, sondern drei klar erkennbare Schritte. */
+body.page-id-1987 #planung .avia-timeline {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+body.page-id-1987 #planung .av-milestone {
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  grid-template-rows: 58px minmax(0, 1fr);
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  position: static !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-contentbox {
+  display: flex;
+  min-height: 100% !important;
+  padding: 28px 26px !important;
+  flex-direction: column;
+}
+body.page-id-1987 #planung .av-milestone-title {
+  margin: 0 0 16px !important;
+  font-size: clamp(18px, 1.45vw, 22px) !important;
+  line-height: 1.2;
+}
+body.page-id-1987 #planung .av-milestone-content {
+  color: var(--wg-theme-muted);
+  font-size: 16px;
+  line-height: 1.58;
+}
+body.page-id-1987 #planung .av-timeline-nav { display: none !important; }
+@media (max-width: 989px) {
+  body.page-id-1987 #planung .avia-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  body.page-id-1987 #planung .avia-timeline { grid-template-columns: 1fr; gap: 14px; }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 52px minmax(0, 1fr); }
+  body.page-id-1987 #planung .av-milestone-contentbox { padding: 25px 22px !important; }
+}
+
+/* Nummer und Karte nutzen dieselbe Breite; so bleibt die Zuordnung auf jeder
+   Bildschirmgroesse eindeutig. */
+body.page-id-1987 #planung .av-milestone-date {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  justify-self: stretch;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap,
+body.page-id-1987 #planung .av-milestone-contentbox {
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+@media (max-width: 989px) {
+  body.page-id-1987 #planung .avia-timeline {
+    grid-template-columns: minmax(0, 640px);
+    justify-content: center;
+    gap: 18px;
+  }
+  body.page-id-1987 #planung .av-milestone { grid-template-rows: 54px minmax(0, 1fr); }
+}
+
+/* Die alte Sprechblasen-Spitze und die Slider-Navigation gehoeren nicht zu
+   den neuen Schritt-Karten. */
+body.page-id-1987 #planung .av-milestone-contentbox::before,
+body.page-id-1987 #planung .av-milestone-contentbox::after,
+body.page-id-1987 #planung .av-timeline-nav,
+body.page-id-1987 #planung .avia-slideshow-arrows {
+  display: none !important;
+}
+body.page-id-1987 #planung .av-milestone-date {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.page-id-1987 #planung .av-milestone-content-wrap {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Gemeinsame Ablauf-Komponente: Zahl, Karte und Raster folgen auf allen
+   Angebotsseiten derselben Geometrie. */
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone {
+  display: grid !important;
+  grid-template-rows: 56px minmax(0, 1fr);
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-date strong {
+  display: flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  text-indent: 0 !important;
+}
+
+/* Die Teamkarte hat bewusst eine Bildkante; ohne das Motiv darf dort kein
+   reservierter Leerraum entstehen. */
+body.page-id-3516 #av_section_4 .my-flex-column:first-child {
+  background-image: url(../../wp-content/uploads/2025/01/Mitarbeiter_free_16003.webp) !important;
+  background-size: contain !important;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-content-wrap,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  position: static !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+  display: flex;
+  min-height: 100% !important;
+  padding: 28px 26px !important;
+  flex-direction: column;
+}
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox::before,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox::after,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-timeline-nav,
+body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-slideshow-arrows {
+  display: none !important;
+}
+@media (max-width: 989px) {
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .avia-timeline {
+    grid-template-columns: minmax(0, 640px);
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone {
+    grid-template-rows: 52px minmax(0, 1fr);
+  }
+  body:is(.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.page-id-1987) .av-milestone-contentbox {
+    padding: 25px 22px !important;
+  }
+}
+
+/* Location-Zitat: eine ruhige, durchgehende Flaeche statt wechselnder
+   Abschnittshintergruende ober- und unterhalb des Textes. */
+body.page-id-3516 #einleitung {
+  padding: clamp(44px, 6vw, 76px) 20px !important;
+  background: var(--wg-theme-canvas) !important;
+}
+body.page-id-3516 #einleitung > .container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  padding: 0;
+}
+body.page-id-3516 #einleitung .entry-content-wrapper {
+  padding: clamp(34px, 4vw, 54px) !important;
+  border: 1px solid var(--wg-theme-border);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-theme-surface);
+  box-shadow: var(--wg-theme-shadow);
+}
+body.page-id-3516 #einleitung :where(.hr, .hr-invisible) { display: none !important; }
+body.page-id-3516 #einleitung .avia_textblock {
+  max-width: 940px;
+  margin: 0 auto !important;
+  color: var(--wg-theme-accent);
+  font-size: clamp(20px, 2vw, 29px);
+  line-height: 1.45;
+  text-align: center !important;
+}
+body.page-id-3516 #einleitung .avia_textblock :where(p, span) {
+  margin: 0 !important;
+  text-decoration: none !important;
+}
+
+/* Einheitliche Zeichensetzung: das kaufmaennische Und bleibt lesbar und
+   nimmt nicht mehr die dekorative Serifenschrift des alten Themes an. */
+#top .special_amp {
+  font: inherit !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Aktion und Navigation: Kontakt ist immer dieselbe deutliche Primaeraktion;
+   alle anderen Links bleiben als ruhige, glasartige Sekundaeraktionen lesbar. */
+#top #main .avia-button.avia-size-large {
+  border-color: color-mix(in srgb, var(--wg-theme-accent) 58%, transparent) !important;
+  background: color-mix(in srgb, var(--wg-theme-surface) 74%, transparent) !important;
+  color: var(--wg-theme-accent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72), 0 8px 22px rgba(31, 43, 33, .08) !important;
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+}
+#top #main .avia-button.avia-size-large:hover {
+  border-color: var(--wg-theme-accent) !important;
+  background: color-mix(in srgb, var(--wg-theme-surface) 90%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), 0 12px 26px rgba(31, 43, 33, .14) !important;
+}
+#top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]) {
+  border-color: var(--wg-theme-accent) !important;
+  background: color-mix(in srgb, var(--wg-theme-accent) 94%, transparent) !important;
+  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 10px 24px var(--wg-theme-button-shadow) !important;
+}
+#top #main .avia-button:is([aria-label*="anfrag" i], [aria-label*="kontakt" i]):hover {
+  border-color: var(--wg-theme-accent-hover) !important;
+  background: var(--wg-theme-accent-hover) !important;
+  color: #fff !important;
+}
+#top #wrap_all #menu-item-1996 > a .avia-menu-text {
+  border: 1px solid color-mix(in srgb, var(--wg-theme-accent) 76%, rgba(255, 255, 255, .35)) !important;
+  background: color-mix(in srgb, var(--wg-theme-accent) 94%, transparent) !important;
+  color: #fff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 8px 20px var(--wg-theme-button-shadow) !important;
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+}
+#top #wrap_all #menu-item-1996 > a:hover .avia-menu-text {
+  background: var(--wg-theme-accent-hover) !important;
+  color: #fff !important;
+}
+
+/* Formularfelder: ruhige Glasflaeche und ein praeziser, nicht gelber Fokus. */
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+  background: rgba(255, 255, 255, .62) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):focus,
+#top .wg-contact-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea):focus-visible {
+  outline: none !important;
+  border-color: var(--wg-theme-accent) !important;
+  background: rgba(255, 255, 255, .86) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--wg-theme-accent) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+}
+
+/* ============================================================
+   Sprachumschalter: dezente Pille rechts neben Logo/Navigation. */
+.wg-lang-switch {
+  position: absolute;
+  z-index: 400;
+  top: 50%;
+  right: 74px;
+  transform: translateY(-50%);
+}
+.html_header_transparency .wg-lang-switch { top: 36px; }
+.wg-lang-switch a {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid var(--wg-theme-border, rgba(31, 43, 33, .25));
+  border-radius: 999px;
+  background: var(--wg-theme-card, rgba(255, 255, 255, .82));
+  color: var(--wg-theme-text, #1f2b21);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.wg-lang-switch a:hover {
+  background: var(--wg-theme-accent, #3d5a44);
+  border-color: var(--wg-theme-accent, #3d5a44);
+  color: #fff;
+}
+@media (max-width: 989px) {
+  .wg-lang-switch { right: 84px; }
+  .html_header_transparency .wg-lang-switch { top: 50%; }
+}

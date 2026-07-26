@@ -21,7 +21,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src/pages",
       includes: "../_includes",
-      data: "../_data",
       output: ".",
     },
     htmlTemplateEngine: "njk",

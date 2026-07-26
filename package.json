@@ -1,7 +1,7 @@
 {
   "name": "waldgefluester-website",
   "version": "1.0.0",
-  "description": "1:1-Kopie von [waldgefluester-events.de](https://waldgefluester-events.de/) (WordPress/Enfold) als statische Website, gehostet über GitHub Pages.",
+  "description": "1:1-Kopie von [waldgefluester-events.de](https://waldgefluester-events.de/) (WordPress/Enfold) als statische Website, gehostet \u00fcber GitHub Pages.",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
@@ -20,10 +20,7 @@
   },
   "homepage": "https://github.com/Waldi1607/waldgefluester_website#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "@fontsource/caveat": "^5.3.0",
-    "@fontsource/open-sans": "^5.3.0",
-    "@fontsource/quicksand": "^5.3.0"
+    "@11ty/eleventy": "^3.1.6"
   },
   "private": true
 }

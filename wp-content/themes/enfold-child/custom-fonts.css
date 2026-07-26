@@ -1,0 +1,29 @@
+/* Schriftgrößen */
+h1 {
+  font-size: clamp(1.8rem, calc(3vw + 1rem), 5rem);
+}
+
+h2 {
+  font-size: 1.842em;
+}
+
+h3 {
+  font-size: 1.3572em;
+}
+
+h4 {
+  font-size: 1.2572em;
+}
+
+small {
+  font-size: 0.7368em;
+}
+
+html,
+body {
+  font-size: clamp(0.8em, 0.4167vw + 0.8875em, 1em);
+}
+
+blockquote {
+  font-size: 0.8em;
+}
