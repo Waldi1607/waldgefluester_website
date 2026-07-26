@@ -1,29 +1,29 @@
-{% from "components.njk" import hero, intro, zigzag, sectionQuote, iconList, planTimeline, ctaButton, contactBridge with context %}
+{% from "components.njk" import hero, intro, zigzag, sectionQuote, iconList, planTimeline, ctaButton, contactBridge, subnav, gallery with context %}
 
-
-	<div id='main' class='all_colors' data-scroll-offset='88'>
-
-	{% set heroTitle %}Events &amp; Forest Café at Waldgeflüster{% endset %}
+{% set heroTitle %}Events &amp; Forest Café at Waldgeflüster{% endset %}
 {{ hero(heroTitle, {}) }}{% set introText %}<p><span class="s1">Beyond weddings and private celebrations, we regularly open </span><b>Waldgeflüster</b><span class="s1"> to everyone: with our </span><b>forest café</b><span class="s1">, Bavarian curling, and our own events throughout the year. You’ll find all upcoming dates here – stop by, we look forward to seeing you!</span></p>
 {% endset %}
-{{ intro(introText) }}<div id='after_section_3'  class='main_color av_default_container_wrap container_wrap fullsize'  ><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-5003'><div class='entry-content-wrapper clearfix'>
-<div  id="impressionen-events"  class='av-special-heading av-e4pfaf-6c89d39622f8ab9e6720b15e37aca66e av-special-heading-h2 blockquote modern-quote modern-centered  avia-builder-el-48  el_after_av_section  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Upcoming dates</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
-<section  class='av_textblock_section av-9k4zz-1d1fdc49b63872318fef38bd080a43c9 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p></p><div id="wg-event-list"><noscript>Please enable JavaScript to see the dates – or give us a call: +49 (0)173 614 98 96.</noscript></div><p></p>
-</div></section>
-</div></div></div><!-- close content main div --></div></div>{% call zigzag({ id: 'eisstock', row: 'av-20jhvn-ac21fa1f5e933bb898e22471788c218c', cellA: 'av-m69g2fy9-4c16524b2424a472a13b26a355893d72', cellB: 'av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada', cellAExtra: ' avia-full-stretch', cellBExtra: ' avia-full-stretch', reverse: true, hr: 'av-7zlhar-deb373a7b4a9cc04b799513d46efae89', icon: 'av-sxa3n-60b3396a081fbbf38455be4192f42ca7', dir: 'rechts', char: '' }) %}
-<div  class='av-special-heading av-m69h0z5i-d7fab9ca7e9ee6596cf0632a5b061c48 av-special-heading-h2 custom-color-heading  avia-builder-el-8  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Forest Café – November through March</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
-<section  class='av_textblock_section av-m69h11vm-1bf22103365ae4fd383f97dd92f2cf79 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p class="p1">During the cold season, our forest café opens its doors: coffee, cake, and warm drinks in the cozy indoor lounge or outside by the fire pit – right in the middle of the forest. Just stop by – you’ll find the current opening dates in the list above.</p>
+{{ intro(introText) }}
+<section class="wg-section" id="termine">
+  <div class="wg-container">
+    <h2 class="wg-quote">Upcoming dates</h2>
+    <div id="wg-event-list"><noscript>Please enable JavaScript to see the dates – or give us a call: +49 (0)173 614 98 96.</noscript></div>
+  </div>
+</section>
+{% call zigzag({ id: 'eisstock', row: 'av-20jhvn-ac21fa1f5e933bb898e22471788c218c', cellA: 'av-m69g2fy9-4c16524b2424a472a13b26a355893d72', cellB: 'av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada', cellAExtra: ' avia-full-stretch', cellBExtra: ' avia-full-stretch', reverse: true, hr: 'av-7zlhar-deb373a7b4a9cc04b799513d46efae89', icon: 'av-sxa3n-60b3396a081fbbf38455be4192f42ca7', dir: 'rechts', char: '' }) %}
+<h2>Forest Café – November through March</h2>
+<p class="p1">During the cold season, our forest café opens its doors: coffee, cake, and warm drinks in the cozy indoor lounge or outside by the fire pit – right in the middle of the forest. Just stop by – you’ll find the current opening dates in the list above.</p>
 <ul>
 <li>Coffee, cake &#038; warm drinks</li>
 <li>Curling lane &#038; fire pit with lounge seating</li>
 <li>Covered terrace &#038; cozy indoor area</li>
 </ul>
-</div></section>
+
 {% endcall %}
 {% call zigzag({ id: 'av-layout-grid-2', row: 'av-3qoiab-28e21722a495823f3eb5573d9ca62e4c', cellA: 'av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf', cellB: 'av-1yah7n-269fe5caf03f5119b2aee87c3c3eba97', cellAExtra: ' avia-full-stretch', arrowFirst: true, hr: 'av-3pzfib-a00a9f75d70b507038feda593c1cb33c', icon: 'av-9wjh5f-74e7953a7cbab43bfa22758075d25e75', dir: 'links', char: '' }) %}
-<div  class='av-special-heading av-9rhxnn-b61a072a66cbb7e01f0a33400b0caa0e av-special-heading-h2 custom-color-heading  avia-builder-el-18  el_before_av_textblock  avia-builder-el-first '><h2 class='av-special-heading-tag '  itemprop="headline"  >Bavarian Curling – Fun <span class='special_amp'>&amp;</span> Action</h2><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div>
-<section  class='av_textblock_section av-71x7bn-28ea30763d5a23df4235ab9efde81fa7 '   itemscope="itemscope" itemtype="https://schema.org/CreativeWork" ><div class='avia_textblock av_inherit_color'  itemprop="text" ><p>A highlight at almost every one of our events: small teams face off on the curling lane – easy to learn, delightfully addictive, and the perfect way to strike up a conversation.</p>
-</div></section>
+<h2>Bavarian Curling – Fun <span class='special_amp'>&amp;</span> Action</h2>
+<p>A highlight at almost every one of our events: small teams face off on the curling lane – easy to learn, delightfully addictive, and the perfect way to strike up a conversation.</p>
+
 {% endcall %}{% set kontaktHeading %}Questions about our events?{% endset %}
 {% set kontaktText %}<p>Send us a message through the form or give us a call – we’re happy to help.</p>
 {% endset %}
