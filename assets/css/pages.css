@@ -3528,3 +3528,37 @@ body.page-id-3516 #einleitung .avia_textblock :where(p, span) {
   background: rgba(255, 255, 255, .86) !important;
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--wg-theme-accent) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .9) !important;
 }
+
+/* ============================================================
+   Sprachumschalter: dezente Pille rechts neben Logo/Navigation. */
+.wg-lang-switch {
+  position: absolute;
+  z-index: 400;
+  top: 50%;
+  right: 74px;
+  transform: translateY(-50%);
+}
+.html_header_transparency .wg-lang-switch { top: 36px; }
+.wg-lang-switch a {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid var(--wg-theme-border, rgba(31, 43, 33, .25));
+  border-radius: 999px;
+  background: var(--wg-theme-card, rgba(255, 255, 255, .82));
+  color: var(--wg-theme-text, #1f2b21);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.wg-lang-switch a:hover {
+  background: var(--wg-theme-accent, #3d5a44);
+  border-color: var(--wg-theme-accent, #3d5a44);
+  color: #fff;
+}
+@media (max-width: 989px) {
+  .wg-lang-switch { right: 84px; }
+  .html_header_transparency .wg-lang-switch { top: 50%; }
+}

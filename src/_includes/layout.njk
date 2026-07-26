@@ -1,6 +1,24 @@
+{#- Sprach-Plumbing: locale kommt aus der Front Matter (Default de).
+    base   = Präfix für interne Seitenlinks (EN-Seiten bleiben unter /en/),
+    snip   = Snippet-Verzeichnis der Sprache,
+    pageDirDe = Seitenpfad ohne en/-Präfix (für hreflang-Alternates),
+    langAltUrl = Ziel des Sprachumschalters. -#}
+{%- set locale = locale or 'de' -%}
+{%- set base = pre + ('en/' if locale == 'en' else '') -%}
+{%- set snip = 'src/snippets/en/' if locale == 'en' else 'src/snippets/' -%}
+{%- set pageDir = permalink | replace('index.html', '') -%}
+{%- set pageDirDe = pageDir | replace('en/', '') -%}
+{%- set langAltUrl = (pre + pageDirDe) if locale == 'en' else (pre + 'en/' + ('' if noEn else pageDir)) -%}
+{%- set hreflangLinks -%}
+{%- if not noEn %}
+<link rel="alternate" hreflang="de" href="https://waldgefluester-events.de/{{ pageDirDe }}" />
+<link rel="alternate" hreflang="en" href="https://waldgefluester-events.de/en/{{ pageDirDe }}" />
+<link rel="alternate" hreflang="x-default" href="https://waldgefluester-events.de/{{ pageDirDe }}" />
+{% endif -%}
+{%- endset -%}
 <!DOCTYPE html>
 {{ htmlTag | safe }}
-{% if fullHead %}<head>{% rawfile 'src/snippets/' + slug + '-head-full.html' %}</head>
+{% if fullHead %}<head>{% rawfile snip + slug + '-head-full.html' %}{{ hreflangLinks | safe }}</head>
 {% else %}<head>
 <script>/* Nicht-Produktivumgebungen (localhost, github.io, Vorschau) senden keine Analytics-
    Daten. Googles offizieller Opt-out-Schalter wirkt fuer JEDEN gtag-Loader, auch fuer den,
@@ -61,7 +79,8 @@ if (!/(^|\.)waldgefluester-events\.de$/.test(location.hostname)) {
 
 			</script>
 			
-	{% rawfile 'src/snippets/' + slug + '-seo.html' %}
+	{% rawfile snip + slug + '-seo.html' %}
+{{ hreflangLinks | safe }}
 <script>
 /* Google Consent Mode v2: Standard = abgelehnt, bis der Cookie-Banner Zustimmung meldet */
 window.dataLayer = window.dataLayer || [];
@@ -158,8 +177,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 {% if heroLarge %}<link rel="preload" as="image" href="{{ pre }}{{ heroLarge }}"{% if heroSmall %} media="(min-width: 768px)"{% endif %}>{% endif %}
 {% if heroSmall %}<link rel="preload" as="image" href="{{ pre }}{{ heroSmall }}" media="(max-width: 767px)">{% endif %}
 <link rel='stylesheet' id='wg-bundle-css' href='{{ pre }}assets/css/bundle.css' media='all' />
-{% rawfile 'src/snippets/' + slug + '-head.html' %}
-<link rel='stylesheet' id='wg-pages-css' href='{{ pre }}assets/css/pages.css?v=26' media='all' />
+{% rawfile snip + slug + '-head.html' %}
+<link rel='stylesheet' id='wg-pages-css' href='{{ pre }}assets/css/pages.css?v=27' media='all' />
 
 <script id="jquery-core-js" src="{{ pre }}wp-includes/js/jquery/jquery.min.js"></script>
 <script id="jquery-migrate-js" src="{{ pre }}wp-includes/js/jquery/jquery-migrate.min.js"></script>
@@ -785,7 +804,7 @@ PLAu:8
 {% set pageBodyClasses = 'wg-theme-' ~ pageTheme %}
 {{ bodyTag | replace('class="', 'class="' ~ pageBodyClasses ~ ' ') | safe }}
 
-<a class="wg-skip-link" href="#main">Zum Inhalt springen</a>
+<a class="wg-skip-link" href="#main">{{ "Zum Inhalt springen" | t | safe }}</a>
 
 
 			
@@ -798,9 +817,9 @@ PLAu:8
 
 	
 {% include 'partials/header.njk' %}
-{% include 'bodies/' + slug + '.njk' %}
+{% include ('bodies/en/' if locale == 'en' else 'bodies/') + slug + '.njk' %}
 {% include 'partials/kontakt.njk' %}
-<script src="{{ pre }}assets/js/site.js?v=6" defer></script>
-{% rawfile 'src/snippets/' + slug + '-post.html' %}
-{% if fullFooter %}{% rawfile 'src/snippets/' + slug + '-foot-full.html' %}
+<script src="{{ pre }}assets/js/site.js?v=7" defer></script>
+{% rawfile snip + slug + '-post.html' %}
+{% if fullFooter %}{% rawfile snip + slug + '-foot-full.html' %}
 {% else %}{% include 'partials/footer.njk' %}{% endif -%}

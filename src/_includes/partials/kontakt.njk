@@ -4,18 +4,18 @@
       <img class="wg-contact-mark" src="{{ pre }}wp-content/uploads/2025/01/Ihr_wir_passt-BEIGE-300x225.png" alt="" width="300" height="225" loading="lazy" decoding="async" aria-hidden="true">
 
       <div class="wg-contact-heading">
-        <p class="wg-eyebrow">Euer nächster Schritt</p>
-        <h2 id="wg-contact-title">Ein paar Eckdaten genügen.</h2>
-        <p class="wg-contact-lead">Erzählt uns kurz, was ihr plant. Wir melden uns persönlich und schauen gemeinsam, was zu euch passt.</p>
+        <p class="wg-eyebrow">{{ "Euer nächster Schritt" | t | safe }}</p>
+        <h2 id="wg-contact-title">{{ "Ein paar Eckdaten genügen." | t | safe }}</h2>
+        <p class="wg-contact-lead">{{ "Erzählt uns kurz, was ihr plant. Wir melden uns persönlich und schauen gemeinsam, was zu euch passt." | t | safe }}</p>
       </div>
 
-      <dl class="wg-contact-facts" aria-label="Direkte Kontaktmöglichkeiten">
+      <dl class="wg-contact-facts" aria-label="{{ 'Direkte Kontaktmöglichkeiten' | t | safe }}">
         <div>
-          <dt>Direkt per E-Mail</dt>
+          <dt>{{ "Direkt per E-Mail" | t | safe }}</dt>
           <dd><a href="mailto:anfrage@waldgefluester-events.de">anfrage@waldgefluester-events.de</a></dd>
         </div>
         <div>
-          <dt>Lieber persönlich?</dt>
+          <dt>{{ "Lieber persönlich?" | t | safe }}</dt>
           <dd><a href="tel:+491736149896">+49 (0)173 614 98 96</a></dd>
         </div>
       </dl>
@@ -25,71 +25,71 @@
       <form class="wg-contact-form" data-wg-contact data-endpoint="" action="#kontaktformular" method="post" aria-describedby="wg-contact-note">
         <div class="wg-contact-grid">
           <div class="wg-field">
-            <label for="wg-name">Name <span aria-hidden="true">*</span></label>
+            <label for="wg-name">{{ "Name" | t | safe }} <span aria-hidden="true">*</span></label>
             <input id="wg-name" name="name" type="text" autocomplete="name" required aria-describedby="wg-name-error">
             <span class="wg-field-error" id="wg-name-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field">
-            <label for="wg-email">E-Mail <span aria-hidden="true">*</span></label>
+            <label for="wg-email">{{ "E-Mail" | t | safe }} <span aria-hidden="true">*</span></label>
             <input id="wg-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="wg-email-error">
             <span class="wg-field-error" id="wg-email-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field">
-            <label for="wg-phone">Telefonnummer <span class="wg-optional">optional</span></label>
+            <label for="wg-phone">{{ "Telefonnummer" | t | safe }} <span class="wg-optional">{{ "optional" | t | safe }}</span></label>
             <input id="wg-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="wg-phone-error">
             <span class="wg-field-error" id="wg-phone-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field">
-            <label for="wg-event">Was plant ihr? <span aria-hidden="true">*</span></label>
+            <label for="wg-event">{{ "Was plant ihr?" | t | safe }} <span aria-hidden="true">*</span></label>
             <select id="wg-event" name="event" required aria-describedby="wg-event-error">
-              <option value="">Bitte auswählen</option>
-              <option value="Hochzeit">Hochzeit</option>
-              <option value="Private Feier">Geburtstag oder private Feier</option>
-              <option value="Firmenfeier">Firmen- oder Weihnachtsfeier</option>
-              <option value="Trauerfeier">Trauerfeier</option>
-              <option value="Kooperation">Eigenes Event oder Kooperation</option>
-              <option value="Sonstiges">Sonstiges</option>
+              <option value="">{{ "Bitte auswählen" | t | safe }}</option>
+              <option value="Hochzeit">{{ "Hochzeit" | t | safe }}</option>
+              <option value="Private Feier">{{ "Geburtstag oder private Feier" | t | safe }}</option>
+              <option value="Firmenfeier">{{ "Firmen- oder Weihnachtsfeier" | t | safe }}</option>
+              <option value="Trauerfeier">{{ "Trauerfeier" | t | safe }}</option>
+              <option value="Kooperation">{{ "Eigenes Event oder Kooperation" | t | safe }}</option>
+              <option value="Sonstiges">{{ "Sonstiges" | t | safe }}</option>
             </select>
             <span class="wg-field-error" id="wg-event-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field">
-            <label for="wg-guests">Personenanzahl <span aria-hidden="true">*</span></label>
+            <label for="wg-guests">{{ "Personenanzahl" | t | safe }} <span aria-hidden="true">*</span></label>
             <input id="wg-guests" name="guests" type="number" inputmode="numeric" min="1" max="500" required aria-describedby="wg-guests-hint wg-guests-error">
-            <span class="wg-field-hint" id="wg-guests-hint">Eine ungefähre Zahl reicht.</span>
+            <span class="wg-field-hint" id="wg-guests-hint">{{ "Eine ungefähre Zahl reicht." | t | safe }}</span>
             <span class="wg-field-error" id="wg-guests-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field">
-            <label for="wg-year">Wunschjahr <span aria-hidden="true">*</span></label>
-            <input id="wg-year" name="year" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{4}" maxlength="4" placeholder="z. B. 2027" required aria-describedby="wg-year-hint wg-year-error">
-            <span class="wg-field-hint" id="wg-year-hint">Vierstellige Jahreszahl.</span>
+            <label for="wg-year">{{ "Wunschjahr" | t | safe }} <span aria-hidden="true">*</span></label>
+            <input id="wg-year" name="year" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{4}" maxlength="4" placeholder="{{ 'z. B. 2027' | t | safe }}" required aria-describedby="wg-year-hint wg-year-error">
+            <span class="wg-field-hint" id="wg-year-hint">{{ "Vierstellige Jahreszahl." | t | safe }}</span>
             <span class="wg-field-error" id="wg-year-error" aria-live="polite"></span>
           </div>
 
           <div class="wg-field wg-field-wide">
-            <label for="wg-message">Was dürfen wir schon wissen? <span aria-hidden="true">*</span></label>
-            <textarea id="wg-message" name="message" rows="6" minlength="20" required aria-describedby="wg-message-hint wg-message-error" placeholder="Terminwunsch, Anlass und alles, was euch wichtig ist …"></textarea>
-            <span class="wg-field-hint" id="wg-message-hint">Ein paar Sätze helfen uns bei der ersten Einschätzung.</span>
+            <label for="wg-message">{{ "Was dürfen wir schon wissen?" | t | safe }} <span aria-hidden="true">*</span></label>
+            <textarea id="wg-message" name="message" rows="6" minlength="20" required aria-describedby="wg-message-hint wg-message-error" placeholder="{{ 'Terminwunsch, Anlass und alles, was euch wichtig ist …' | t | safe }}"></textarea>
+            <span class="wg-field-hint" id="wg-message-hint">{{ "Ein paar Sätze helfen uns bei der ersten Einschätzung." | t | safe }}</span>
             <span class="wg-field-error" id="wg-message-error" aria-live="polite"></span>
           </div>
         </div>
 
         <label class="wg-consent" for="wg-privacy">
           <input id="wg-privacy" name="privacy" type="checkbox" required aria-describedby="wg-privacy-error">
-          <span>Ich habe die <a href="{{ pre }}rechtliches/">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. <span aria-hidden="true">*</span></span>
+          <span>{{ "Ich habe die" | t | safe }} <a href="{{ pre }}rechtliches/">{{ "Datenschutzhinweise" | t | safe }}</a> {{ "gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden." | t | safe }} <span aria-hidden="true">*</span></span>
         </label>
         <span class="wg-field-error wg-consent-error" id="wg-privacy-error" aria-live="polite"></span>
 
         <div class="wg-contact-actions">
-          <button class="wg-contact-submit" type="submit" data-default-label="Anfrage senden">
-            <span>Anfrage senden</span>
+          <button class="wg-contact-submit" type="submit" data-default-label="{{ 'Anfrage senden' | t | safe }}">
+            <span>{{ "Anfrage senden" | t | safe }}</span>
             <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14M14 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p id="wg-contact-note" class="wg-contact-note">Wir verwenden eure Angaben ausschließlich, um eure Anfrage persönlich zu beantworten.</p>
+          <p id="wg-contact-note" class="wg-contact-note">{{ "Wir verwenden eure Angaben ausschließlich, um eure Anfrage persönlich zu beantworten." | t | safe }}</p>
         </div>
         <p class="wg-form-status" data-wg-form-status role="status" aria-live="polite"></p>
       </form>

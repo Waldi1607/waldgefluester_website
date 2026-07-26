@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  var WG_EN = (document.documentElement.lang || 'de').indexOf('en') === 0;
+
   var form = document.querySelector('[data-wg-contact]');
   if (!form) return;
 
@@ -10,12 +12,12 @@
   var status = form.querySelector('[data-wg-form-status]');
 
   function errorMessage(field) {
-    if (field.validity.valueMissing) return 'Bitte füllt dieses Feld aus.';
-    if (field.validity.typeMismatch) return 'Bitte gebt eine gültige E-Mail-Adresse ein.';
-    if (field.validity.patternMismatch) return 'Bitte gebt eine vierstellige Jahreszahl ein.';
-    if (field.validity.tooShort) return 'Bitte schreibt uns mindestens 20 Zeichen.';
-    if (field.validity.rangeUnderflow || field.validity.rangeOverflow) return 'Bitte gebt eine realistische Personenanzahl ein.';
-    return 'Bitte prüft diese Angabe.';
+    if (field.validity.valueMissing) return WG_EN ? 'Please fill in this field.' : 'Bitte füllt dieses Feld aus.';
+    if (field.validity.typeMismatch) return WG_EN ? 'Please enter a valid e-mail address.' : 'Bitte gebt eine gültige E-Mail-Adresse ein.';
+    if (field.validity.patternMismatch) return WG_EN ? 'Please enter a four-digit year.' : 'Bitte gebt eine vierstellige Jahreszahl ein.';
+    if (field.validity.tooShort) return WG_EN ? 'Please write at least 20 characters.' : 'Bitte schreibt uns mindestens 20 Zeichen.';
+    if (field.validity.rangeUnderflow || field.validity.rangeOverflow) return WG_EN ? 'Please enter a realistic number of guests.' : 'Bitte gebt eine realistische Personenanzahl ein.';
+    return WG_EN ? 'Please check this entry.' : 'Bitte prüft diese Angabe.';
   }
 
   function errorNode(field) {
@@ -72,7 +74,7 @@
       submit.disabled = true;
       submit.setAttribute('aria-busy', 'true');
     }
-    if (submitLabel) submitLabel.textContent = 'Anfrage wird gesendet …';
+    if (submitLabel) submitLabel.textContent = WG_EN ? 'Sending inquiry …' : 'Anfrage wird gesendet …';
 
     if (!endpoint) {
       if (status) status.textContent = 'Das Formular ist bereit. Der sichere Versand wird beim Onlinegang aktiviert.';
@@ -100,7 +102,7 @@
         });
       }
       form.reset();
-      if (status) status.textContent = 'Vielen Dank! Eure Anfrage ist angekommen. Wir melden uns persönlich bei euch.';
+      if (status) status.textContent = WG_EN ? 'Thank you! Your inquiry has arrived. We will get back to you personally.' : 'Vielen Dank! Eure Anfrage ist angekommen. Wir melden uns persönlich bei euch.';
     } catch (error) {
       if (status) status.textContent = 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versucht es erneut oder ruft uns kurz an.';
     } finally {
@@ -152,7 +154,7 @@
     var open = menuIsOpen();
     if (burger) {
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      burger.setAttribute('aria-label', open ? (WG_EN ? 'Close menu' : 'Menü schließen') : (WG_EN ? 'Open menu' : 'Menü öffnen'));
     }
     if (open) showHeader();
   }

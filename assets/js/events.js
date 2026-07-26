@@ -8,8 +8,11 @@
   var mode = script.getAttribute('data-mode') || 'list';
   var targetUrl = script.getAttribute('data-target-url') || '';
 
-  var MONATE = ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
-  var TAGE = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+  var EN = (document.documentElement.lang || 'de').indexOf('en') === 0;
+  var MONATE = EN
+    ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    : ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+  var TAGE = EN ? ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] : ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
 
   function parseDay(str) {
     var p = (str || '').split('-');
@@ -48,8 +51,10 @@
 
   function weekdayLine(ev) {
     var d = parseDay(ev.date);
-    if (ev.end && ev.end !== ev.date) return 'Zweitägig';
-    return ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'][d.getDay()];
+    if (ev.end && ev.end !== ev.date) return EN ? 'Two days' : 'Zweitägig';
+    return EN
+      ? ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()]
+      : ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'][d.getDay()];
   }
 
   function el(tag, cls, text) {
@@ -65,7 +70,8 @@
     target.innerHTML = '';
     if (!events.length) {
       target.appendChild(el('p', 'wg-events-empty',
-        'Aktuell sind keine Termine geplant – schaut bald wieder vorbei oder folgt uns auf Instagram!'));
+        EN ? 'No upcoming dates right now – check back soon or follow us on Instagram!'
+           : 'Aktuell sind keine Termine geplant – schaut bald wieder vorbei oder folgt uns auf Instagram!'));
       return;
     }
     events.forEach(function (ev) {
@@ -96,8 +102,8 @@
     if (!banner || !events.length) return;
     var inner = banner.querySelector('.container') || banner;
     inner.innerHTML = '';
-    inner.appendChild(el('span', 'wg-home-kicker', 'Bei uns ist was los'));
-    inner.appendChild(el('h2', 'wg-home-title', 'Kommende Events & Waldcafé-Termine'));
+    inner.appendChild(el('span', 'wg-home-kicker', EN ? 'Something is always happening here' : 'Bei uns ist was los'));
+    inner.appendChild(el('h2', 'wg-home-title', EN ? 'Upcoming events & forest café dates' : 'Kommende Events & Waldcafé-Termine'));
     var grid = el('div', 'wg-home-grid');
     events.slice(0, 3).forEach(function (ev) {
       var card = el(ev.url ? 'a' : 'div', 'wg-home-card');
@@ -111,7 +117,7 @@
       grid.appendChild(card);
     });
     inner.appendChild(grid);
-    var more = el('a', 'wg-home-more', 'Alle Termine ansehen');
+    var more = el('a', 'wg-home-more', EN ? 'See all dates' : 'Alle Termine ansehen');
     more.href = targetUrl || '#';
     inner.appendChild(more);
     banner.hidden = false;
@@ -129,7 +135,8 @@
         if (mode !== 'banner') {
           var target = document.getElementById('wg-event-list');
           if (target) target.appendChild(el('p', 'wg-events-empty',
-            'Termine konnten nicht geladen werden – ruft uns gerne an: +49 (0)173 614 98 96.'));
+            EN ? 'Dates could not be loaded – feel free to call us: +49 (0)173 614 98 96.'
+               : 'Termine konnten nicht geladen werden – ruft uns gerne an: +49 (0)173 614 98 96.'));
         }
       });
   }

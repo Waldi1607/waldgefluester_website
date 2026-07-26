@@ -23,6 +23,17 @@ Struktur:
 
 Navigation, Formular, Cookie-Banner oder Footer ändern = **eine Datei** in `partials/` anfassen; wiederkehrende Inhaltsblöcke (Hero, CTAs, Abläufe …) = Makro in `components.njk`; Texte einer Seite = `bodies/<seite>.njk`. Danach `npm run build`, fertig.
 
+## Zweisprachigkeit (DE/EN)
+
+Deutsch liegt unter `/`, Englisch unter `/en/…` (gleiche Pfade). Umsetzung:
+
+- **Geteilte UI-Strings** (Navigation, Formular, Cookie-Banner, Footer): der deutsche Text steht lesbar im Template und läuft durch den Nunjucks-Filter `t` (`{{ "Heiraten" | t | safe }}`). Die Übersetzungen stehen in `src/_data/translations.json` (DE-Text → EN-Text); fehlt ein Eintrag, bleibt der deutsche Text sichtbar. Neue UI-Strings: Filter dranhängen + Eintrag ergänzen.
+- **Seiteninhalte**: `src/_includes/bodies/en/<seite>.njk` sind übersetzte Schwestern der deutschen Bodies (gleiche Struktur/Makros, englische Texte). SEO-Meta: `src/snippets/en/<seite>-seo.html`. Übrige Snippets in `src/snippets/en/` sind pfadangepasste Kopien (EN-Seiten liegen eine Ebene tiefer).
+- **Seiten-Definitionen**: `src/pages/en/<seite>.njk` (permalink `en/…`, `locale: "en"`, `lang="en"`). `layout.njk` setzt daraus `base` (interne Links bleiben unter `/en/`), wählt Bodies/Snippets der Sprache und rendert die hreflang-Alternates (x-default = DE).
+- **Sprachumschalter**: Pille im Header (`.wg-lang-switch`), verlinkt auf die Schwesterseite.
+- **JS**: `assets/js/site.js` und `events.js` lesen `<html lang>` für Formular-/Terminlisten-Texte.
+- **Bewusst deutsch**: Rezensionen der Paare (echte Kundenstimmen), `/rechtliches/` (Impressum/Datenschutz, aus EN-Seiten verlinkt als "German"), Markenslogan "IHR, WIR, PASST!".
+
 ## Wie dieser Klon entstanden ist
 
 - Komplett-Mirror der gerenderten WordPress-Seite (`wget --mirror --convert-links`), alle Links relativ
