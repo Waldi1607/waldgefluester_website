@@ -464,8 +464,8 @@ body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
 #top.page-id-5002 .avia-icon-list li .iconlist_title { margin-bottom: 4px; }
 
 
-/* Sprachumschalter (Tokens durch feste Werte ersetzt, da UI-System entfernt) */
-   Sprachumschalter: dezente Pille rechts neben Logo/Navigation. */
+/* Sprachumschalter: dezente Pille rechts neben Logo/Navigation
+   (Tokens durch feste Werte ersetzt, da UI-System entfernt). */
 .wg-lang-switch {
   position: absolute;
   z-index: 400;
@@ -601,6 +601,62 @@ body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
 .wg-form-status:empty { display: none; }
 .wg-form-status.is-success { color: #4a7a4a; }
 .wg-form-status.is-error { color: #a33a32; }
+
+/* Colorset-Hintergründe für Header, Menü-Dropdowns und Sticky-Submenü.
+   Diese Selektoren wurden beim Kürzen von bundle.css aus den Original-
+   Farbschema-Blöcken (dynamic_avia/enfold_child.css) entfernt — dadurch
+   waren Header-Hintergrund (.header_bg), Dropdown-Menüs und die
+   Submenü-Leiste transparent. Blöcke 1:1 aus dem Original übernommen. */
+.socket_color .header_bg,
+.socket_color .main_menu ul ul,
+.socket_color .main_menu .menu ul li a,
+.socket_color .pointer_arrow_wrap .pointer_arrow,
+.socket_color .avia_mega_div,
+.socket_color .av-subnav-menu > li ul,
+.socket_color .av-subnav-menu a{
+	background-color:var(--enfold-socket-color-bg);
+	color: var(--enfold-socket-color-meta);
+}
+.footer_color .header_bg,
+.footer_color .main_menu ul ul,
+.footer_color .main_menu .menu ul li a,
+.footer_color .pointer_arrow_wrap .pointer_arrow,
+.footer_color .avia_mega_div,
+.footer_color .av-subnav-menu > li ul,
+.footer_color .av-subnav-menu a{
+	background-color:var(--enfold-footer-color-bg);
+	color: var(--enfold-footer-color-meta);
+}
+.alternate_color .header_bg,
+.alternate_color .main_menu ul ul,
+.alternate_color .main_menu .menu ul li a,
+.alternate_color .pointer_arrow_wrap .pointer_arrow,
+.alternate_color .avia_mega_div,
+.alternate_color .av-subnav-menu > li ul,
+.alternate_color .av-subnav-menu a{
+	background-color:var(--enfold-alternate-color-bg);
+	color: var(--enfold-alternate-color-meta);
+}
+.main_color .header_bg,
+.main_color .main_menu ul ul,
+.main_color .main_menu .menu ul li a,
+.main_color .pointer_arrow_wrap .pointer_arrow,
+.main_color .avia_mega_div,
+.main_color .av-subnav-menu > li ul,
+.main_color .av-subnav-menu a{
+	background-color:var(--enfold-main-color-bg);
+	color: var(--enfold-main-color-meta);
+}
+.header_color .header_bg,
+.header_color .main_menu ul ul,
+.header_color .main_menu .menu ul li a,
+.header_color .pointer_arrow_wrap .pointer_arrow,
+.header_color .avia_mega_div,
+.header_color .av-subnav-menu > li ul,
+.header_color .av-subnav-menu a{
+	background-color:var(--enfold-header-color-bg);
+	color: var(--enfold-header-color-meta);
+}
 
 /* Teamfoto über dem Footer (av_section_12 auf allen Seiten).
    Der Inline-Style aus dem WordPress-Original ging beim Eleventy-Umbau
