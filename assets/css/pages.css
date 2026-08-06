@@ -601,3 +601,14 @@ body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
 .wg-form-status:empty { display: none; }
 .wg-form-status.is-success { color: #4a7a4a; }
 .wg-form-status.is-error { color: #a33a32; }
+
+/* Teamfoto über dem Footer (av_section_12 auf allen Seiten).
+   Der Inline-Style aus dem WordPress-Original ging beim Eleventy-Umbau
+   verloren; die Sektion samt 400px-Spacer ist noch da — hier kommt das
+   Hintergrundbild zentral zurück. */
+.avia-section.av-dogi7-3684c9a5743b0e3541661444970bc713 {
+  background-image: url(../../wp-content/uploads/2025/01/Mitarbeiter_free_16003.webp);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-attachment: scroll;
+}
