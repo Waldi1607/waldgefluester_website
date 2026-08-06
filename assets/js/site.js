@@ -77,7 +77,30 @@
     if (submitLabel) submitLabel.textContent = WG_EN ? 'Sending inquiry …' : 'Anfrage wird gesendet …';
 
     if (!endpoint) {
-      if (status) status.textContent = 'Das Formular ist bereit. Der sichere Versand wird beim Onlinegang aktiviert.';
+      // Kein Backend konfiguriert: Anfrage über das E-Mail-Programm des Nutzers
+      // versenden (funktioniert ohne Server; kann später auf ein echtes
+      // Endpoint/Formspree umgestellt werden, indem data-endpoint gesetzt wird).
+      var subject = WG_EN ? 'Event inquiry via the website' : 'Eventanfrage über die Website';
+      var lines = WG_EN
+        ? ['Name: ' + payload.name, 'E-mail: ' + payload.email, 'Phone: ' + payload.phone,
+           'Type of event: ' + payload.event, 'Number of guests: ' + payload.guests,
+           'Preferred year: ' + payload.year, '', 'Message:', payload.message]
+        : ['Name: ' + payload.name, 'E-Mail: ' + payload.email, 'Telefonnummer: ' + payload.phone,
+           'Was geplant ist: ' + payload.event, 'Personenanzahl: ' + payload.guests,
+           'Wunschjahr: ' + payload.year, '', 'Nachricht:', payload.message];
+      window.location.href = 'mailto:anfrage@waldgefluester-events.de?subject='
+        + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      if (window.wgTrack) {
+        window.wgTrack('anfrage_abgeschickt', {
+          eventform: payload.event, personenanzahl: payload.guests, wunschjahr: payload.year
+        });
+      }
+      if (status) {
+        status.className = 'wg-form-status is-success';
+        status.textContent = WG_EN
+          ? 'Your e-mail program opens with the pre-filled inquiry – just send it and we will get back to you.'
+          : 'Euer E-Mail-Programm öffnet sich mit der vorausgefüllten Anfrage – einfach abschicken, wir melden uns bei euch.';
+      }
       if (submit) {
         submit.disabled = false;
         submit.removeAttribute('aria-busy');
@@ -118,6 +141,7 @@
 (function () {
   'use strict';
 
+  var WG_EN = (document.documentElement.lang || 'de').indexOf('en') === 0;
   var body = document.body;
   var root = document.documentElement;
   var header = document.getElementById('header');
