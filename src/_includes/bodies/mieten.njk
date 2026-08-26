@@ -1,0 +1,40 @@
+{% from "components.njk" import hero, intro, contactBridge with context %}
+
+
+	<div id='main' class='all_colors' data-scroll-offset='88'>
+
+	{% set heroTitle %}Waldgeflüster mieten – eine Location, viele Anlässe{% endset %}
+{{ hero(heroTitle, {}) }}{% set introText %}<p><span class="s1">Vom Sommerfest bis zur Weihnachtsfeier, vom Geburtstag bis zum Trauercafé: Im </span><b>Waldgeflüster</b><span class="s1"> mietet ihr keine Räume, sondern die ganze Location – exklusiv für euch und eure Gäste, mitten in der Natur der Schwäbischen Alb. Sucht euch euren Anlass aus. </span><b>IHR, WIR, PASST!</b></p>
+{% endset %}
+{{ intro(introText) }}<div id='mieten-anlaesse'  class='main_color av_default_container_wrap container_wrap fullsize wg-mieten-wrap'  ><div class='container av-section-cont-open' >
+  <div class="wg-mieten-grid">
+    <a class="wg-mieten-tile" href="{{ base }}heiraten-schwaebische-alb/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp" alt="{{ 'Brautpaar mit Wunderkerzen – Heiraten im Waldgeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Heiraten" | t | safe }}</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}sommerfest/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp" alt="{{ 'Gartenfest mit Gästen – Sommerfest im Waldgeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Sommerfest" | t | safe }}</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}firmenfeier/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/SR-TanzParty-96-768x512.webp" alt="{{ 'Abendliches Event am Zelt – Firmenfeier im Waldgeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Firmenfeier" | t | safe }}</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}winter/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/02/Festzelt1_im_Winter-768x431.webp" alt="{{ 'Festzelt mit Kerzen und Lichterketten – Weihnachtsfeiern im Wintergeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Weihnachtsfeiern" | t | safe }}</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}geburtstage/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/KC_Feier-174-768x512.webp" alt="{{ 'Feiernde Gäste mit erhobenen Gläsern – Geburtstage im Waldgeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Geburtstage" | t | safe }}</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}trauerfeier/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/09/DSC04673-1-768.jpg" alt="{{ 'Ruhige Sitzecke mit Kamin – Trauercafé im Waldgeflüster' | t | safe }}" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">{{ "Trauercafé" | t | safe }}</span>
+    </a>
+  </div>
+</div></div>
+{% set kontaktHeading %}Euer nächster Schritt: Termin anfragen{% endset %}
+{% set kontaktText %}<p>Ihr wisst schon, was ihr feiern wollt? Schreibt uns – wir melden uns persönlich mit freien Terminen und Ideen für euren Anlass.</p>
+{% endset %}
+{{ contactBridge(kontaktHeading, kontaktText) }}

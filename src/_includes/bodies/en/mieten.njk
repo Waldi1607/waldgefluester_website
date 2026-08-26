@@ -1,0 +1,40 @@
+{% from "components.njk" import hero, intro, contactBridge with context %}
+
+
+	<div id='main' class='all_colors' data-scroll-offset='88'>
+
+	{% set heroTitle %}Rent Waldgeflüster – One Venue, Many Occasions{% endset %}
+{{ hero(heroTitle, {}) }}{% set introText %}<p><span class="s1">From summer parties to Christmas celebrations, from birthdays to funeral receptions: at </span><b>Waldgeflüster</b><span class="s1"> you don’t rent rooms – you rent the whole venue, exclusively for you and your guests, surrounded by the nature of the Swabian Alb. Pick your occasion. </span><b>IHR, WIR, PASST!</b></p>
+{% endset %}
+{{ intro(introText) }}<div id='mieten-anlaesse'  class='main_color av_default_container_wrap container_wrap fullsize wg-mieten-wrap'  ><div class='container av-section-cont-open' >
+  <div class="wg-mieten-grid">
+    <a class="wg-mieten-tile" href="{{ base }}heiraten-schwaebische-alb/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp" alt="Bridal couple with sparklers – weddings at Waldgeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Weddings</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}sommerfest/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp" alt="Garden party with guests – summer parties at Waldgeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Summer parties</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}firmenfeier/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/SR-TanzParty-96-768x512.webp" alt="Evening event by the marquee – company events at Waldgeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Company events</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}winter/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/02/Festzelt1_im_Winter-768x431.webp" alt="Marquee with candles and fairy lights – Christmas parties at Wintergeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Christmas parties</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}geburtstage/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/01/KC_Feier-174-768x512.webp" alt="Guests celebrating with raised glasses – birthdays at Waldgeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Birthdays</span>
+    </a>
+    <a class="wg-mieten-tile" href="{{ base }}trauerfeier/">
+      <span class="wg-mieten-media"><img src="{{ pre }}wp-content/uploads/2025/09/DSC04673-1-768.jpg" alt="Quiet seating area with fireplace – funeral receptions at Waldgeflüster" loading="lazy" decoding="async"></span>
+      <span class="wg-mieten-label">Funeral receptions</span>
+    </a>
+  </div>
+</div></div>
+{% set kontaktHeading %}Your next step: request a date{% endset %}
+{% set kontaktText %}<p>Already know what you want to celebrate? Write to us – we’ll get back to you personally with available dates and ideas for your occasion.</p>
+{% endset %}
+{{ contactBridge(kontaktHeading, kontaktText) }}

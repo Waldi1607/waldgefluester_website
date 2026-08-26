@@ -663,3 +663,84 @@ body.page-id-5002 #av_section_1 h1 { color: #f3f0ea; }
   background-position: 50% 100%;
   background-attachment: scroll;
 }
+
+/* ---------- Mieten-Bereich: Anlass-Seiten + Kachel-Uebersicht ---------- */
+/* Die neuen Anlass-Seiten (/mieten/, /sommerfest/, /firmenfeier/, /geburtstage/)
+   nutzen das Feiern-Geruest (page-id-5001); eigene Bilder kommen ueber die
+   zusaetzliche Body-Klasse wg-page-<slug>. Sommerfest behaelt das
+   Feiern-Standardbild (Gartenfest). */
+body.wg-page-mieten .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+body.wg-page-mieten .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+  background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp);
+}
+body.wg-page-firmenfeier .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+body.wg-page-firmenfeier .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+  background-image: url(../../wp-content/uploads/2025/01/SR-TanzParty-96.webp);
+}
+body.wg-page-geburtstage .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+body.wg-page-geburtstage .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+  background-image: url(../../wp-content/uploads/2025/01/KC_Feier-174.webp);
+}
+@media (max-width: 767px) {
+  body.wg-page-mieten .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+  body.wg-page-mieten .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+    background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp);
+  }
+  body.wg-page-firmenfeier .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+  body.wg-page-firmenfeier .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+    background-image: url(../../wp-content/uploads/2025/01/SR-TanzParty-96-768x512.webp);
+  }
+  body.wg-page-geburtstage .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner,
+  body.wg-page-geburtstage .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 {
+    background-image: url(../../wp-content/uploads/2025/01/KC_Feier-174-768x512.webp);
+  }
+}
+
+/* Anlass-Kacheln auf /mieten/ (Bild + Label, wie die Rubriken beim Vorbild) */
+.wg-mieten-wrap > .container {
+  padding-top: 0 !important;
+  padding-bottom: clamp(48px, 6vw, 88px) !important;
+}
+.wg-mieten-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 30px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.wg-mieten-tile { display: block; text-decoration: none !important; }
+.wg-mieten-media {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 4 / 3;
+  background: #e9e6e1;
+}
+.wg-mieten-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+.wg-mieten-tile:hover .wg-mieten-media img,
+.wg-mieten-tile:focus-visible .wg-mieten-media img { transform: scale(1.05); }
+.wg-mieten-label {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  color: #3a4a3a;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-size: .92em;
+  transition: color .2s ease;
+}
+.wg-mieten-tile:hover .wg-mieten-label,
+.wg-mieten-tile:focus-visible .wg-mieten-label { color: #678266; }
+@media (max-width: 989px) {
+  .wg-mieten-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+  .wg-mieten-grid { grid-template-columns: 1fr; }
+}
