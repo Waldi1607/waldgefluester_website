@@ -27,7 +27,7 @@ body.page-id-5003 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
 
 /* ---------- Trauercafé (page-id-5002): Bilder + ruhige Optik ---------- */
 body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
-  background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg);
+  background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp);
 }
 body.page-id-5002 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
   background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp);
@@ -216,7 +216,9 @@ body.page-id-5003 #impressionen-events { margin-bottom: clamp(32px, 4vw, 48px); 
 }
 #top .pfeilcontainer > .flex_cell:not(:has(.av-special-heading)) {
   min-height: clamp(320px, 28vw, 430px);
-  border-radius: 26px 0 0 26px;
+  /* Rundum abgerundet: auch die Naht-Seite zum Textfeld (vorher waren je
+     nach Bildposition die rechten bzw. äußeren Ecken eckig). */
+  border-radius: 26px;
 }
 #top .pfeilcontainer > .flex_cell:has(.av-special-heading) {
   padding: clamp(32px, 3vw, 46px) clamp(30px, 4vw, 52px) !important;
@@ -241,7 +243,11 @@ body:is(.page-id-1143,.page-id-3516,.page-id-5001,.page-id-5002,.page-id-5003,.p
 
 /* Ablauf: Jede Ziffer steht geometrisch in der Mitte ihrer Karte. */
 body.page-id-1987 #planung .av-milestone {
-  display: grid !important;
+  /* inline-grid statt grid: Grid zentriert die Ziffer in der Karte, inline-
+     Level hält die Karten nebeneinander (wie inline-block auf den anderen
+     Seiten) statt sie untereinander zu stapeln. */
+  display: inline-grid !important;
+  vertical-align: top;
   grid-template-rows: 54px minmax(0, 1fr);
   justify-items: stretch;
 }
@@ -345,7 +351,7 @@ body.page-id-1987 #planung .av-milestone-date {
   body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
-  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp); }
 }
 
 /* ---------- LCP-Fix: Hero sofort malen (Parallax-Layer ist bis JS-Init display:none;
@@ -355,7 +361,7 @@ body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { b
 body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
 body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
 body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp); background-size: cover; background-position: center; }
-body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-1440.jpg); background-size: cover; background-position: center; }
+body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp); background-size: cover; background-position: center; }
 body.page-id-1559 .avia-section.av-m65exedf-f297d08e6f5792d0a2ec4e0eeaeced9c { background-image: url(../../wp-content/uploads/2025/01/Waldgefluester-1.webp); background-size: cover; background-position: center; }
 body.page-id-1610 .avia-section.av-4p5ahx6-7af42a683abcda1e17bcdcb6b1b6acb6 { background-image: url(../../wp-content/uploads/2025/01/Fotograf1300.webp); background-size: cover; background-position: center; }
 body.page-id-1987 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp); background-size: cover; background-position: center; }
@@ -365,7 +371,7 @@ body.page-id-1987 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { bac
   body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
-  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/09/DSC04673-1-768.jpg); }
+  body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp); }
 }
 
 
@@ -743,4 +749,99 @@ body.wg-page-geburtstage .avia-section.av-6zkywz-1b2215787bb2706e3468f3d40966251
 }
 @media (max-width: 599px) {
   .wg-mieten-grid { grid-template-columns: 1fr; }
+}
+
+/* Sommerfest/Firmenfeier/Geburtstage: Catering-Zelle zeigt das Salatbuffet
+   des Caterers (statt des geerbten Feiern-Bildes). */
+body.wg-page-sommerfest .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf,
+body.wg-page-firmenfeier .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf,
+body.wg-page-geburtstage .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+  background-image: url(../../wp-content/uploads/2025/10/Food-1200.jpg);
+  background-position: 50% 50%;
+}
+@media (max-width: 767px) {
+  body.wg-page-sommerfest .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf,
+  body.wg-page-firmenfeier .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf,
+  body.wg-page-geburtstage .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+    background-image: url(../../wp-content/uploads/2025/10/Food-768.jpg);
+  }
+}
+
+/* Einleitungstexte aller Seiten mittig ausrichten (schlägt den
+   Blocksatz aus bundle.css über die doppelte ID-Spezifität) */
+body#top #after_submenu_1 .avia_textblock {
+  text-align: center;
+}
+
+/* Sommerfest: "Laue Abende"-Zelle zeigt die Feuerschale am Abend
+   (statt des geerbten Feiern-Bildes). */
+body.wg-page-sommerfest .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
+  background-image: url(../../wp-content/uploads/2025/10/Feuerschale.webp);
+}
+
+/* Einleitungsblock aller Seiten horizontal zentrieren (der 900px-Wrapper
+   klebte links, weil die Basisregel keine Auto-Margins setzt). */
+body#top #after_submenu_1 .entry-content-wrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Sommerfest: Location-Zelle zeigt den Aussenbereich mit Sonnenschirmen
+   im Abendlicht (statt des geerbten Feiern-Bildes). */
+body.wg-page-sommerfest .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/01/DSC05522.webp);
+}
+@media (max-width: 767px) {
+  body.wg-page-sommerfest .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+    background-image: url(../../wp-content/uploads/2025/01/DSC05522-768x512.webp);
+  }
+}
+
+/* Firmenfeier: eigene Bilder für die Team- und die Get-together-Zelle
+   (Gartenfest bzw. Anstossen mit Kruegen). */
+body.wg-page-firmenfeier .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp);
+}
+body.wg-page-firmenfeier .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
+  background-image: url(../../wp-content/uploads/2025/10/KS-475.webp);
+}
+@media (max-width: 767px) {
+  body.wg-page-firmenfeier .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+    background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp);
+  }
+}
+
+/* Geburtstage: eigene Bilder für die Party- und die Tanzen-Zelle
+   (Festzelt-Tafel bzw. Diskokugel). */
+body.wg-page-geburtstage .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/01/154-Sarah-Max-154.webp);
+}
+body.wg-page-geburtstage .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
+  background-image: url(../../wp-content/uploads/2025/10/Diskokugel.webp);
+}
+@media (max-width: 767px) {
+  body.wg-page-geburtstage .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+    background-image: url(../../wp-content/uploads/2025/01/154-Sarah-Max-154-768x512.webp);
+  }
+}
+
+/* Trauercafé: "Ein Ort für euch" – Punkteliste links, Bild rechts */
+.wg-grief-place {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.wg-grief-place-media { margin: 0; }
+.wg-grief-place-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+}
+@media (max-width: 989px) {
+  .wg-grief-place { grid-template-columns: 1fr; }
+  .wg-grief-place-media { max-width: 480px; margin: 0 auto; }
 }
