@@ -18,10 +18,10 @@ body.page-id-5001 .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
 
 /* ---------- Events (page-id-5003): Bilder ---------- */
 body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner {
-  background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp);
+  background-image: url(../../wp-content/uploads/2025/10/Sofa-Hero-1920.jpg);
 }
 body.page-id-5003 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
-  background-image: url(../../wp-content/uploads/2025/02/Sitzlounge_im_Winter.webp);
+  background-image: url(../../wp-content/uploads/2025/10/Waldcafe-Anbau-1300.jpg);
 }
 /* Eisstock-Zelle (av-m69g0suv) behält ihr Original-Bild aus post-1987.css */
 
@@ -350,7 +350,7 @@ body.page-id-1987 #planung .av-milestone-date {
   body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424-768.webp); }
   body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
   body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1-768x512.webp); }
-  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/01/DJI_0782-768.webp); }
+  body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/10/Sofa-Hero-768.jpg); }
   body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 .av-parallax .av-parallax-inner { background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp); }
 }
 
@@ -360,7 +360,7 @@ body.page-id-1143 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { b
 body.page-id-4947 .avia-section.av-m65exedf-e74ad119a57c6f61c28d30542003d435 { background-image: url(../../wp-content/uploads/2025/01/SR-Ansprache-Torte-Spiel-Sparklers-89-e1737154381424.webp); background-size: cover; background-position: center; }
 body.page-id-3516 .avia-section.av-6zkywz-a19058bfaf8a7876ffe79912f5be7e45 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
 body.page-id-5001 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp); background-size: cover; background-position: center; }
-body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/01/DJI_0782.webp); background-size: cover; background-position: center; }
+body.page-id-5003 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Sofa-Hero-1920.jpg); background-size: cover; background-position: center; }
 body.page-id-5002 .avia-section.av-6zkywz-1b2215787bb2706e3468f3d409662512 { background-image: url(../../wp-content/uploads/2025/10/Trauercafe-Kerzen.webp); background-size: cover; background-position: center; }
 body.page-id-1559 .avia-section.av-m65exedf-f297d08e6f5792d0a2ec4e0eeaeced9c { background-image: url(../../wp-content/uploads/2025/01/Waldgefluester-1.webp); background-size: cover; background-position: center; }
 body.page-id-1610 .avia-section.av-4p5ahx6-7af42a683abcda1e17bcdcb6b1b6acb6 { background-image: url(../../wp-content/uploads/2025/01/Fotograf1300.webp); background-size: cover; background-position: center; }
@@ -844,4 +844,50 @@ body.wg-page-geburtstage .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
 @media (max-width: 989px) {
   .wg-grief-place { grid-template-columns: 1fr; }
   .wg-grief-place-media { max-width: 480px; margin: 0 auto; }
+}
+
+/* Winter: "Festessen"-Zelle zeigt das Catering-Buffet (wie bei
+   Firmenfeier "Catering & Getränke aus einer Hand") */
+body.page-id-1987 .flex_cell.av-m69h1oq1-c6dd7e77e03327f8393f013c8eb1d035 {
+  background-image: url(../../wp-content/uploads/2025/10/Food-1200.jpg);
+}
+@media (max-width: 767px) {
+  body.page-id-1987 .flex_cell.av-m69h1oq1-c6dd7e77e03327f8393f013c8eb1d035 {
+    background-image: url(../../wp-content/uploads/2025/10/Food-768.jpg);
+  }
+}
+
+/* Winter: "Glühweinempfang"-Zelle zeigt den Glühweinempfang */
+body.page-id-1987 .flex_cell.av-5zrqvn-57c3fefc1f63f4d4bf56e76c69a05480 {
+  background-image: url(../../wp-content/uploads/2025/10/Gluehweinempfang-1300.jpg);
+}
+
+/* Winter: Bildzellen der Bild/Text-Reihen höher ziehen — die Motive
+   wirkten sonst als schmale Streifen */
+@media (min-width: 990px) {
+  /* Textspalten vertikal mittig zur Bildhöhe ausrichten */
+  body#top.page-id-1987 .pfeilcontainer > .flex_cell:has(.av-special-heading) {
+    vertical-align: middle;
+  }
+}
+
+/* Winter: "Location"-Zelle zeigt den Winterwald mit Glühweinstand
+   (statt des Deko-Standardbildes aus bundle.css) */
+body.page-id-1987 .flex_cell.av-m69g3goh-9d5841147cc5ebcef1bed602bfc23ada {
+  background-image: url(../../wp-content/uploads/2025/10/Winterwald.jpg);
+}
+
+/* Winter: "Eisstockschießen"-Zelle zeigt die Eisstockbahn im Detail */
+body.page-id-1987 .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+  background-image: url(../../wp-content/uploads/2025/10/Eisstockbahn-schmal-1300.jpg);
+}
+
+/* Eigene Events: Abschlusstext vor dem Formular mittig ausrichten */
+body#top.page-id-5003 .av_textblock_section.av-ltsd5v-7ce20276c9ce276d553e3e223ca0191e .avia_textblock {
+  text-align: center;
+}
+
+/* Eigene Events: Eisstock-Zelle zeigt die Eisstockbahn (schmal) */
+body.page-id-5003 .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
+  background-image: url(../../wp-content/uploads/2025/10/Eisstockbahn-schmal-1300.jpg);
 }
