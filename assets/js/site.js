@@ -66,8 +66,7 @@
       year: value('year'),
       message: value('message'),
       privacyAccepted: data.get('privacy') === 'on',
-      source: window.location.pathname,
-      _subject: WG_EN ? 'Event inquiry via the website' : 'Eventanfrage über die Website'
+      source: window.location.pathname
     };
     var endpoint = form.getAttribute('data-endpoint') || window.WG_CONTACT_ENDPOINT || '';
 
@@ -111,10 +110,37 @@
     }
 
     try {
+      // Formspree-Versand: deutsche/englische Feldnamen für eine lesbare
+      // Anfrage-Mail, dynamischer Betreff, _replyto für den Antworten-Knopf.
+      var mailBody = WG_EN ? {
+        'Name': payload.name,
+        'E-mail': payload.email,
+        'Phone': payload.phone,
+        'Occasion': payload.event,
+        'Number of guests': payload.guests,
+        'Preferred year': payload.year,
+        'Message': payload.message,
+        'Privacy accepted': payload.privacyAccepted ? 'yes' : 'no',
+        'Page': payload.source,
+        '_replyto': payload.email,
+        '_subject': 'Event inquiry: ' + payload.event + ' – ' + payload.name + ' (' + payload.guests + ' guests, ' + payload.year + ')'
+      } : {
+        'Name': payload.name,
+        'E-Mail': payload.email,
+        'Telefon': payload.phone,
+        'Anlass': payload.event,
+        'Personenanzahl': payload.guests,
+        'Wunschjahr': payload.year,
+        'Nachricht': payload.message,
+        'Datenschutz akzeptiert': payload.privacyAccepted ? 'ja' : 'nein',
+        'Seite': payload.source,
+        '_replyto': payload.email,
+        '_subject': 'Eventanfrage: ' + payload.event + ' – ' + payload.name + ' (' + payload.guests + ' Gäste, ' + payload.year + ')'
+      };
       var response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(mailBody)
       });
       if (!response.ok) throw new Error('contact_request_failed');
 
