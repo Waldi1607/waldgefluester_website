@@ -66,7 +66,8 @@
       year: value('year'),
       message: value('message'),
       privacyAccepted: data.get('privacy') === 'on',
-      source: window.location.pathname
+      source: window.location.pathname,
+      _subject: WG_EN ? 'Event inquiry via the website' : 'Eventanfrage über die Website'
     };
     var endpoint = form.getAttribute('data-endpoint') || window.WG_CONTACT_ENDPOINT || '';
 
@@ -112,7 +113,7 @@
     try {
       var response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       });
       if (!response.ok) throw new Error('contact_request_failed');
@@ -125,9 +126,17 @@
         });
       }
       form.reset();
-      if (status) status.textContent = WG_EN ? 'Thank you! Your inquiry has arrived. We will get back to you personally.' : 'Vielen Dank! Eure Anfrage ist angekommen. Wir melden uns persönlich bei euch.';
+      if (status) {
+        status.className = 'wg-form-status is-success';
+        status.textContent = WG_EN ? 'Thank you! Your inquiry has arrived. We will get back to you personally.' : 'Vielen Dank! Eure Anfrage ist angekommen. Wir melden uns persönlich bei euch.';
+      }
     } catch (error) {
-      if (status) status.textContent = 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versucht es erneut oder ruft uns kurz an.';
+      if (status) {
+        status.className = 'wg-form-status is-error';
+        status.textContent = WG_EN
+          ? 'Your inquiry could not be sent right now. Please try again or give us a quick call.'
+          : 'Die Anfrage konnte gerade nicht gesendet werden. Bitte versucht es erneut oder ruft uns kurz an.';
+      }
     } finally {
       if (submit) {
         submit.disabled = false;

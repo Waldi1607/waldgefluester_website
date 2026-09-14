@@ -7,7 +7,7 @@ const CACHE = "wg-static-v20";
 const PRECACHE = [
   "assets/css/bundle.css",
   "assets/css/pages.css?v=46",
-  "assets/js/site.js?v=8",
+  "assets/js/site.js?v=9",
   "assets/js/events.js",
   "wp-includes/js/jquery/jquery.min.js",
   "wp-content/themes/enfold/js/avia-js.min.js",
