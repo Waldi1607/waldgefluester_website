@@ -18,7 +18,7 @@
 {%- endset -%}
 <!DOCTYPE html>
 {{ htmlTag | safe }}
-{% if fullHead %}<head>{% rawfile snip + slug + '-head-full.html' %}{{ hreflangLinks | safe }}</head>
+{% if fullHead %}<head>{% rawfile snip + slug + '-head-full.html' %}{{ hreflangLinks | safe }}{% include 'partials/schema-venue.njk' %}</head>
 {% else %}<head>
 <script>/* Nicht-Produktivumgebungen (localhost, github.io, Vorschau) senden keine Analytics-
    Daten. Googles offizieller Opt-out-Schalter wirkt fuer JEDEN gtag-Loader, auch fuer den,
@@ -798,6 +798,7 @@ Compress: CSS:load minified only - JS:load minified only
 Updates: enabled - token has changed and not verified
 PLAu:8
 -->
+{% include 'partials/schema-venue.njk' %}
 </head>{% endif %}
 {# Seitenthemes und Komponentenvarianten werden zentral am Body vererbt. #}
 {% set pageTheme = theme | default('forest') %}

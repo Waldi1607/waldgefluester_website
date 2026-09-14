@@ -123,13 +123,50 @@
     banner.hidden = false;
   }
 
+  // SEO: Termine als schema.org-Event-Markup einspeisen, damit sie in der
+  // Google-Event-Suche auftauchen können.
+  function injectEventSchema(events) {
+    if (!events.length || document.getElementById('wg-event-schema')) return;
+    var venue = {
+      '@type': 'EventVenue',
+      name: 'Waldgeflüster Events',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Kaltentalstraße 52',
+        postalCode: '72584',
+        addressLocality: 'Hülben',
+        addressCountry: 'DE'
+      }
+    };
+    var items = events.map(function (ev) {
+      var item = {
+        '@type': 'Event',
+        name: ev.title,
+        startDate: ev.date,
+        eventStatus: 'https://schema.org/EventScheduled',
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        location: venue,
+        organizer: { '@type': 'Organization', name: 'Waldgeflüster Events', url: 'https://waldgefluester-events.de/' }
+      };
+      if (ev.end) item.endDate = ev.end;
+      if (ev.teaser) item.description = ev.teaser;
+      if (ev.url) item.url = ev.url;
+      return item;
+    });
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'wg-event-schema';
+    script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': items });
+    document.head.appendChild(script);
+  }
+
   function init() {
     fetch(src, { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function (data) {
         var events = upcoming(data);
         if (mode === 'banner') renderBanner(events);
-        else renderList(events);
+        else { renderList(events); injectEventSchema(events); }
       })
       .catch(function () {
         if (mode !== 'banner') {

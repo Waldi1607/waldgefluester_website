@@ -8,7 +8,7 @@ const PRECACHE = [
   "assets/css/bundle.css",
   "assets/css/pages.css?v=46",
   "assets/js/site.js?v=10",
-  "assets/js/events.js",
+  "assets/js/events.js?v=2",
   "wp-includes/js/jquery/jquery.min.js",
   "wp-content/themes/enfold/js/avia-js.min.js",
 ];
