@@ -891,3 +891,47 @@ body#top.page-id-5003 .av_textblock_section.av-ltsd5v-7ce20276c9ce276d553e3e223c
 body.page-id-5003 .flex_cell.av-m69g0suv-9a07d853d48cb7eb8533b6a45924abbf {
   background-image: url(../../wp-content/uploads/2025/10/Eisstockbahn-schmal-1300.jpg);
 }
+
+/* Sprachumschalter rechts NEBEN dem Anfragen-Button statt darüber:
+   das Menü rückt auf Desktop etwas nach links, die Pille übernimmt
+   den rechten Rand. (Mobil bleibt die Position neben dem Burger.) */
+@media (min-width: 990px) {
+  #top .av_menu_right .main_menu { right: 72px; }
+  #top .wg-lang-switch { right: 10px; }
+  #top.html_header_transparency .wg-lang-switch,
+  .html_header_transparency #top .wg-lang-switch { top: 50%; }
+}
+
+/* Schmale Desktops (990–1180px): durch den Menü-Versatz für die
+   Sprach-Pille wird es eng — Logo und Menüabstände kompakter, damit
+   nichts in den Schriftzug läuft. */
+@media (min-width: 990px) and (max-width: 1180px) {
+  #top .av-logo-container .logo.avia-svg-logo { max-width: 290px; width: 290px; }
+  #top .av-main-nav > li > a { padding: 0 4px; font-size: 13px; }
+}
+
+/* ---------- Bilderseite (page-id-1610): Lesbarkeit ---------- */
+/* Einleitung einspaltig statt zweispaltig; wie die übrigen Intros
+   auf lesbare Breite begrenzt und zentriert. */
+body#top.page-id-1610 .av_textblock_section.av-4dgq3wq-34d5f10dd8412c84a22501cc77d2072f .avia_textblock {
+  column-count: 1;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Kategorie-Überschriften und Beschreibungstexte nicht mehr randlos —
+   die Galerien selbst bleiben bewusst in voller Breite. */
+body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av-special-heading,
+body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textblock_section {
+  padding-left: clamp(24px, 5vw, 70px);
+  padding-right: clamp(24px, 5vw, 70px);
+}
+
+/* Footer-Kontakt: echtes Instagram-Symbol (entypo-fontello) vor dem
+   Seitennamen — ersetzt das Kamera-Emoji. */
+.wg-insta-icon::before {
+  content: "\f16d";
+  font-family: 'entypo-fontello';
+  font-weight: 400;
+  font-style: normal;
+}
