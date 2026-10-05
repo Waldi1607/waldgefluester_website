@@ -1234,19 +1234,18 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
    wie Ueberschrift + Text + Routen-Link in der linken Spalte */
 .wg-lp-anfahrt {
   display: grid;
-  grid-template-columns: minmax(0, 560px) 1fr;
+  grid-template-columns: minmax(0, 1fr) clamp(280px, 38%, 440px);
   gap: 36px;
   align-items: stretch;
-  margin-right: calc(50% - 50vw);
 }
-#top a.wg-lp-karte { display: block; position: relative; height: 100%; min-height: 240px; text-decoration: none; overflow: hidden; border-radius: 16px 0 0 16px; border: 1px solid #e5e2db; border-right: none; }
+#top a.wg-lp-karte { display: block; position: relative; height: 100%; min-height: 240px; text-decoration: none; overflow: hidden; border-radius: 16px; border: 1px solid #e5e2db; }
 .wg-lp-karte img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
 #top a.wg-lp-karte:hover img { transform: scale(1.03); }
 .wg-lp-karte-hinweis { position: absolute; right: 10px; bottom: 8px; z-index: 2; background: rgba(255,255,255,.88); border-radius: 999px; padding: 3px 12px; font-size: .72em; color: #55554f; }
 @media (max-width: 767px) {
   .wg-lp-slider img.hoch { width: 56vw; }
-  .wg-lp-anfahrt { grid-template-columns: 1fr; gap: 18px; margin-right: 0; }
-  #top a.wg-lp-karte { height: 240px; border-radius: 16px; border-right: 1px solid #e5e2db; }
+  .wg-lp-anfahrt { grid-template-columns: 1fr; gap: 18px; }
+  #top a.wg-lp-karte { height: 240px; }
 }
 
 /* Enfold legt auf a>img automatisch ein weisses Hover-Overlay – fuer die Karte deaktivieren */
