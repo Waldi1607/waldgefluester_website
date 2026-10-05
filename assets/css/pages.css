@@ -1139,3 +1139,49 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 #wg-event-banner .wg-home-card.wg-event--osterbrunch {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23aad9ee' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
 }
+
+/* ---------- SEO-Landingpages (z.B. /hochzeitslocation-stuttgart/) ---------- */
+.wg-lp { max-width: 980px; margin: 0 auto; padding: 56px 20px 72px; text-align: left; }
+.wg-lp h2 { color: #3f5340; font-weight: 400; letter-spacing: .5px; margin: 0 0 18px; }
+.wg-lp-intro p { font-size: 1.08em; line-height: 1.75; color: #45453f; }
+.wg-lp-abschnitt { margin-top: 56px; }
+.wg-lp-fakten { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.wg-lp-fakt { background: #fff; border: 1px solid #e5e2db; border-radius: 16px; padding: 20px 12px; text-align: center; }
+.wg-lp-fakt strong { display: block; font-size: 1.7em; color: #3f5340; margin-bottom: 4px; }
+.wg-lp-fakt span { color: #777770; font-size: .9em; }
+.wg-lp-liste { margin: 0; padding-left: 22px; }
+.wg-lp-liste li { margin-bottom: 12px; line-height: 1.65; }
+.wg-lp-rating { color: #55554f; }
+.wg-lp-zitat { margin: 18px 0; padding: 18px 22px; background: #fff; border-left: 4px solid #89a488; border-radius: 0 14px 14px 0; }
+.wg-lp-zitat p { margin: 0 0 8px; font-style: italic; line-height: 1.6; }
+.wg-lp-zitat footer { font-size: .85em; color: #8d8d84; }
+#top .wg-lp a.wg-lp-maplink { color: #678266; text-decoration: underline; }
+.wg-lp-frage { background: #fff; border: 1px solid #e5e2db; border-radius: 12px; margin-bottom: 10px; padding: 0; }
+.wg-lp-frage summary { cursor: pointer; padding: 15px 18px; font-weight: 600; color: #3f5340; list-style: none; position: relative; padding-right: 40px; }
+.wg-lp-frage summary::-webkit-details-marker { display: none; }
+.wg-lp-frage summary::after { content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: #89a488; font-size: 1.3em; }
+.wg-lp-frage[open] summary::after { content: "–"; }
+.wg-lp-frage p { margin: 0; padding: 0 18px 16px; line-height: 1.65; color: #55554f; }
+.wg-lp-cta { margin-top: 64px; text-align: center; background: #fff; border: 1px solid #e5e2db; border-radius: 18px; padding: 36px 26px; }
+.wg-lp-cta-buttons { margin-top: 22px; }
+#top .wg-lp a.wg-lp-btn { display: inline-block; margin: 6px 8px; background: #678266; color: #fff; border-radius: 999px; padding: 13px 30px; text-decoration: none; font-weight: 600; transition: background .2s; }
+#top .wg-lp a.wg-lp-btn:hover { background: #51684f; }
+#top .wg-lp a.wg-lp-btn-hell { background: transparent; color: #678266; border: 1px solid #678266; }
+#top .wg-lp a.wg-lp-btn-hell:hover { background: #678266; color: #fff; }
+@media (max-width: 767px) {
+  .wg-lp { padding: 36px 16px 48px; }
+  .wg-lp-fakten { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .wg-lp-abschnitt { margin-top: 40px; }
+}
+
+/* ---------- Footer: SEO-Rubriken (beliebte Suchen) ---------- */
+.wg-seo-links { background: #f2f0ea; border-top: 1px solid #e5e2db; }
+.wg-seo-links-inner { max-width: 1120px; margin: 0 auto; padding: 34px 20px 30px; display: flex; flex-wrap: wrap; gap: 40px; text-align: left; }
+.wg-seo-col h4 { margin: 0 0 12px; font-size: .95em; letter-spacing: 1.5px; text-transform: uppercase; color: #3f5340; }
+.wg-seo-col ul { list-style: none; margin: 0; padding: 0; }
+.wg-seo-col li { margin-bottom: 8px; }
+#top .wg-seo-col a { color: #55554f; text-decoration: none; font-size: .92em; }
+#top .wg-seo-col a:hover { color: #678266; text-decoration: underline; }
+@media (max-width: 767px) {
+  .wg-seo-links-inner { gap: 24px; padding: 26px 16px; }
+}
