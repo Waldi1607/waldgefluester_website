@@ -1193,12 +1193,34 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 @media (min-width: 990px) {
   .wg-lp-intro h2 { font-size: 1.85em; white-space: nowrap; }
 }
-.wg-lp-bilder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
-.wg-lp-bilder img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; display: block; }
-.wg-lp-bildbreit { margin-top: 56px; }
-.wg-lp-bildbreit img { width: 100%; height: auto; border-radius: 18px; display: block; }
+/* Vollbreiter, swipebarer Bild-Slider (Location/Zelt) */
+.wg-lp-slider-wrap { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: 40px; }
+.wg-lp-slider {
+  display: flex; gap: 14px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 24px; scrollbar-width: none;
+}
+.wg-lp-slider::-webkit-scrollbar { display: none; }
+.wg-lp-slider img {
+  flex: 0 0 auto; width: min(62vw, 780px); height: 430px;
+  object-fit: cover; border-radius: 18px; scroll-snap-align: center;
+}
+#top .wg-lp-slider-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,.92); color: #3f5340; font-size: 18px;
+  cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,.2); z-index: 5;
+}
+#top .wg-lp-slider-btn:hover { background: #ffffff; }
+.wg-lp-slider-prev { left: 16px; }
+.wg-lp-slider-next { right: 16px; }
+/* Breites Abschlussbild ueber die volle Fensterbreite */
+.wg-lp-bildbreit { width: 100vw; margin-left: calc(50% - 50vw); margin-top: 64px; }
+.wg-lp-bildbreit img { width: 100%; height: clamp(260px, 46vw, 560px); object-fit: cover; display: block; }
 @media (max-width: 767px) {
-  .wg-lp-bilder { grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
-  .wg-lp-bilder img { height: 200px; }
-  .wg-lp-bildbreit { margin-top: 36px; }
+  .wg-lp-slider { gap: 10px; padding: 0 16px; }
+  .wg-lp-slider img { width: 82vw; height: 240px; }
+  #top .wg-lp-slider-btn { display: none; }
+  .wg-lp-bildbreit { margin-top: 40px; }
 }
