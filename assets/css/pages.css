@@ -1057,3 +1057,19 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   #wg-event-list .wg-event-title,
   #wg-event-list .wg-event-teaser { overflow-wrap: break-word; word-break: break-word; }
 }
+
+/* Schritt-Timeline ("So plant ihr euer Fest"): Navigationspfeile zeigten
+   nach oben (\e87e); horizontal muss es links/rechts sein (\e87c/\e87d) */
+#top .avia-timeline-container .av-timeline-nav-prev::before { content: "\e87c"; }
+#top .avia-timeline-container .av-timeline-nav-next::before { content: "\e87d"; }
+/* Die Buttons kollabieren durch font-size:0 auf ~2px und lagen deckungsgleich
+   uebereinander; feste Groesse macht sie zum nebeneinanderliegenden Pfeilpaar. */
+#top .avia-timeline-container .av-timeline-nav { width: auto; }
+#top .avia-timeline-container .av-timeline-nav a {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  margin-left: 8px;
+}
