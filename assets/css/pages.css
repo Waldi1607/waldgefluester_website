@@ -1283,3 +1283,12 @@ body.wg-lp-winter #av_section_1 .av-parallax .av-parallax-inner {
 }
 /* Weihnachtsfeier-LPs: laengere Intro-Ueberschriften duerfen umbrechen */
 body.wg-lp-winter .wg-lp-intro h2 { white-space: normal; }
+
+/* Teamevent-Landingpages: Gartenszene als Hero, Intro-Ueberschrift darf umbrechen */
+body.wg-lp-team #av_section_1,
+body.wg-lp-team #av_section_1 .av-parallax .av-parallax-inner {
+  background-image: url(../../wp-content/uploads/2025/01/07_Laura-und-Marc-Come-Together-2-1.webp) !important;
+  background-size: cover;
+  background-position: center;
+}
+body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
