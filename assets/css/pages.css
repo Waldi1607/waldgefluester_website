@@ -1273,3 +1273,11 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 @media (max-width: 767px) {
   .wg-lp-rez-karte { padding: 18px 18px; }
 }
+
+/* Weihnachtsfeier-Landingpages: winterlicher Gastraum als Hero */
+body.wg-lp-winter #av_section_1,
+body.wg-lp-winter #av_section_1 .av-parallax .av-parallax-inner {
+  background-image: url(../../wp-content/uploads/2025/10/Gastraum.webp) !important;
+  background-size: cover;
+  background-position: center;
+}
