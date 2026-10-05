@@ -1141,11 +1141,11 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 }
 
 /* ---------- SEO-Landingpages (z.B. /hochzeitslocation-stuttgart/) ---------- */
-.wg-lp { max-width: 980px; margin: 0 auto; padding: 56px 20px 72px; text-align: left; }
+.wg-lp { max-width: 1120px; margin: 0 auto; padding: 56px 20px 72px; text-align: left; }
 .wg-lp h2 { color: #3f5340; font-weight: 400; letter-spacing: .5px; margin: 0 0 18px; }
 .wg-lp-intro p { font-size: 1.08em; line-height: 1.75; color: #45453f; }
 .wg-lp-abschnitt { margin-top: 56px; }
-.wg-lp-fakten { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.wg-lp-fakten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .wg-lp-fakt { background: #fff; border: 1px solid #e5e2db; border-radius: 16px; padding: 20px 12px; text-align: center; }
 .wg-lp-fakt strong { display: block; font-size: 1.7em; color: #3f5340; margin-bottom: 4px; }
 .wg-lp-fakt span { color: #777770; font-size: .9em; }
@@ -1170,18 +1170,35 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 #top .wg-lp a.wg-lp-btn-hell:hover { background: #678266; color: #fff; }
 @media (max-width: 767px) {
   .wg-lp { padding: 36px 16px 48px; }
-  .wg-lp-fakten { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .wg-lp-fakten { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .wg-lp-fakt { padding: 14px 6px; }
+  .wg-lp-fakt strong { font-size: 1.25em; }
+  .wg-lp-fakt span { font-size: .78em; }
   .wg-lp-abschnitt { margin-top: 40px; }
 }
 
 /* ---------- Footer: SEO-Rubriken (beliebte Suchen) ---------- */
-.wg-seo-links { background: #f2f0ea; border-top: 1px solid #e5e2db; }
+.wg-seo-links { background: #000000; border-top: 1px solid rgba(255,255,255,.12); }
 .wg-seo-links-inner { max-width: 1120px; margin: 0 auto; padding: 34px 20px 30px; display: flex; flex-wrap: wrap; gap: 40px; text-align: left; }
-.wg-seo-col h4 { margin: 0 0 12px; font-size: .95em; letter-spacing: 1.5px; text-transform: uppercase; color: #3f5340; }
+.wg-seo-col h4 { margin: 0 0 12px; font-size: .95em; letter-spacing: 1.5px; text-transform: uppercase; color: #ffffff; }
 .wg-seo-col ul { list-style: none; margin: 0; padding: 0; }
 .wg-seo-col li { margin-bottom: 8px; }
-#top .wg-seo-col a { color: #55554f; text-decoration: none; font-size: .92em; }
-#top .wg-seo-col a:hover { color: #678266; text-decoration: underline; }
+#top .wg-seo-col a { color: #c9c9c2; text-decoration: none; font-size: .92em; }
+#top .wg-seo-col a:hover { color: #ffffff; text-decoration: underline; }
 @media (max-width: 767px) {
   .wg-seo-links-inner { gap: 24px; padding: 26px 16px; }
+}
+
+/* LP: Intro-Ueberschrift einzeilig auf Desktop, Bilderband, breites Bild */
+@media (min-width: 990px) {
+  .wg-lp-intro h2 { font-size: 1.85em; white-space: nowrap; }
+}
+.wg-lp-bilder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+.wg-lp-bilder img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; display: block; }
+.wg-lp-bildbreit { margin-top: 56px; }
+.wg-lp-bildbreit img { width: 100%; height: auto; border-radius: 18px; display: block; }
+@media (max-width: 767px) {
+  .wg-lp-bilder { grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
+  .wg-lp-bilder img { height: 200px; }
+  .wg-lp-bildbreit { margin-top: 36px; }
 }
