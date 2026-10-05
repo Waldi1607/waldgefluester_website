@@ -935,3 +935,83 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   font-weight: 400;
   font-style: normal;
 }
+
+/* ---------- Mobile-Optimierung (Smartphones) ---------- */
+
+/* EN-Umschalter: Header-inner-container hat auf mobil Hoehe 0, top:50% ergab 0
+   und die Pille ragte zur Haelfte ueber den oberen Rand. Fix auf Burger-Mitte (40px). */
+@media (max-width: 989px) {
+  #top .wg-lang-switch,
+  #top.html_header_transparency .wg-lang-switch,
+  .html_header_transparency #top .wg-lang-switch {
+    top: 40px;
+    transform: translateY(-50%);
+    right: 84px;
+  }
+}
+
+/* Blocksatz erzeugt auf schmalen Screens grosse Wortluecken -> linksbuendig.
+   Liste automatisch aus den text-align:justify-Regeln der dynamic_avia-Post-CSS generiert. */
+@media (max-width: 767px) {
+  #top .av_textblock_section.av-1440503-dacd7fff1d3196021f28d9eb863bff94 .avia_textblock,
+  #top .av_textblock_section.av-1ecjo6b-96921230ff4584b5ca7b28476fb2bffb .avia_textblock,
+  #top .av_textblock_section.av-1ekrnqy-7fd475a95e7c03c351956be22cb58abd .avia_textblock,
+  #top .av_textblock_section.av-1fr0crb-6e6162a1a3a2ffb7cc4edbcf2624b42b .avia_textblock,
+  #top .av_textblock_section.av-1mt45r-909460b3620623a8db04fcda692f6d57 .avia_textblock,
+  #top .av_textblock_section.av-1n9j7j-f38af84f5212e477809da780a4a4461a .avia_textblock,
+  #top .av_textblock_section.av-1ptpvr-507693fba51d53e81c35389317af4289 .avia_textblock,
+  #top .av_textblock_section.av-1t9pl0a-74dc6bdbc49c43540e2164cdfe036ef9 .avia_textblock,
+  #top .av_textblock_section.av-236007-fb7dbb689bd6a359b4f74e39536725f7 .avia_textblock,
+  #top .av_textblock_section.av-28kobxm-6cb0aaafddb4911fcc08213754f07c85 .avia_textblock,
+  #top .av_textblock_section.av-2njemdm-19527d6f70ffbccf6420313cdf47c21b .avia_textblock,
+  #top .av_textblock_section.av-2t6n53-ad39d8ed7e97f1b1b48e03eb423d36b2 .avia_textblock,
+  #top .av_textblock_section.av-36rr5z-cb69f354721eb3d19b81a3aeb4a20414 .avia_textblock,
+  #top .av_textblock_section.av-379z13-41d7112345191feb96061ca8c02c8fdd .avia_textblock,
+  #top .av_textblock_section.av-3h7gc6y-9459fbe70e5b6576e04b1a1b68cf8f15 .avia_textblock,
+  #top .av_textblock_section.av-41lyrb-07baa07a9b9d16c7fa196ab212a8da11 .avia_textblock,
+  #top .av_textblock_section.av-4dgq3wq-34d5f10dd8412c84a22501cc77d2072f .avia_textblock,
+  #top .av_textblock_section.av-4zwqx3-73f32431c7c31c8da11b76cf6851414b .avia_textblock,
+  #top .av_textblock_section.av-60eg4n-ed1632f62ff75e9e7f073cd25bd85020 .avia_textblock,
+  #top .av_textblock_section.av-69gg8n-96a1f8980bca3049a08190b5c64131db .avia_textblock,
+  #top .av_textblock_section.av-6zxjz-d44fb38e7066405ccc7fee6de0555d17 .avia_textblock,
+  #top .av_textblock_section.av-71x7bn-28ea30763d5a23df4235ab9efde81fa7 .avia_textblock,
+  #top .av_textblock_section.av-738dr-718982ff945f10646133ff53c8157e93 .avia_textblock,
+  #top .av_textblock_section.av-7407xv-0460bc622a0104fe2a79dec8335e26f1 .avia_textblock,
+  #top .av_textblock_section.av-8ci0f-07e4922e9bd529db3c58353a74a0e2ab .avia_textblock,
+  #top .av_textblock_section.av-8vtvc7-2-2-f2f7d1420697ac5f14034f4204d52fba .avia_textblock,
+  #top .av_textblock_section.av-8vtvc7-2-f0633ce717ba93460df04aa75b02f08f .avia_textblock,
+  #top .av_textblock_section.av-8vtvc7-5f380ccc0bdcc7825958c64ff921c71c .avia_textblock,
+  #top .av_textblock_section.av-9k4zz-1d1fdc49b63872318fef38bd080a43c9 .avia_textblock,
+  #top .av_textblock_section.av-a6920z-57ebc6f470161c168a35bcabdf0f4239 .avia_textblock,
+  #top .av_textblock_section.av-dzxbnu-f878feb8571fc1bf7e8c72c35d7a528f .avia_textblock,
+  #top .av_textblock_section.av-fgnocn-26dfc16876aebf84a438a4dc5a969964 .avia_textblock,
+  #top .av_textblock_section.av-fgvy7-e01640f8706009e55e962b4e61cc92df .avia_textblock,
+  #top .av_textblock_section.av-g66yui-887a80b80b5d9b3fda6e64e32caaf3c2 .avia_textblock,
+  #top .av_textblock_section.av-jnlaa2-1bbe31464227d467c9fb4393b2470c54 .avia_textblock,
+  #top .av_textblock_section.av-ltsd5v-7ce20276c9ce276d553e3e223ca0191e .avia_textblock,
+  #top .av_textblock_section.av-lxd66f-4841d2ba56c4e399242b80cc61a97209 .avia_textblock,
+  #top .av_textblock_section.av-lywbz-181897c3755c30dbeb5d040d39ecb19b .avia_textblock,
+  #top .av_textblock_section.av-m6527t9x-0b3316a1a3b71fc1bd44fd8b74acd94f .avia_textblock,
+  #top .av_textblock_section.av-m656oyhq-1917d0c95891e869acafcd6e42542f97 .avia_textblock,
+  #top .av_textblock_section.av-m656tsfd-b6c2d204b2d97ce28c37c5bba1d461a0 .avia_textblock,
+  #top .av_textblock_section.av-m65eyyfr-7b027bceb6ba7b4fef7fd10049d82d98 .avia_textblock,
+  #top .av_textblock_section.av-m67ok70a-85e327d8428e697b5048c7e062698258 .avia_textblock,
+  #top .av_textblock_section.av-m69h0liq-c03c2bd487196ad71d3c7eab25b12d84 .avia_textblock,
+  #top .av_textblock_section.av-m69h11vm-1bf22103365ae4fd383f97dd92f2cf79 .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-19ea8459a2ed8b8d51ce404eed0dd93e .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-6-0c2756f129d682da6a47ac562fa44a83 .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-6-6-6-6-6-6-72253ee312e4cd4ab3f39fb65213b28d .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-6-6-6-6-6-f557344f9bb90cf5e78063c5a36a4174 .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-6-6-6-6-7674b756d4fa67fc3c53704f67f80721 .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-6-6-6d9159b0253cb89f53aa34ca9e93047e .avia_textblock,
+  #top .av_textblock_section.av-m6dya1wf-6-cf80e006c7f11f8c02186b4ae45a7f23 .avia_textblock,
+  #top .av_textblock_section.av-m6f0wekj-c49b6dbeebd9cadde89c07ef15663782 .avia_textblock,
+  #top .av_textblock_section.av-m6f0z9y2-f0625a4b61a02972b82a93032d684481 .avia_textblock,
+  #top .av_textblock_section.av-m6h24zp4-66b69583983068e76a8d08fee868f6cb .avia_textblock,
+  #top .av_textblock_section.av-m6ioosk4-8df9dba1c9bf8511ab2126db5b765b4b .avia_textblock,
+  #top .av_textblock_section.av-m6osb696-d85de29cc1dd90621d5c70cefb2a6252 .avia_textblock,
+  #top .av_textblock_section.av-mfbdqv-ef0428523c69b4b48883844e5ab648e8 .avia_textblock,
+  #top .av_textblock_section.av-xibkv-701abdab27b060687f485de1547d63a8 .avia_textblock {
+    text-align: left;
+  }
+}
