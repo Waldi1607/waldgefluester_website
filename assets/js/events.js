@@ -64,6 +64,19 @@
     return n;
   }
 
+  // EN-Seiten: deutsche Zeitangaben uebersetzen ("ab 17 Uhr" -> "from 17:00"),
+  // Teaser nutzen teaser_en aus events.json, wenn vorhanden.
+  function zeitText(ev) {
+    var t = ev.time || '';
+    if (!EN) return t;
+    var m = t.match(/^ab\s+(\d{1,2})(?::(\d{2}))?\s*Uhr$/);
+    if (m) return 'from ' + m[1] + ':' + (m[2] || '00');
+    return t.replace(/^ab\s+/, 'from ').replace(/\s*Uhr$/, '');
+  }
+  function teaserText(ev) {
+    return (EN && ev.teaser_en) ? ev.teaser_en : ev.teaser;
+  }
+
   // Titel -> Modifier-Klasse (z.B. "hello herbst!" -> "wg-event--hello-herbst"),
   // damit einzelne Events eigene Linienfarben bekommen koennen.
   function slugKlasse(titel) {
@@ -90,7 +103,7 @@
       var body = el('div', 'wg-event-body');
       var head = el('div', 'wg-event-head');
       head.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev)));
-      if (ev.time) head.appendChild(el('span', 'wg-event-time', ev.time));
+      if (ev.time) head.appendChild(el('span', 'wg-event-time', zeitText(ev)));
       body.appendChild(head);
       var title = el('h3', 'wg-event-title');
       if (ev.url) {
@@ -101,7 +114,7 @@
         title.textContent = ev.title;
       }
       body.appendChild(title);
-      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', ev.teaser));
+      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', teaserText(ev)));
       item.appendChild(body);
       target.appendChild(item);
     });
@@ -120,9 +133,9 @@
       if (ev.url) card.href = ev.url;
       card.appendChild(badge(ev));
       var body = el('div', 'wg-home-card-body');
-      body.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev) + (ev.time ? ' · ' + ev.time : '')));
+      body.appendChild(el('span', 'wg-event-weekday', weekdayLine(ev) + (ev.time ? ' · ' + zeitText(ev) : '')));
       body.appendChild(el('div', 'wg-event-title', ev.title));
-      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', ev.teaser));
+      if (ev.teaser) body.appendChild(el('p', 'wg-event-teaser', teaserText(ev)));
       card.appendChild(body);
       grid.appendChild(card);
     });
