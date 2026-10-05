@@ -1281,3 +1281,5 @@ body.wg-lp-winter #av_section_1 .av-parallax .av-parallax-inner {
   background-size: cover;
   background-position: center;
 }
+/* Weihnachtsfeier-LPs: laengere Intro-Ueberschriften duerfen umbrechen */
+body.wg-lp-winter .wg-lp-intro h2 { white-space: normal; }
