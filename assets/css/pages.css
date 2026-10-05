@@ -1292,3 +1292,8 @@ body.wg-lp-team #av_section_1 .av-parallax .av-parallax-inner {
   background-position: center;
 }
 body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
+
+/* Dezente Linkzeile unter den Intros der Hauptseiten zu den regionalen Landingpages */
+#top .wg-regio-links { font-size: .92em; color: #777770; margin-top: 14px; }
+#top .wg-regio-links a { color: #678266; text-decoration: underline; }
+#top .wg-regio-links a:hover { color: #3f5340; }

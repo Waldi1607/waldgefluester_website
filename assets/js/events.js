@@ -149,7 +149,7 @@
   // SEO: Termine als schema.org-Event-Markup einspeisen, damit sie in der
   // Google-Event-Suche auftauchen können.
   function injectEventSchema(events) {
-    if (!events.length || document.getElementById('wg-event-schema')) return;
+    if (!events.length) return;
     var venue = {
       '@type': 'EventVenue',
       name: 'Waldgeflüster Events',
@@ -172,15 +172,20 @@
         organizer: { '@type': 'Organization', name: 'Waldgeflüster Events', url: 'https://waldgefluester-events.de/' }
       };
       if (ev.end) item.endDate = ev.end;
-      if (ev.teaser) item.description = ev.teaser;
+      if (ev.teaser) item.description = teaserText(ev);
       if (ev.url) item.url = ev.url;
       return item;
     });
-    var script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'wg-event-schema';
-    script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': items });
-    document.head.appendChild(script);
+    // Ein fester Block steht bereits im HTML (fuer Crawler ohne JavaScript);
+    // hier wird er mit dem aktuellen Stand aus events.json ueberschrieben.
+    var block = document.getElementById('wg-event-schema');
+    if (!block) {
+      block = document.createElement('script');
+      block.type = 'application/ld+json';
+      block.id = 'wg-event-schema';
+      document.head.appendChild(block);
+    }
+    block.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': items });
   }
 
   function init() {
