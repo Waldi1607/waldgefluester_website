@@ -1,4 +1,4 @@
-# Waldgeflüster Events — statische Website
+# Waldgeflüster Eventlocation — statische Website
 
 Statische Website von [waldgefluester-events.de](https://waldgefluester-events.de/) (ursprünglich WordPress/Enfold-Mirror), gehostet über GitHub Pages, gebaut mit **Eleventy**.
 

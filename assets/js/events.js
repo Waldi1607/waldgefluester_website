@@ -152,7 +152,7 @@
     if (!events.length) return;
     var venue = {
       '@type': 'EventVenue',
-      name: 'Waldgeflüster Events',
+      name: 'Waldgeflüster Eventlocation',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Kaltentalstraße 52',
@@ -169,7 +169,7 @@
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         location: venue,
-        organizer: { '@type': 'Organization', name: 'Waldgeflüster Events', url: 'https://waldgefluester-events.de/' }
+        organizer: { '@type': 'Organization', name: 'Waldgeflüster Eventlocation', url: 'https://waldgefluester-events.de/' }
       };
       if (ev.end) item.endDate = ev.end;
       if (ev.teaser) item.description = teaserText(ev);
