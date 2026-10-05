@@ -64,6 +64,16 @@
     return n;
   }
 
+  // Titel -> Modifier-Klasse (z.B. "hello herbst!" -> "wg-event--hello-herbst"),
+  // damit einzelne Events eigene Linienfarben bekommen koennen.
+  function slugKlasse(titel) {
+    var s = (titel || '').toLowerCase()
+      .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+      .replace(/é/g, 'e')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    return s ? ' wg-event--' + s : '';
+  }
+
   function renderList(events) {
     var target = document.getElementById('wg-event-list');
     if (!target) return;
@@ -75,7 +85,7 @@
       return;
     }
     events.forEach(function (ev) {
-      var item = el('article', 'wg-event');
+      var item = el('article', 'wg-event' + slugKlasse(ev.title));
       item.appendChild(badge(ev));
       var body = el('div', 'wg-event-body');
       var head = el('div', 'wg-event-head');
@@ -106,7 +116,7 @@
     inner.appendChild(el('h2', 'wg-home-title', EN ? 'Upcoming events & forest café dates' : 'Kommende Events & Waldcafé-Termine'));
     var grid = el('div', 'wg-home-grid');
     events.slice(0, 3).forEach(function (ev) {
-      var card = el(ev.url ? 'a' : 'div', 'wg-home-card');
+      var card = el(ev.url ? 'a' : 'div', 'wg-home-card' + slugKlasse(ev.title));
       if (ev.url) card.href = ev.url;
       card.appendChild(badge(ev));
       var body = el('div', 'wg-home-card-body');

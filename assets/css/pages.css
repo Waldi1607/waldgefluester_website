@@ -1089,17 +1089,13 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   display: flex;
   align-items: center;
   gap: 36px;
-  max-width: 880px;
+  max-width: 1120px;
   margin: 44px auto 0;
   background: #ffffff;
   border: 1px solid #e5e2db;
   border-radius: 18px;
   padding: 30px 34px;
   text-align: left;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: left -140px bottom -40px;
-  background-size: 480px 440px;
 }
 .wg-whatsapp-title { font-size: 1.35em; margin: 0 0 12px; color: #3f5340; }
 .wg-whatsapp-text p { margin: 0 0 18px; line-height: 1.65; color: #55554f; }
@@ -1121,4 +1117,25 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   .wg-whatsapp-card { flex-direction: column; gap: 18px; padding: 22px 18px; margin-top: 32px; text-align: center; }
   #top a.wg-whatsapp-qr { flex: none; }
   .wg-whatsapp-qr img { width: 170px; }
+}
+
+/* Startseiten-Eventkarten im gleichen Flyer-Look wie die Eventseite */
+#wg-event-banner .wg-home-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 118% 118%;
+}
+
+/* Eventspezifische Linienfarben: hello herbst orange (wie Flyer), Osterbrunch hellblau */
+#wg-event-list .wg-event.wg-event--hello-herbst,
+#wg-event-banner .wg-home-card.wg-event--hello-herbst {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e98c3f' stroke-width='40' stroke-linecap='round' opacity='.6'/%3E%3C/svg%3E");
+}
+#wg-event-list .wg-event.wg-event--osterbrunch,
+#wg-event-banner .wg-home-card.wg-event--osterbrunch {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23aad9ee' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
 }
