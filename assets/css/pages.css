@@ -1041,3 +1041,19 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
     margin: 2px 6px 2px 0;
   }
 }
+
+/* Eigene Events: Terminkarten auf Smartphones 2 pro Zeile statt 3,
+   kompakter und mit Umbruch-Schutz, damit kein Text aus den Boxen laeuft */
+@media (max-width: 767px) {
+  #wg-event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  #wg-event-list .wg-event { padding: 14px; gap: 12px; }
+  #wg-event-list .wg-event .wg-event-badge { width: 64px; padding: 8px 4px 6px; }
+  #wg-event-list .wg-badge-day { font-size: 1.7em; }
+  #wg-event-list .wg-event-weekday { font-size: .8em; display: block; }
+  #wg-event-list .wg-event-time { margin-left: 0; display: block; font-size: .78em; }
+  #wg-event-list .wg-event-title { font-size: 1em; }
+  #wg-event-list .wg-event-teaser { font-size: .85em; line-height: 1.5; margin-top: 6px; }
+  #wg-event-list .wg-event-head,
+  #wg-event-list .wg-event-title,
+  #wg-event-list .wg-event-teaser { overflow-wrap: break-word; word-break: break-word; }
+}
