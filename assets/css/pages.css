@@ -1230,12 +1230,24 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 .wg-lp-intro p { max-width: 880px; margin-left: auto; margin-right: auto; }
 .wg-lp-mitte { text-align: center; max-width: 880px; margin-left: auto; margin-right: auto; }
 .wg-lp-slider img.hoch { width: min(30vw, 330px); }
-.wg-lp-anfahrt { display: grid; grid-template-columns: 1.15fr .85fr; gap: 30px; align-items: center; }
-#top a.wg-lp-karte { display: block; text-decoration: none; }
-.wg-lp-karte img { width: 100%; height: auto; border-radius: 16px; border: 1px solid #e5e2db; display: block; transition: box-shadow .25s ease, transform .25s ease; }
-#top a.wg-lp-karte:hover img { box-shadow: 0 10px 28px rgba(45,45,42,.18); transform: translateY(-2px); }
-.wg-lp-karte-hinweis { display: block; margin-top: 6px; font-size: .75em; color: #8d8d84; text-align: center; }
+/* Karte rechts: ragt bis zum Fensterrand hinaus und ist exakt so hoch
+   wie Ueberschrift + Text + Routen-Link in der linken Spalte */
+.wg-lp-anfahrt {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) 1fr;
+  gap: 36px;
+  align-items: stretch;
+  margin-right: calc(50% - 50vw);
+}
+#top a.wg-lp-karte { display: block; position: relative; height: 100%; min-height: 240px; text-decoration: none; overflow: hidden; border-radius: 16px 0 0 16px; border: 1px solid #e5e2db; border-right: none; }
+.wg-lp-karte img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+#top a.wg-lp-karte:hover img { transform: scale(1.03); }
+.wg-lp-karte-hinweis { position: absolute; right: 10px; bottom: 8px; z-index: 2; background: rgba(255,255,255,.88); border-radius: 999px; padding: 3px 12px; font-size: .72em; color: #55554f; }
 @media (max-width: 767px) {
   .wg-lp-slider img.hoch { width: 56vw; }
-  .wg-lp-anfahrt { grid-template-columns: 1fr; gap: 18px; }
+  .wg-lp-anfahrt { grid-template-columns: 1fr; gap: 18px; margin-right: 0; }
+  #top a.wg-lp-karte { height: 240px; border-radius: 16px; border-right: 1px solid #e5e2db; }
 }
+
+/* Enfold legt auf a>img automatisch ein weisses Hover-Overlay – fuer die Karte deaktivieren */
+#top .wg-lp-karte .image-overlay { display: none !important; }
