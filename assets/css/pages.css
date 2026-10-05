@@ -1015,3 +1015,29 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
     text-align: left;
   }
 }
+
+/* Hero-Ueberschrift auf Smartphones kleiner (lange Titel brachen in 5+ Zeilen um) */
+@media (max-width: 767px) {
+  #top #av_section_1 h1.av-special-heading-tag {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 1px;
+  }
+}
+
+/* Cookie-Banner auf Smartphones kompakter (belegte fast die halbe Bildschirmhoehe) */
+@media (max-width: 767px) {
+  #top .avia-cookie-consent {
+    padding: 10px 12px 8px;
+  }
+  #top .avia-cookie-consent p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin: 0 0 8px;
+  }
+  #top .avia-cookie-consent .avia-cookie-consent-button {
+    padding: 6px 14px;
+    font-size: 11px;
+    margin: 2px 6px 2px 0;
+  }
+}
