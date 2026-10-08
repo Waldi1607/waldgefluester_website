@@ -1297,3 +1297,10 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
 #top .wg-regio-links { font-size: .92em; color: #777770; margin-top: 14px; }
 #top .wg-regio-links a { color: #678266; text-decoration: underline; }
 #top .wg-regio-links a:hover { color: #3f5340; }
+
+/* Bilder-Seite: Abstand der Galerien zu Ueberschrift und Text (vorher fuellte der entfernte
+   "Mehr laden"-Knopf diesen Raum) */
+#top.page-id-1610 .av-masonry { margin-top: 28px; margin-bottom: 72px; }
+@media (max-width: 767px) {
+  #top.page-id-1610 .av-masonry { margin-top: 18px; margin-bottom: 48px; }
+}
