@@ -309,3 +309,27 @@
   syncMenuState();
   updateScrollState();
 })();
+
+/* Hintergrundbilder der Galerie-Kacheln erst laden, wenn sie in die Naehe des Viewports kommen
+   (Markup liefert data-bg statt style, siehe Masonry-Galerien). */
+(function () {
+  'use strict';
+  var tiles = document.querySelectorAll('[data-bg]');
+  if (!tiles.length) return;
+  function show(el) {
+    el.style.backgroundImage = 'url(' + el.getAttribute('data-bg') + ')';
+    el.removeAttribute('data-bg');
+  }
+  if (!('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(tiles, show);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      show(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '600px 0px' });
+  Array.prototype.forEach.call(tiles, function (el) { io.observe(el); });
+})();
