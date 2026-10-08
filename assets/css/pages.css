@@ -1310,3 +1310,7 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
 @media (max-width: 767px) {
   #top.page-id-1610 #map.av-fullwidth-hotspots { margin-bottom: 40px; }
 }
+
+/* Unternavigation (Sprungmarken unter dem Hero): groessere Schrift */
+#top .av-submenu-container { font-size: 16px; }
+#top .av-submenu-container .av-subnav-menu > li > a { padding-top: 10px; padding-bottom: 10px; }
