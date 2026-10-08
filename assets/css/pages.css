@@ -1304,3 +1304,9 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
 @media (max-width: 767px) {
   #top.page-id-1610 .av-masonry { margin-top: 18px; margin-bottom: 48px; }
 }
+
+/* Bilder-Seite: Abstand zwischen der Karte (Hotspots) und der ersten Galerie "Freie Trauung" */
+#top.page-id-1610 #map.av-fullwidth-hotspots { margin-bottom: 64px; }
+@media (max-width: 767px) {
+  #top.page-id-1610 #map.av-fullwidth-hotspots { margin-bottom: 40px; }
+}
