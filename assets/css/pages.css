@@ -1336,7 +1336,7 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
   }
   /* Pille so hoch wie der Sprachumschalter (30px) */
   #top #header .av-main-nav > li.av-menu-button > a .avia-menu-text {
-    display: inline-block; box-sizing: border-box; height: 30px; line-height: 20px; padding: 5px 16px; margin: 0;
+    display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: 30px; line-height: 1; padding: 0 16px 1px; margin: 0;
     font-size: 13px; letter-spacing: .5px; border-radius: 999px; background: #678266; color: #fff !important; border: 0;
   }
   #top #header .av-main-nav > li.av-menu-button > a .avia-menu-fx,
@@ -1356,4 +1356,22 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
   .responsive #top.page-id-1610 .flex_column.av_four_fifth { width: calc(100% - 64px) !important; float: left !important; margin: 0 !important; }
   .responsive #top.page-id-1610 .flex_column.scroll-to-map-button { width: 64px !important; float: left !important; margin: 0 !important; padding-top: 8px; }
   .responsive #top.page-id-1610 .flex_column.scroll-to-map-button .av_font_icon { margin: 0; }
+}
+
+/* Smartphone/Tablet: Unternavigation schmal halten, damit Kopfzeile + Leiste wenig Bildschirm belegen */
+@media only screen and (max-width: 989px) {
+  #top .av-submenu-container { min-height: 0 !important; font-size: 14px !important; line-height: 1.3 !important; }
+  #top .av-submenu-container .container { padding: 0 !important; width: 100% !important; max-width: none !important; }
+  #top .av-submenu-container .av-subnav-menu {
+    display: flex !important; flex-wrap: wrap; justify-content: center; align-items: center;
+    position: static !important; left: auto !important; transform: none !important; float: none !important;
+    width: 100% !important; margin: 0 !important; padding: 3px 4px !important; box-sizing: border-box; font-size: 13px !important;
+  }
+  #top .av-submenu-container .av-subnav-menu > li { display: block !important; float: none !important; padding: 0 !important; margin: 0 !important; }
+  #top .av-submenu-container .av-subnav-menu > li > a { padding: 6px 7px !important; line-height: 1.3 !important; font-size: 13px !important; border: 0 !important; }
+  #top .av-submenu-container .av-subnav-menu > li > a .avia-menu-text { font-size: 13px !important; }
+}
+/* Bilder-Seite Smartphone: Luft zwischen Hero und Karte */
+@media only screen and (max-width: 767px) {
+  #top.page-id-1610 #map.av-fullwidth-hotspots { margin-top: 28px; }
 }
