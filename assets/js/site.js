@@ -333,3 +333,60 @@
   }, { rootMargin: '600px 0px' });
   Array.prototype.forEach.call(tiles, function (el) { io.observe(el); });
 })();
+
+/* Smartphone/Tablet: Unternavigation (Sprungmarken) unter der festen Kopfzeile mitfuehren.
+   Enfold macht sie auf schmalen Bildschirmen statisch; CSS position:sticky scheitert an
+   overflow:hidden auf #wrap_all. */
+(function () {
+  'use strict';
+  var sub = document.querySelector('.av-submenu-container.av-sticky-submenu');
+  if (!sub) return;
+  var placeholder = sub.nextElementSibling && sub.nextElementSibling.classList.contains('sticky_placeholder') ? sub.nextElementSibling : null;
+  var narrow = window.matchMedia('(max-width: 989px)');
+  var HEADER_HEIGHT = 72;
+  var fixed = false;
+  var main = document.getElementById('main');
+  var defaultOffset = main ? main.getAttribute('data-scroll-offset') : null;
+  function syncScrollOffset() {
+    if (!main) return;
+    // Enfold scrollt Sprungmarken um diesen Wert unter den oberen Rand; auf schmalen Bildschirmen
+    // muessen feste Kopfzeile und Unternavigation dazu.
+    main.setAttribute('data-scroll-offset', narrow.matches ? String(HEADER_HEIGHT + sub.offsetHeight + 12) : (defaultOffset || '88'));
+  }
+  function anchorTop() {
+    var ref = (placeholder && placeholder.offsetHeight > 0) ? placeholder : sub;
+    return ref.getBoundingClientRect().top;
+  }
+  function update() {
+    if (!narrow.matches) {
+      if (fixed) { sub.classList.remove('wg-sub-fixed'); fixed = false; }
+      return;
+    }
+    var shouldFix = anchorTop() <= HEADER_HEIGHT;
+    if (shouldFix !== fixed) {
+      sub.classList.toggle('wg-sub-fixed', shouldFix);
+      if (placeholder) placeholder.style.height = shouldFix ? sub.offsetHeight + 'px' : '';
+      fixed = shouldFix;
+    }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  // Sprungmarken der Unternavigation selbst scrollen: Enfolds Rechnung passt nicht zur festen
+  // Kopfzeile auf schmalen Bildschirmen (Ziel landete unter oder ueber der Leiste).
+  document.addEventListener('click', function (event) {
+    if (!narrow.matches) return;
+    var link = event.target.closest ? event.target.closest('.av-submenu-container a[href*="#"]') : null;
+    if (!link) return;
+    var id = link.getAttribute('href').split('#')[1];
+    var target = id ? document.getElementById(id) : null;
+    if (!target) return;
+    event.preventDefault();
+    event.stopPropagation();
+    var top = target.getBoundingClientRect().top + window.scrollY - (HEADER_HEIGHT + sub.offsetHeight + 12);
+    window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+    if (window.history && history.replaceState) history.replaceState(null, '', '#' + id);
+  }, true);
+  window.addEventListener('resize', syncScrollOffset);
+  syncScrollOffset();
+  window.addEventListener('resize', update);
+  update();
+})();

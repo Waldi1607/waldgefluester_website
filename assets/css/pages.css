@@ -1314,3 +1314,30 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
 /* Unternavigation (Sprungmarken unter dem Hero): groessere Schrift */
 #top .av-submenu-container { font-size: 16px; }
 #top .av-submenu-container .av-subnav-menu > li > a { padding-top: 10px; padding-bottom: 10px; }
+
+/* Mobile Kopfzeile: fest am oberen Rand, nach dem Scrollen weiss, Anfrage-Button immer sichtbar;
+   Unternavigation wandert darunter mit (Enfold macht beides auf dem Smartphone statisch). */
+@media only screen and (max-width: 989px) {
+  .responsive #top #wrap_all #header {
+    position: fixed !important; top: 0; left: 0; right: 0; height: 72px;
+    z-index: 501; background: transparent; transition: background .25s ease, box-shadow .25s ease;
+  }
+  .responsive #top #wrap_all #header #header_main,
+  .responsive #top #wrap_all #header #header_main .container { height: 72px !important; }
+  .responsive body#top.wg-nav-scrolled #wrap_all #header { background: #fff; box-shadow: 0 1px 8px rgba(0, 0, 0, .12); }
+  body.wg-nav-scrolled #header .av-hamburger-inner,
+  body.wg-nav-scrolled #header .av-hamburger-inner::before,
+  body.wg-nav-scrolled #header .av-hamburger-inner::after { background-color: #333 !important; }
+  /* Anfrage-Button aus dem Hauptmenue auch auf dem Smartphone zeigen */
+  #top #header .av-main-nav > li.av-menu-button { display: block !important; position: absolute; right: 140px; top: 0; margin: 0; }
+  #top #header .av-main-nav > li.av-menu-button > a {
+    display: inline-block; padding: 0 14px; margin: 17px 0 0; line-height: 38px; height: 38px;
+    font-size: 13px; letter-spacing: .5px; border-radius: 999px; background: #678266; color: #fff !important;
+  }
+  #top #header .av-main-nav > li.av-menu-button > a .avia-menu-fx,
+  #top #header .av-main-nav > li.av-menu-button > a .avia-bullet { display: none; }
+  /* Unternavigation wandert unter der Kopfzeile mit (Klasse setzt site.js; CSS-sticky scheitert an overflow:hidden auf #wrap_all) */
+  #top .av-submenu-container.wg-sub-fixed {
+    position: fixed !important; top: 72px !important; left: 0; right: 0; width: 100%; z-index: 300; background: #fff;
+  }
+}
