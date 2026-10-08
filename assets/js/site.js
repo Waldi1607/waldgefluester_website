@@ -379,6 +379,8 @@
     var id = link.getAttribute('href').split('#')[1];
     var target = id ? document.getElementById(id) : null;
     if (!target) return;
+    // Zielabschnitt auf dem Smartphone ausgeblendet (z.B. Galerie)? Dann zum naechsten sichtbaren Nachbarn.
+    while (target && target.getBoundingClientRect().height === 0 && target.nextElementSibling) target = target.nextElementSibling;
     event.preventDefault();
     event.stopPropagation();
     var top = target.getBoundingClientRect().top + window.scrollY - (HEADER_HEIGHT + sub.offsetHeight + 12);
