@@ -1078,10 +1078,10 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 #wg-event-list .wg-event {
   position: relative;
   overflow: hidden;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 440 -20 L 95 262 C 38 308 42 362 100 350 L 560 110 L 590 190 L 150 470 C 90 508 70 440 120 410' fill='none' stroke='%23e3f73c' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 345 12 L 75 212 C 8 262 15 302 82 266 L 490 190 L 500 240 L 95 415 C 25 450 32 492 102 462 L 490 408' fill='none' stroke='%23e3f73c' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 118% 118%;
+  background-size: 100% 100%;
 }
 
 /* WhatsApp-Gruppen-Einladung unter der Terminliste */
@@ -1124,20 +1124,20 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 440 -20 L 95 262 C 38 308 42 362 100 350 L 560 110 L 590 190 L 150 470 C 90 508 70 440 120 410' fill='none' stroke='%23e3f73c' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 345 12 L 75 212 C 8 262 15 302 82 266 L 490 190 L 500 240 L 95 415 C 25 450 32 492 102 462 L 490 408' fill='none' stroke='%23e3f73c' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 118% 118%;
+  background-size: 100% 100%;
 }
 
 /* Eventspezifische Linienfarben: hello herbst orange (wie Flyer), Osterbrunch hellblau */
 #wg-event-list .wg-event.wg-event--hello-herbst,
 #wg-event-banner .wg-home-card.wg-event--hello-herbst {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 440 -20 L 95 262 C 38 308 42 362 100 350 L 560 110 L 590 190 L 150 470 C 90 508 70 440 120 410' fill='none' stroke='%23e98c3f' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 345 12 L 75 212 C 8 262 15 302 82 266 L 490 190 L 500 240 L 95 415 C 25 450 32 492 102 462 L 490 408' fill='none' stroke='%23e98c3f' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.6'/%3E%3C/svg%3E");
 }
 #wg-event-list .wg-event.wg-event--osterbrunch,
 #wg-event-banner .wg-home-card.wg-event--osterbrunch {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 440 -20 L 95 262 C 38 308 42 362 100 350 L 560 110 L 590 190 L 150 470 C 90 508 70 440 120 410' fill='none' stroke='%23aad9ee' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 345 12 L 75 212 C 8 262 15 302 82 266 L 490 190 L 500 240 L 95 415 C 25 450 32 492 102 462 L 490 408' fill='none' stroke='%23aad9ee' stroke-width='46' stroke-linecap='round' stroke-linejoin='round' opacity='.75'/%3E%3C/svg%3E");
 }
 
 /* ---------- SEO-Landingpages (z.B. /hochzeitslocation-stuttgart/) ---------- */
