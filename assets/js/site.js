@@ -79,7 +79,7 @@
     if (!endpoint) {
       // Kein Backend konfiguriert: Anfrage über das E-Mail-Programm des Nutzers
       // versenden (funktioniert ohne Server; kann später auf ein echtes
-      // Endpoint/Formspree umgestellt werden, indem data-endpoint gesetzt wird).
+      // Endpoint/Formcarry umgestellt werden, indem data-endpoint gesetzt wird).
       var subject = WG_EN ? 'Event inquiry via the website' : 'Eventanfrage über die Website';
       var lines = WG_EN
         ? ['Name: ' + payload.name, 'E-mail: ' + payload.email, 'Phone: ' + payload.phone,
@@ -110,8 +110,9 @@
     }
 
     try {
-      // Formspree-Versand: deutsche/englische Feldnamen für eine lesbare
-      // Anfrage-Mail, dynamischer Betreff, _replyto für den Antworten-Knopf.
+      // Formcarry-Versand: lesbare deutsche/englische Feldnamen für die Anfrage-Mail;
+      // das Feld "email" nutzt Formcarry als Antwortadresse, "_gotcha" ist der Honeypot
+      // gegen Spam-Bots (bleibt bei echten Nutzern leer).
       var mailBody = WG_EN ? {
         'Name': payload.name,
         'E-mail': payload.email,
@@ -122,8 +123,8 @@
         'Message': payload.message,
         'Privacy accepted': payload.privacyAccepted ? 'yes' : 'no',
         'Page': payload.source,
-        '_replyto': payload.email,
-        '_subject': 'Event inquiry: ' + payload.event + ' – ' + payload.name + ' (' + payload.guests + ' guests, ' + payload.year + ')'
+        email: payload.email,
+        _gotcha: ''
       } : {
         'Name': payload.name,
         'E-Mail': payload.email,
@@ -134,8 +135,8 @@
         'Nachricht': payload.message,
         'Datenschutz akzeptiert': payload.privacyAccepted ? 'ja' : 'nein',
         'Seite': payload.source,
-        '_replyto': payload.email,
-        '_subject': 'Eventanfrage: ' + payload.event + ' – ' + payload.name + ' (' + payload.guests + ' Gäste, ' + payload.year + ')'
+        email: payload.email,
+        _gotcha: ''
       };
       var response = await fetch(endpoint, {
         method: 'POST',
@@ -143,6 +144,9 @@
         body: JSON.stringify(mailBody)
       });
       if (!response.ok) throw new Error('contact_request_failed');
+      // Formcarry bestätigt gespeicherte Anfragen mit code 200 / status "success".
+      var result = await response.json().catch(function () { return null; });
+      if (!result || result.code !== 200) throw new Error('contact_request_rejected');
 
       if (window.wgTrack) {
         window.wgTrack('anfrage_abgeschickt', {
