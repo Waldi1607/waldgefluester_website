@@ -1078,7 +1078,7 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 #wg-event-list .wg-event {
   position: relative;
   overflow: hidden;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M -30 120 C 20 190 60 320 95 350 C 130 325 150 125 185 100 C 220 125 240 330 275 352 C 310 328 330 115 365 95 C 400 120 420 240 450 300' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 118% 118%;
@@ -1124,7 +1124,7 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M -30 120 C 20 190 60 320 95 350 C 130 325 150 125 185 100 C 220 125 240 330 275 352 C 310 328 330 115 365 95 C 400 120 420 240 450 300' fill='none' stroke='%23e3f73c' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 118% 118%;
@@ -1133,11 +1133,11 @@ body#top.page-id-1610 .av-layout-grid-container .flex_cell.av_one_full .av_textb
 /* Eventspezifische Linienfarben: hello herbst orange (wie Flyer), Osterbrunch hellblau */
 #wg-event-list .wg-event.wg-event--hello-herbst,
 #wg-event-banner .wg-home-card.wg-event--hello-herbst {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23e98c3f' stroke-width='40' stroke-linecap='round' opacity='.6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M -30 120 C 20 190 60 320 95 350 C 130 325 150 125 185 100 C 220 125 240 330 275 352 C 310 328 330 115 365 95 C 400 120 420 240 450 300' fill='none' stroke='%23e98c3f' stroke-width='40' stroke-linecap='round' opacity='.6'/%3E%3C/svg%3E");
 }
 #wg-event-list .wg-event.wg-event--osterbrunch,
 #wg-event-banner .wg-home-card.wg-event--osterbrunch {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M 460 20 C 290 50 130 140 100 265 C 76 370 180 430 270 375 C 352 325 310 220 195 250 C 95 276 60 380 115 500' fill='none' stroke='%23aad9ee' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460' preserveAspectRatio='none'%3E%3Cpath d='M -30 120 C 20 190 60 320 95 350 C 130 325 150 125 185 100 C 220 125 240 330 275 352 C 310 328 330 115 365 95 C 400 120 420 240 450 300' fill='none' stroke='%23aad9ee' stroke-width='40' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E");
 }
 
 /* ---------- SEO-Landingpages (z.B. /hochzeitslocation-stuttgart/) ---------- */
