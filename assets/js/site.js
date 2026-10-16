@@ -64,6 +64,7 @@
       event: value('event'),
       guests: Number(value('guests')),
       year: value('year'),
+      referral: value('referral'),
       message: value('message'),
       privacyAccepted: data.get('privacy') === 'on',
       source: window.location.pathname
@@ -84,10 +85,10 @@
       var lines = WG_EN
         ? ['Name: ' + payload.name, 'E-mail: ' + payload.email, 'Phone: ' + payload.phone,
            'Type of event: ' + payload.event, 'Number of guests: ' + payload.guests,
-           'Preferred year: ' + payload.year, '', 'Message:', payload.message]
+           'Preferred year: ' + payload.year, 'How you found us: ' + payload.referral, '', 'Message:', payload.message]
         : ['Name: ' + payload.name, 'E-Mail: ' + payload.email, 'Telefonnummer: ' + payload.phone,
            'Was geplant ist: ' + payload.event, 'Personenanzahl: ' + payload.guests,
-           'Wunschjahr: ' + payload.year, '', 'Nachricht:', payload.message];
+           'Wunschjahr: ' + payload.year, 'Aufmerksam geworden durch: ' + payload.referral, '', 'Nachricht:', payload.message];
       window.location.href = 'mailto:anfrage@waldgefluester-events.de?subject='
         + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
       if (window.wgTrack) {
@@ -120,6 +121,7 @@
         'Occasion': payload.event,
         'Number of guests': payload.guests,
         'Preferred year': payload.year,
+        'How you found us': payload.referral,
         'Message': payload.message,
         'Privacy accepted': payload.privacyAccepted ? 'yes' : 'no',
         'Page': payload.source,
@@ -132,6 +134,7 @@
         'Anlass': payload.event,
         'Personenanzahl': payload.guests,
         'Wunschjahr': payload.year,
+        'Aufmerksam geworden durch': payload.referral,
         'Nachricht': payload.message,
         'Datenschutz akzeptiert': payload.privacyAccepted ? 'ja' : 'nein',
         'Seite': payload.source,

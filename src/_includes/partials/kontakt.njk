@@ -66,6 +66,19 @@
             <span class="wg-field-hint" id="wg-year-hint">{{ "Vierstellige Jahreszahl." | t | safe }}</span>
             <span class="wg-field-error" id="wg-year-error" aria-live="polite"></span>
           </div>
+          <div class="wg-field">
+            <label for="wg-referral">{{ "Wie seid ihr auf uns aufmerksam geworden?" | t | safe }} <span aria-hidden="true">*</span></label>
+            <select id="wg-referral" name="referral" required aria-describedby="wg-referral-error">
+              <option value="">{{ "Bitte auswählen" | t | safe }}</option>
+              <option value="Persönliche Empfehlung">{{ "Persönliche Empfehlung" | t | safe }}</option>
+              <option value="Instagram / Facebook">{{ "Instagram / Facebook" | t | safe }}</option>
+              <option value="Bridebook">{{ "Bridebook" | t | safe }}</option>
+              <option value="KI-Suche">{{ "KI-Suche (ChatGPT, Claude, …)" | t | safe }}</option>
+              <option value="Google-Suche">{{ "Google-Suche" | t | safe }}</option>
+              <option value="Sonstiges">{{ "Sonstiges" | t | safe }}</option>
+            </select>
+            <span class="wg-field-error" id="wg-referral-error" aria-live="polite"></span>
+          </div>
 
           <div class="wg-field wg-field-wide">
             <label for="wg-message">{{ "Was dürfen wir schon wissen?" | t | safe }} <span aria-hidden="true">*</span></label>
