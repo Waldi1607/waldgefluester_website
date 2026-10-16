@@ -8,6 +8,11 @@
     var data = { event: name, seite: location.pathname };
     for (var k in params) if (params.hasOwnProperty(k)) data[k] = params[k];
     window.dataLayer.push(data);
+    // Meta-Pixel: Lead nur, wenn der Pixel laeuft (also nur mit Einwilligung, sonst ist fbq
+    // nicht definiert). Keine personenbezogenen Daten, nur der Anlass.
+    if (name === 'anfrage_abgeschickt' && typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', { content_name: (params && params.eventform) || '' });
+    }
   };
   window.wgTrack = push;
 

@@ -1471,20 +1471,47 @@ function av_privacy_cookie_setter( cookie_name ){var cookie_check = jQuery('html
 });</script></script><script type="application/ld+json" id="wg-event-schema">{"@context":"https://schema.org","@graph":[{"@type":"Event","name":"hello herbst!","startDate":"2026-11-06","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Burger & Drinks, Live Music & DJ."},{"@type":"Event","name":"Waldcafé","startDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2026-11-29","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2026-12-20","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2027-01-10","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2027-01-31","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2027-02-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Waldcafé","startDate":"2027-03-14","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"description":"Eisstockbahn, Burger & Waffeln, Café & Drinks."},{"@type":"Event","name":"Osterbrunch","startDate":"2027-03-28","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"EventVenue","name":"Waldgeflüster Eventlocation","address":{"@type":"PostalAddress","streetAddress":"Kaltentalstraße 52","postalCode":"72584","addressLocality":"Hülben","addressCountry":"DE"}},"organizer":{"@type":"Organization","name":"Waldgeflüster Eventlocation","url":"https://waldgefluester-events.de/"},"endDate":"2027-03-29","description":"Families & Kids welcome."}]}</script><script src="../assets/js/events.js?v=6" data-events-src="../events.json" data-mode="list" defer></script>
 <script src="../assets/js/tracking.js" defer></script>
 <script>
-/* Consent-Update: Zustimmung ueber den Enfold-Cookie-Banner an Google melden */
+/* Consent-Update: Zustimmung ueber den Enfold-Cookie-Banner an Google melden
+   und den Meta-Pixel (Facebook-Pixel) erst nach Einwilligung laden */
 (function(){
+  var META_PIXEL_ID = '[PIXEL_ID]';
+  var metaPixelLoaded = false;
   function grant(){
     if (typeof window.gtag === 'function') {
       window.gtag('consent','update',{ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted', analytics_storage:'granted'});
     }
   }
+  /* Einwilligung liegt vor, wenn der Banner beantwortet wurde (aviaCookieConsent) und Tracking
+     nicht abgewaehlt ist. Waehlt der Nutzer Tracking in den Cookie-Einstellungen ab, setzt Enfold
+     aviaPrivacyGoogleTrackingDisabled: hasConsent() wird falsch, beim naechsten Seitenaufruf laedt
+     weder der Google-Tag-Consent noch der Meta-Pixel. */
   function hasConsent(){
     return document.cookie.indexOf('aviaCookieConsent=') > -1 &&
            document.cookie.indexOf('aviaPrivacyGoogleTrackingDisabled') === -1;
   }
-  if (hasConsent()) grant();
+  /* Offizieller Meta-Pixel-Basiscode, bewusst ohne <noscript>-Bild (das wuerde ohne Einwilligung
+     feuern). Nur einmal pro Seitenaufruf und nur auf der echten Domain, damit localhost und
+     GitHub-Vorschau keine Daten senden (gleiche Hostname-Sperre wie beim Google-Tag). */
+  function loadMetaPixel(){
+    if (metaPixelLoaded || !hasConsent()) return;
+    if (!/(^|\.)waldgefluester-events\.de$/.test(location.hostname)) return;
+    metaPixelLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+  if (hasConsent()) { grant(); loadMetaPixel(); }
   document.addEventListener('click', function(e){
-    if (e.target.closest && e.target.closest('.avia-cookie-close-bar')) grant();
+    if (e.target.closest && e.target.closest('.avia-cookie-close-bar')) {
+      grant();
+      /* Capture-Phase: Enfold setzt das Cookie erst in seinem eigenen Handler, deshalb den
+         Pixel-Start um einen Tick verzoegern, damit hasConsent() den neuen Stand sieht. */
+      setTimeout(loadMetaPixel, 50);
+    }
   }, true);
 })();
 </script>
