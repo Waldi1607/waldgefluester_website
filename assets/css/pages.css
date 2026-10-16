@@ -1375,3 +1375,9 @@ body.wg-lp-team .wg-lp-intro h2 { white-space: normal; }
 @media only screen and (max-width: 767px) {
   #top.page-id-1610 #map.av-fullwidth-hotspots { margin-top: 28px; }
 }
+
+/* Formular: Hinweistext direkt unter dem Eingabefeld (das Theme gibt Eingabefeldern einen Abstand nach unten) */
+#top .wg-contact-form .wg-field input,
+#top .wg-contact-form .wg-field select,
+#top .wg-contact-form .wg-field textarea { margin-bottom: 0 !important; }
+#top .wg-contact-form .wg-field-hint { margin-top: 4px; }
