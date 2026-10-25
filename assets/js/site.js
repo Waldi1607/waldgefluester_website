@@ -114,6 +114,9 @@
       // Formcarry-Versand: lesbare deutsche/englische Feldnamen für die Anfrage-Mail;
       // das Feld "email" nutzt Formcarry als Antwortadresse, "_gotcha" ist der Honeypot
       // gegen Spam-Bots (bleibt bei echten Nutzern leer).
+      // Kurzfassung fuer den Mail-Betreff bei Formcarry ({{kurzfassung}} in den Einstellungen):
+      // Jahr · Anlass · Personenanzahl, in DE und EN gleich benannt.
+      var kurzfassung = [payload.year, payload.event, payload.guests + (WG_EN ? ' guests' : ' Personen')].join(' · ');
       var mailBody = WG_EN ? {
         'Name': payload.name,
         'E-mail': payload.email,
@@ -125,6 +128,7 @@
         'Message': payload.message,
         'Privacy accepted': payload.privacyAccepted ? 'yes' : 'no',
         'Page': payload.source,
+        kurzfassung: kurzfassung,
         email: payload.email,
         _gotcha: ''
       } : {
@@ -138,6 +142,7 @@
         'Nachricht': payload.message,
         'Datenschutz akzeptiert': payload.privacyAccepted ? 'ja' : 'nein',
         'Seite': payload.source,
+        kurzfassung: kurzfassung,
         email: payload.email,
         _gotcha: ''
       };
