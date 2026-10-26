@@ -5,3 +5,6 @@ node_modules/
 .env
 node_modules/
 .claude/
+
+# Search-Console-Exporte (lokal, nicht veroeffentlichen)
+search-console/
